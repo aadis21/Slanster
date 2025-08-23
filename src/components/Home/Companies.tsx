@@ -1,106 +1,128 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-
-const logos = [
-  "/AILandingPage/logo-1.png",
-  "/AILandingPage/logo-10.png",
-  "/AILandingPage/logo-2.png",
-  "/AILandingPage/logo-3.png",
-  "/AILandingPage/logo-4.png",
-  "/AILandingPage/logo-5.png",
-  "/AILandingPage/logo-6.png",
-  "/AILandingPage/logo-7.png",
-  "/AILandingPage/logo-8.png",
-  "/AILandingPage/logo-9.png",
-];
+import "./companies.css";
+import Image from "next/image";
 
 const Companies = () => {
-  const [index, setIndex] = useState(0);
-  const [showEven, setShowEven] = useState(true);
+  const [currentLogoIndexes, setCurrentLogoIndexes] = useState([
+    0, 0, 0, 0, 0, 0,
+  ]);
+  const [screenWidth, setScreenWidth] = useState<number>(0);
+
+  const logosSets = [
+    [
+      { src: "/animationLogos/logo 1.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 2.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 3.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 4.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 5.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 6.jpg", height: "70px", width: "auto" },
+    ],
+    [
+      { src: "/animationLogos/logo 7.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 8.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 9.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 10.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 11.jpg", height: "70px", width: "auto" },
+    ],
+    [
+      { src: "/animationLogos/logo 13.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 14.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 15.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 16.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 17.jpg", height: "70px", width: "auto" },
+    ],
+    [
+      { src: "/animationLogos/logo 19.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 20.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 21.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 22.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 23.jpg", height: "70px", width: "auto" },
+    ],
+    [
+      { src: "/animationLogos/logo 25.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 26.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 27.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 28.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 29.jpg", height: "70px", width: "auto" },
+    ],
+    [
+      { src: "/animationLogos/logo 31.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 30.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 24.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 18.jpg", height: "35px", width: "auto" },
+      { src: "/animationLogos/logo 12.jpg", height: "70px", width: "auto" },
+    ],
+  ];
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % logos.length);
-      setShowEven((prev) => !prev); // odd/even toggle
-    }, 3500);
-    return () => clearInterval(interval);
-  }, []);
+    // Track screen width only in browser
+    setScreenWidth(window.innerWidth);
 
-  const getVisibleLogos = () => {
-    if (typeof window !== "undefined") {
-      if (window.innerWidth < 640) return 3; // mobile
-      if (window.innerWidth < 1024) return 6; // tablet
-      if (window.innerWidth < 1440) return 8; // laptop
-      return 8; // big desktop
-    }
-    return 8;
-  };
-
-  const [visibleCount, setVisibleCount] = useState(getVisibleLogos());
-
-  useEffect(() => {
-    const handleResize = () => setVisibleCount(getVisibleLogos());
+    const handleResize = () => setScreenWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
+
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    const intervals = logosSets.map((logos, setIndex) => {
+      const totalLogos = logos.length;
+      const intervalDuration = setIndex % 2 === 0 ? 3000 : 4000;
+      return setInterval(() => {
+        setCurrentLogoIndexes((prevIndexes) => {
+          const updatedIndexes = [...prevIndexes];
+          updatedIndexes[setIndex] =
+            (updatedIndexes[setIndex] + 1) % totalLogos;
+          return updatedIndexes;
+        });
+      }, intervalDuration);
+    });
+
+    return () => intervals.forEach((interval) => clearInterval(interval));
+  }, []);
+
   return (
-    <div className="relative w-full flex justify-center py-12 bg-white overflow-hidden">
-      {/* Left & Right blur */}
-      <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-white to-transparent pointer-events-none z-10" />
-      <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-white to-transparent pointer-events-none z-10" />
+    <div className="text-[#696984] flex justify-center font-pop pb-10 sm:py-10 xsm:py-5 md:mt-0 xsm:mt-0 sm:mt-0 bg-white">
+      <div className="w-[90%] space-y-8 xsm:space-y-4 sm:space-y-4 md:space-y-6">
+        <div
+          className="text-center font-inter text-gray-900
+             text-[16px] sm:text-[24px] md:text-[32px] lg:text-[40px] xl:text-[40px] 2xl:text-[40px]"
+        >
+          Trusted by <span className="text-[#1dbf73]">200+</span> Companies
+          Worldwide
+        </div>
 
-      {/* Logos Grid */}
-      <div
-        className="grid gap-10 items-center relative z-0"
-        style={{
-          gridTemplateColumns: `repeat(${visibleCount}, minmax(0, 1fr))`,
-        }}
-      >
-        {[...Array(visibleCount)].map((_, i) => {
-          const logoIndex = (index + i) % logos.length;
-
-          // decide animation group
-          const isEven = i % 2 === 0;
-          const shouldAnimate = showEven ? isEven : !isEven;
-
-          return (
-            <div
-              key={i}
-              className="w-20 sm:w-24 md:w-28 lg:w-32 xl:w-36 h-12 sm:h-14 md:h-16 lg:h-20 flex items-center justify-center overflow-hidden"
-            >
-              <AnimatePresence mode="popLayout">
-                {shouldAnimate ? (
-                  <motion.img
-                    key={logoIndex}
-                    src={logos[logoIndex]}
-                    alt="company logo"
-                    className="w-full h-auto object-contain"
-                    initial={{ y: isEven ? 80 : -80, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: isEven ? -80 : 80, opacity: 0 }}
-                    transition={{
-                      duration: 1.2,
-                      ease: "easeInOut",
+        <div className="flex justify-center xsm:gap-3 xsm:justify-around ">
+          {logosSets
+            .slice(0, screenWidth <= 480 ? 4 : 6) // ✅ uses state instead of window
+            .map((logos, setIndex) => (
+              <div
+                key={setIndex}
+                className="slider-container w-[100%] xsm:w-[15%] md:w-[15%]"
+              >
+                {logos.map((logo, index) => (
+                  <Image
+                    key={index}
+                    src={logo.src}
+                    alt={`Company Logo ${index}`}
+                    style={{
+                      height: screenWidth <= 720 ? "28px" : logo.height,
+                      width: "auto",
                     }}
+                    className={
+                      index === currentLogoIndexes[setIndex]
+                        ? "logo active"
+                        : "logo"
+                    }
+                    width={200}
+                    height={200}
                   />
-                ) : (
-                  <motion.img
-                    key={`static-${logoIndex}`}
-                    src={logos[logoIndex]}
-                    alt="company logo"
-                    className="w-full h-auto object-contain"
-                    initial={false}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={undefined} // ✅ fix: no animation on exit
-                  />
-                )}
-              </AnimatePresence>
-            </div>
-          );
-        })}
+                ))}
+              </div>
+            ))}
+        </div>
       </div>
     </div>
   );

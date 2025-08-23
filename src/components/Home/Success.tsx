@@ -296,7 +296,8 @@ function Success() {
       <header className="text-center">
         <div className="md:max-w-5xl mx-auto">
           <h2
-            className={`${inter.className} text-3xl md:text-4xl font-medium leading-[44px] text-[#1E2631] max-w-3xl mx-auto`}
+            className={`${inter.className} text-center font-normal text-gray-900 
+              text-[16px] sm:text-[24px] md:text-[32px] lg:text-[40px] xl:text-[40px] 2xl:text-[40px]`}
           >
             Driving Success With Next-Gen Technologies
           </h2>
@@ -313,7 +314,7 @@ function Success() {
                 onClick={() => setSelected(index)}
                 className={`px-5 py-4 flex flex-row justify-between items-center cursor-pointer rounded-lg transition-all duration-300 ${
                   selected === index
-                    ? "bg-blue-600 text-white font-semibold shadow-md"
+                    ? "bg-[#084c74] text-white font-semibold shadow-md"
                     : "bg-gray-100 hover:bg-gray-200"
                 }`}
               >

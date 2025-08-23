@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        dmsans: ["DM Sans", "sans-serif"], // 👈 Custom font
+        dmsans: ["DM Sans", "sans-serif"],
       },
     },
   },

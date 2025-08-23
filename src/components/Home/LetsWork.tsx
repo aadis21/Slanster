@@ -2,6 +2,9 @@
 
 import React, { useState } from "react";
 import { Phone, Mail, Headphones } from "lucide-react";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -56,14 +59,17 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-white">
+    <div className={`w-full min-h-screen bg-white ${inter.className}`}>
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 relative">
         {/* LEFT SIDE FORM */}
         <div className="p-6 sm:p-8 lg:p-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <h2
+            className={`${inter.className} text-start font-normal text-gray-900 
+              text-[16px] sm:text-[24px] md:text-[32px] lg:text-[46px] xl:text-[46px] 2xl:text-[52px] mb-4`}
+          >
             Get in <span className="text-blue-600">touch</span>
           </h2>
-          <p className="text-gray-600 mb-10 max-w-md text-sm sm:text-base">
+          <p className="text-gray-600 mb-10 max-w-md text-sm sm:text-base text-center md:text-left">
             Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu leo
             molestie vel, ornare non id blandit netus.
           </p>
@@ -197,7 +203,7 @@ const ContactPage = () => {
               <Mail size={18} className="text-black" />
               <div>
                 <p className="font-semibold">E-MAIL</p>
-                <p className="text-pink-500">info@company.com</p>
+                <p className="text-pink-500">support@slanster.com</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
@@ -213,9 +219,9 @@ const ContactPage = () => {
         </div>
 
         {/* RIGHT SIDE MAP */}
-        <div className="relative bg-blue-500 flex items-center justify-center md:px-0 px-4 md:pr-10 pr-0">
+        <div className="relative md:bg-blue-500  flex items-center justify-center md:px-0 px-4 md:pr-10 pr-0">
           {/* Blue Block Background */}
-          <div className="absolute w-full h-full bg-blue-500 -z-10"></div>
+          <div className="absolute w-full h-full -z-10"></div>
 
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2563.558407265768!2d14.42076!3d50.08804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b94eab7c3d9f1%3A0x7b9c9c3cddc3f1f9!2sPrague!5e0!3m2!1sen!2scz!4v1672123456789"

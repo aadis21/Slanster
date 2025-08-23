@@ -1,9 +1,19 @@
+"use client";
 import React from "react";
+import { Inter } from "next/font/google";
 import BrillianceImg from "../../../public/home/Brilliance/Brilliance.png";
+
+// Inter font import
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+});
 
 const Brilliance = () => {
   return (
-    <div className="w-full min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center px-6 md:px-12 lg:px-24 py-12">
+    <div
+      className={`w-full min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center px-6 md:px-12 lg:px-24 py-12 ${inter.className}`}
+    >
       <div className="max-w-7xl w-full relative grid grid-cols-1 md:grid-cols-2 items-center gap-10">
         {/* Background Grey Rectangle */}
         <div
@@ -14,10 +24,13 @@ const Brilliance = () => {
 
         {/* LEFT SECTION */}
         <div className="relative z-10 text-center md:text-left">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug text-white">
+          <h1
+            className=" font-inter text-white 
+             text-[16px] sm:text-[24px] md:text-[32px] lg:text-[46px] xl:text-[46px] 2xl:text-[52px]"
+          >
             Leading you to <br /> tech brilliance
           </h1>
-          <p className="mt-4 text-gray-400 max-w-md mx-auto md:mx-0 text-sm sm:text-base md:text-lg">
+          <p className="mt-4 text-gray-400 max-w-md mx-auto md:mx-0 text-sm sm:text-base md:text-lg font-normal">
             Our consulting process begins with a thorough assessment of your
             current IT infrastructure, workflows, and pain points.
           </p>
@@ -26,19 +39,19 @@ const Brilliance = () => {
           <div className="mt-6 space-y-3 max-w-md mx-auto md:mx-0">
             <div className="flex items-center gap-3">
               <span className="text-green-500 text-xl">✔</span>
-              <p className="text-gray-200 text-sm sm:text-base">
+              <p className="text-gray-200 text-sm sm:text-base font-normal">
                 24/7 Full service support
               </p>
             </div>
             <div className="flex items-center gap-3">
               <span className="text-green-500 text-xl">✔</span>
-              <p className="text-gray-200 text-sm sm:text-base">
+              <p className="text-gray-200 text-sm sm:text-base font-normal">
                 Easy to approach
               </p>
             </div>
             <div className="flex items-center gap-3">
               <span className="text-green-500 text-xl">✔</span>
-              <p className="text-gray-200 text-sm sm:text-base">
+              <p className="text-gray-200 text-sm sm:text-base font-normal">
                 Immediate response
               </p>
             </div>
@@ -51,28 +64,28 @@ const Brilliance = () => {
           <div className="w-full md:w-[70%] space-y-6">
             {/* Step 1 */}
             <div className="bg-gradient-to-r from-white/10 to-transparent p-5 sm:p-6 rounded-xl border border-white/20 shadow-md">
-              <h3 className="font-semibold text-lg sm:text-xl text-white">
+              <h3 className="font-medium text-lg sm:text-xl text-white">
                 01 Discover and analysis
               </h3>
-              <p className="text-gray-300 text-sm sm:text-base mt-2">
+              <p className="text-gray-300 text-sm sm:text-base mt-2 font-normal">
                 Perform an analysis of the client&apos;s existing IT systems.
               </p>
             </div>
             {/* Step 2 */}
             <div className="bg-gradient-to-r from-white/10 to-transparent p-5 sm:p-6 rounded-xl border border-white/20 shadow-md">
-              <h3 className="font-semibold text-lg sm:text-xl text-white">
+              <h3 className="font-medium text-lg sm:text-xl text-white">
                 02 Tailored Solutions
               </h3>
-              <p className="text-gray-300 text-sm sm:text-base mt-2">
+              <p className="text-gray-300 text-sm sm:text-base mt-2 font-normal">
                 Develop IT solutions based on the analysis phase.
               </p>
             </div>
             {/* Step 3 */}
             <div className="bg-gradient-to-r from-white/10 to-transparent p-5 sm:p-6 rounded-xl border border-white/20 shadow-md">
-              <h3 className="font-semibold text-lg sm:text-xl text-white">
+              <h3 className="font-medium text-lg sm:text-xl text-white">
                 03 Deployment and Support
               </h3>
-              <p className="text-gray-300 text-sm sm:text-base mt-2">
+              <p className="text-gray-300 text-sm sm:text-base mt-2 font-normal">
                 Regularly communicate with our client to address any concerns.
               </p>
             </div>

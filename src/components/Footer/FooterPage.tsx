@@ -7,22 +7,25 @@ import {
   FaYoutube,
   FaLinkedin,
 } from "react-icons/fa";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 const FooterPage = () => {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className={`${inter.className} bg-gray-900 text-white`}>
       {/* Top Section */}
-      <div className="max-w-7xl mx-auto px-6 md:px-0 py-20 flex md:flex-row flex-col justify-between gap-12 animate-fadeIn ">
+      <div className="max-w-7xl mx-auto px-6 md:px-0 py-20 flex flex-col md:flex-row justify-between gap-12 animate-fadeIn">
         {/* Logo & Description */}
-        <div className="col-span-1 flex flex-col items-start">
+        <div className="flex flex-col items-start max-w-[300px]">
           <Image
-            src="/logo.png"
+            src="/logofooter.png"
             alt="Logo"
             width={220}
             height={220}
             className="mb-6"
           />
-          <p className="text-gray-400 text-base leading-relaxed max-w-sm">
+          <p className="text-gray-400 text-base leading-relaxed">
             We empower businesses and learners by combining expert guidance with
             AI-driven solutions, fostering smarter decisions, streamlined
             growth, and continuous learning for a future-ready world.
@@ -32,12 +35,12 @@ const FooterPage = () => {
         {/* Quick Links */}
         <div>
           <h3 className="font-semibold text-xl mb-6">Quick Links</h3>
-          <ul className="space-y-4 text-gray-400 text-base">
+          <ul className="space-y-3 text-gray-400 text-base">
             {["Home", "About Us", "Projects", "Mentors", "Super 30"].map(
               (item, idx) => (
                 <li
                   key={idx}
-                  className="relative group cursor-pointer w-fit hover:text-white transition"
+                  className="relative py-2 group cursor-pointer w-fit hover:text-white transition"
                 >
                   <span>{item}</span>
                   <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
@@ -50,7 +53,7 @@ const FooterPage = () => {
         {/* Services */}
         <div>
           <h3 className="font-semibold text-xl mb-6">Services</h3>
-          <ul className="space-y-4 text-gray-400 text-base">
+          <ul className="space-y-3 text-gray-400 text-base">
             {[
               "AI",
               "Blockchain",
@@ -61,7 +64,7 @@ const FooterPage = () => {
             ].map((item, idx) => (
               <li
                 key={idx}
-                className="relative group cursor-pointer w-fit hover:text-white transition"
+                className="relative py-2 group cursor-pointer w-fit hover:text-white transition"
               >
                 <span>{item}</span>
                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
@@ -73,7 +76,7 @@ const FooterPage = () => {
         {/* Courses */}
         <div>
           <h3 className="font-semibold text-xl mb-6">Courses</h3>
-          <ul className="space-y-4 text-gray-400 text-base">
+          <ul className="space-y-3 text-gray-400 text-base">
             {[
               "ITGC, IT Audit & Cyber Assessment",
               "IT Asset Management (SAM)",
@@ -83,7 +86,7 @@ const FooterPage = () => {
             ].map((item, idx) => (
               <li
                 key={idx}
-                className="relative group cursor-pointer w-fit hover:text-white transition"
+                className="relative py-2 group cursor-pointer w-fit hover:text-white transition"
               >
                 <span>{item}</span>
                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
@@ -95,22 +98,18 @@ const FooterPage = () => {
         {/* Contact Us */}
         <div>
           <h3 className="font-semibold text-xl mb-6">Contact Us</h3>
-          <ul className="space-y-4 text-gray-400 text-base">
+          <ul className="space-y-3 text-gray-400 text-base py-2">
             <li className="relative group cursor-pointer w-fit hover:text-white transition">
               <a href="tel:+914545454545">+91 4545454545</a>
               <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
             </li>
-
-            {/* Email with underline hover */}
             <li className="relative group cursor-pointer w-fit hover:text-white transition">
               <a href="mailto:support@slanster.com">support@slanster.com</a>
               <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
             </li>
-
-            {/* Address with underline hover */}
             <li className="relative group cursor-pointer w-fit hover:text-white transition">
               <span>
-                Global Business <br /> Park - Chandigarh, Punjab 140603
+                Global Business <br /> Park - Chandigarh, <br /> Punjab 140603
               </span>
               <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
             </li>
@@ -135,7 +134,7 @@ const FooterPage = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t-3 border-gray-700 flex flex-col md:flex-row justify-between items-center px-6 py-6 text-gray-400 text-sm">
+        <div className="border-t border-gray-700 flex flex-col md:flex-row justify-between items-center px-6 py-6 text-gray-400 text-sm">
           <div className="flex space-x-6 mb-3 md:mb-0">
             {[
               { name: "Privacy policy", link: "/privacypolicy" },

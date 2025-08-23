@@ -37,7 +37,8 @@ const FeaturedCard = () => {
     <section className="bg-gray-900 min-h-screen flex flex-col justify-center items-center px-6 py-16">
       {/* Heading */}
       <h2
-        className={`${inter.className} text-3xl md:text-4xl font-medium leading-[44px] text-white max-w-3xl mx-auto text-center mb-12`}
+        className="text-center font-inter text-white 
+             text-[16px] sm:text-[24px] md:text-[32px] lg:text-[40px] xl:text-[40px] 2xl:text-[40px]"
       >
         Explore Our Featured Industries
       </h2>
@@ -46,16 +47,16 @@ const FeaturedCard = () => {
       <div className="max-w-7xl w-full">
         <div
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 
-                        max-h-[42rem] overflow-y-auto pr-2 m-5"
+                     max-h-[42rem] overflow-y-auto pr-2 m-5"
         >
           {cards.map((card) => (
             <motion.div
               key={card.id}
               whileHover={{ scale: 1.05 }}
-              className="relative  overflow-hidden rounded-2xl shadow-lg cursor-pointer group h-64 sm:h-72 lg:h-80 
-                         border border-white/30 hover:border-blue-500 transition duration-500"
+              className="relative overflow-hidden rounded-2xl shadow-lg cursor-pointer group h-64 sm:h-72 lg:h-80 
+             border border-white/30 hover:border-[#084c74] transition duration-500"
             >
-              {/* Image (hide on hover) */}
+              {/* Image */}
               <Image
                 src={card.image}
                 alt={card.title}
@@ -63,16 +64,22 @@ const FeaturedCard = () => {
                 className="object-cover transition-opacity duration-700 group-hover:opacity-0"
               />
 
-              {/* Blue gradient (visible only on hover) */}
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-700 via-blue-600 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out"></div>
+              {/* Custom Blue Gradient */}
+              <div
+                className="absolute inset-0 bg-gradient-to-t from-[#084c74] via-[#084c74] to-[#084c74] 
+                  opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out"
+              ></div>
 
-              {/* Title animation */}
+              {/* Title */}
               <motion.h3
                 initial={{ opacity: 1 }}
                 whileHover={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, ease: "easeInOut" }}
-                className="absolute left-1/2 -translate-x-1/2 text-white text-lg font-semibold drop-shadow-md transition-all duration-700 
-                           bottom-6 group-hover:bottom-1/2 group-hover:-translate-y-1/2 group-hover:text-xl group-hover:font-semibold"
+                className="absolute left-1/2 -translate-x-1/2 text-white 
+       text-lg font-semibold drop-shadow-md transition-all duration-700 
+       bottom-6 group-hover:bottom-1/2 group-hover:-translate-y-1/2 
+       group-hover:text-xl group-hover:font-semibold 
+       whitespace-nowrap"
               >
                 {card.title}
               </motion.h3>

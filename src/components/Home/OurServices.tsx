@@ -39,7 +39,8 @@ const OurServices = () => {
       {/* Heading */}
       <p className="text-gray-500 uppercase tracking-wide mb-2">Our Services</p>
       <h2
-        className={`${inter.className} text-3xl md:text-4xl font-medium leading-[44px] text-[#1E2631] max-w-3xl mx-auto`}
+        className={`${inter.className} text-center font-normal text-gray-900 
+              text-[16px] sm:text-[24px] md:text-[32px] lg:text-[40px] xl:text-[40px] 2xl:text-[40px]`}
       >
         Comprehensive IT solutions, <br /> Customized to drive <br />
         <span>Your business forward</span>
@@ -70,10 +71,16 @@ const OurServices = () => {
 
             {/* Text at bottom */}
             <div className="relative z-10 text-left mt-auto">
-              <h3 className="text-lg font-semibold text-yellow-400 mb-2">
+              <h3
+                className={`${inter.className} text-lg font-normal text-yellow-400 mb-2`}
+              >
                 {service.title}
               </h3>
-              <p className="text-gray-200 text-sm">{service.desc}</p>
+              <p
+                className={`${inter.className} text-gray-200 text-sm font-normal`}
+              >
+                {service.desc}
+              </p>
             </div>
           </div>
         ))}

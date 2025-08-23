@@ -39,20 +39,22 @@ const FlipCard = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Responsive gaps + height
-  const GAP_X = 10; // smaller on mobile
-  const GAP_Y = 20; // smaller on mobile
-  const CARD_HEIGHT = 220; // smaller default height
+  const GAP_X = 10;
+  const GAP_Y = 20;
+  const CARD_HEIGHT = 220;
 
   return (
-    <section className="relative bg-blue-600 text-white py-16 px-4 md:py-20 md:px-6 overflow-hidden">
+    <section className="relative bg-blue-600 text-white py-16 px-4 md:py-20 md:px-6 overflow-hidden font-inter">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between">
         {/* Left Section */}
         <div className="md:w-1/3 mb-10 md:mb-0 text-center md:text-left">
-          <h4 className="uppercase tracking-widest text-xs md:text-sm font-semibold text-gray-200">
+          <h4 className="uppercase tracking-widest text-xs md:text-sm font-semibold text-gray-200 font-inter">
             Testimonials
           </h4>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-snug text-white">
+          <h2
+            className="text-start font-inter text-white 
+             text-[16px] sm:text-[24px] md:text-[32px] lg:text-[40px] xl:text-[40px] 2xl:text-[40px] font-bold leading-snug"
+          >
             What People Say <br /> About Us.
           </h2>
 
@@ -92,7 +94,7 @@ const FlipCard = () => {
                   height: `${CARD_HEIGHT}px`,
                 }}
               >
-                <div className="bg-white text-gray-900 rounded-xl shadow-2xl md:mx-0 mx-5 p-6 sm:p-8 relative flex flex-col justify-between h-full">
+                <div className="bg-white text-gray-900 rounded-xl shadow-2xl md:mx-0 mx-5 p-6 sm:p-8 relative flex flex-col justify-between h-full font-inter">
                   {/* User Image */}
                   <div className="absolute -top-6 left-4">
                     <Image
@@ -105,12 +107,14 @@ const FlipCard = () => {
                   </div>
 
                   {/* Text */}
-                  <p className="mt-8 text-gray-700 text-sm sm:text-base leading-relaxed">
+                  <p className="mt-8 text-gray-700 text-sm sm:text-base leading-relaxed font-inter">
                     {item.text}
                   </p>
                   <div className="mt-4">
-                    <h4 className="font-semibold text-gray-900">{item.name}</h4>
-                    <span className="text-gray-500 text-xs sm:text-sm">
+                    <h4 className="font-semibold text-gray-900 font-inter">
+                      {item.name}
+                    </h4>
+                    <span className="text-gray-500 text-xs sm:text-sm font-inter">
                       {item.location}
                     </span>
                   </div>

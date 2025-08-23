@@ -3,6 +3,10 @@
 import React, { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { Inter } from "next/font/google";
+
+// Load Inter font
+const inter = Inter({ subsets: ["latin"] });
 
 // Use absolute paths from public folder
 const posts = [
@@ -98,11 +102,14 @@ const ITExpert = () => {
   }, []);
 
   return (
-    <div className="w-full bg-gray-50 py-16 px-6 md:px-12">
+    <div className={`w-full bg-gray-50 py-16 px-6 md:px-12 ${inter.className}`}>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-6">
-          <h2 className="font-inter font-medium text-4xl sm:text-5xl md:text-[54px] tracking-[-0.0225em] text-gray-900 leading-snug sm:leading-tight">
+          <h2
+            className={`${inter.className} text-start font-normal text-gray-900 
+              text-[16px] sm:text-[24px] md:text-[32px] lg:text-[40px] xl:text-[40px] 2xl:text-[40px]`}
+          >
             Innovating IT: Expert <br /> insights & industry trends
           </h2>
 
@@ -143,7 +150,7 @@ const ITExpert = () => {
             {posts.map((post) => (
               <div
                 key={post.id}
-                className={`px-3 py-10 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4`}
+                className="px-3 py-10 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
               >
                 <div className="bg-white rounded-xl overflow-hidden shadow-sm h-full flex flex-col">
                   {/* Image */}
@@ -189,3 +196,6 @@ const ITExpert = () => {
 };
 
 export default ITExpert;
+
+
+
