@@ -244,7 +244,7 @@ const TechnologiesData: TechnologiesProps[] = [
     tech: [
       {
         title: "Android",
-        image: "/assets/home/frontend/1.png",
+        image: "/success/frontend/1.png",
       },
       {
         title: "Cordova",
@@ -308,7 +308,7 @@ function Success() {
         {/* Sidebar Selection */}
         <div className="md:w-1/3 w-full">
           <ul className="w-full rounded-lg gap-3 grid grid-cols-2 md:grid-cols-1">
-            {TechnologiesData.map((data, index) => (
+            {TechnologiesData?.map((data, index) => (
               <li
                 key={index}
                 onClick={() => setSelected(index)}

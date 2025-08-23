@@ -8,14 +8,14 @@ const HeaderPage: React.FC = () => {
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50 font-inter">
-      <div className="max-w-7xl mx-auto flex items-center justify-between h-24">
+      <div className="max-w-8xl px-15 mx-auto flex items-center justify-between h-24">
         {/* Logo */}
         <div className="flex items-center">
           <Image
             src="/logoheader.png"
             alt="Slanster Logo"
-            width={180}
-            height={90}
+            width={300}
+            height={100}
             priority
           />
         </div>

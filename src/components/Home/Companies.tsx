@@ -12,47 +12,47 @@ const Companies = () => {
 
   const logosSets = [
     [
-      { src: "/animationLogos/logo 1.jpg", height: "70px", width: "auto" },
-      { src: "/animationLogos/logo 2.jpg", height: "70px", width: "auto" },
-      { src: "/animationLogos/logo 3.jpg", height: "70px", width: "auto" },
-      { src: "/animationLogos/logo 4.jpg", height: "70px", width: "auto" },
-      { src: "/animationLogos/logo 5.jpg", height: "70px", width: "auto" },
-      { src: "/animationLogos/logo 6.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 1.jpg", height: "40px", width: "auto" },
+      { src: "/animationLogos/logo 2.jpg", height: "40px", width: "auto" },
+      { src: "/animationLogos/logo 3.jpg", height: "40px", width: "auto" },
+      { src: "/animationLogos/logo 4.jpg", height: "40px", width: "auto" },
+      { src: "/animationLogos/logo 5.jpg", height: "40px", width: "auto" },
+      { src: "/animationLogos/logo 6.jpg", height: "40px", width: "auto" },
     ],
     [
-      { src: "/animationLogos/logo 7.jpg", height: "70px", width: "auto" },
-      { src: "/animationLogos/logo 8.jpg", height: "70px", width: "auto" },
-      { src: "/animationLogos/logo 9.jpg", height: "70px", width: "auto" },
-      { src: "/animationLogos/logo 10.jpg", height: "70px", width: "auto" },
-      { src: "/animationLogos/logo 11.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 7.jpg", height: "40px", width: "auto" },
+      { src: "/animationLogos/logo 8.jpg", height: "40px", width: "auto" },
+      { src: "/animationLogos/logo 9.jpg", height: "40px", width: "auto" },
+      { src: "/animationLogos/logo 10.jpg", height: "40px", width: "auto" },
+      { src: "/animationLogos/logo 11.jpg", height: "40px", width: "auto" },
     ],
     [
-      { src: "/animationLogos/logo 13.jpg", height: "70px", width: "auto" },
-      { src: "/animationLogos/logo 14.jpg", height: "70px", width: "auto" },
-      { src: "/animationLogos/logo 15.jpg", height: "70px", width: "auto" },
-      { src: "/animationLogos/logo 16.jpg", height: "70px", width: "auto" },
-      { src: "/animationLogos/logo 17.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 13.jpg", height: "40px", width: "auto" },
+      { src: "/animationLogos/logo 14.jpg", height: "40px", width: "auto" },
+      { src: "/animationLogos/logo 15.jpg", height: "40px", width: "auto" },
+      { src: "/animationLogos/logo 16.jpg", height: "40px", width: "auto" },
+      { src: "/animationLogos/logo 17.jpg", height: "40px", width: "auto" },
     ],
     [
-      { src: "/animationLogos/logo 19.jpg", height: "70px", width: "auto" },
-      { src: "/animationLogos/logo 20.jpg", height: "70px", width: "auto" },
-      { src: "/animationLogos/logo 21.jpg", height: "70px", width: "auto" },
-      { src: "/animationLogos/logo 22.jpg", height: "70px", width: "auto" },
-      { src: "/animationLogos/logo 23.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 19.jpg", height: "40px", width: "auto" },
+      { src: "/animationLogos/logo 20.jpg", height: "40px", width: "auto" },
+      { src: "/animationLogos/logo 21.jpg", height: "40px", width: "auto" },
+      { src: "/animationLogos/logo 22.jpg", height: "40px", width: "auto" },
+      { src: "/animationLogos/logo 23.jpg", height: "40px", width: "auto" },
     ],
     [
-      { src: "/animationLogos/logo 25.jpg", height: "70px", width: "auto" },
-      { src: "/animationLogos/logo 26.jpg", height: "70px", width: "auto" },
-      { src: "/animationLogos/logo 27.jpg", height: "70px", width: "auto" },
-      { src: "/animationLogos/logo 28.jpg", height: "70px", width: "auto" },
-      { src: "/animationLogos/logo 29.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 25.jpg", height: "40px", width: "auto" },
+      { src: "/animationLogos/logo 26.jpg", height: "40px", width: "auto" },
+      { src: "/animationLogos/logo 27.jpg", height: "40px", width: "auto" },
+      { src: "/animationLogos/logo 28.jpg", height: "40px", width: "auto" },
+      { src: "/animationLogos/logo 29.jpg", height: "40px", width: "auto" },
     ],
     [
-      { src: "/animationLogos/logo 31.jpg", height: "70px", width: "auto" },
-      { src: "/animationLogos/logo 30.jpg", height: "70px", width: "auto" },
-      { src: "/animationLogos/logo 24.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 31.jpg", height: "40px", width: "auto" },
+      { src: "/animationLogos/logo 30.jpg", height: "40px", width: "auto" },
+      { src: "/animationLogos/logo 24.jpg", height: "40px", width: "auto" },
       { src: "/animationLogos/logo 18.jpg", height: "35px", width: "auto" },
-      { src: "/animationLogos/logo 12.jpg", height: "70px", width: "auto" },
+      { src: "/animationLogos/logo 12.jpg", height: "40px", width: "auto" },
     ],
   ];
 
@@ -85,12 +85,12 @@ const Companies = () => {
 
   return (
     <div className="text-[#696984] flex justify-center font-pop pb-10 sm:py-10 xsm:py-5 md:mt-0 xsm:mt-0 sm:mt-0 bg-white">
-      <div className="w-[90%] space-y-8 xsm:space-y-4 sm:space-y-4 md:space-y-6">
+      <div className="w-[90%] space-y-8 xsm:space-y-4 sm:space-y-4 md:space-y-6 px-6 md:px-0">
         <div
           className="text-center font-inter text-gray-900
              text-[16px] sm:text-[24px] md:text-[32px] lg:text-[40px] xl:text-[40px] 2xl:text-[40px]"
         >
-          Trusted by <span className="text-[#1dbf73]">200+</span> Companies
+          Trusted by <span className="text-[#084c74]">200+</span> Companies
           Worldwide
         </div>
 

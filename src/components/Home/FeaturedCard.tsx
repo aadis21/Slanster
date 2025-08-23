@@ -26,15 +26,11 @@ const cards: CardType[] = [
   { id: 8, title: "Social Media", image: testImage },
   { id: 9, title: "Logistics", image: testImage },
   { id: 10, title: "E-commerce", image: testImage },
-  { id: 11, title: "EV", image: testImage },
-  { id: 12, title: "SaaS", image: testImage },
-  { id: 13, title: "Travel", image: testImage },
-  { id: 14, title: "Entertainment", image: testImage },
 ];
 
 const FeaturedCard = () => {
   return (
-    <section className="bg-gray-900 min-h-screen flex flex-col justify-center items-center px-6 py-16">
+    <section className="bg-gray-900 min-h-screen flex flex-col justify-center items-center px-6 md:px-0 py-16">
       {/* Heading */}
       <h2
         className="text-center font-inter text-white 
@@ -52,9 +48,10 @@ const FeaturedCard = () => {
           {cards.map((card) => (
             <motion.div
               key={card.id}
-              whileHover={{ scale: 1.05 }}
-              className="relative overflow-hidden rounded-2xl shadow-lg cursor-pointer group h-64 sm:h-72 lg:h-80 
-             border border-white/30 hover:border-[#084c74] transition duration-500"
+              // whileHover={{ scale: 1.05 }}
+              className="relative overflow-hidden rounded-2xl shadow-lg cursor-pointer group 
+h-40 sm:h-56 lg:h-64 
+border border-white/30 hover:border-[#084c74] transition duration-500"
             >
               {/* Image */}
               <Image
