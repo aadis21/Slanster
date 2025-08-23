@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   FaFacebookF,
   FaInstagram,
@@ -10,6 +11,22 @@ import {
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "About Us", href: "/about" },
+  { name: "Projects", href: "/projects" },
+  { name: "Mentors", href: "/mentors" },
+  { name: "Super 30", href: "/super30" },
+];
+
+// const navLinksServices = [
+//   { name: "Home", href: "/" },
+//   { name: "About Us", href: "/about" },
+//   { name: "Projects", href: "/projects" },
+//   { name: "Mentors", href: "/mentors" },
+//   { name: "Super 30", href: "/super30" },
+// ];
 
 const FooterPage = () => {
   return (
@@ -36,17 +53,17 @@ const FooterPage = () => {
         <div>
           <h3 className="font-semibold text-xl mb-6">Quick Links</h3>
           <ul className="space-y-3 text-gray-400 text-base">
-            {["Home", "About Us", "Projects", "Mentors", "Super 30"].map(
-              (item, idx) => (
-                <li
-                  key={idx}
-                  className="relative py-2 group cursor-pointer w-fit hover:text-white transition"
-                >
-                  <span>{item}</span>
-                  <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-                </li>
-              )
-            )}
+            {navLinks.map((item, idx) => (
+              <li
+                key={idx}
+                className="relative py-2 group cursor-pointer w-fit hover:text-white transition"
+              >
+                <Link href={item.href}>
+                  <span>{item.name}</span>
+                </Link>
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -66,7 +83,11 @@ const FooterPage = () => {
                 key={idx}
                 className="relative py-2 group cursor-pointer w-fit hover:text-white transition"
               >
-                <span>{item}</span>
+                <Link
+                  href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                >
+                  <span>{item}</span>
+                </Link>
                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
               </li>
             ))}
@@ -88,7 +109,11 @@ const FooterPage = () => {
                 key={idx}
                 className="relative py-2 group cursor-pointer w-fit hover:text-white transition"
               >
-                <span>{item}</span>
+                <Link
+                  href={`/courses/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                >
+                  <span>{item}</span>
+                </Link>
                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
               </li>
             ))}
@@ -138,17 +163,17 @@ const FooterPage = () => {
           <div className="flex space-x-6 mb-3 md:mb-0">
             {[
               { name: "Privacy policy", link: "/privacypolicy" },
-              { name: "Sitemap", link: "#" },
-              { name: "Terms and Conditions", link: "termsconditions" },
+              { name: "Sitemap", link: "/sitemap" },
+              { name: "Terms and Conditions", link: "/termsconditions" },
             ].map((item, idx) => (
-              <a
+              <Link
                 key={idx}
                 href={item.link}
                 className="relative group cursor-pointer w-fit hover:text-white transition"
               >
                 <span>{item.name}</span>
                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-              </a>
+              </Link>
             ))}
           </div>
           <p className="hover:text-white transition">

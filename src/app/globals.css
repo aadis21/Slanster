@@ -49,4 +49,14 @@ body {
   animation: fadeIn 1s ease-in-out forwards;
 }
 
+/* slider  */
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-slide {
+  animation: slide 30s linear infinite;
+}
 
