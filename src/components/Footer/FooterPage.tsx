@@ -72,20 +72,25 @@ const FooterPage = () => {
           <h3 className="font-semibold text-xl mb-6">Services</h3>
           <ul className="space-y-3 text-gray-400 text-base">
             {[
+              // "AI",
+              // "Blockchain",
+              // "Bespoke",
+              // "Data Analytics",
+              // "Cyber Security",
+              // "AR/VR",
+
               "AI",
-              "Blockchain",
-              "Bespoke",
-              "Data Analytics",
+              "Consulting",
+              "Bespoke IT",
               "Cyber Security",
+              "Staffing",
               "AR/VR",
             ].map((item, idx) => (
               <li
                 key={idx}
                 className="relative py-2 group cursor-pointer w-fit hover:text-white transition"
               >
-                <Link
-                  href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
-                >
+                <Link href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}>
                   <span>{item}</span>
                 </Link>
                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-sky-500 transition-all duration-300 group-hover:w-full"></span>

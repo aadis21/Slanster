@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Blockchain = () => {
+const Consulting = () => {
   return <div className="bg-white text-gray-900 h-screen">Blockchain</div>;
-}
+};
 
-export default Blockchain
+export default Consulting;

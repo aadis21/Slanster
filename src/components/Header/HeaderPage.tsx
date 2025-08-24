@@ -14,6 +14,7 @@ const HeaderPage: React.FC = () => {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Services", href: "/services" },
+    { name: "AI", href: "/ai" },
     { name: "Mentors", href: "/mentors" },
     { name: "Training", href: "/training" },
   ];
@@ -56,6 +57,7 @@ const HeaderPage: React.FC = () => {
           >
             Let&apos;s Connect
           </button>
+
 
           <Link href="/super30">
             <button className="cursor-pointer  px-5 py-2 bg-sky-900 text-white rounded-md hover:bg-sky-800 transition">

@@ -1,0 +1,194 @@
+"use client";
+import React, { useState } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import {
+  FaBrain,
+  FaIndustry,
+  FaUsers,
+  FaCogs,
+  FaChartLine,
+} from "react-icons/fa";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
+
+const services = [
+  {
+    id: 1,
+    label: "Intelligence",
+    heading: "Your AI Development Partner",
+    desc: "Delivering future-ready AI solutions to pace up growth, optimize operations, and revolutionize your business.",
+    points: [
+      "Accelerate Operational Excellence",
+      "Revolutionize Customer Experiences",
+      "Unlock Strategic Data Insights",
+    ],
+  },
+  {
+    id: 2,
+    label: "Studio",
+    heading: "AI Studio for Creativity",
+    desc: "Empowering startups and enterprises with AI-driven design, automation, and content creation studio.",
+    points: [
+      "AI-powered design",
+      "Faster content delivery",
+      "Seamless integration",
+    ],
+  },
+  {
+    id: 3,
+    label: "Startup",
+    heading: "AI for Startups",
+    desc: "Helping startups scale faster with innovative AI-driven strategies and automation.",
+    points: [
+      "Faster time to market",
+      "Smart resource management",
+      "Growth-focused AI tools",
+    ],
+  },
+  {
+    id: 4,
+    label: "Custom (Enterprise-level)",
+    heading: "Enterprise AI Solutions",
+    desc: "Building custom large-scale AI solutions tailored for enterprise-level transformation.",
+    points: [
+      "Enterprise automation",
+      "Data-driven decision making",
+      "Enhanced security",
+    ],
+  },
+];
+
+const circleIcons = [
+  { id: 1, icon: <FaBrain size={20} />, label: "AI Intelligence" },
+  { id: 2, icon: <FaIndustry size={20} />, label: "Industry" },
+  { id: 3, icon: <FaUsers size={20} />, label: "Customers" },
+  { id: 4, icon: <FaCogs size={20} />, label: "Automation" },
+  { id: 5, icon: <FaChartLine size={20} />, label: "Insights" },
+];
+
+const AIServices = () => {
+  const [active, setActive] = useState(1);
+  const activeService = services.find((s) => s.id === active);
+
+  return (
+    <section
+      className={`w-full bg-white py-16 px-6 md:px-12 ${inter.className}`}
+    >
+      {/* Heading */}
+      <motion.div
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className="text-center mb-12"
+      >
+        <h2
+          className="text-lg md:text-xl text-gray-900 border border-gray-300 rounded-full shadow-2xl 
+               px-6 py-2 inline-block mx-auto"
+        >
+          AI Services
+        </h2>
+
+        <h2 className="text-3xl md:text-5xl text-gray-900 mt-4">
+          Full-spectrum of{" "}
+          <span className="text-blue-600">AI-driven Solutions</span>
+        </h2>
+
+        <p className="text-lg text-gray-700 mt-2">
+          Engineered for Global Impact
+        </p>
+      </motion.div>
+
+      {/* Buttons */}
+      <div className="flex flex-wrap justify-center gap-3 mb-16">
+        {services.map((service) => (
+          <motion.button
+            key={service.id}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setActive(service.id)}
+            className={`px-5 py-2.5 rounded-full border transition-all duration-300 text-sm ${
+              active === service.id
+                ? "bg-blue-600 text-white shadow-md border-blue-600"
+                : "bg-white text-gray-700 border-gray-300 hover:border-blue-600"
+            }`}
+          >
+            {service.label}
+          </motion.button>
+        ))}
+      </div>
+
+      {/* Content Section */}
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16">
+        {/* Left Text */}
+        <motion.div
+          key={activeService?.id}
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          className="flex-1 text-center md:text-left"
+        >
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">
+            {activeService?.heading}
+          </h3>
+          <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
+            {activeService?.desc}
+          </p>
+          <ul className="space-y-3 text-gray-900 text-sm md:text-base">
+            {activeService?.points.map((p, idx) => (
+              <li key={idx} className="flex items-start">
+                <span className="text-blue-600 mr-2">•</span> {p}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
+        {/* Right Circular Icons */}
+        <div className="flex-1 flex justify-center">
+          <div className="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
+            {/* Outer circle */}
+            <div className="absolute w-full h-full rounded-full border-2 border-gray-200"></div>
+
+            {/* Rotating icons container */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+              className="absolute inset-0"
+            >
+              {circleIcons.map((item, i) => {
+                const angle = (i / circleIcons.length) * 2 * Math.PI;
+                const radius = 135; // 🔥 thoda bada (border se bahar le jane ke liye)
+                const center = 128; // w-64/h-64 ka half (128px)
+                const x = radius * Math.cos(angle);
+                const y = radius * Math.sin(angle);
+
+                return (
+                  <div
+                    key={item.id}
+                    className="absolute flex flex-col items-center justify-center"
+                    style={{
+                      transform: `translate(${x + center}px, ${y + center}px)`,
+                    }}
+                  >
+                    <div className="p-4 bg-white rounded-full shadow-lg border border-gray-200 text-blue-600">
+                      {React.cloneElement(item.icon, { size: 28 })}{" "}
+                      {/* 🔥 icons bigger */}
+                    </div>
+                  </div>
+                );
+              })}
+            </motion.div>
+
+            {/* Center Fixed Logo */}
+            <div className="p-5  flex items-center justify-center z-10">
+              <Image src="/logo.png" alt="Logo" width={150} height={150} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AIServices;

@@ -1,10 +1,10 @@
-import Blockchain from "@/components/ServicesPages/Blockchain/Blockchain";
+import Consulting from "@/components/ServicesPages/Consulting/Consulting";
 import React from "react";
 
 const Page = () => {
   return (
     <div>
-      <Blockchain />
+      <Consulting />
     </div>
   );
 };

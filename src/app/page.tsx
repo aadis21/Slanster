@@ -1,3 +1,5 @@
+import FAQ from "@/components/AI/FAQ";
+import AIServices from "@/components/Home/AIServices";
 import Brilliance from "@/components/Home/Brilliance";
 import Companies from "@/components/Home/Companies";
 import FeaturedCard from "@/components/Home/FeaturedCard";
@@ -8,7 +10,10 @@ import LandingPage from "@/components/Home/LandingPage";
 import LetsWork from "@/components/Home/LetsWork";
 import OurServices from "@/components/Home/OurServices";
 import OurWork from "@/components/Home/OurWork";
+import Placement from "@/components/Home/Placement";
 import Success from "@/components/Home/Success";
+import Super30 from "@/components/Super30/Super30";
+
 
 export default function Pgae() {
   return (
@@ -19,11 +24,15 @@ export default function Pgae() {
       <FeaturedCard />
       <Success />
       <ITPartners />
+      <AIServices />
       <OurWork />
       <Brilliance />
       <FlipCard />
       <ITExpert />
       <LetsWork />
+      <Super30 />
+      <Placement />
+      <FAQ />
     </>
   );
 }
