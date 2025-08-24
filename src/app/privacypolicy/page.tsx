@@ -10,12 +10,12 @@ const page = () => {
       </h1>
 
       {/* Intro */}
-      <p className="text-center text-lg text-gray-300 max-w-4xl mx-auto mb-12">
-        At Infutrix, we are committed to protecting the privacy and personal
-        information of our clients, users, and visitors. This Privacy Policy
-        outlines the types of information we collect, how we use and protect it,
-        and your rights concerning your data.
-      </p>
+    <p className="text-center text-lg text-gray-300 max-w-4xl mx-auto mb-12">
+  At Slanster, we value the trust of our clients, users, and visitors. 
+  This Privacy Policy explains the information we collect, how we use and safeguard it, 
+  and the rights you have regarding your personal data.
+</p>
+
 
       {/* Section 1 */}
       <div className="bg-gradient-to-r from-green-700 to-green-400 w-fit px-4 py-2 rounded-t-md mb-6">

@@ -18,30 +18,30 @@ const LandingPage = () => {
         {/* Left Content */}
         <div className="flex-1 text-left">
           <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-extrabold leading-snug md:leading-tight mb-6 text-gray-900">
-            <span className="text-sky-700">Smarter Learning</span> that <br />
-            Builds <span className="text-sky-700">Smarter Futures.</span>
-          </h1>
+  <span className="text-sky-700">Smarter Tech,</span> <br />
+  <span className="text-sky-700">Smarter Business.</span>
+</h1>
+
 
           <p className="text-gray-600 text-sm sm:text-base md:text-lg lg:text-xl mb-8 max-w-xl">
-            Join a global community of learners and professionals. Access
-            expert-led courses, mentorship, and AI-powered consulting designed
-            for students, startups, and industries.
-          </p>
+  Empowering businesses with AI, cloud, and digital solutions for startups and enterprises.
+</p>
+
 
           {/* Buttons */}
           <div className="flex flex-wrap gap-4 mb-8">
             <button className="bg-[#084c74] text-white px-5 sm:px-6 py-3 rounded-lg font-medium shadow hover:bg-[#063d5d] transition text-sm sm:text-base">
-              Enroll in Super 30
+              Get Started Today
             </button>
             <button className="border text-gray-900 border-gray-300 px-5 sm:px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition text-sm sm:text-base">
-              Get Free Consultation
+              Request a Demo
             </button>
           </div>
 
           {/* Reviews */}
           <div className="flex items-center gap-3">
             <div className="flex -space-x-2">
-              <Image
+              {/* <Image
                 src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid&w=740&q=80"
                 alt="user1"
                 width={40}
@@ -61,11 +61,11 @@ const LandingPage = () => {
                 width={40}
                 height={40}
                 className="rounded-full border-2 border-white"
-              />
+              /> */}
             </div>
-            <p className="text-gray-900 text-sm sm:text-base">
+            {/* <p className="text-gray-900 text-sm sm:text-base">
               ⭐ 4.9 <span className="text-gray-500">from 1k+ reviews</span>
-            </p>
+            </p> */}
           </div>
         </div>
 
@@ -90,30 +90,30 @@ const LandingPage = () => {
           <div className="absolute top-4 left-0 bg-white shadow-md rounded-lg px-3 sm:px-4 py-3 text-xs sm:text-sm font-medium flex items-center gap-2 sm:gap-3 w-40 sm:w-48 md:w-52 lg:w-56">
             <LineChart className="text-sky-700 w-5 h-5 sm:w-6 sm:h-6" />
             <div>
-              <p className="text-gray-900">Data-Driven Solutions</p>
-              <p className="text-gray-500 text-[10px] sm:text-xs">
-                Power of analytics & AI
-              </p>
-            </div>
-          </div>
+               <p className="text-gray-900">AI-Driven</p>
+  <p className="text-gray-500 text-[10px] sm:text-xs">
+    Smarter automation, faster growth.
+  </p>
+</div>
+</div>
 
-          <div className="absolute top-20 right-0 bg-white shadow-md rounded-lg px-3 sm:px-4 py-3 text-xs sm:text-sm font-medium flex items-center gap-2 sm:gap-3 w-40 sm:w-48 md:w-52 lg:w-56">
-            <Users className="text-sky-700 w-5 h-5 sm:w-6 sm:h-6" />
-            <div>
-              <p className="text-gray-900">Expert Mentorship</p>
-              <p className="text-gray-500 text-[10px] sm:text-xs">
-                1:1 guidance of industry leaders
-              </p>
-            </div>
-          </div>
+<div className="absolute top-20 right-0 bg-white shadow-md rounded-lg px-3 sm:px-4 py-3 text-xs sm:text-sm font-medium flex items-center gap-2 sm:gap-3 w-40 sm:w-48 md:w-52 lg:w-56">
+  <Users className="text-sky-700 w-5 h-5 sm:w-6 sm:h-6" />
+  <div>
+    <p className="text-gray-900">Cloud Infrastructure</p>
+    <p className="text-gray-500 text-[10px] sm:text-xs">
+      Trusted by 5K+ businesses.
+    </p>
+  </div>
+</div>
 
-          <div className="absolute bottom-4 left-2 sm:left-6 bg-white shadow-md rounded-lg px-3 sm:px-4 py-3 text-xs sm:text-sm font-medium flex items-center gap-2 sm:gap-3 w-40 sm:w-48 md:w-52 lg:w-56">
-            <GraduationCap className="text-sky-700 w-5 h-5 sm:w-6 sm:h-6" />
-            <div>
-              <p className="text-gray-900">Career Guidance</p>
-              <p className="text-gray-500 text-[10px] sm:text-xs">
-                5,000 Students
-              </p>
+<div className="absolute bottom-4 left-2 sm:left-6 bg-white shadow-md rounded-lg px-3 sm:px-4 py-3 text-xs sm:text-sm font-medium flex items-center gap-2 sm:gap-3 w-40 sm:w-48 md:w-52 lg:w-56">
+  <GraduationCap className="text-sky-700 w-5 h-5 sm:w-6 sm:h-6" />
+  <div>
+    <p className="text-gray-900">Smart Integration</p>
+    <p className="text-gray-500 text-[10px] sm:text-xs">
+      Connect tools & workflows easily.
+    </p>
             </div>
           </div>
         </div>

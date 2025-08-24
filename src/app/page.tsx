@@ -14,7 +14,6 @@ import Placement from "@/components/Home/Placement";
 import Success from "@/components/Home/Success";
 import Super30 from "@/components/Super30/Super30";
 
-
 export default function Pgae() {
   return (
     <>
@@ -23,12 +22,13 @@ export default function Pgae() {
       <OurServices />
       <FeaturedCard />
       <Success />
-      <ITPartners />
+      <ITExpert />
+      {/* <ITPartners /> */}
       <AIServices />
       <OurWork />
       <Brilliance />
       <FlipCard />
-      <ITExpert />
+
       <LetsWork />
       <Super30 />
       <Placement />
