@@ -70,9 +70,9 @@ export default function Placement() {
       >
         {/* Left: Copy */}
         <div className="flex flex-col justify-center">
-          <motion.span variants={fadeUp} className="inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-[#0f395f]">
+          <motion.div$1>
             <Sparkles className="h-4 w-4" /> Placement Program
-          </motion.span>
+          </motion.div>
 
           <motion.h2
             variants={fadeUp}
@@ -114,13 +114,13 @@ export default function Placement() {
               <span className="pointer-events-none absolute inset-0 translate-x-[-100%] bg-white/10 transition-transform duration-700 hover:translate-x-0" />
             </motion.button>
 
-            {/* <motion.a
+            <motion.a
               whileHover={{ y: -2 }}
               href="#"
               className="rounded-xl border border-[#0f395f]/20 bg-white px-6 sm:px-7 py-3 text-[#0f395f] font-medium shadow-sm hover:shadow-md"
             >
               Download Brochure
-            </motion.a> */}
+            </motion.a>
           </motion.div>
 
           {/* Trust bar */}
