@@ -35,7 +35,7 @@ const services = [
   title: "Staffing",
   desc: "Access top tech talent for your projects.",
   icon: <Users className="w-6 h-6 text-white" />,
-  backgroundimage: "/home/ourservices/staffing.png",
+  backgroundimage: "/home/ourservices/Staffing.png",
 },
 {
   title: "AR/VR",
