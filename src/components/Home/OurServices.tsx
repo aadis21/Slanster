@@ -1,36 +1,51 @@
 "use client";
 import React from "react";
-import { Cloud, Globe, Link, Monitor } from "lucide-react";
+import { Cloud, Briefcase, Cpu, Globe, Shield, Users, Glasses, Link, Monitor } from "lucide-react";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
 const services = [
-  {
-    title: "IT Consulting",
-    desc: "Expert advice to keep your tech running smoothly.",
-    icon: <Monitor className="w-6 h-6 text-white" />,
-    backgroundimage: "/home/ourservices.jpg",
-  },
-  {
-    title: "Cloud Solutions",
-    desc: "Secure, scalable cloud services tailored to you.",
-    icon: <Cloud className="w-6 h-6 text-white" />,
-    backgroundimage: "/home/ourservices.jpg",
-  },
-  {
-    title: "Design & Development",
-    desc: "Responsive websites that enhance user experience.",
-    icon: <Link className="w-6 h-6 text-white" />,
-    backgroundimage: "/home/ourservices.jpg",
-  },
-  {
-    title: "Network Solutions",
-    desc: "Reliable network design for seamless connectivity.",
-    icon: <Globe className="w-6 h-6 text-white" />,
-    backgroundimage: "/home/ourservices.jpg",
-  },
+{
+  title: "AI",
+  desc: "Automate processes, analyze data, and decide smarter.",
+  icon: <Monitor className="w-6 h-6 text-white" />,
+  backgroundimage: "/home/ourservices/ai.png",
+},
+{
+  title: "Consulting",
+  desc: "Streamline operations and accelerate business growth.",
+  icon: <Briefcase className="w-6 h-6 text-white" />,
+  backgroundimage: "/home/ourservices/consulting.png",
+},
+{
+  title: "Bespoke IT",
+  desc: "Custom IT solutions for unique business needs.",
+  icon: <Cpu className="w-6 h-6 text-white" />,
+  backgroundimage: "/home/ourservices/Bespoke.png",
+},
+{
+  title: "Cybersecurity",
+  desc: "Protect digital assets with enterprise-grade security.",
+  icon: <Shield className="w-6 h-6 text-white" />,
+  backgroundimage: "/home/ourservices/Cyber security.png",
+},
+{
+  title: "Staffing",
+  desc: "Access top tech talent for your projects.",
+  icon: <Users className="w-6 h-6 text-white" />,
+  backgroundimage: "/home/ourservices/staffing.png",
+},
+{
+  title: "AR/VR",
+  desc: "Immersive augmented and virtual reality solutions.",
+  icon: <Glasses className="w-6 h-6 text-white" />,
+  backgroundimage: "/home/ourservices/ARVR.png",
+},
+
+
+
 ];
 
 const OurServices = () => {
@@ -42,8 +57,8 @@ const OurServices = () => {
         className={`${inter.className} text-center font-normal text-gray-900 
               text-[16px] sm:text-[24px] md:text-[32px] lg:text-[40px] xl:text-[40px] 2xl:text-[40px]`}
       >
-        Comprehensive IT solutions, <br /> Customized to drive <br />
-        <span>Your business forward</span>
+        Smart IT Services to Power  <br /> Your Business<br />
+        {/* <span>Your business forward</span> */}
       </h2>
 
       {/* Service Cards */}

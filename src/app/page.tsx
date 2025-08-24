@@ -18,11 +18,12 @@ export default function Pgae() {
       <OurServices />
       <FeaturedCard />
       <Success />
-      <ITPartners />
+      <ITExpert />
+      {/* <ITPartners /> */}
       <OurWork />
       <Brilliance />
       <FlipCard />
-      <ITExpert />
+      
       <LetsWork />
     </>
   );
