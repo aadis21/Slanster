@@ -177,7 +177,7 @@ const FooterPage = () => {
             ))}
           </div>
           <p className="hover:text-white transition">
-            © 2024, All Rights Reserved
+            © 2025, All Rights Reserved
           </p>
         </div>
       </div>

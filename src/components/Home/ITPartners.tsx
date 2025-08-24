@@ -1,9 +1,14 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { Inter } from "next/font/google";
+import { motion } from "framer-motion";
+import { FaPlayCircle, FaRegSmile } from "react-icons/fa";
 
 const inter = Inter({ subsets: ["latin"] });
 
 const ITPartners = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
   return (
     <section
       className={`w-full bg-white py-16 px-6 md:px-0 ${inter.className}`}
@@ -47,15 +52,45 @@ const ITPartners = () => {
         </div>
 
         {/* Video Section */}
-        <div className="rounded-xl overflow-hidden shadow-lg">
+        <div className="relative rounded-xl overflow-hidden shadow-lg">
+          {/* YouTube iframe */}
           <iframe
-            className="w-full aspect-[16/6]" // custom aspect ratio
-            src="https://www.youtube.com/embed/w3SEDmWPuUg"
+            className="w-full aspect-[16/6]"
+            src={`https://www.youtube.com/embed/w3SEDmWPuUg?autoplay=${
+              isPlaying ? 1 : 0
+            }&modestbranding=1&rel=0&showinfo=0`}
             title="IT Partners Video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
+
+          {/* Overlay */}
+          {!isPlaying && (
+            <div
+              className="absolute inset-0 bg-gray-900/90 flex flex-col items-center justify-center cursor-pointer"
+              onClick={() => setIsPlaying(true)}
+            >
+              {/* React Icon Logo (Top-left) */}
+              <div className="absolute top-4 left-4 text-white text-3xl">
+                <FaRegSmile />
+              </div>
+
+              {/* Animated Play Button (Center) */}
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0.8 }}
+                animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
+                transition={{ repeat: Infinity, duration: 1.5 }}
+                className="text-white shadow-xl"
+              >
+                <FaPlayCircle className="w-20 h-20" />
+              </motion.div>
+{/* 
+              <p className="text-white mt-4 text-lg font-medium">
+                Click to Play
+              </p> */}
+            </div>
+          )}
         </div>
       </div>
     </section>

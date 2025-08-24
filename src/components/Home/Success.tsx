@@ -178,7 +178,7 @@ const TechnologiesData: TechnologiesProps[] = [
       },
       {
         title: "Kubernets",
-        image: "/assets/home/devops/7.png",
+        image: "/success/devops/7.png",
       },
       {
         title: "Openshift",
@@ -314,7 +314,7 @@ function Success() {
                 onClick={() => setSelected(index)}
                 className={`px-5 py-4 flex flex-row justify-between items-center cursor-pointer rounded-lg transition-all duration-300 ${
                   selected === index
-                    ? "bg-[#084c74] text-white font-semibold shadow-md"
+                    ? "bg-[#0F395F] text-white font-semibold shadow-md"
                     : "bg-gray-100 hover:bg-gray-200"
                 }`}
               >
