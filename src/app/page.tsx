@@ -22,16 +22,16 @@ export default function Pgae() {
       <OurServices />
       <FeaturedCard />
       <Success />
-      <ITExpert />
+      {/* <ITExpert /> */}
       {/* <ITPartners /> */}
       <AIServices />
       <OurWork />
+      <Super30 />
+      <Placement />
       <Brilliance />
       <FlipCard />
 
       <LetsWork />
-      <Super30 />
-      <Placement />
       <FAQ />
     </>
   );

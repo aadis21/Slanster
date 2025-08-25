@@ -26,25 +26,26 @@ const Placement = () => {
         {/* LEFT SIDE */}
         <div className="flex flex-col justify-center space-y-6 md:space-y-8">
           <h2 className="text-4xl md:text-5xl text-gray-900 leading-tight">
-            Me’ey Cannod Char
+            Your Career, Our Commitment
           </h2>
           <p className="text-gray-600 leading-relaxed text-base md:text-lg">
-            Every Can Consequit tu 3428, Providei Consequaturn Lor Upi Yin
-            Similique Tu Consequatum Ipsu perucseisi Every Yp Consequatu YO
-            Perecuytym. Lon Securecy Unp Hnd Ey Cojsequiati Atiept Lorem
-            Similiquci, Pereuctly Lou Sicrey Tu Secup Upb Everi Iv Wninlrle
-            Totamas.
+            Join our exclusive <span className="font-semibold">Super 30 Batch</span> and unlock career success with:
           </p>
+          <ul className="list-disc list-inside text-gray-600 text-base md:text-lg space-y-2">
+            <li>End-to-End Mentorship from industry experts</li>
+            <li>Hands-on Training & Real-World Projects</li>
+            <li>Guaranteed Placement Support in top companies</li>
+          </ul>
           <p className="text-gray-600 text-base md:text-lg">
-            Char Lor V Yim Ot Upi Pereucnm Olipinie, Vote Every Yim Char-Char.
+            Start your journey today and secure your future with confidence.
           </p>
+
           <div>
-            <button className="bg-[#0f395f] cursor-pointer hover:bg-[#0d2f4a] transition-all duration-300 text-white px-8 py-3 rounded-lg flex items-center space-x-3 text-lg  group overflow-hidden relative">
-              <span className="relative z-10">Char Peouecn</span>
+            <button className="bg-[#0f395f] cursor-pointer hover:bg-[#0d2f4a] transition-all duration-300 text-white px-8 py-3 rounded-lg flex items-center space-x-3 text-lg group overflow-hidden relative">
+              <span className="relative z-10">Enroll Now</span>
               <span className="text-xl transform transition-transform duration-300 group-hover:translate-x-2 relative z-10">
                 →
               </span>
-
               {/* Background Animation Overlay */}
               <span className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"></span>
             </button>

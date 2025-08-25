@@ -14,38 +14,28 @@ type FAQItem = {
 
 const faqs: FAQItem[] = [
   {
-    question:
-      "What is Neuros and how does it differ from other analytics platforms?",
-    answer:
-      "Neuros is an AI-powered business analytics platform designed to provide real-time insights, predictive analytics, and seamless integrations with various tools. Unlike traditional analytics platforms, Neuros harnesses the power of artificial intelligence to offer more accurate forecasts, customizable dashboards, and a user-friendly interface tailored for businesses of all sizes.",
+    question: "What is the Super 30 Batch?",
+    answer: "It’s a fast-track program for 30 selected learners with hands-on projects and mentorship.",
   },
   {
-    question: "How does the AI-driven predictive analytics feature work?",
-    answer:
-      "Our AI models analyze historical data, identify trends, and generate forecasts to help businesses make informed decisions with higher accuracy.",
+    question: "Who can apply for Super 30?",
+    answer: "Final-year students, fresh graduates, and early professionals can apply through a test and interview.",
   },
   {
-    question: "Is my data secure with Neuros?",
-    answer:
-      "Yes, data security is our top priority. Neuros uses industry-standard encryption and complies with leading security certifications.",
+    question: "What projects does your IT company handle?",
+    answer: "We work on software, AI, cloud, and digital transformation projects for global clients.",
   },
   {
-    question:
-      "Can I integrate Neuros with other tools and platforms I currently use?",
-    answer:
-      "Absolutely! Neuros supports integrations with a wide range of business tools and platforms for seamless workflows.",
+    question: "Which technologies do you use?",
+    answer: "Our stack includes React, Node.js, Python, ML frameworks, and major cloud platforms.",
   },
   {
-    question:
-      "How is the pricing structured for Neuros? Are there any hidden fees?",
-    answer:
-      "Neuros offers flexible subscription plans based on business needs, with transparent pricing and no hidden charges.",
+    question: "What is the work culture like?",
+    answer: "We follow a collaborative culture with innovation, flexibility, and continuous learning.",
   },
   {
-    question:
-      "I’m new to business analytics. Does Neuros offer any support or tutorials?",
-    answer:
-      "Yes, Neuros provides extensive support resources, including tutorials, documentation, and a dedicated customer success team.",
+    question: "How do you support career growth?",
+    answer: "We offer mentorship, project rotations, and training to help employees scale their careers.",
   },
 ];
 
@@ -79,9 +69,9 @@ const FAQ: React.FC = () => {
           Frequently Asked Questions
         </h2>
         <p className="text-gray-600 text-lg leading-relaxed">
-          Explore our frequently asked questions to learn more about{" "}
-          <span className="font-semibold text-blue-600">Neuros</span>’s
-          features, security, integration capabilities, and more.
+          Quick answers about our{" "}
+          <span className="font-semibold text-blue-600">IT Company</span> and{" "}
+          <span className="font-semibold text-blue-600">Super 30 Batch</span>.
         </p>
       </motion.div>
 
@@ -116,7 +106,6 @@ const FAQ: React.FC = () => {
               )}
             </div>
 
-            {/* Smooth Animated Answer */}
             <AnimatePresence>
               {openIndex === index && (
                 <motion.div
