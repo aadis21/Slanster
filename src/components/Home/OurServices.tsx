@@ -24,7 +24,7 @@ type Service = {
 
 const services: Service[] = [
   {
-    title: "AI",
+    title: "Artificial Intelligence",
     desc: "Automate processes, analyze data, and decide smarter.",
     icon: <Monitor className="w-6 h-6 text-white" />,
     backgroundimage: "/home/ourservices/ai.png",
