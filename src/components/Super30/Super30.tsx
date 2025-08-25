@@ -1,8 +1,26 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Super30 = () => {
+  // Swap these with your local assets under /public/home/
+  const images = [
+    "/home/super30image.png",
+    "/home/super30image2.png",
+    "/home/super30image3.png",
+    // "/home/super30image4.png",
+  ];
+
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % images.length);
+    }, 3000); // change every 3s
+    return () => clearInterval(id);
+  }, [images.length]);
+
   return (
     <div className="bg-white">
       <div className="relative w-full min-h-screen px-4 sm:px-6 md:px-12 py-10 flex flex-col items-center backdrop-blur-md">
@@ -18,15 +36,20 @@ const Super30 = () => {
 
         {/* MAIN GRID */}
         <div className="relative max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          {/* LEFT IMAGE BOX */}
-          <div className="w-full h-[280px] sm:h-[350px] md:h-[420px] border border-blue-600 p-2 rounded-2xl flex justify-center">
-            <Image
-              className="object-cover rounded-xl"
-              src="/home/super30image.jpeg"
-              alt="Super 30 Batch"
-              width={400}
-              height={400}
-            />
+          {/* LEFT IMAGE BOX (no border; fade-loop carousel) */}
+          <div className="w-full h-[280px] sm:h-[350px] md:h-[420px] rounded-2xl flex justify-center relative overflow-hidden">
+            {images.map((src, i) => (
+              <Image
+                key={src}
+                src={src}
+                alt="Super 30 Batch"
+                fill
+                priority={i === 0}
+                className={`object-cover rounded-xl transition-opacity duration-700 ease-in-out ${
+                  i === index ? "opacity-100" : "opacity-0"
+                }`}
+              />
+            ))}
           </div>
 
           {/* RIGHT CONTENT */}
@@ -63,7 +86,7 @@ const Super30 = () => {
         <div className="max-w-7xl w-full sm:w-[85%] md:w-[70%] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16 text-center md:text-left">
           <div>
             <h3 className="text-3xl sm:text-4xl font-bold text-gray-900">
-              1M+
+              10K+
             </h3>
             <p className="text-gray-600 mt-2 text-sm sm:text-base">
               Students trained & mentored
@@ -71,7 +94,7 @@ const Super30 = () => {
           </div>
           <div>
             <h3 className="text-3xl sm:text-4xl font-bold text-gray-900">
-              93%
+              99%
             </h3>
             <p className="text-gray-600 mt-2 text-sm sm:text-base">
               Placement success rate
@@ -79,7 +102,7 @@ const Super30 = () => {
           </div>
           <div>
             <h3 className="text-3xl sm:text-4xl font-bold text-gray-900">
-              4.9/5
+              5/5
             </h3>
             <p className="text-gray-600 mt-2 text-sm sm:text-base">
               Learner satisfaction score
