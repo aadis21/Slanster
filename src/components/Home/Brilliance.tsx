@@ -130,15 +130,15 @@ const Brilliance = () => {
           {/* RIGHT – 3 process cards with parallax tilt */}
           <div className="relative flex items-center justify-center z-10 mt-10 md:mt-0">
             <div className="w-full md:w-[78%] space-y-5">
-              <TiltCard title=" Discover & Plan" points={["Data & workflow audit", "Use-case ROI map", "Safety guardrails"]} />
+              <TiltCard title=" Discover & Plan" points={["Data & workflow audit", "Use-case ROI map"]} />
               <TiltCard
                 title=" Build & Iterate"
-                points={["LLM apps & vector search", "Real-time pipelines", "Weekly ship cycles"]}
+                points={["LLM apps & vector search", "Real-time pipelines"]}
                 delay={0.05}
               />
               <TiltCard
                 title=" Deploy & Run"
-                points={["CI/CD & monitoring", "Drift evaluation", "FinOps & SRE"]}
+                points={["CI/CD & monitoring", "Drift evaluation"]}
                 delay={0.1}
               />
             </div>
