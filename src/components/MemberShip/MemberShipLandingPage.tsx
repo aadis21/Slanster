@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaSearch } from "react-icons/fa";
 import { Inter } from "next/font/google";
+import MemberShip from "./MemberShipCard";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "600", "700"] });
 
@@ -45,21 +46,23 @@ const Counter: React.FC<CounterProps> = ({
 };
 
 const MemberShipLandingPage: React.FC = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
   return (
-    <div className={`relative w-full h-screen ${inter.className}`}>
-      {/* ✅ Background Image */}
+    <div className={` w-full ${inter.className}`}>
+      {/* Background Image */}
+
       <Image
         src="/membership/membershipimg.png"
         alt="Membership Background"
         fill
-        className="object-cover -z-10"
+        className="object-contain md:object-cover -z-10"
+        priority
       />
-
-      {/* ✅ Overlay */}
       <div className="absolute inset-0 bg-black/30 -z-10"></div>
 
-      {/* ✅ Search Section */}
-      <div className="flex flex-col items-center justify-center h-[70%] text-center px-4">
+      {/* Search Box */}
+      <div className="flex flex-col items-center justify-center h-[50vh] text-center px-4">
         <motion.div
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -69,17 +72,19 @@ const MemberShipLandingPage: React.FC = () => {
           <input
             type="text"
             placeholder="Search for Expert"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
             className={`flex-1 px-5 py-3 outline-none text-gray-700 text-sm md:text-base ${inter.className}`}
           />
-          <button className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 text-sm md:text-base">
+          <button className="flex items-center gap-2 bg-[#084c74] hover:bg-[#084c74] text-white px-6 py-3 text-sm md:text-base">
             <FaSearch />
             Search
           </button>
         </motion.div>
       </div>
 
-      {/* ✅ Bottom Stats with Counter Animation */}
-      <div className="absolute bottom-0 w-full bg-black/60 text-white py-8">
+      {/* Stats Section */}
+      <div className="bg-black/60 text-white py-8 mt-12">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 text-center gap-8 px-6">
           <div>
             <p className="text-sm md:text-base mb-1">Mentors Ready to Guide</p>
@@ -95,6 +100,8 @@ const MemberShipLandingPage: React.FC = () => {
           </div>
         </div>
       </div>
+      {/* Experts Section */}
+      <MemberShip searchQuery={searchQuery} />
     </div>
   );
 };
