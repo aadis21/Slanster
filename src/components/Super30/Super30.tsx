@@ -27,7 +27,7 @@ const Super30 = () => {
         {/* BACKGROUND SHADOW IMAGE */}
         <div className="absolute inset-0 -z-10 flex items-center justify-center">
           <Image
-            src="/home/PlacementLogos/bgshadow.png"
+            src="/public/home/placement/bgshadow.png"
             alt="Background Shadow"
             fill
             className="object-cover opacity-50"
