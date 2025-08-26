@@ -168,8 +168,7 @@ const MemberShip: React.FC<{ searchQuery?: string }> = ({
 
                   {/* Button */}
                   <div className="mt-auto pt-4">
-                    <button
-                      className="w-full cursor-pointer hover:scale-105 bg-[#084c74] hover:bg-[#073654] text-white text-sm py-2.5 rounded-lg shadow transition-all"
+                    <button className="w-full cursor-pointer hover:scale-105 bg-[#084c74] hover:bg-[#073654] text-white text-sm py-2.5 rounded-lg shadow transition-all"
                       onClick={() => setOpenModal(true)}
                     >
                       Book Now

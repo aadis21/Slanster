@@ -1,21 +1,93 @@
 "use client";
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import React from "react";
+import React, { useState } from "react";
+
+import logo1 from "../../../public/home/placement/accenture.png"
+import logo2 from "../../..//public/home/placement/tcs.jpg"
+import logo3 from "../../..//public/home/placement/deloitte.png";
+import logo4 from "../../..//public/home/placement/hcl.png";
+import logo5 from "../../..//public/home/placement/infosys.jpg";
+import logo6 from "../../..//public/home/placement/kpmg.png";
+import logo7 from "../../..//public/home/placement/ky.png";
+import logo8 from "../../..//public/home/placement/pwc.png";
+import logo9 from "../../..//public/home/placement/servicenow.png"
+
+import BgShadow from "../../../public/home/placement/bgshadow.png"
+import ContactModal from "../Header/ContactModal";
 
 // Load Inter font
 const inter = Inter({ subsets: ["latin"], weight: ["400", "600", "700"] });
 
-const logos = Array.from({ length: 9 }).map((_, i) => ({
-  src: `/public/home/placement/logo${i + 1}.png`,
-  alt: `Placement partner ${i + 1}`,
-  // staggered entrance + unique float timing for organic feel
-  delay: `${i * 90}ms`,
-  floatDuration: `${5 + (i % 4)}s`,
-  floatDelay: `${(i % 5) * 0.4}s`,
-}));
+
+const logos = [
+  {
+    src: logo1,
+    alt: "Accenture",
+    delay: "0ms",
+    floatDuration: "5s",
+    floatDelay: "0s",
+  },
+  {
+    src: logo2,
+    alt: "TCS",
+    delay: "90ms",
+    floatDuration: "6s",
+    floatDelay: "0.4s",
+  },
+  {
+    src: logo3,
+    alt: "Deloitte",
+    delay: "180ms",
+    floatDuration: "7s",
+    floatDelay: "0.8s",
+  },
+  {
+    src: logo4,
+    alt: "HCL",
+    delay: "270ms",
+    floatDuration: "8s",
+    floatDelay: "1.2s",
+  },
+  {
+    src: logo5,
+    alt: "Infosys",
+    delay: "360ms",
+    floatDuration: "5s",
+    floatDelay: "1.6s",
+  },
+  {
+    src: logo6,
+    alt: "KPMG",
+    delay: "450ms",
+    floatDuration: "6s",
+    floatDelay: "2s",
+  },
+  {
+    src: logo7,
+    alt: "KY",
+    delay: "540ms",
+    floatDuration: "7s",
+    floatDelay: "2.4s",
+  },
+  {
+    src: logo8,
+    alt: "PwC",
+    delay: "630ms",
+    floatDuration: "8s",
+    floatDelay: "2.8s",
+  },
+  {
+    src: logo9,
+    alt: "ServiceNow",
+    delay: "720ms",
+    floatDuration: "5s",
+    floatDelay: "3.2s",
+  },
+];
 
 const Placement: React.FC = () => {
+  const [openModal, setOpenModal] = useState(false);
   return (
     <section
       className={`relative w-full min-h-screen flex items-center justify-center px-6 md:px-10 lg:px-0 py-16 bg-white overflow-hidden ${inter.className}`}
@@ -30,7 +102,7 @@ const Placement: React.FC = () => {
         {/* Background shadow */}
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/public/home/placement/bgshadow.png"
+            src={BgShadow}
             alt="Background Shadow"
             fill
             className="object-cover opacity-60"
@@ -46,18 +118,22 @@ const Placement: React.FC = () => {
           </h2>
 
           <p className="text-gray-700 text-base md:text-lg animate-[fade-up_700ms_ease_120ms_both]">
-            Join our exclusive <span className="font-semibold">Super 30 Batch</span> and master:
+            Join our exclusive{" "}
+            <span className="font-semibold">Super 30 Batch</span> and master:
           </p>
 
           <ol className="space-y-3 text-gray-700 text-base md:text-lg animate-[fade-up_700ms_ease_180ms_both] list-decimal list-inside">
             <li>
-              <span className="font-semibold">Consulting Skills</span> — Learn problem-solving frameworks used by top Big 4 consultants
+              <span className="font-semibold">Consulting Skills</span> — Learn
+              problem-solving frameworks used by top Big 4 consultants
             </li>
             <li>
-              <span className="font-semibold">Tech Skills</span> — Build expertise in AI, Cybersecurity & Cloud FinOps
+              <span className="font-semibold">Tech Skills</span> — Build
+              expertise in AI, Cybersecurity & Cloud FinOps
             </li>
             <li>
-              <span className="font-semibold">Business Relationship</span> — Storytelling, client communication & professional networking
+              <span className="font-semibold">Business Relationship</span> —
+              Storytelling, client communication & professional networking
             </li>
           </ol>
 
@@ -65,7 +141,8 @@ const Placement: React.FC = () => {
           <div className="pt-2 animate-[fade-up_700ms_ease_300ms_both]">
             <button
               type="button"
-              className="group relative inline-flex items-center gap-2 rounded-xl bg-[#0f395f] px-6 py-3 text-white text-base md:text-lg shadow-lg shadow-[#0f395f]/20 transition-transform duration-300 hover:scale-[1.03] focus:outline-none focus:ring-4 focus:ring-[#0f395f]/30"
+              className="group relative inline-flex items-center gap-2 rounded-xl bg-[#0f395f] px-6 py-3 text-white text-base md:text-lg shadow-lg shadow-[#0f395f]/20 transition-transform duration-300 hover:scale-[1.03] focus:outline-none focus:ring-4 focus:ring-[#0f395f]/30 cursor-pointer hover:scale-105"
+              onClick={() => setOpenModal(true)}
             >
               <span className="relative z-10">Enroll Now</span>
               <span className="relative z-10 text-xl transition-transform duration-300 group-hover:translate-x-1">
@@ -99,15 +176,35 @@ const Placement: React.FC = () => {
       {/* Scoped animations */}
       <style jsx>{`
         @keyframes fade-up {
-          0% { opacity: 0; transform: translateY(8px); }
-          100% { opacity: 1; transform: translateY(0); }
+          0% {
+            opacity: 0;
+            transform: translateY(8px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
         @keyframes floatY {
-          0% { transform: translateY(0); }
-          50% { transform: translateY(-6px); }
-          100% { transform: translateY(0); }
+          0% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-6px);
+          }
+          100% {
+            transform: translateY(0);
+          }
         }
       `}</style>
+
+      {openModal && (
+        <ContactModal
+          isOpen={openModal}
+          onClose={() => setOpenModal(false)}
+          // you can also pass `mentor={selectedMentor}` if ContactModal accepts it
+        />
+      )}
     </section>
   );
 };
