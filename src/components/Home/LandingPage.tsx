@@ -17,26 +17,17 @@ const inter = Inter({
   weight: ["400", "500", "600", "700", "800"],
 });
 
-const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]; // smooth easeInOut
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 const LandingPage: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const inView = useInView(sectionRef, { amount: 0.5 });
 
-  // Mouse-based parallax for hero illustration & floating cards
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
 
   const rotateX = useTransform(my, [-50, 50], [8, -8]);
   const rotateY = useTransform(mx, [-50, 50], [-8, 8]);
-
-  // Floating Y animation (typed + valid Easing)
-  const floatY = {
-    animate: {
-      y: [0, -8, 0, 8, 0],
-      transition: { duration: 6, repeat: Infinity, ease: EASE },
-    },
-  } as const;
 
   const handleMouseMove = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
@@ -67,9 +58,8 @@ const LandingPage: React.FC = () => {
       ref={sectionRef}
       className={`${inter.className} relative overflow-hidden bg-white md:min-h-screen md:pt-0 pt-12 flex items-center justify-center px-4 sm:px-8 md:px-12 lg:px-20`}
     >
-      {/* BACKGROUND: runs only while section is visible */}
+      {/* BACKGROUND */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {/* Rotating conic halo */}
         <motion.div
           aria-hidden
           className="absolute -inset-24 rounded-full opacity-40 mix-blend-overlay"
@@ -85,7 +75,6 @@ const LandingPage: React.FC = () => {
           }}
         />
 
-        {/* Subtle moving dot grid */}
         <motion.div
           aria-hidden
           className="absolute inset-0"
@@ -106,7 +95,6 @@ const LandingPage: React.FC = () => {
           }}
         />
 
-        {/* Three drifting cyan blobs */}
         <motion.div
           className="absolute -top-24 -left-24 h-72 w-72 rounded-full blur-3xl"
           style={{
@@ -118,11 +106,7 @@ const LandingPage: React.FC = () => {
               ? { x: [0, 20, -10, 0], y: [0, -10, 10, 0] }
               : { x: 0, y: 0 }
           }
-          transition={{
-            duration: 20,
-            repeat: inView ? Infinity : 0,
-            ease: EASE,
-          }}
+          transition={{ duration: 20, repeat: inView ? Infinity : 0, ease: EASE }}
         />
         <motion.div
           className="absolute bottom-[-120px] right-[-120px] h-96 w-96 rounded-full blur-[64px]"
@@ -135,11 +119,7 @@ const LandingPage: React.FC = () => {
               ? { x: [0, -15, 10, 0], y: [0, 15, -10, 0] }
               : { x: 0, y: 0 }
           }
-          transition={{
-            duration: 24,
-            repeat: inView ? Infinity : 0,
-            ease: EASE,
-          }}
+          transition={{ duration: 24, repeat: inView ? Infinity : 0, ease: EASE }}
         />
         <motion.div
           className="absolute top-1/3 left-1/2 -translate-x-1/2 h-64 w-64 rounded-full blur-2xl"
@@ -148,15 +128,9 @@ const LandingPage: React.FC = () => {
               "radial-gradient(60% 60% at 50% 50%, #38bdf855, transparent)",
           }}
           animate={
-            inView
-              ? { scale: [1, 1.06, 1], rotate: [0, 6, 0] }
-              : { scale: 1, rotate: 0 }
+            inView ? { scale: [1, 1.06, 1], rotate: [0, 6, 0] } : { scale: 1, rotate: 0 }
           }
-          transition={{
-            duration: 18,
-            repeat: inView ? Infinity : 0,
-            ease: EASE,
-          }}
+          transition={{ duration: 18, repeat: inView ? Infinity : 0, ease: EASE }}
         />
       </div>
 
@@ -191,7 +165,6 @@ const LandingPage: React.FC = () => {
             startups and enterprises.
           </motion.p>
 
-          {/* Buttons */}
           <motion.div variants={itemUp} className="flex flex-wrap gap-4 mb-8">
             <motion.button
               whileHover={{ scale: 1.04 }}
@@ -208,11 +181,7 @@ const LandingPage: React.FC = () => {
                     }
                   : { boxShadow: "0 0 0 rgba(0,0,0,0)" }
               }
-              transition={{
-                duration: 2.8,
-                repeat: inView ? Infinity : 0,
-                ease: EASE,
-              }}
+              transition={{ duration: 2.8, repeat: inView ? Infinity : 0, ease: EASE }}
             >
               Get Started Today
             </motion.button>
@@ -231,11 +200,7 @@ const LandingPage: React.FC = () => {
                     }
                   : { boxShadow: "0 0 0 rgba(0,0,0,0)" }
               }
-              transition={{
-                duration: 3.2,
-                repeat: inView ? Infinity : 0,
-                ease: EASE,
-              }}
+              transition={{ duration: 3.2, repeat: inView ? Infinity : 0, ease: EASE }}
             >
               Request a Demo
             </motion.button>
@@ -247,25 +212,19 @@ const LandingPage: React.FC = () => {
           className="flex-1 relative flex justify-center items-end w-full md:mt-0 mt-10"
           style={{ perspective: 900 }}
         >
-          {/* Card shadow plate */}
           <motion.div
             className="relative rounded-3xl w-[180px] sm:w-full md:w-[300px] lg:w-[380px] h-[220px] sm:h-[300px] md:h-[360px] lg:h-[440px] bg-gradient-to-tr from-slate-100 to-white shadow-inner"
             variants={itemUp}
           />
 
-          {/* Orbiting accent rings + nodes (only while visible) */}
+          {/* Orbiting rings */}
           <motion.div
             aria-hidden
             className="pointer-events-none absolute inset-0 flex items-center justify-center"
           >
-            {/* outer ring */}
             <motion.div
               animate={inView ? { rotate: 360 } : { rotate: 0 }}
-              transition={{
-                duration: 28,
-                ease: "linear",
-                repeat: inView ? Infinity : 0,
-              }}
+              transition={{ duration: 28, ease: "linear", repeat: inView ? Infinity : 0 }}
               className="absolute h-[115%] w-[115%] rounded-full"
               style={{
                 boxShadow: "inset 0 0 0 1px rgba(14,165,233,0.18)",
@@ -275,7 +234,6 @@ const LandingPage: React.FC = () => {
               <div className="absolute -top-1 left-1/2 -translate-x-1/2 h-2 w-2 rounded-full bg-sky-500/70" />
               <div className="absolute -bottom-1 left-8 h-[6px] w-[6px] rounded-full bg-cyan-400/70" />
             </motion.div>
-            {/* inner ring */}
             <motion.div
               animate={inView ? { rotate: -360 } : { rotate: 0 }}
               transition={{
@@ -285,15 +243,13 @@ const LandingPage: React.FC = () => {
                 delay: 0.2,
               }}
               className="absolute h-[88%] w-[88%] rounded-full"
-              style={{
-                boxShadow: "inset 0 0 0 1px rgba(56,189,248,0.18)",
-              }}
+              style={{ boxShadow: "inset 0 0 0 1px rgba(56,189,248,0.18)" }}
             >
               <div className="absolute top-1/2 -right-1 -translate-y-1/2 h-[6px] w-[6px] rounded-full bg-sky-400/80" />
             </motion.div>
           </motion.div>
 
-          {/* Person Image with 3D tilt */}
+          {/* Main image with tilt */}
           <motion.div
             className="absolute bottom-0 md:pt-0 pt-12 will-change-transform"
             style={{ rotateX, rotateY }}
@@ -310,10 +266,16 @@ const LandingPage: React.FC = () => {
           </motion.div>
 
           {/* Floating Cards */}
-          <AnimatePresence>
+          <AnimatePresence initial={false}>
+            {/* Card 1 */}
             <motion.div
               variants={itemUp}
-              {...floatY}
+              initial={{ y: 0 }}
+              animate={{
+                y: [0, -8, 0, 8, 0],
+                transition: { duration: 6, repeat: Infinity, ease: EASE },
+              }}
+              exit={{ opacity: 0, y: 10, transition: { duration: 0.2, ease: EASE } }}
               className="absolute top-4 left-0 bg-white/90 backdrop-blur-sm shadow-lg rounded-xl px-3 sm:px-4 py-3 text-xs sm:text-sm font-medium flex items-center gap-2 sm:gap-3 w-40 sm:w-48 md:w-52 lg:w-56 border border-slate-100"
               style={{ rotateX, rotateY }}
             >
@@ -326,17 +288,15 @@ const LandingPage: React.FC = () => {
               </div>
             </motion.div>
 
+            {/* Card 2 */}
             <motion.div
               variants={itemUp}
+              initial={{ y: 0 }}
               animate={{
                 y: [0, 10, 0],
-                transition: {
-                  duration: 5.5,
-                  repeat: Infinity,
-                  ease: EASE,
-                  delay: 0.4,
-                },
+                transition: { duration: 5.5, repeat: Infinity, ease: EASE, delay: 0.4 },
               }}
+              exit={{ opacity: 0, y: 10, transition: { duration: 0.2, ease: EASE } }}
               className="absolute top-20 right-0 bg-white/90 backdrop-blur-sm shadow-lg rounded-xl px-3 sm:px-4 py-3 text-xs sm:text-sm font-medium flex items-center gap-2 sm:gap-3 w-40 sm:w-48 md:w-52 lg:w-56 border border-slate-100"
               style={{ rotateX, rotateY }}
             >
@@ -349,17 +309,15 @@ const LandingPage: React.FC = () => {
               </div>
             </motion.div>
 
+            {/* Card 3 */}
             <motion.div
               variants={itemUp}
+              initial={{ y: 0 }}
               animate={{
                 y: [0, -12, 0],
-                transition: {
-                  duration: 7,
-                  repeat: Infinity,
-                  ease: EASE,
-                  delay: 0.8,
-                },
+                transition: { duration: 7, repeat: Infinity, ease: EASE, delay: 0.8 },
               }}
+              exit={{ opacity: 0, y: 10, transition: { duration: 0.2, ease: EASE } }}
               className="absolute bottom-4 left-2 sm:left-6 bg-white/90 backdrop-blur-sm shadow-lg rounded-xl px-3 sm:px-4 py-3 text-xs sm:text-sm font-medium flex items-center gap-2 sm:gap-3 w-40 sm:w-48 md:w-52 lg:w-56 border border-slate-100"
               style={{ rotateX, rotateY }}
             >
@@ -375,7 +333,6 @@ const LandingPage: React.FC = () => {
         </motion.div>
       </motion.div>
 
-      {/* Subtle top highlight line */}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sky-200 to-transparent" />
     </section>
   );
