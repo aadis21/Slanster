@@ -9,12 +9,15 @@ import {
   useTransform,
   AnimatePresence,
   useInView,
+  type Variants,
 } from "framer-motion";
 
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
 });
+
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]; // smooth easeInOut
 
 const LandingPage: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -27,12 +30,13 @@ const LandingPage: React.FC = () => {
   const rotateX = useTransform(my, [-50, 50], [8, -8]);
   const rotateY = useTransform(mx, [-50, 50], [-8, 8]);
 
+  // Floating Y animation (typed + valid Easing)
   const floatY = {
     animate: {
       y: [0, -8, 0, 8, 0],
-      transition: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+      transition: { duration: 6, repeat: Infinity, ease: EASE },
     },
-  };
+  } as const;
 
   const handleMouseMove = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
@@ -45,7 +49,7 @@ const LandingPage: React.FC = () => {
     [mx, my]
   );
 
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -53,9 +57,9 @@ const LandingPage: React.FC = () => {
     },
   };
 
-  const itemUp = {
+  const itemUp: Variants = {
     hidden: { opacity: 0, y: 18 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
   };
 
   return (
@@ -117,7 +121,7 @@ const LandingPage: React.FC = () => {
           transition={{
             duration: 20,
             repeat: inView ? Infinity : 0,
-            ease: "easeInOut",
+            ease: EASE,
           }}
         />
         <motion.div
@@ -134,7 +138,7 @@ const LandingPage: React.FC = () => {
           transition={{
             duration: 24,
             repeat: inView ? Infinity : 0,
-            ease: "easeInOut",
+            ease: EASE,
           }}
         />
         <motion.div
@@ -144,12 +148,14 @@ const LandingPage: React.FC = () => {
               "radial-gradient(60% 60% at 50% 50%, #38bdf855, transparent)",
           }}
           animate={
-            inView ? { scale: [1, 1.06, 1], rotate: [0, 6, 0] } : { scale: 1, rotate: 0 }
+            inView
+              ? { scale: [1, 1.06, 1], rotate: [0, 6, 0] }
+              : { scale: 1, rotate: 0 }
           }
           transition={{
             duration: 18,
             repeat: inView ? Infinity : 0,
-            ease: "easeInOut",
+            ease: EASE,
           }}
         />
       </div>
@@ -205,7 +211,7 @@ const LandingPage: React.FC = () => {
               transition={{
                 duration: 2.8,
                 repeat: inView ? Infinity : 0,
-                ease: "easeInOut",
+                ease: EASE,
               }}
             >
               Get Started Today
@@ -228,7 +234,7 @@ const LandingPage: React.FC = () => {
               transition={{
                 duration: 3.2,
                 repeat: inView ? Infinity : 0,
-                ease: "easeInOut",
+                ease: EASE,
               }}
             >
               Request a Demo
@@ -327,7 +333,7 @@ const LandingPage: React.FC = () => {
                 transition: {
                   duration: 5.5,
                   repeat: Infinity,
-                  ease: "easeInOut",
+                  ease: EASE,
                   delay: 0.4,
                 },
               }}
@@ -350,7 +356,7 @@ const LandingPage: React.FC = () => {
                 transition: {
                   duration: 7,
                   repeat: Infinity,
-                  ease: "easeInOut",
+                  ease: EASE,
                   delay: 0.8,
                 },
               }}
