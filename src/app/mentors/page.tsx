@@ -1,10 +1,13 @@
-import Mentors from "@/components/Mentors/Mentors";
+import MemberShipLandingPage from "@/components/MemberShip/MemberShipLandingPage";
+import MemberShipCard from "@/components/MemberShip/MemberShipCard";
 import React from "react";
 
 const Page = () => {
   return (
     <div>
-      <Mentors />
+      {/* <Mentors /> */}
+      <MemberShipLandingPage />
+      <MemberShipCard />
     </div>
   );
 };
