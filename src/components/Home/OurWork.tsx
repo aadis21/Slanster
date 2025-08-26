@@ -1,14 +1,7 @@
 "use client";
-import React, { useEffect, useMemo, useRef, useState } from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { Inter } from "next/font/google";
-
-import AvtarMale from "../../../public/home/Mentors/avtarMale.jpg";
-import AvtarFemele from "../../../public/home/Mentors/avtarFemale.jpg";
-import ContactModal from "../Header/ContactModal";
-
- 
-
+import React from "react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -209,49 +202,68 @@ const OurWork: React.FC = () => {
 
 
   return (
-    <section className={`bg-[#0F395F] text-white ${inter.className}`}>
-      <div className="max-w-7xl md:px-0 px-2 mx-auto py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          {/* Left Column */}
-          <div className="lg:col-span-5">
-            <h2 className="text-[32px] md:text-[52px] lg:text-[52px] leading-snug">
-              Meet Your Mentors
-            </h2>
-            <p className="mt-4 text-gray-300 text-[15px] leading-relaxed">
-              Learn from industry experts with practical insights and
-              personalized guidance to elevate your skills.
-            </p>
+    <section
+      className={`relative w-full min-h-screen flex items-center justify-center px-6 md:px-10 lg:px-0 py-16 bg-white overflow-hidden ${inter.className}`}
+      aria-label="Placement & Super 30"
+    >
+      {/* Soft ambient glows (no motion, no shake) */}
+      <div className="pointer-events-none absolute -top-32 -left-32 h-80 w-80 rounded-full bg-[#0f395f]/10 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-32 -right-24 h-96 w-96 rounded-full bg-sky-200/40 blur-3xl" />
 
+      <div className="relative max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 rounded-2xl shadow-xl bg-white/70 backdrop-blur-md border border-gray-100 p-6 sm:p-10 md:p-12 lg:p-16">
+        {/* Background texture (NOTE: no /public prefix) */}
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/home/placement/bgshadow.png"
+            alt="Background Shadow"
+            fill
+            sizes="100vw"
+            className="object-cover opacity-60"
+            priority
+          />
+        </div>
+
+        {/* LEFT CONTENT (static heading) */}
+        <div className="flex flex-col justify-center gap-6 md:gap-7">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#0f395f] to-[#0f6fa8]">
+              Your Career, Our Commitment
+            </span>
+          </h2>
+
+          <p className="text-gray-700 text-base md:text-lg">
+            Join our exclusive <span className="font-semibold">Super 30 Batch</span> and master:
+          </p>
+
+          <ol className="space-y-3 text-gray-700 text-base md:text-lg list-decimal list-inside">
+            <li>
+              <span className="font-semibold">Consulting Skills</span> — Learn problem-solving frameworks used by top Big 4 consultants
+            </li>
+            <li>
+              <span className="font-semibold">Tech Skills</span> — Build expertise in AI, Cybersecurity & Cloud FinOps
+            </li>
+            <li>
+              <span className="font-semibold">Business Relationship</span> — Storytelling, client communication & networking
+            </li>
+          </ol>
+
+          <div className="pt-2">
             <button
-              className="md:mt-12 mt-5 inline-flex items-center rounded-md 
-                         text-[#0A2852] bg-white px-6 py-3 text-sm font-medium 
-                         shadow-md hover:shadow-lg transition-transform hover:scale-105"
               type="button"
+              className="group relative inline-flex items-center gap-2 rounded-xl bg-[#0f395f] px-6 py-3 text-white text-base md:text-lg shadow-lg shadow-[#0f395f]/20 transition-transform duration-300 hover:scale-[1.03] focus:outline-none focus:ring-4 focus:ring-[#0f395f]/30"
             >
-              Get Personalized Advice
+              <span className="relative z-10">Enroll Now</span>
+              <span className="relative z-10 text-xl transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+              <span className="pointer-events-none absolute inset-0 overflow-hidden rounded-xl">
+                <span className="absolute left-[-120%] top-0 h-full w-1/2 rotate-12 bg-white/15 blur-md transition-transform duration-700 group-hover:translate-x-[240%]" />
+              </span>
             </button>
           </div>
+        </div>
 
-          {/* Right Column - Slider */}
-          <div className="lg:col-span-7">
-            <div ref={scrollerRef} className="overflow-hidden scroll-smooth">
-              <div
-                className={`flex w-[200%] ${
-                  isPaused ? "" : "animate-slide"
-                } hover:[animation-play-state:paused]`}
-              >
-                {[...cards, ...cards].map((card, index) => (
-                  <div key={index} ref={index === 0 ? firstCardRef : undefined}>
-                    <Card
-                      {...card}
-                      image={card.gender === "male" ? AvtarMale : AvtarFemele}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* SIDE BAR */}
+            {/* SIDE BAR — moved DOWN & now working */}
             <div className="mt-6 flex items-center gap-3">
               <div className="flex items-center gap-3">
                 <button
@@ -274,15 +286,15 @@ const OurWork: React.FC = () => {
                 </button>
               </div>
 
+              {/* progress track */}
               <div className="relative flex-1 h-[2px] bg-gray-300/70 rounded">
                 <div
                   className="absolute left-0 top-1/2 -translate-y-1/2 h-[2px] bg-white"
-                  style={{ width: `${Math.max(8, progress)}%` }}
+                  style={{ width: `${Math.max(8, progress)}%` }} // ensures small visible segment
                 />
-              </div>
+              </span>
             </div>
-            {/* /SIDE BAR */}
-          </div>
+          ))}
         </div>
       </div>
       {openModal && (
@@ -292,4 +304,4 @@ const OurWork: React.FC = () => {
   );
 };
 
-export default OurWork;
+export default Placement;
