@@ -292,9 +292,9 @@ function Success() {
   const [selected, setSelected] = useState<number>(0);
 
   return (
-    <section className="relative bg-white text-gray-900 px-6 md:px-10 py-16">
+    <section className="relative bg-white text-gray-900 px-6 md:px-0 py-16">
       <header className="text-center">
-        <div className="md:max-w-5xl mx-auto">
+        <div className="md:max-w-7xl mx-auto">
           <h2
             className={`${inter.className} text-center font-normal text-gray-900 
               text-[16px] sm:text-[24px] md:text-[32px] lg:text-[40px] xl:text-[40px] 2xl:text-[40px]`}
@@ -304,9 +304,9 @@ function Success() {
         </div>
       </header>
 
-      <div className="flex md:flex-row flex-col gap-10 xl:gap-12 items-center justify-center mt-12 max-w-6xl mx-auto">
+      <div className="flex md:flex-row flex-col gap-10 xl:gap-12 items-center justify-center mt-12 max-w-7xl mx-auto">
         {/* Sidebar Selection */}
-        <div className="md:w-1/3 w-full">
+        <div className="md:w-1/2 w-full">
           <ul className="w-full rounded-lg gap-3 grid grid-cols-2 md:grid-cols-1">
             {TechnologiesData?.map((data, index) => (
               <li

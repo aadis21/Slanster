@@ -85,7 +85,7 @@ const Application: React.FC = () => {
 
   return (
     <div className="w-full py-12 bg-white">
-      <div className="max-w-7xl mx-auto flex flex-col px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto flex flex-col md:px-0 px-4 ">
         {/* Section Heading */}
         <div className="mb-4 flex items-center justify-center">
           <span className="inline-flex items-center gap-2 px-4 py-2 shadow-lg text-xs sm:text-sm font-medium text-gray-700 bg-gray-100 rounded-full border border-gray-300">
@@ -97,10 +97,10 @@ const Application: React.FC = () => {
         </div>
 
         <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+          <h2 className="font-dmsans text-center md:text-5xl text-3xl leading-[1.2] max-w-4xl mx-auto text-[#1C1F25]">
             Insights and predictions made easy
           </h2>
-          <p className="text-gray-500 mt-2 max-w-4xl mx-auto text-center">
+          <p className="text-gray-500 mt-2 max-w-3xl mx-auto text-center">
             Advanced business intelligence tools enhance efficiency across your
             entire operation. By predicting future revenue and dissecting
             marketing effectiveness, these tools provide you with the critical

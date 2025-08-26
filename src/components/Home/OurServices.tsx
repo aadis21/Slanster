@@ -136,7 +136,10 @@ const OurServices = () => {
     <section className="py-16 px-6 md:px-0 bg-white">
       {/* Heading */}
       <div className="text-center">
-        <p className="text-gray-500 uppercase tracking-wide mb-2">Our Services</p>
+        <p className="inline-block border rounded-2xl border-gray-300 shadow-md px-4 py-1 rounded-md text-gray-500
+         uppercase tracking-wide mb-4 bg-white">
+          Our Services
+        </p>
         <h2
           className={`${inter.className} font-normal text-gray-900 
             text-[16px] sm:text-[24px] md:text-[32px] lg:text-[40px]`}
@@ -150,11 +153,15 @@ const OurServices = () => {
         <div className="overflow-hidden">
           <div
             ref={trackRef}
-            className={`flex gap-8 ${animating ? "transition-transform duration-500 ease-out" : ""}`}
-            style={{ transform: `translateX(${-(index - visibleCards) * stepPx}px)` }}
+            className={`flex gap-8 ${
+              animating ? "transition-transform duration-500 ease-out" : ""
+            }`}
+            style={{
+              transform: `translateX(${-(index - visibleCards) * stepPx}px)`,
+            }}
             onTransitionEnd={handleTransitionEnd}
           >
-            {looped.map((service, i) => (
+            {looped?.map((service, i) => (
               <div
                 key={`${service.title}-${i}`}
                 ref={i === 0 ? firstCardRef : undefined}
@@ -173,10 +180,14 @@ const OurServices = () => {
                   {service.icon}
                 </div>
                 <div className="relative z-10 text-left mt-auto">
-                  <h3 className={`${inter.className} text-lg font-normal text-yellow-400 mb-2`}>
+                  <h3
+                    className={`${inter.className} text-lg font-normal text-yellow-400 mb-2`}
+                  >
                     {service.title}
                   </h3>
-                  <p className={`${inter.className} text-gray-200 text-sm font-normal`}>
+                  <p
+                    className={`${inter.className} text-gray-200 text-sm font-normal`}
+                  >
                     {service.desc}
                   </p>
                 </div>

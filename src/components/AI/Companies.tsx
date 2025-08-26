@@ -28,9 +28,9 @@ const logos = [
 const Companies = () => {
   return (
     <div className="w-full py-16 bg-white flex flex-col items-center">
-      <p className="text-gray-500 text-sm sm:text-base mb-12 text-center">
-        160,000+ customers in over 120 countries grow their businesses with
-        Neuros
+      <p className="text-gray-900 text-2xl md:text-4xl mb-12 text-center font-dmsans leading-[1.2]">
+        160,000+ customers in over 120 countries grow <br /> their businesses
+        with Neuros
       </p>
 
       <div className="grid grid-cols-2 sm:grid-cols-5 gap-6 sm:gap-12 items-center justify-items-center">

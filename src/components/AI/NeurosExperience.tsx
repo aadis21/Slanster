@@ -69,10 +69,13 @@ const NeurosExperience = () => {
   return (
     <div className="w-full py-12 bg-white">
       <div className="text-center mb-8">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+        <h2
+          className="font-dmsans text-center md:text-5xl text-3xl
+               leading-[1.2] max-w-4xl mx-auto text-[#1C1F25]"
+        >
           The Neuros Experience
         </h2>
-        <p className="text-gray-500 mt-2">
+        <p className="text-gray-500 mt-4">
           At Neuros, we pride ourselves on delivering top-notch AI-driven
           business analytics. Hear what our satisfied users have to say.
         </p>

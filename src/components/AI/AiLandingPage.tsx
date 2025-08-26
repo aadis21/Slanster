@@ -19,7 +19,7 @@ const AiLandingPage = () => {
 
       {/* Heading */}
       <h1
-        className="font-dmsans font-bold text-center text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] 
+        className="font-dmsans  text-center text-[28px] sm:text-[36px] md:text-5xl lg:text-5xl
                leading-[1.2] max-w-4xl mx-auto text-[#1C1F25]"
       >
         Revolutionizing Business Decisions <br className="block" />
@@ -37,8 +37,8 @@ const AiLandingPage = () => {
       <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
         {/* Primary Button */}
         <button
-          className="px-5 sm:px-6 py-2.5 sm:py-3 bg-blue-500 text-white font-semibold rounded-md shadow-lg 
-                     hover:bg-blue-600 hover:scale-105 transform transition-all duration-300 
+          className="px-5 cursor-pointer sm:px-6 py-2.5 sm:py-3 bg-[#084c74] text-white font-semibold rounded-md shadow-lg 
+                     hover:bg-[#084c74] hover:scale-105 transform transition-all duration-300 
                      text-sm sm:text-base active:scale-95"
         >
           Start your free trial
@@ -57,7 +57,7 @@ const AiLandingPage = () => {
       </div>
 
       <div className="mt-12 w-full max-w-7xl px-2 sm:px-4">
-        <div className="bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl p-6 sm:p-10 flex items-center justify-center relative overflow-hidden h-[350px] sm:h-[450px] lg:h-[500px]">
+        <div className="bg-gradient-to-br from-[#084c74] to-[#084c74] rounded-xl p-6 sm:p-10 flex items-center justify-center relative overflow-hidden h-[350px] sm:h-[450px] lg:h-[500px]">
           {/* Grid effect */}
           <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.3)_1px,transparent_1px)] bg-[size:30px_30px] sm:bg-[size:40px_40px]"></div>
 
@@ -89,7 +89,7 @@ const AiLandingPage = () => {
           {/* Video Button */}
           <div className="absolute bg-gray-400 rounded-full p-2">
             <div className="relative z-10 bg-white rounded-full px-4 sm:px-6 py-2.5 sm:py-3 shadow-lg flex items-center gap-3 shadow-gray-300">
-              <button className="bg-blue-500 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full text-white">
+              <button className="bg-[#084c74] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full text-white">
                 <Play className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
               <div>

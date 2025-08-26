@@ -114,7 +114,7 @@ const BusinessAnalytics = () => {
       </div>
 
       {/* Heading */}
-      <h1 className="font-dmsans font-bold text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1.2] max-w-4xl mx-auto text-[#1C1F25]">
+      <h1 className="font-dmsans text-center md:text-5xl text-3xl leading-[1.2] max-w-4xl mx-auto text-[#1C1F25]">
         Improve your Continuous <br className="hidden sm:block" />
         Design Data workflow
       </h1>
@@ -127,16 +127,16 @@ const BusinessAnalytics = () => {
 
       {/* Buttons */}
       <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-        <button className="px-5 sm:px-6 py-2.5 sm:py-3 bg-blue-500 text-white font-semibold rounded-md shadow-lg hover:bg-blue-600 hover:scale-105 transform transition-all duration-300 text-sm sm:text-base active:scale-95 w-full sm:w-auto">
+        <button className="px-5 sm:px-6 py-2.5 sm:py-3 bg-[#084c74] text-white font-semibold rounded-md shadow-lg hover:bg-[#084c74] hover:scale-105 transform transition-all duration-300 text-sm sm:text-base active:scale-95 w-full sm:w-auto cursor-pointer">
           Get a demo
         </button>
-        <button className="px-5 sm:px-6 py-2.5 sm:py-3 flex items-center justify-center gap-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 hover:scale-105 transform transition-all duration-300 text-sm sm:text-base active:scale-95 w-full sm:w-auto">
+        <button className="px-5 sm:px-6 py-2.5 sm:py-3 flex items-center justify-center gap-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 hover:scale-105 transform transition-all duration-300 text-sm sm:text-base active:scale-95 w-full sm:w-auto cursor-pointer">
           Research
         </button>
       </div>
 
       {/* Strategy Cards */}
-      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
+      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl px-4">
         {strategies.map((item, i) => (
           <div
             key={i}
@@ -154,7 +154,7 @@ const BusinessAnalytics = () => {
       </div>
 
       {/* Wave Section */}
-      <div className="mt-12  relative w-full max-w-6xl rounded-xl overflow-hidden shadow-lg bg-blue-600">
+      <div className="mt-12  relative w-full max-w-6xl rounded-xl overflow-hidden shadow-lg bg-[#084c74]">
         <div className="relative w-full md:h-[400px] h-[600px] flex flex-col md:flex-row">
           {/* Background Image */}
           <Image
@@ -165,7 +165,7 @@ const BusinessAnalytics = () => {
           />
 
           {/* Left Side Content */}
-          <div className="relative z-50 flex flex-col justify-center px-6 md:px-10 w-full md:w-1/2 py-8 bg-black/30 md:bg-transparent">
+          <div className="relative  flex flex-col justify-center px-6 md:px-10 w-full md:w-1/2 py-8 bg-black/30 md:bg-transparent">
             <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
               Experience the Future of <br /> Business Analytics with Neuros
             </h2>
@@ -184,7 +184,7 @@ const BusinessAnalytics = () => {
           </div>
 
           {/* Right Side Floating Cards */}
-          <div className="hidden md:flex absolute right-6 inset-y-0 items-center z-50">
+          <div className="hidden md:flex absolute right-6 inset-y-0 items-center">
             <div className="grid gap-4 max-w-xs">
               <div className="bg-blue-400/30 backdrop-blur-lg p-4 rounded-lg flex items-start gap-3 text-white shadow-lg">
                 <Zap className="w-6 h-6 flex-shrink-0" />

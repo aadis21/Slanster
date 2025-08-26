@@ -23,11 +23,11 @@ const Super30 = () => {
 
   return (
     <div className="bg-white">
-      <div className="relative w-full min-h-screen px-4 sm:px-6 md:px-12 py-10 flex flex-col items-center backdrop-blur-md">
+      <div className="relative w-full min-h-screen px-6 md:px-0 py-10 flex flex-col items-center backdrop-blur-md">
         {/* BACKGROUND SHADOW IMAGE */}
         <div className="absolute inset-0 -z-10 flex items-center justify-center">
           <Image
-            src="/public/home/placement/bgshadow.png"
+            src="/home/placement/bgshadow.png"
             alt="Background Shadow"
             fill
             className="object-cover opacity-50"
@@ -35,7 +35,7 @@ const Super30 = () => {
         </div>
 
         {/* MAIN GRID */}
-        <div className="relative max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div className="relative max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* LEFT IMAGE BOX (no border; fade-loop carousel) */}
           <div className="w-full h-[280px] sm:h-[350px] md:h-[420px] rounded-2xl flex justify-center relative overflow-hidden">
             {images.map((src, i) => (
@@ -73,7 +73,7 @@ const Super30 = () => {
             </p>
 
             {/* BUTTON */}
-            <button className="cursor-pointer mt-6 w-full sm:w-2/3 md:w-1/2 bg-[#0f395f] hover:bg-[#0d2f4a] transition-all duration-300 text-white px-6 py-3 rounded-lg flex justify-center items-center space-x-2 sm:space-x-3 text-base sm:text-lg shadow-md group relative animate-bounce">
+            <button className="cursor-pointer mt-12 w-full sm:w-2/3 md:w-1/2 bg-[#0f395f] hover:bg-[#0d2f4a] transition-all duration-300 text-white px-6 py-3 rounded-lg flex justify-center items-center space-x-2 sm:space-x-3 text-base sm:text-lg shadow-md group relative animate-bounce">
               <span className="relative z-10">Enroll in Super 30</span>
               <span className="text-lg sm:text-xl transform transition-transform duration-300 group-hover:translate-x-2 relative z-10">
                 →
