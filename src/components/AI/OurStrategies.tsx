@@ -8,11 +8,12 @@ const strategies = [
     title: "AI-Driven Forecasts",
     desc: "Harness the unmatched power of artificial intelligence with Neuros. Dive deep into predictive analytics, anticipate market trends...",
   },
-  {
-    icon: <Link className="w-5 h-5 text-gray-700" />,
-    title: "Connect & Streamline",
-    desc: "Neuros seamlessly integrates with your favorite business tools, CRMs, and platforms. Experience a unified analytics platform...",
-  },
+{
+  icon: <Link className="w-5 h-5 text-gray-700" />,
+  title: "Connect & Streamline",
+  desc: "Integrate Slanster with your favorite tools, CRMs, and platforms. Create a smooth, unified workflow where your team and data work together effortlessly.",
+},
+
   {
     icon: <Zap className="w-5 h-5 text-gray-700" />,
     title: "Instant Insights",

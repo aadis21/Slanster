@@ -87,7 +87,7 @@ const AiLandingPage = () => {
           />
 
           {/* Video Button */}
-          <div className="absolute bg-gray-400 rounded-full p-2">
+          {/* <div className="absolute bg-gray-400 rounded-full p-2">
             <div className="relative z-10 bg-white rounded-full px-4 sm:px-6 py-2.5 sm:py-3 shadow-lg flex items-center gap-3 shadow-gray-300">
               <button className="bg-[#084c74] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full text-white">
                 <Play className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -101,7 +101,7 @@ const AiLandingPage = () => {
                 </span>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

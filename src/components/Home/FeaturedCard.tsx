@@ -4,15 +4,15 @@ import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import { Inter } from "next/font/google";
 
-import testImage1 from "../../../public/FeaturedCard/industry1.webp";
+import testImage1 from "../../../public/FeaturedCard/industry1.png";
 import testImage2 from "../../../public/FeaturedCard/industry2.webp";
 import testImage3 from "../../../public/FeaturedCard/industry3.webp";
 import testImage4 from "../../../public/FeaturedCard/industry4.webp";
-import testImage5 from "../../../public/FeaturedCard/industry5.webp";
+import testImage5 from "../../../public/FeaturedCard/industry5.png";
 import testImage6 from "../../../public/FeaturedCard/industry6.webp";
 import testImage7 from "../../../public/FeaturedCard/industry7.webp";
 import testImage8 from "../../../public/FeaturedCard/industry8.webp";
-import testImage9 from "../../../public/FeaturedCard/industry10.webp";
+import testImage9 from "../../../public/FeaturedCard/industry10.png";
 import testImage10 from "../../../public/FeaturedCard/industry11.webp";
 
 const inter = Inter({ subsets: ["latin"] });

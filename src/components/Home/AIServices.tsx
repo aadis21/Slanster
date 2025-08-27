@@ -1,62 +1,40 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import {
-  FaBrain,
-  FaIndustry,
-  FaUsers,
-  FaCogs,
-  FaChartLine,
-} from "react-icons/fa";
+import { FaBrain, FaIndustry, FaUsers, FaCogs, FaChartLine } from "react-icons/fa";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
 const services = [
   {
-   id: 1,
+    id: 1,
     label: "Predictive Analytics",
     heading: "Smarter Decisions with AI",
     desc: "Leverage AI-powered insights to forecast trends, spot risks, and unlock new opportunities with confidence.",
-    points: [
-      "Forecast trends with precision",
-      "Spot risks before they happen",
-      "Make data-driven decisions fast",
-    ],
+    points: ["Forecast trends with precision", "Spot risks before they happen", "Make data-driven decisions fast"],
   },
   {
     id: 2,
     label: "Intelligent Automation",
     heading: "Work Smarter with Automation",
     desc: "Automate tasks, streamline workflows, and boost efficiency with AI-driven intelligent systems.",
-    points: [
-      "Automate repetitive tasks",
-      "End-to-end workflow efficiency",
-      "Save time & reduce errors",
-    ],
+    points: ["Automate repetitive tasks", "End-to-end workflow efficiency", "Save time & reduce errors"],
   },
   {
     id: 3,
     label: "Computer Vision",
     heading: "AI That Sees & Understands",
     desc: "From real-time recognition to quality checks, our computer vision tech makes businesses smarter and faster.",
-    points: [
-      "Real-time image & video analysis",
-      "Improve security & quality control",
-      "Innovate with deep learning",
-    ],
+    points: ["Real-time image & video analysis", "Improve security & quality control", "Innovate with deep learning"],
   },
   {
     id: 4,
     label: "Natural Language Processing (NLP)",
     heading: "Next-Level Conversations",
     desc: "Power chatbots, assistants, and sentiment analysis with NLP that feels human-like and intuitive.",
-    points: [
-      "AI chatbots & virtual assistants",
-      "Understand customer emotions",
-      "Human-like communication at scale",
-    ],
+    points: ["AI chatbots & virtual assistants", "Understand customer emotions", "Human-like communication at scale"],
   },
 ];
 
@@ -72,11 +50,24 @@ const AIServices = () => {
   const [active, setActive] = useState(1);
   const activeService = services.find((s) => s.id === active);
 
+  const ringRef = useRef<HTMLDivElement | null>(null);
+  const [ringSize, setRingSize] = useState(0);
+
+  useEffect(() => {
+    const updateSize = () => {
+      if (ringRef.current) setRingSize(ringRef.current.offsetWidth);
+    };
+    updateSize();
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+
+  const ICON_BOX = 56;
+  const BORDER_PX = 2;
+
   return (
     <div className="bg-white">
-      <section
-        className={`mx-auto max-w-7xl py-16 md:px-0 px-6 ${inter.className}`}
-      >
+      <section className={`mx-auto max-w-7xl py-16 md:px-0 px-6 ${inter.className}`}>
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
@@ -84,21 +75,15 @@ const AIServices = () => {
           transition={{ duration: 0.7 }}
           className="text-center mb-12"
         >
-          <h2
-            className="text-lg md:text-xl text-gray-900 border border-gray-300 rounded-full shadow-2xl 
-               px-6 py-2 inline-block mx-auto"
-          >
+          <h2 className="text-lg md:text-xl text-gray-900 border border-gray-300 rounded-full shadow-2xl px-6 py-2 inline-block mx-auto">
             AI Services
           </h2>
 
           <h2 className="text-3xl md:text-5xl text-gray-900 mt-4">
-            Full-spectrum of{" "}
-            <span className="text-blue-600">AI-driven Solutions</span>
+            Full-spectrum of <span className="text-blue-600">AI-driven Solutions</span>
           </h2>
 
-          <p className="text-lg text-gray-700 mt-2">
-            Engineered for Global Impact
-          </p>
+          <p className="text-lg text-gray-700 mt-2">Engineered for Global Impact</p>
         </motion.div>
 
         {/* Buttons */}
@@ -130,12 +115,8 @@ const AIServices = () => {
             transition={{ duration: 0.7 }}
             className="flex-1 text-center md:text-left"
           >
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">
-              {activeService?.heading}
-            </h3>
-            <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
-              {activeService?.desc}
-            </p>
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">{activeService?.heading}</h3>
+            <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">{activeService?.desc}</p>
             <ul className="space-y-3 text-gray-900 text-sm md:text-base">
               {activeService?.points.map((p, idx) => (
                 <li key={idx} className="flex items-start">
@@ -147,11 +128,11 @@ const AIServices = () => {
 
           {/* Right Circular Icons */}
           <div className="flex-1 flex justify-center">
-            <div className="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
+            <div ref={ringRef} className="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
               {/* Outer circle */}
-              <div className="absolute w-full h-full rounded-full border-2 border-gray-200"></div>
+              <div className="absolute w-full h-full rounded-full border-2 border-gray-200" />
 
-              {/* Rotating icons container */}
+              {/* Rotating icons */}
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
@@ -159,32 +140,30 @@ const AIServices = () => {
               >
                 {circleIcons.map((item, i) => {
                   const angle = (i / circleIcons.length) * 2 * Math.PI;
-                  const radius = 135; // 🔥 thoda bada (border se bahar le jane ke liye)
-                  const center = 128; // w-64/h-64 ka half (128px)
-                  const x = radius * Math.cos(angle);
-                  const y = radius * Math.sin(angle);
+                  const center = ringSize / 2;
+
+                  // ✅ icon pura circle ke line ke uppar (andar se touch kare)
+                  const radius = center - ICON_BOX / 2 - BORDER_PX / 2;
+
+                  const x = center + radius * Math.cos(angle) - ICON_BOX / 2;
+                  const y = center + radius * Math.sin(angle) - ICON_BOX / 2;
 
                   return (
                     <div
                       key={item.id}
-                      className="absolute flex flex-col items-center justify-center"
-                      style={{
-                        transform: `translate(${x + center}px, ${
-                          y + center
-                        }px)`,
-                      }}
+                      className="absolute flex items-center justify-center"
+                      style={{ left: `${x}px`, top: `${y}px`, width: ICON_BOX, height: ICON_BOX }}
                     >
-                      <div className="p-4 bg-white rounded-full shadow-lg border border-gray-200 text-blue-600">
-                        {React.cloneElement(item.icon, { size: 28 })}{" "}
-                        {/* 🔥 icons bigger */}
+                      <div className="w-full h-full flex items-center justify-center bg-white rounded-full shadow-lg border border-gray-200 text-blue-600">
+                        {React.cloneElement(item.icon, { size: 28 })}
                       </div>
                     </div>
                   );
                 })}
               </motion.div>
 
-              {/* Center Fixed Logo */}
-              <div className="p-5  flex items-center justify-center z-10">
+              {/* Center Logo */}
+              <div className="p-5 flex items-center justify-center z-10">
                 <Image src="/logo.png" alt="Logo" width={150} height={150} />
               </div>
             </div>

@@ -1,7 +1,7 @@
 import AiLandingPage from '@/components/AI/AiLandingPage';
 import Application from '@/components/AI/Application';
-import BusinessAnalytics from '@/components/AI/BusinessAnalytics';
-import Companies from '@/components/AI/Companies';
+// import BusinessAnalytics from '@/components/AI/BusinessAnalytics';
+// import Companies from '@/components/AI/Companies';
 import FAQ from '@/components/AI/FAQ';
 import NeurosExperience from '@/components/AI/NeurosExperience';
 import OurStrategies from '@/components/AI/OurStrategies';
@@ -11,10 +11,10 @@ const Page = () => {
   return (
     <div>
         <AiLandingPage />
-        <Companies />
+        {/* <Companies /> */}
         <OurStrategies />
         <NeurosExperience />
-        <BusinessAnalytics />
+        {/* <BusinessAnalytics /> */}
         <Application />
         <FAQ />
     </div>
