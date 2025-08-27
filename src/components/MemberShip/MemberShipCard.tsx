@@ -3,9 +3,19 @@ import React, { useMemo, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Inter } from "next/font/google";
-import AvtarMale from "../../../public/home/Mentors/avtarMale.jpg";
-import AvtarFemele from "../../../public/home/Mentors/avtarFemale.jpg";
+// import AvtarMale from "../../../public/home/Mentors/avtarMale.jpg";
 import ContactModal from "../Header/ContactModal";
+
+
+import AvtarFemele4 from "../../../public/home/Mentors/avtarFemale.jpg";
+import AvtarMale from "../../../public/home/Avtars/avtarmale.webp";
+import AvtarFemele from "../../../public/home/Avtars/avtarfemele.webp";
+import AvtarFemele2 from "../../../public/home/Avtars/avtarfemale2.webp";
+import AvtarMale2 from "../../../public/home/Avtars/avtarmale2.webp";
+import AvtarFemele3 from "../../../public/home/Avtars/avtarfemele3.webp";
+import AvtarMale3 from "../../../public/home/Avtars/avtarmale3.webp";
+import AvtarMale4 from "../../../public/home/Avtars/avtarmale4.webp";
+import AvtarMale5 from "../../../public/home/Avtars/avtarmale5.webp";
 
 
 const inter = Inter({
@@ -13,105 +23,117 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
+
 const MemberShip: React.FC<{ searchQuery?: string }> = ({
   
   searchQuery = "",
 }) => {
-  const cards = useMemo(
-    () => [
-      {
-        id: 1,
-        name: "Amitesh",
-        role: "CTO · IT Company",
-        experience: "10+ Yrs Of Experience",
-        description:
-          "Oversees end-to-end technology strategy, platform architecture, and product engineering. Highly skilled in AI systems, scalable microservices, and building products from 0→1.",
-        gender: "male",
-      },
-      {
-        id: 2,
-        name: "Gaurav",
-        role: "Sr Manager · Big4",
-        experience: "9+ Yrs Of Experience",
-        description:
-          "Works at a Big4 firm in business, risk, and technology consulting. Guides on control frameworks, digital transformation, and tech-enabled risk mitigation.",
-        gender: "male",
-      },
-      {
-        id: 3,
-        name: "Divyansh",
-        role: "Professor · Artificial Intelligence",
-        experience: "8+ Yrs Of Experience",
-        description:
-          "Educator at a leading university teaching AI and ML. Focuses on practical model building, MLOps fundamentals, and responsible AI practices.",
-        gender: "male",
-      },
-      {
-        id: 4,
-        name: "Sonam",
-        role: "Product Manager · E-commerce",
-        experience: "7+ Yrs Of Experience",
-        description:
-          "Drives end-to-end product development and deployment for e-commerce. Specializes in user journeys, conversion funnels, and data-driven roadmaps.",
-        gender: "female",
-      },
-      {
-        id: 5,
-        name: "Rishabh",
-        role: "Risk Consultant · Big4",
-        experience: "6+ Yrs Of Experience",
-        description:
-          "Specializes in enterprise risk management and policy consulting at a Big4 firm. Advises on governance models, audits, and regulatory alignment.",
-        gender: "male",
-      },
-      {
-        id: 6,
-        name: "Dhruv",
-        role: "Cyber Specialist · Banking",
-        experience: "8+ Yrs Of Experience",
-        description:
-          "Experienced in governance, risk, and compliance for financial institutions. Mentors on GRC tooling, SOC processes, and regulatory frameworks.",
-        gender: "male",
-      },
-      {
-        id: 7,
-        name: "Anirudh",
-        role: "ESG Consultant · Big4",
-        experience: "7+ Yrs Of Experience",
-        description:
-          "Climate change and social impact consulting expert at a Big4 firm. Guides on ESG reporting, materiality assessment, and sustainability roadmaps.",
-        gender: "male",
-      },
-      {
-        id: 8,
-        name: "Kriti",
-        role: "AI Product Lead",
-        experience: "9+ Yrs Of Experience",
-        description:
-          "Leads AI-first product strategy—LLM integrations, RAG pipelines, and experimentation. Mentors on PRDs, model evaluations, and GTM for AI features.",
-        gender: "female",
-      },
-      {
-        id: 9,
-        name: "Kabir",
-        role: "Cyber Threat Analyst",
-        experience: "6+ Yrs Of Experience",
-        description:
-          "Focuses on threat hunting, incident response, and SIEM use-cases. Coaches on playbooks, blue-team workflows, and defense-in-depth design.",
-        gender: "male",
-      },
-      {
-        id: 10,
-        name: "Meera",
-        role: "Senior Product Manager",
-        experience: "8+ Yrs Of Experience",
-        description:
-          "Owns discovery → delivery for data-driven products. Strong in metrics, stakeholder alignment, experimentation, and scalable release processes.",
-        gender: "female",
-      },
-    ],
-    []
-  );
+ const cards = useMemo(
+   () => [
+     {
+       id: 1,
+       name: "Amitesh",
+       role: "CTO · IT Company",
+       experience: "10+ Yrs Of Experience",
+       description:
+         "Oversees end-to-end technology strategy, platform architecture, and product engineering. Highly skilled in AI systems, scalable microservices, and building products from 0→1.",
+       gender: "male",
+       image: AvtarMale2,
+     },
+     {
+       id: 2,
+       name: "Gaurav",
+       role: "Sr Manager · Big4",
+       experience: "9+ Yrs Of Experience",
+       description:
+         "Works at a Big4 firm in business, risk, and technology consulting. Guides on control frameworks, digital transformation, and tech-enabled risk mitigation.",
+       gender: "male",
+       image: AvtarMale3,
+     },
+     {
+       id: 3,
+       name: "Divyansh",
+       role: "Professor · Artificial Intelligence",
+       experience: "8+ Yrs Of Experience",
+       description:
+         "Educator at a leading university teaching AI and ML. Focuses on practical model building, MLOps fundamentals, and responsible AI practices.",
+       gender: "male",
+       image: AvtarMale4,
+     },
+     {
+       id: 4,
+       name: "Sonam",
+       role: "Product Manager · E-commerce",
+       experience: "7+ Yrs Of Experience",
+       description:
+         "Drives end-to-end product development and deployment for e-commerce. Specializes in user journeys, conversion funnels, and data-driven roadmaps.",
+       gender: "female",
+       image: AvtarFemele,
+     },
+     {
+       id: 5,
+       name: "Rishabh",
+       role: "Risk Consultant · Big4",
+       experience: "6+ Yrs Of Experience",
+       description:
+         "Specializes in enterprise risk management and policy consulting at a Big4 firm. Advises on governance models, audits, and regulatory alignment.",
+       gender: "male",
+       image: AvtarMale5,
+     },
+     {
+       id: 6,
+       name: "Dhruv",
+       role: "Cyber Specialist · Banking",
+       experience: "8+ Yrs Of Experience",
+       description:
+         "Experienced in governance, risk, and compliance for financial institutions. Mentors on GRC tooling, SOC processes, and regulatory frameworks.",
+       gender: "male",
+       image: AvtarMale,
+     },
+     {
+       id: 7,
+       name: "Anirudh",
+       role: "ESG Consultant · Big4",
+       experience: "7+ Yrs Of Experience",
+       description:
+         "Climate change and social impact consulting expert at a Big4 firm. Guides on ESG reporting, materiality assessment, and sustainability roadmaps.",
+       gender: "male",
+       image: AvtarMale2,
+     },
+     {
+       id: 8,
+       name: "Kriti",
+       role: "AI Product Lead",
+       experience: "9+ Yrs Of Experience",
+       description:
+         "Leads AI-first product strategy—LLM integrations, RAG pipelines, and experimentation. Mentors on PRDs, model evaluations, and GTM for AI features.",
+       gender: "female",
+       image: AvtarFemele2,
+     },
+     {
+       id: 9,
+       name: "Kabir",
+       role: "Cyber Threat Analyst",
+       experience: "6+ Yrs Of Experience",
+       description:
+         "Focuses on threat hunting, incident response, and SIEM use-cases. Coaches on playbooks, blue-team workflows, and defense-in-depth design.",
+       gender: "male",
+       image: AvtarMale3,
+     },
+     {
+       id: 10,
+       name: "Meera",
+       role: "Senior Product Manager",
+       experience: "8+ Yrs Of Experience",
+       description:
+         "Owns discovery → delivery for data-driven products. Strong in metrics, stakeholder alignment, experimentation, and scalable release processes.",
+       gender: "female",
+       image: AvtarFemele3,
+     },
+   ],
+   []
+ );
+
 
   const query = searchQuery.toLowerCase().trim();
    const [openModal, setOpenModal] = useState(false);
@@ -147,10 +169,10 @@ const MemberShip: React.FC<{ searchQuery?: string }> = ({
                 {/* Image */}
                 <div className="w-full h-52 relative">
                   <Image
-                    src={expert.gender === "male" ? AvtarMale : AvtarFemele}
+                    src={expert.image} // 👈 ab yeh unique image lega har card ka
                     alt={expert.name}
                     fill
-                    className="object-cover"
+                    className="object-cover object-top w-1/2 h-1/2" 
                   />
                 </div>
 
@@ -168,7 +190,8 @@ const MemberShip: React.FC<{ searchQuery?: string }> = ({
 
                   {/* Button */}
                   <div className="mt-auto pt-4">
-                    <button className="w-full cursor-pointer hover:scale-105 bg-[#084c74] hover:bg-[#073654] text-white text-sm py-2.5 rounded-lg shadow transition-all"
+                    <button
+                      className="w-full cursor-pointer hover:scale-105 bg-[#084c74] hover:bg-[#073654] text-white text-sm py-2.5 rounded-lg shadow transition-all"
                       onClick={() => setOpenModal(true)}
                     >
                       Book Now

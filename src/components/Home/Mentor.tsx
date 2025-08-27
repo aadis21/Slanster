@@ -2,10 +2,17 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import { Inter } from "next/font/google";
-
-import AvtarMale from "../../../public/home/Mentors/avtarMale.jpg";
-import AvtarFemele from "../../../public/home/Mentors/avtarFemale.jpg";
 import ContactModal from "../Header/ContactModal";
+import AnimatedButton from "../../../utils/AnimatedButton";
+
+import AvtarMale from "../../../public/home/Avtars/avtarmale.webp";
+import AvtarFemele from "../../../public/home/Avtars/avtarfemele.webp";
+import AvtarFemele2 from "../../../public/home/Avtars/avtarfemale2.webp";
+import AvtarMale2 from "../../../public/home/Avtars/avtarmale2.webp";
+import AvtarFemele3 from "../../../public/home/Avtars/avtarfemele3.webp";
+import AvtarMale3 from "../../../public/home/Avtars/avtarmale3.webp";
+import AvtarMale4 from "../../../public/home/Avtars/avtarmale4.webp";
+import AvtarMale5 from "../../../public/home/Avtars/avtarmale5.webp";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,6 +26,7 @@ type Mentor = {
   experience: string;
   description: string;
   gender: "male" | "female";
+  image: StaticImageData;
 };
 
 type CardProps = {
@@ -45,7 +53,7 @@ const Card: React.FC<CardProps> = ({
                   transition-all duration-300 flex flex-col h-[460px]"
   >
     <div className="relative h-[200px] bg-gray-200">
-      <Image src={image} alt={name} fill className="object-cover" />
+      <Image src={image} alt={name} fill className="object-cover object-top" />
     </div>
 
     <div className="p-4 flex flex-col flex-1">
@@ -73,29 +81,94 @@ const Card: React.FC<CardProps> = ({
 );
 
 // ---------- Main Component ----------
-const OurWork: React.FC = () => {
-  const cards: Mentor[] = useMemo(
-    () => [
-      {
-        name: "Amitesh",
-        role: "CTO · IT Company",
-        experience: "10+ Yrs Of Experience",
-        description:
-          "Oversees end-to-end technology strategy, platform architecture, and product engineering. Highly skilled in AI systems, scalable microservices, and building products from 0→1.",
-        gender: "male",
-      },
-      {
-        name: "Sonam",
-        role: "Product Manager · E-commerce",
-        experience: "7+ Yrs Of Experience",
-        description:
-          "Drives end-to-end product development and deployment for e-commerce. Specializes in user journeys, conversion funnels, and data-driven roadmaps.",
-        gender: "female",
-      },
-      // ...rest
-    ],
-    []
-  );
+const Mentor: React.FC = () => {
+ const cards: Mentor[] = useMemo(
+   () => [
+     {
+       id: 1,
+       name: "Amitesh",
+       role: "CTO · IT Company",
+       experience: "10+ Yrs Of Experience",
+       description:
+         "Oversees end-to-end technology strategy, platform architecture, and product engineering. Highly skilled in AI systems, scalable microservices, and building products from 0→1.",
+       gender: "male",
+       image: AvtarMale,
+     },
+     {
+       id: 2,
+       name: "Gaurav",
+       role: "Sr Manager · Big4",
+       experience: "9+ Yrs Of Experience",
+       description:
+         "Works at a Big4 firm in business, risk, and technology consulting. Guides on control frameworks, digital transformation, and tech-enabled risk mitigation.",
+       gender: "male",
+       image: AvtarMale2,
+     },
+     {
+       id: 3,
+       name: "Divyansh",
+       role: "Professor · Artificial Intelligence",
+       experience: "8+ Yrs Of Experience",
+       description:
+         "Educator at a leading university teaching AI and ML. Focuses on practical model building, MLOps fundamentals, and responsible AI practices.",
+       gender: "male",
+       image: AvtarMale3,
+     },
+     {
+       id: 4,
+       name: "Sonam",
+       role: "Product Manager · E-commerce",
+       experience: "7+ Yrs Of Experience",
+       description:
+         "Drives end-to-end product development and deployment for e-commerce. Specializes in user journeys, conversion funnels, and data-driven roadmaps.",
+       gender: "female",
+       image: AvtarFemele,
+     },
+     {
+       id: 5,
+       name: "Rishabh",
+       role: "Risk Consultant · Big4",
+       experience: "6+ Yrs Of Experience",
+       description:
+         "Specializes in enterprise risk management and policy consulting at a Big4 firm. Advises on governance models, audits, and regulatory alignment.",
+       gender: "male",
+       image: AvtarMale4,
+     },
+     {
+       id: 6,
+       name: "Dhruv",
+       role: "Cyber Specialist · Banking",
+       experience: "8+ Yrs Of Experience",
+       description:
+         "Experienced in governance, risk, and compliance for financial institutions. Mentors on GRC tooling, SOC processes, and regulatory frameworks.",
+       gender: "male",
+       image: AvtarMale5,
+     },
+    
+     {
+       id: 8,
+       name: "Kriti",
+       role: "AI Product Lead",
+       experience: "9+ Yrs Of Experience",
+       description:
+         "Leads AI-first product strategy—LLM integrations, RAG pipelines, and experimentation. Mentors on PRDs, model evaluations, and GTM for AI features.",
+       gender: "female",
+       image: AvtarFemele2,
+     },
+     {
+       id: 9,
+       name: "Kabir",
+       role: "Cyber Threat Analyst",
+       experience: "6+ Yrs Of Experience",
+       description:
+         "Focuses on threat hunting, incident response, and SIEM use-cases. Coaches on playbooks, blue-team workflows, and defense-in-depth design.",
+       gender: "male",
+       image: AvtarFemele3, // 👀 lagta hai ye actually female image hai, check kar lena
+     },
+   ],
+   []
+ );
+
 
   // ----- Slider refs & state -----
   const scrollerRef = useRef<HTMLDivElement | null>(null);
@@ -106,7 +179,7 @@ const OurWork: React.FC = () => {
 
   // Modal states
   const [openModal, setOpenModal] = useState(false);
-  const [selectedMentor, setSelectedMentor] = useState<Mentor | null>(null); // ✅ fixed type
+  const [selectedMentor, setSelectedMentor] = useState<Mentor | null>(null);
 
   // card step calculation
   useEffect(() => {
@@ -170,14 +243,9 @@ const OurWork: React.FC = () => {
               personalized guidance to elevate your skills.
             </p>
 
-            <button
-              className="md:mt-12 mt-5 inline-flex items-center rounded-md 
-                         text-[#0A2852] bg-white px-6 py-3 text-sm font-medium 
-                         shadow-md hover:shadow-lg transition-transform hover:scale-105"
-              type="button"
-            >
+            <AnimatedButton showArrow className="md:mt-12 mt-5">
               Get Personalized Advice
-            </button>
+            </AnimatedButton>
           </div>
 
           {/* Right Column - Slider */}
@@ -192,7 +260,7 @@ const OurWork: React.FC = () => {
                   <div key={index} ref={index === 0 ? firstCardRef : undefined}>
                     <Card
                       {...card}
-                      image={card.gender === "male" ? AvtarMale : AvtarFemele}
+                      image={card.image}
                       onBookNow={() => {
                         setSelectedMentor(card);
                         setOpenModal(true);
@@ -238,14 +306,10 @@ const OurWork: React.FC = () => {
       </div>
 
       {openModal && (
-        <ContactModal
-          isOpen={openModal}
-          onClose={() => setOpenModal(false)}
-          // you can also pass `mentor={selectedMentor}` if ContactModal accepts it
-        />
+        <ContactModal isOpen={openModal} onClose={() => setOpenModal(false)} />
       )}
     </section>
   );
 };
 
-export default OurWork;
+export default Mentor;

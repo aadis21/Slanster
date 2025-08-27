@@ -251,17 +251,17 @@ const LandingPage: React.FC = () => {
 
           {/* Main image with tilt */}
           <motion.div
-            className="absolute bottom-0 md:pt-0 pt-12 will-change-transform"
+            className="absolute bottom-0 md:pt-10 pt-12 md:mt-12 will-change-transform"
             style={{ rotateX, rotateY }}
             variants={itemUp}
           >
             <Image
-              src="/home/Frame.png"
+              src="/home/Frame2.png"
               alt="hero"
               width={420}
-              height={640}
+              height={740}
               priority
-              className="object-cover w-full h-[40vh] sm:h-[60vh] md:h-[80vh] lg:h-[90vh] drop-shadow-xl"
+              className="object-cover w-full h-[50vh] sm:h-[60vh] md:h-[90vh] lg:h-[90vh] drop-shadow-xl"
             />
           </motion.div>
 

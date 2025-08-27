@@ -19,7 +19,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
     <button
       onClick={onClick}
       className={`
-        flex items-center gap-2 bg-sky-500 hover:bg-sky-600 text-white 
+        flex items-center gap-2 bg-[#00517c] hover:bg-[#00517c] text-white 
         px-5 py-3 rounded-full font-medium shadow-md 
         hover:shadow-xl transition-all duration-300 ease-in-out 
         transform hover:scale-105 cursor-pointer 

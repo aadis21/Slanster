@@ -4,12 +4,13 @@ import Brilliance from "@/components/Home/Brilliance";
 import Companies from "@/components/Home/Companies";
 import FeaturedCard from "@/components/Home/FeaturedCard";
 import FlipCard from "@/components/Home/FlipCard";
-import ITExpert from "@/components/Home/ITExpert";
+// import ITExpert from "@/components/Home/ITExpert";
 import ITPartners from "@/components/Home/ITPartners";
 import LandingPage from "@/components/Home/LandingPage";
 import LetsWork from "@/components/Home/LetsWork";
+import Mentor from "@/components/Home/Mentor";
 import OurServices from "@/components/Home/OurServices";
-import OurWork from "@/components/Home/OurWork";
+// import OurWork from "@/components/Home/Mentor";
 import Placement from "@/components/Home/Placement";
 import Success from "@/components/Home/Success";
 import Super30 from "@/components/Super30/Super30";
@@ -25,7 +26,8 @@ export default function Pgae() {
       {/* <ITExpert /> */}
       {/* <ITPartners /> */}
       <AIServices />
-      <OurWork />
+      {/* <OurWork /> */}
+      <Mentor />
       <Super30 />
       <Placement />
       <Brilliance />
