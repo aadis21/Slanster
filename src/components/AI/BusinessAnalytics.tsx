@@ -167,7 +167,7 @@ const BusinessAnalytics = () => {
           {/* Left Side Content */}
           <div className="relative  flex flex-col justify-center px-6 md:px-10 w-full md:w-1/2 py-8 bg-black/30 md:bg-transparent">
             <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-              Experience the Future of <br /> Business Analytics with Neuros
+              Master Choice Better Results, <br />   With Slanster
             </h2>
 
             {/* CTA */}

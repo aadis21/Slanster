@@ -7,6 +7,9 @@ import {
   RefreshCw,
   Shield,
   Users,
+  BarChart3,
+  Plug,
+  MessageSquare,
 } from "lucide-react";
 import React, { useState } from "react";
 import { BsStars } from "react-icons/bs";
@@ -20,8 +23,10 @@ const iconMap = {
   "Stay Updated, Always": <RefreshCw className="w-5 h-5" />,
   "Your Data's Safe Haven": <Shield className="w-5 h-5" />,
   "Collaborate and Conquer": <ServerCog className="w-5 h-5" />,
+  "Analytics Redefined": <BarChart3 className="w-5 h-5" />,
+  "Seamless Integration": <Plug className="w-5 h-5" />,
+  "Smart Collaboration": <MessageSquare className="w-5 h-5" />,
 };
-
 
 interface Testimonial {
   headers: string;
@@ -77,6 +82,7 @@ const testimonials: Testimonial[] = [
   },
 ];
 
+
 const Application: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
   const displayedTestimonials = showAll
@@ -97,16 +103,15 @@ const Application: React.FC = () => {
         </div>
 
         <div className="text-center mb-8">
-          <h2 className="font-dmsans text-center md:text-5xl text-3xl leading-[1.2] max-w-4xl mx-auto text-[#1C1F25]">
-            Insights and predictions made easy
-          </h2>
-          <p className="text-gray-500 mt-2 max-w-3xl mx-auto text-center">
-            Advanced business intelligence tools enhance efficiency across your
-            entire operation. By predicting future revenue and dissecting
-            marketing effectiveness, these tools provide you with the critical
-            insights needed for informed decision-making.
-          </p>
-        </div>
+  <h2 className="font-dmsans text-center md:text-5xl text-3xl leading-[1.2] max-w-4xl mx-auto text-[#1C1F25]">
+    AI-powered tools, tailored for every need
+  </h2>
+  <p className="text-gray-500 mt-2 max-w-3xl mx-auto text-center">
+    From customer support to content automation, Slanster brings together 
+    powerful AI applications that make your work smarter, faster, and simpler.
+  </p>
+</div>
+
 
         {/* Cards with shadow overlay */}
         <div className="relative">

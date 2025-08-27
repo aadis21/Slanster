@@ -5,46 +5,42 @@ import Slider from "react-slick";
 
 const testimonials = [
   {
-    text: "Project management is smoother with Neuros. Its dashboards provide a clear view of progress and areas of improvement.",
-    name: "Nathan D. Hall",
-    role: "Project Lead",
+    text: "With Slanster’s AI chatbots, our customer response time dropped from hours to seconds. It feels like we finally scaled our support team without adding headcount.",
+    name: "Priya Malhotra",
+    role: "Customer Experience Manager",
   },
   {
-    text: "Neuros's real-time data has been crucial in refining our products. Its collaborative features ensure our team is always aligned.",
-    name: "Naomi K. Johnson",
-    role: "Product Manager",
+    text: "The AI proposal generator saved us countless hours. What used to take days of manual effort is now done in minutes—accurate, polished, and client-ready.",
+    name: "James R. Carter",
+    role: "Business Development Lead",
   },
   {
-    text: "Real-time data processing with Neuros has changed how we make decisions. It's a must-have tool for modern businesses.",
-    name: "Michael O. Lopez",
-    role: "Operations Director",
+    text: "Slanster’s voice AI has transformed our outbound calling. Clients feel like they’re talking to a real person, and our conversions have never been better.",
+    name: "Sofia Alvarez",
+    role: "Operations Head",
   },
   {
-    text: "Thanks to Neuros, our workflows are far more efficient and transparent. It’s a powerful tool for scaling companies.",
-    name: "Sophia M. Clark",
-    role: "CTO",
+    text: "We rely on Slanster for market intelligence. Their AI crawlers give us real-time competitor insights that help us stay ahead without drowning in data.",
+    name: "Arjun Mehta",
+    role: "Strategy Consultant",
   },
   {
-    text: "Project management is smoother with Neuros. Its dashboards provide a clear view of progress and areas of improvement.",
-    name: "Nathan D. Hall",
-    role: "Project Lead",
+    text: "Hiring is faster and smarter now. The AI resume screener and interview bot make our recruitment process seamless and bias-free.",
+    name: "Linda Zhang",
+    role: "HR Director",
   },
   {
-    text: "Neuros's real-time data has been crucial in refining our products. Its collaborative features ensure our team is always aligned.",
-    name: "Naomi K. Johnson",
-    role: "Product Manager",
+    text: "Slanster’s AI analytics give us instant clarity on performance. Instead of waiting weeks for reports, our teams act on real-time insights.",
+    name: "Smeeksha Patel",
+    role: "Data & Analytics Head",
   },
   {
-    text: "Real-time data processing with Neuros has changed how we make decisions. It's a must-have tool for modern businesses.",
-    name: "Michael O. Lopez",
-    role: "Operations Director",
-  },
-  {
-    text: "Thanks to Neuros, our workflows are far more efficient and transparent. It’s a powerful tool for scaling companies.",
-    name: "Sophia M. Clark",
-    role: "CTO",
+    text: "The integration process was effortless. Slanster connected with our CRM and marketing tools in minutes, saving us huge setup costs.",
+    name: "Raghav",
+    role: "Marketing Technology Lead",
   },
 ];
+
 
 const NeurosExperience = () => {
   const settings = {
@@ -68,18 +64,20 @@ const NeurosExperience = () => {
 
   return (
     <div className="w-full py-12 bg-white">
-      <div className="text-center mb-8">
-        <h2
-          className="font-dmsans text-center md:text-5xl text-3xl
-               leading-[1.2] max-w-4xl mx-auto text-[#1C1F25]"
-        >
-          The Neuros Experience
-        </h2>
-        <p className="text-gray-500 mt-4">
-          At Neuros, we pride ourselves on delivering top-notch AI-driven
-          business analytics. Hear what our satisfied users have to say.
-        </p>
-      </div>
+    <div className="text-center mb-8">
+  <h2
+    className="font-dmsans text-center md:text-5xl text-3xl
+         leading-[1.2] max-w-4xl mx-auto text-[#1C1F25]"
+  >
+    The Slanster Experience
+  </h2>
+  <p className="text-gray-500 mt-4 max-w-3xl mx-auto">
+    At Slanster, we build AI solutions that simplify work, drive growth, 
+    and spark innovation. But don’t just take our word for it—see what our 
+    clients and partners have to say.
+  </p>
+</div>
+
 
       <Slider {...settings}>
         {testimonials.map((t, i) => (

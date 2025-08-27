@@ -356,7 +356,7 @@ const LandingPage = () => {
     <section className={`${inter.className} relative w-full h-1/2 md:h-screen md:py-0 py-10`}>
       {/* Background Image */}
       <Image
-        src="/framelandingpage.png"
+        src="/test1.jpg"
         alt="Landing Background"
         fill
         className="object-cover object-center"
