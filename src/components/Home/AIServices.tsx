@@ -67,7 +67,9 @@ const AIServices = () => {
 
   return (
     <div className="bg-white">
-      <section className={`mx-auto max-w-7xl py-16 md:px-0 px-6 ${inter.className}`}>
+      <section
+        className={`mx-auto max-w-7xl py-16 md:px-0 px-6 ${inter.className}`}
+      >
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
@@ -80,10 +82,13 @@ const AIServices = () => {
           </h2>
 
           <h2 className="text-3xl md:text-5xl text-gray-900 mt-4">
-            Full-spectrum of <span className="text-blue-600">AI-driven Solutions</span>
+            Full-spectrum of{" "}
+            <span className="text-blue-600">AI-driven Solutions</span>
           </h2>
 
-          <p className="text-lg text-gray-700 mt-2">Engineered for Global Impact</p>
+          <p className="text-lg text-gray-700 mt-2">
+            Engineered for Global Impact
+          </p>
         </motion.div>
 
         {/* Buttons */}
@@ -115,8 +120,12 @@ const AIServices = () => {
             transition={{ duration: 0.7 }}
             className="flex-1 text-center md:text-left"
           >
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">{activeService?.heading}</h3>
-            <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">{activeService?.desc}</p>
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">
+              {activeService?.heading}
+            </h3>
+            <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
+              {activeService?.desc}
+            </p>
             <ul className="space-y-3 text-gray-900 text-sm md:text-base">
               {activeService?.points.map((p, idx) => (
                 <li key={idx} className="flex items-start">
@@ -127,8 +136,11 @@ const AIServices = () => {
           </motion.div>
 
           {/* Right Circular Icons */}
-          <div className="flex-1 flex justify-center">
-            <div ref={ringRef} className="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
+          <div className="flex-1 flex justify-center hidden md:flex">
+            <div
+              ref={ringRef}
+              className="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center"
+            >
               {/* Outer circle */}
               <div className="absolute w-full h-full rounded-full border-2 border-gray-200" />
 
@@ -152,7 +164,12 @@ const AIServices = () => {
                     <div
                       key={item.id}
                       className="absolute flex items-center justify-center"
-                      style={{ left: `${x}px`, top: `${y}px`, width: ICON_BOX, height: ICON_BOX }}
+                      style={{
+                        left: `${x}px`,
+                        top: `${y}px`,
+                        width: ICON_BOX,
+                        height: ICON_BOX,
+                      }}
                     >
                       <div className="w-full h-full flex items-center justify-center bg-white rounded-full shadow-lg border border-gray-200 text-blue-600">
                         {React.cloneElement(item.icon, { size: 28 })}
