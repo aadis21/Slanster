@@ -1,6 +1,7 @@
 "use client";
 
 import { Inter } from "next/font/google";
+import Image from "next/image";
 import React, { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -151,12 +152,20 @@ const ContactPage = () => {
 
         {/* MIDDLE MAP */}
         <div className="w-full md:basis-2/5 flex justify-center items-center px-2 md:px-4">
-          <iframe
+          {/* <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2563.558407265768!2d14.42076!3d50.08804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b94eab7c3d9f1%3A0x7b9c9c3cddc3f1f9!2sPrague!5e0!3m2!1sen!2scz!4v1672123456789"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
             className="w-full h-64 md:h-full rounded-lg shadow-lg"
+          /> */}
+
+          <Image
+            src="/getintouch.webp"
+            alt="No image Found"
+            width={400}
+            height={400}
+            className="rounded-xl"
           />
         </div>
 
