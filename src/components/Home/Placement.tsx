@@ -88,7 +88,12 @@ const Placement: React.FC = () => {
 
       <div className="relative max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 rounded-2xl bg-white/60 backdrop-blur-md border border-gray-100 p-5 sm:p-8 md:p-10">
         <div className="absolute inset-0 -z-10">
-          <Image src={BgShadow} alt="Background Shadow" fill className="object-cover opacity-45" />
+          <Image
+            src={BgShadow}
+            alt="Background Shadow"
+            fill
+            className="object-cover opacity-45"
+          />
         </div>
 
         {/* LEFT – heading with looping typewriter on "Commitment" */}
@@ -97,22 +102,29 @@ const Placement: React.FC = () => {
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#0f395f] to-[#0f6fa8]">
               Your Career, Our{" "}
             </span>
-            <TypeLoopWord
-              text="Commitment"
-              speed={95}     // typing speed (ms)
-              hold={1200}    // hold after full word (ms)
-              className="bg-clip-text text-transparent bg-gradient-to-r from-[#0f395f] to-[#0f6fa8]"
-            />
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#0f395f] to-[#0f6fa8]">
+              Commitment
+            </span>
           </h2>
 
           <p className="font-sans text-gray-700 text-[14px] sm:text-[15px] md:text-[16px] animate-[fade-up_600ms_ease_100ms_both]">
-            Join our exclusive <span className="font-semibold">Super 30 Batch</span> and master:
+            Join our exclusive{" "}
+            <span className="font-semibold">Super 30 Batch</span> and master:
           </p>
 
           <ol className="font-sans space-y-2.5 text-gray-700 text-[14px] sm:text-[15px] md:text-[16px] animate-[fade-up_600ms_ease_160ms_both] list-decimal list-inside">
-            <li><span className="font-semibold">Consulting Skills</span> — Frameworks used by the Big 4</li>
-            <li><span className="font-semibold">Tech Skills</span> — AI, Cybersecurity & Cloud FinOps</li>
-            <li><span className="font-semibold">Business Relationship</span> — Storytelling, client comms & networking</li>
+            <li>
+              <span className="font-semibold">Consulting Skills</span> —
+              Frameworks used by the Big 4
+            </li>
+            <li>
+              <span className="font-semibold">Tech Skills</span> — AI,
+              Cybersecurity & Cloud FinOps
+            </li>
+            <li>
+              <span className="font-semibold">Business Relationship</span> —
+              Storytelling, client comms & networking
+            </li>
           </ol>
 
           <div className="pt-1 animate-[fade-up_600ms_ease_220ms_both]">
@@ -122,7 +134,9 @@ const Placement: React.FC = () => {
               onClick={() => setOpenModal(true)}
             >
               <span className="relative z-10">Enroll Now</span>
-              <span className="relative z-10 text-lg transition-transform duration-300 group-hover:translate-x-1">→</span>
+              <span className="relative z-10 text-lg transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
               <span className="pointer-events-none absolute inset-0 overflow-hidden rounded-xl">
                 <span className="absolute left-[-120%] top-0 h-full w-1/2 rotate-12 bg-white/15 blur-md transition-transform duration-700 group-hover:translate-x-[240%]" />
               </span>
@@ -138,7 +152,11 @@ const Placement: React.FC = () => {
               <div
                 key={k}
                 className="slot relative w-28 h-10 sm:w-32 sm:h-12 md:w-36 md:h-14"
-                style={{ animationDelay: `${i * STAGGER_MS}ms` } as React.CSSProperties}
+                style={
+                  {
+                    animationDelay: `${i * STAGGER_MS}ms`,
+                  } as React.CSSProperties
+                }
               >
                 <Image
                   src={l.src}
@@ -164,14 +182,26 @@ const Placement: React.FC = () => {
           animation: blink 1s steps(1, end) infinite;
         }
         @keyframes blink {
-          0%, 50% { opacity: .75; }
-          50.01%, 100% { opacity: 0; }
+          0%,
+          50% {
+            opacity: 0.75;
+          }
+          50.01%,
+          100% {
+            opacity: 0;
+          }
         }
 
         /* fade-in content */
         @keyframes fade-up {
-          0% { opacity: 0; transform: translateY(10px) scale(0.98); }
-          100% { opacity: 1; transform: translateY(0) scale(1); }
+          0% {
+            opacity: 0;
+            transform: translateY(10px) scale(0.98);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
         }
 
         /* logo swap animation */
@@ -179,14 +209,30 @@ const Placement: React.FC = () => {
           animation: fadeSwap ${SWITCH_MS - 200}ms ease both;
         }
         @keyframes fadeSwap {
-          0%   { opacity: 0; transform: scale(0.96) translateY(4px); filter: drop-shadow(0 0 0 rgba(15,57,95,0)); }
-          25%  { opacity: 1; transform: scale(1) translateY(0); }
-          75%  { opacity: 1; transform: scale(1.02); }
-          100% { opacity: 1; transform: scale(1);  filter: drop-shadow(0 8px 16px rgba(15,57,95,0.22)); }
+          0% {
+            opacity: 0;
+            transform: scale(0.96) translateY(4px);
+            filter: drop-shadow(0 0 0 rgba(15, 57, 95, 0));
+          }
+          25% {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+          }
+          75% {
+            opacity: 1;
+            transform: scale(1.02);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1);
+            filter: drop-shadow(0 8px 16px rgba(15, 57, 95, 0.22));
+          }
         }
       `}</style>
 
-      {openModal && <ContactModal isOpen={openModal} onClose={() => setOpenModal(false)} />}
+      {openModal && (
+        <ContactModal isOpen={openModal} onClose={() => setOpenModal(false)} />
+      )}
     </section>
   );
 };

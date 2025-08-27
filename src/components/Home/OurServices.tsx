@@ -61,7 +61,7 @@ const services: Service[] = [
   },
 ];
 
-const visibleCards = 3;
+const visibleCards = 4; // always show 4 cards
 
 const mod = (n: number, m: number) => ((n % m) + m) % m;
 
@@ -115,14 +115,21 @@ const OurServices = () => {
     }
   }, [animating]);
 
-  const next = () => setIndex((i) => i + 1);
-  const prev = () => setIndex((i) => i - 1);
+  // ✅ only move if total > visibleCards
+  const next = () => {
+    if (total > visibleCards) setIndex((i) => i + 1);
+  };
+
+  const prev = () => {
+    if (total > visibleCards) setIndex((i) => i - 1);
+  };
 
   const realIndex = mod(index - visibleCards, total);
   const progress = total > 1 ? realIndex / (total - 1) : 1;
 
   const barRef = useRef<HTMLDivElement | null>(null);
   const handleBarClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (total <= visibleCards) return; // disable click when ≤4
     const el = barRef.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
@@ -136,8 +143,10 @@ const OurServices = () => {
     <section className="py-16 px-6 md:px-0 bg-white">
       {/* Heading */}
       <div className="text-center">
-        <p className="inline-block border rounded-2xl border-gray-300 shadow-md px-4 py-1 rounded-md text-gray-500
-         uppercase tracking-wide mb-4 bg-white">
+        <p
+          className="inline-block border rounded-2xl border-gray-300 shadow-md px-4 py-1 text-gray-500
+         uppercase tracking-wide mb-4 bg-white"
+        >
           Our Services
         </p>
         <h2
@@ -197,38 +206,40 @@ const OurServices = () => {
         </div>
 
         {/* Controls + Progress */}
-        <div className="mt-6 flex items-center gap-4">
-          <button
-            onClick={prev}
-            className="w-10 h-10 rounded-full bg-sky-900 text-white flex items-center justify-center shadow"
-            aria-label="Previous"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-
-          <button
-            onClick={next}
-            className="w-10 h-10 rounded-full bg-sky-900 text-white flex items-center justify-center shadow"
-            aria-label="Next"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
-
-          {/* Progress bar */}
-          <div className="flex-1">
-            <div
-              ref={barRef}
-              onClick={handleBarClick}
-              className="relative h-[2px] w-full cursor-pointer select-none"
+        {total > visibleCards && ( // show only if more than 4 cards
+          <div className="mt-6 flex items-center gap-4">
+            <button
+              onClick={prev}
+              className="w-10 h-10 rounded-full bg-sky-900 text-white flex items-center justify-center shadow"
+              aria-label="Previous"
             >
-              <div className="absolute inset-0 bg-neutral-300" />
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+
+            <button
+              onClick={next}
+              className="w-10 h-10 rounded-full bg-sky-900 text-white flex items-center justify-center shadow"
+              aria-label="Next"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+
+            {/* Progress bar */}
+            <div className="flex-1">
               <div
-                className="absolute left-0 top-0 h-full transition-all duration-500 bg-sky-900"
-                style={{ width: `${Math.max(progress * 100, 2)}%` }}
-              />
+                ref={barRef}
+                onClick={handleBarClick}
+                className="relative h-[2px] w-full cursor-pointer select-none"
+              >
+                <div className="absolute inset-0 bg-neutral-300" />
+                <div
+                  className="absolute left-0 top-0 h-full transition-all duration-500 bg-sky-900"
+                  style={{ width: `${Math.max(progress * 100, 2)}%` }}
+                />
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

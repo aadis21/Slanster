@@ -87,16 +87,18 @@ const MemberShipLandingPage: React.FC = () => {
       <div className="bg-black/60 text-white py-8 mt-12">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 text-center gap-8 px-6">
           <div>
-            <p className="text-sm md:text-base mb-1">Mentors Ready to Guide</p>
-            <Counter target={200} suffix="+ Industry Experts" />
+            {/* <p className="text-sm md:text-base mb-1">Mentors Ready to Guide</p> */}
+            <p className="text-sm md:text-2xl mb-1">Industry Experts</p>
+            <Counter target={200} suffix="+" />
           </div>
           <div>
-            <p className="text-sm md:text-base mb-1">Sessions Completed</p>
-            <Counter target={10000} suffix="+ Successful Mentorships" />
+            {/* <p className="text-sm md:text-base mb-1">Sessions Completed</p> */}
+            <p className="text-sm md:text-2xl mb-1">Successful Mentorships</p>
+            <Counter target={10000} suffix="+ " />
           </div>
           <div>
-            <p className="text-sm md:text-base mb-1">Learners Benefitted</p>
-            <Counter target={8000} suffix="+ Growth Stories" />
+            <p className="text-sm md:text-2xl mb-1">Success Stories</p>
+            <Counter target={8000} suffix="+ " />
           </div>
         </div>
       </div>

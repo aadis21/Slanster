@@ -51,7 +51,7 @@ const ContactPage = () => {
 
   return (
     <div
-      className={`min-h-screen bg-white flex items-center justify-center text-white ${inter.className}`}
+      className={`min-h-screen bg-white md:py-0 py-10 flex items-center justify-center text-white ${inter.className}`}
     >
       {/* GRID */}
       <div className="w-[95%] md:w-[90%] max-w-7xl mx-auto flex flex-col md:flex-row bg-[#1e3a5f] p-6 rounded-2xl shadow-lg gap-8">

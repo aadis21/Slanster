@@ -137,12 +137,12 @@ const FooterPage = () => {
               <a href="mailto:support@slanster.com">support@slanster.com</a>
               <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
             </li>
-            <li className="relative group cursor-pointer w-fit hover:text-white transition">
+            {/* <li className="relative group cursor-pointer w-fit hover:text-white transition">
               <span>
                 Global Business <br /> Park - Chandigarh, <br /> Punjab 140603
               </span>
               <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
