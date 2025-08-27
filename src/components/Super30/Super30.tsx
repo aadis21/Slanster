@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import ContactModal from "../Header/ContactModal";
 
 const Super30 = () => {
   // Swap these with your local assets under /public/home/
@@ -12,6 +13,8 @@ const Super30 = () => {
   ];
 
   const [index, setIndex] = useState(0);
+    const [openModal, setOpenModal] = useState(false);
+
 
   useEffect(() => {
     if (images.length <= 1) return;
@@ -73,7 +76,10 @@ const Super30 = () => {
             </p>
 
             {/* BUTTON */}
-            <button className="cursor-pointer mt-12 w-full sm:w-2/3 md:w-1/2 bg-[#0f395f] hover:bg-[#0d2f4a] transition-all duration-300 text-white px-6 py-3 rounded-lg flex justify-center items-center space-x-2 sm:space-x-3 text-base sm:text-lg shadow-md group relative animate-bounce">
+            <button
+              className="cursor-pointer mt-12 w-full sm:w-2/3 md:w-1/2 bg-[#0f395f] hover:bg-[#0d2f4a] transition-all duration-300 text-white px-6 py-3 rounded-lg flex justify-center items-center space-x-2 sm:space-x-3 text-base sm:text-lg shadow-md group relative animate-bounce"
+              onClick={() => setOpenModal(true)}
+            >
               <span className="relative z-10">Enroll in Super 30</span>
               <span className="text-lg sm:text-xl transform transition-transform duration-300 group-hover:translate-x-2 relative z-10">
                 →
@@ -110,6 +116,10 @@ const Super30 = () => {
           </div>
         </div>
       </div>
+      {/* modal  */}
+      {openModal && (
+        <ContactModal isOpen={openModal} onClose={() => setOpenModal(false)} />
+      )}
     </div>
   );
 };

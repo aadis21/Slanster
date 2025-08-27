@@ -130,10 +130,10 @@ const Placement: React.FC = () => {
           <div className="pt-1 animate-[fade-up_600ms_ease_220ms_both]">
             <button
               type="button"
-              className="group relative inline-flex items-center gap-2 rounded-xl bg-[#0f395f] px-5 py-2.5 text-white text-sm md:text-[15px] shadow-lg shadow-[#0f395f]/20 transition-transform duration-300 hover:scale-[1.04] focus:outline-none focus:ring-4 focus:ring-[#0f395f]/30"
+              className="group relative inline-flex items-center gap-2 rounded-xl bg-[#0f395f] px-5 py-2.5 text-white text-sm md:text-[15px] shadow-lg shadow-[#0f395f]/20 transition-transform duration-300 hover:scale-[1.04] focus:outline-none focus:ring-4 focus:ring-[#0f395f]/30 cursor-pointer"
               onClick={() => setOpenModal(true)}
             >
-              <span className="relative z-10">Enroll Now</span>
+              <span className="relative z-10 ">Enroll Now</span>
               <span className="relative z-10 text-lg transition-transform duration-300 group-hover:translate-x-1">
                 →
               </span>

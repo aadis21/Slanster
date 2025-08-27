@@ -243,7 +243,11 @@ const Mentor: React.FC = () => {
               personalized guidance to elevate your skills.
             </p>
 
-            <AnimatedButton showArrow className="md:mt-12 mt-5">
+            <AnimatedButton
+              showArrow
+              className="md:mt-12 mt-5"
+              onClick={() => setOpenModal(true)}
+            >
               Get Personalized Advice
             </AnimatedButton>
           </div>

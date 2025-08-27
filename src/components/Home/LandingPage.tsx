@@ -340,20 +340,25 @@
 
 // export default LandingPage;
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import AnimatedButton from "../../../utils/AnimatedButton";
+import ContactModal from "../Header/ContactModal";
 
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
+
 const LandingPage = () => {
+  const [openModal, setOpenModal] = useState(false);
   return (
-    <section className={`${inter.className} relative w-full h-1/2 md:h-screen md:py-0 py-10`}>
+    <section
+      className={`${inter.className} relative w-full h-1/2 md:h-screen md:py-0 py-10`}
+    >
       {/* Background Image */}
       <Image
         src="/framelandingpage.png"
@@ -385,12 +390,20 @@ const LandingPage = () => {
 
           {/* Call to Action Button */}
           <div className="mt-5 sm:mt-6 md:mt-8">
-            <AnimatedButton showArrow className="mt-6 sm:mt-8 w-1/2 text-center justify-center">
+            <AnimatedButton
+              showArrow
+              className="mt-6 sm:mt-8 w-1/2 text-center justify-center"
+              onClick={() => setOpenModal(true)}
+            >
               Get Started
             </AnimatedButton>
           </div>
         </motion.div>
       </div>
+      {/* modal  */}
+      {openModal && (
+        <ContactModal isOpen={openModal} onClose={() => setOpenModal(false)} />
+      )}
     </section>
   );
 };
