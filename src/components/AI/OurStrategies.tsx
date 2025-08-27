@@ -1,4 +1,6 @@
-import React from "react";
+"use client"
+
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { BarChart3, Link, Play, Zap } from "lucide-react";
 
@@ -21,7 +23,25 @@ const strategies = [
   },
 ];
 
+
+const bgImages = [
+  "/AIpage/service_6.webp",
+  "/AIpage/service_7.webp",
+  "/AIpage/service_8.webp",
+  "/AIpage/service_9.webp",
+  "/AIpage/service_10.webp",
+];
+
 const OurStrategies = () => {
+   const [currentIndex, setCurrentIndex] = useState(0);
+
+   // automatic slideshow
+   useEffect(() => {
+     const interval = setInterval(() => {
+       setCurrentIndex((prev) => (prev + 1) % bgImages.length);
+     }, 2000); // 4 seconds delay
+     return () => clearInterval(interval);
+   }, []);
   return (
     <div className="bg-white">
       <div className="max-w-7xl mx-auto min-h-screen md:py-12 py-6 md:px-0 px-4  flex flex-col items-center">
@@ -93,23 +113,36 @@ const OurStrategies = () => {
         {/* Wave Image with Floating Badge */}
         <div className="mt-12 relative w-full max-w-6xl rounded-xl overflow-hidden shadow-lg bg-[#084c74]">
           {/* shadow background */}
-          <Image
+          {/* <Image
             src="/AIlandingPage/wave/bg-shadow.png"
             alt="Wave Design"
             width={1200}
             height={600}
             className="w-full object-cover z-10"
-          />
+          /> */}
 
+          <div className="relative w-full h-[400px] sm:h-[500px]">
+            {bgImages.map((src, i) => (
+              <Image
+                key={i}
+                src={src}
+                alt="Wave Design"
+                fill
+                className={`object-cover transition-opacity duration-1000 ease-in-out ${
+                  i === currentIndex ? "opacity-100" : "opacity-0"
+                }`}
+              />
+            ))}
+          </div>
           {/* wave images on top of shadow */}
-          <Image
+          {/* <Image
             src="/AIlandingPage/wave/wave-1.png"
             alt="Wave 1"
             width={1200}
             height={600}
             className="absolute top-0 right-0 w-full object-cover opacity-80 z-20"
-          />
-          <Image
+          /> */}
+          {/* <Image
             src="/AIlandingPage/wave/wave-2.png"
             alt="Wave 2"
             width={1200}
@@ -122,7 +155,7 @@ const OurStrategies = () => {
             width={1200}
             height={600}
             className="absolute top-20 right-20 w-full object-cover opacity-60 z-40"
-          />
+          /> */}
 
           {/* center text */}
           {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50">

@@ -1,8 +1,25 @@
-import React from "react";
+"use client"
+
+import React, { useEffect, useState } from "react";
 import { Play } from "lucide-react";
-import Image from "next/image";
+// import Image from "next/image";
 
 const AiLandingPage = () => {
+    const images = [
+      "/AIpage/service_3.webp",
+      "/AIpage/service_4.webp",
+      "/AIpage/service_5.webp",
+      "/AIpage/service_6.webp",
+    ];
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % images.length);
+      }, 2000); // 4 sec delay
+      return () => clearInterval(interval);
+    }, [images.length]);
   return (
     <div className="w-full min-h-screen md:py-12 py-6 md:px-0 px-4 bg-white flex flex-col items-center justify-center ">
       {/* Tag */}
@@ -59,10 +76,19 @@ const AiLandingPage = () => {
       <div className="mt-12 w-full max-w-7xl px-2 sm:px-4">
         <div className="bg-gradient-to-br from-[#084c74] to-[#084c74] rounded-xl p-6 sm:p-10 flex items-center justify-center relative overflow-hidden h-[350px] sm:h-[450px] lg:h-[500px]">
           {/* Grid effect */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.3)_1px,transparent_1px)] bg-[size:30px_30px] sm:bg-[size:40px_40px]"></div>
+          {/* <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.3)_1px,transparent_1px)] bg-[size:30px_30px] sm:bg-[size:40px_40px]"></div> */}
+
+          <div
+            className="absolute inset-0 transition-all duration-1000 ease-in-out"
+            style={{
+              backgroundImage: `url(${images[currentIndex]}), radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px)`,
+              backgroundSize: "cover, 30px 30px",
+              backgroundPosition: "center, center",
+            }}
+          ></div>
 
           {/* Logo overlays in diagonal line with gap */}
-          <Image
+          {/* <Image
             src="/AILandingPage/Ellipse.png"
             alt="Logo"
             className="absolute top-12 right-12 w-16 h-16 sm:w-20 sm:h-20 opacity-80"
@@ -84,7 +110,7 @@ const AiLandingPage = () => {
             className="absolute bottom-12 left-12 w-24 h-24 sm:w-32 sm:h-32 opacity-80"
             width={128}
             height={128}
-          />
+          /> */}
 
           {/* Video Button */}
           {/* <div className="absolute bg-gray-400 rounded-full p-2">
