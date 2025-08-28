@@ -6,10 +6,10 @@ import { Play } from "lucide-react";
 
 const AiLandingPage = () => {
     const images = [
-      "/AIpage/service_3.webp",
-      "/AIpage/service_4.webp",
-      "/AIpage/service_5.webp",
-      "/AIpage/service_6.webp",
+      "/AIpage/service_3.png",
+      "/AIpage/service_4.png",
+      "/AIpage/service_5.png",
+      "/AIpage/service_6.png",
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);

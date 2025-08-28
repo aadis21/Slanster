@@ -26,7 +26,7 @@ const strategies = [
 
 const bgImages = [
   "/AIpage/service_6.webp",
-  "/AIpage/service_7.webp",
+  "/AIpage/service_7.png",
   "/AIpage/service_8.webp",
   "/AIpage/service_9.webp",
   "/AIpage/service_10.webp",
