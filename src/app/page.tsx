@@ -34,7 +34,7 @@ export default function Pgae() {
       {/* <FlipCard /> */}
 
       <LetsWork />
-      <FAQ />
+      {/* <FAQ /> */}
     </>
   );
 }
