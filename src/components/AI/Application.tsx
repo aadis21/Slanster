@@ -234,7 +234,7 @@ const Application: React.FC = () => {
       {/* --- Background Layer: animated grid + radial glows --- */}
       <motion.div
         aria-hidden
-        style={{ opacity, y: translate as any }}
+        style={{ opacity, y: translate }}
         className="pointer-events-none absolute inset-0"
       >
         {/* gradient glows */}
@@ -343,10 +343,10 @@ const Application: React.FC = () => {
             transition={{ type: "spring", stiffness: 220, damping: 28 }}
           >
             <AnimatePresence mode="popLayout" initial={false}>
-            {displayedTestimonials.map((item, i) => (
-              <AnimatedCard key={item.headers + i} item={item} />
-            ))}
-          </AnimatePresence>
+              {displayedTestimonials.map((item, i) => (
+                <AnimatedCard key={item.headers + i} item={item} />
+              ))}
+            </AnimatePresence>
           </motion.div>
         </div>
 
