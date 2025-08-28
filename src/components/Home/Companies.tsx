@@ -90,8 +90,7 @@ const Companies = () => {
           className="text-center font-inter text-gray-900
              text-[16px] sm:text-[24px] md:text-[32px] lg:text-[40px] xl:text-[40px] 2xl:text-[40px]"
         >
-          Trusted by <span className="text-[#084c74]">200+</span> Companies
-          Worldwide
+          Trusted by <span className="text-[#084c74]">200+</span> Companies Worldwide
         </div>
 
         <div className="flex justify-center xsm:gap-3 xsm:justify-around ">

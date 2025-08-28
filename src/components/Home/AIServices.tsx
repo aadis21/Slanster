@@ -81,9 +81,14 @@ const AIServices = () => {
             AI Services
           </h2>
 
-          <h2 className="text-3xl md:text-5xl text-gray-900 mt-4">
+          <h2
+            className="text-center font-inter text-gray-900 
+                     text-[20px] sm:text-[28px] md:text-[36px] lg:text-[42px]"
+          >
             Full-spectrum of{" "}
-            <span className="text-blue-600">AI-driven Solutions</span>
+            <span className="text-blue-600 font-inter text-[20px] sm:text-[28px] md:text-[36px] lg:text-[42px]">
+              AI-driven Solutions
+            </span>
           </h2>
 
           <p className="text-lg text-gray-700 mt-2">

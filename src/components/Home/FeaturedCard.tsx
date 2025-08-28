@@ -43,7 +43,7 @@ const FeaturedCard = () => {
     >
       {/* Heading */}
       <h2
-        className="text-center font-inter text-white font-semibold 
+        className="text-center font-inter text-white 
                      text-[20px] sm:text-[28px] md:text-[36px] lg:text-[42px]"
       >
         Explore Our Featured Industries
