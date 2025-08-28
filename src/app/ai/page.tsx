@@ -16,7 +16,7 @@ const Page = () => {
         <NeurosExperience />
         {/* <BusinessAnalytics /> */}
         <Application />
-        <FAQ />
+        {/* <FAQ /> */}
     </div>
   )
 }
