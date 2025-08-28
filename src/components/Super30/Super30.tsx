@@ -100,7 +100,7 @@ const Super30 = () => {
           </div>
           <div>
             <h3 className="text-3xl sm:text-4xl font-bold text-gray-900">
-              99%
+              93%
             </h3>
             <p className="text-gray-600 mt-2 text-sm sm:text-base">
               Placement success rate
@@ -108,7 +108,7 @@ const Super30 = () => {
           </div>
           <div>
             <h3 className="text-3xl sm:text-4xl font-bold text-gray-900">
-              5/5
+              4.8/5
             </h3>
             <p className="text-gray-600 mt-2 text-sm sm:text-base">
               Learner satisfaction score

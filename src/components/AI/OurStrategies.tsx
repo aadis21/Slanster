@@ -29,7 +29,7 @@ const bgImages = [
   "/AIpage/service_7.png",
   "/AIpage/service_8.png",
   "/AIpage/service_9.png",
-  "/AIpage/service_10.webp",
+  "/AIpage/service_10.png",
 ];
 
 const OurStrategies = () => {

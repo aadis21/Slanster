@@ -19,7 +19,7 @@ export default function Pgae() {
   return (
     <>
       <LandingPage />
-      <Companies />
+      {/* <Companies /> */}
       <OurServices />
       <FeaturedCard />
       <Success />
@@ -31,7 +31,7 @@ export default function Pgae() {
       <Super30 />
       <Placement />
       <Brilliance />
-      <FlipCard />
+      {/* <FlipCard /> */}
 
       <LetsWork />
       <FAQ />

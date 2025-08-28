@@ -62,10 +62,9 @@ const services: Service[] = [
 ];
 
 const visibleCards = 4; // always show 4 cards
-
 const mod = (n: number, m: number) => ((n % m) + m) % m;
 
-const OurServices = () => {
+const OurServices: React.FC = () => {
   const total = services.length;
   const head = services.slice(0, visibleCards);
   const tail = services.slice(-visibleCards);
@@ -78,13 +77,22 @@ const OurServices = () => {
   const firstCardRef = useRef<HTMLDivElement | null>(null);
   const [stepPx, setStepPx] = useState(0);
 
+  // Drag/swipe state
+  const [dragPx, setDragPx] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+  const isDragging = useRef(false);
+
   const measure = () => {
     const cardEl = firstCardRef.current;
     const trackEl = trackRef.current;
     if (!cardEl || !trackEl) return;
+
     const cardWidth = cardEl.offsetWidth;
-    const styles = window.getComputedStyle(trackEl);
+    const styles: CSSStyleDeclaration = window.getComputedStyle(trackEl);
+
+    // ✅ properly typed: no `any`
     const gap = parseFloat(styles.gap || styles.columnGap || "0");
+
     setStepPx(cardWidth + gap);
   };
 
@@ -115,11 +123,9 @@ const OurServices = () => {
     }
   }, [animating]);
 
-  // ✅ only move if total > visibleCards
   const next = () => {
     if (total > visibleCards) setIndex((i) => i + 1);
   };
-
   const prev = () => {
     if (total > visibleCards) setIndex((i) => i - 1);
   };
@@ -129,7 +135,7 @@ const OurServices = () => {
 
   const barRef = useRef<HTMLDivElement | null>(null);
   const handleBarClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (total <= visibleCards) return; // disable click when ≤4
+    if (total <= visibleCards) return;
     const el = barRef.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
@@ -139,14 +145,42 @@ const OurServices = () => {
     setIndex(targetIdx);
   };
 
+  // Touch/Swipe handlers (mobile)
+  const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (total <= visibleCards) return;
+    isDragging.current = true;
+    touchStartX.current = e.touches[0].clientX;
+    setAnimating(false);
+  };
+
+  const onTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (!isDragging.current || touchStartX.current === null) return;
+    const currentX = e.touches[0].clientX;
+    const delta = currentX - touchStartX.current;
+    const maxDrag = stepPx * 0.9;
+    const clamped = Math.max(Math.min(delta, maxDrag), -maxDrag);
+    setDragPx(clamped);
+  };
+
+  const onTouchEnd = () => {
+    if (!isDragging.current) return;
+    isDragging.current = false;
+    const delta = dragPx;
+    setDragPx(0);
+    setAnimating(true);
+
+    const threshold = 40; // px swipe threshold
+    if (Math.abs(delta) > threshold) {
+      if (delta < 0) next();
+      else prev();
+    }
+  };
+
   return (
     <section className="py-16 px-6 md:px-0 bg-white">
       {/* Heading */}
       <div className="text-center">
-        <p
-          className="inline-block border rounded-2xl border-gray-300 shadow-md px-4 py-1 text-gray-500
-         uppercase tracking-wide mb-4 bg-white"
-        >
+        <p className="inline-block border rounded-2xl border-gray-300 shadow-md px-4 py-1 text-gray-500 uppercase tracking-wide mb-4 bg-white">
           Our Services
         </p>
         <h2
@@ -159,18 +193,25 @@ const OurServices = () => {
 
       {/* Row slider */}
       <div className="relative max-w-7xl mx-auto mt-12">
-        <div className="overflow-hidden">
+        <div
+          className="overflow-hidden"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
           <div
             ref={trackRef}
             className={`flex gap-8 ${
               animating ? "transition-transform duration-500 ease-out" : ""
             }`}
             style={{
-              transform: `translateX(${-(index - visibleCards) * stepPx}px)`,
+              transform: `translateX(${
+                -(index - visibleCards) * stepPx + dragPx
+              }px)`,
             }}
             onTransitionEnd={handleTransitionEnd}
           >
-            {looped?.map((service, i) => (
+            {looped.map((service, i) => (
               <div
                 key={`${service.title}-${i}`}
                 ref={i === 0 ? firstCardRef : undefined}
@@ -189,14 +230,10 @@ const OurServices = () => {
                   {service.icon}
                 </div>
                 <div className="relative z-10 text-left mt-auto">
-                  <h3
-                    className={`${inter.className} text-lg font-normal text-yellow-400 mb-2`}
-                  >
+                  <h3 className={`${inter.className} text-lg font-normal text-yellow-400 mb-2`}>
                     {service.title}
                   </h3>
-                  <p
-                    className={`${inter.className} text-gray-200 text-sm font-normal`}
-                  >
+                  <p className={`${inter.className} text-gray-200 text-sm font-normal`}>
                     {service.desc}
                   </p>
                 </div>
@@ -205,8 +242,8 @@ const OurServices = () => {
           </div>
         </div>
 
-        {/* Controls + Progress */}
-        {total > visibleCards && ( // show only if more than 4 cards
+        {/* Controls + Progress (progress hidden on mobile) */}
+        {total > visibleCards && (
           <div className="mt-6 flex items-center gap-4">
             <button
               onClick={prev}
@@ -224,12 +261,13 @@ const OurServices = () => {
               <ChevronRight className="w-5 h-5" />
             </button>
 
-            {/* Progress bar */}
-            <div className="flex-1">
+            {/* Progress bar — hidden on mobile */}
+            <div className="flex-1 hidden md:block">
               <div
                 ref={barRef}
                 onClick={handleBarClick}
                 className="relative h-[2px] w-full cursor-pointer select-none"
+                aria-label="Slider progress"
               >
                 <div className="absolute inset-0 bg-neutral-300" />
                 <div
