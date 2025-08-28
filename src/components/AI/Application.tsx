@@ -36,51 +36,52 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    headers: "Predictive Power",
-    text: "Project management is smoother with Neuros. Its dashboards provide a clear view of progress and areas of improvement.",
-    role: "Finance, Retail, E-commerce",
+    headers: "AI-Powered Chat Support Bots",
+    text: "Handle FAQs, resolve issues, and escalate to human agents when needed—all with NLP and sentiment-aware conversations.",
+    role: "E-commerce, Healthcare, Banking",
   },
   {
-    headers: "Connect with Ease",
-    text: "Neuros's real-time data has been crucial in refining our products. Its collaborative features ensure our team is always aligned.",
-    role: "Finance, Retail, E-commerce",
+    headers: "AI Web Crawling & Competitive Intelligence",
+    text: "Stay ahead with real-time competitor insights. Scrapes pricing, services, and product data to generate actionable reports.",
+    role: "Market Research, Consulting Firms",
   },
   {
-    headers: "Visualize Your Success",
-    text: "Real-time data processing with Neuros has changed how we make decisions. It's a must-have tool for modern businesses.",
-    role: "Finance, Retail, E-commerce",
+    headers: "Voice AI – Calling Bots",
+    text: "Automate outbound/inbound calls for reminders, collections, surveys, and lead generation with natural, human-like voice.",
+    role: "Telecom, Insurance, BPO",
   },
   {
-    headers: "Stay Updated, Always",
-    text: "Thanks to Neuros, our workflows are far more efficient and transparent. It’s a powerful tool for scaling companies.",
-    role: "Finance, Retail, E-commerce",
+    headers: "Smart Resume Analyzer & Interview Bot",
+    text: "Screen resumes, shortlist candidates, and conduct first-round AI-driven interviews via chat or voice.",
+    role: "HR Tech, Staffing Agencies",
   },
   {
-    headers: "Your Data's Safe Haven",
-    text: "Project management is smoother with Neuros. Its dashboards provide a clear view of progress and areas of improvement.",
-    role: "Finance, Retail, E-commerce",
+    headers: "AI Proposal Generator from RFPs",
+    text: "Upload an RFP → get a polished, tailored proposal in minutes. Extracts requirements, drafts responses, and formats professionally.",
+    role: "IT Consulting, Audit, Government Tenders",
   },
   {
-    headers: "Collaborate and Conquer",
-    text: "Neuros's real-time data has been crucial in refining our products. Its collaborative features ensure our team is always aligned.",
-    role: "Finance, Retail, E-commerce",
+    headers: "AI Document Summarizer & Insight Extractor",
+    text: "Upload contracts, reports, or compliance docs → get instant summaries with risks, obligations, and next steps.",
+    role: "Legal, Compliance, Procurement",
   },
   {
-    headers: "Analytics Redefined",
-    text: "Neuros allows us to make data-driven decisions faster than ever before.",
-    role: "Finance, Retail, E-commerce",
+    headers: "AI-Based Inventory & Sales Recommender",
+    text: "Predict demand, optimize stock, and suggest sales strategies based on real-time inventory and customer behavior.",
+    role: "Retail, Pharma Stores",
+  },
+  {
+    headers: "AI Social Media Integrator & Content Engine",
+    text: "Generate, schedule, and post content automatically across platforms with hashtags, SEO, and engagement analytics.",
+    role: "Personal Branding, SMBs, Influencer Marketing, EdTech",
   },
   {
     headers: "Seamless Integration",
     text: "Integrates with our existing tools effortlessly, saving time and resources.",
-    role: "Finance, Retail, E-commerce",
-  },
-  {
-    headers: "Smart Collaboration",
-    text: "Team communication and project tracking has never been easier with Neuros.",
-    role: "Finance, Retail, E-commerce",
+    role: "All Industries",
   },
 ];
+
 
 
 const Application: React.FC = () => {
