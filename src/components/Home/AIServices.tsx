@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, animate, useTransform } from "framer-motion";
 import { FaBrain, FaIndustry, FaUsers, FaCogs, FaChartLine } from "react-icons/fa";
 import { Inter } from "next/font/google";
 
@@ -62,14 +62,29 @@ const AIServices = () => {
     return () => window.removeEventListener("resize", updateSize);
   }, []);
 
-  const ICON_BOX = 56;
-  const BORDER_PX = 2;
+  // ====== ICON OVERLAP TUNING ======
+  const ICON_BOX = 56;   // badge size
+  const BORDER_PX = 2;   // outer circle border width (border-2)
+  const OVERLAP = 4;     // +ve => thoda bahar, 0 => bilkul stroke par
+  // =================================
+
+  // ====== ORBIT (CIRCLE MOVE) ======
+  const orbit = useMotionValue(0);
+  const counterOrbit = useTransform(orbit, (v) => -v); // icons upright
+
+  useEffect(() => {
+    const controls = animate(orbit, 360, {
+      duration: 20,           // speed (sec per full round)
+      ease: "linear",
+      repeat: Infinity,
+    });
+    return () => controls.stop();
+  }, [orbit]);
+  // =================================
 
   return (
     <div className="bg-white">
-      <section
-        className={`mx-auto max-w-7xl py-16 md:px-0 px-6 ${inter.className}`}
-      >
+      <section className={`mx-auto max-w-7xl py-16 md:px-0 px-6 ${inter.className}`}>
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
@@ -81,19 +96,11 @@ const AIServices = () => {
             AI Services
           </h2>
 
-          <h2
-            className="text-center font-inter text-gray-900 
-                     text-[20px] sm:text-[28px] md:text-[36px] lg:text-[42px]"
-          >
-            Full-spectrum of{" "}
-            <span className="text-blue-600 font-inter text-[20px] sm:text-[28px] md:text-[36px] lg:text-[42px]">
-              AI-driven Solutions
-            </span>
+          <h2 className="text-3xl md:text-5xl text-gray-900 mt-4">
+            Full-spectrum of <span className="text-blue-600">AI-driven Solutions</span>
           </h2>
 
-          <p className="text-lg text-gray-700 mt-2">
-            Engineered for Global Impact
-          </p>
+          <p className="text-lg text-gray-700 mt-2">Engineered for Global Impact</p>
         </motion.div>
 
         {/* Buttons */}
@@ -144,23 +151,22 @@ const AIServices = () => {
           <div className="flex-1 flex justify-center hidden md:flex">
             <div
               ref={ringRef}
-              className="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center"
+              className="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center overflow-visible"
             >
               {/* Outer circle */}
               <div className="absolute w-full h-full rounded-full border-2 border-gray-200" />
 
-              {/* Rotating icons */}
+              {/* Rotating (orbiting) icons */}
               <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+                style={{ rotate: orbit }}
                 className="absolute inset-0"
               >
                 {circleIcons.map((item, i) => {
                   const angle = (i / circleIcons.length) * 2 * Math.PI;
                   const center = ringSize / 2;
 
-                  // ✅ icon pura circle ke line ke uppar (andar se touch kare)
-                  const radius = center - ICON_BOX / 2 - BORDER_PX / 2;
+                  // Badge center exactly on the stroke; OVERLAP adjusts in/out
+                  const radius = center - BORDER_PX / 2 + OVERLAP;
 
                   const x = center + radius * Math.cos(angle) - ICON_BOX / 2;
                   const y = center + radius * Math.sin(angle) - ICON_BOX / 2;
@@ -176,9 +182,13 @@ const AIServices = () => {
                         height: ICON_BOX,
                       }}
                     >
-                      <div className="w-full h-full flex items-center justify-center bg-white rounded-full shadow-lg border border-gray-200 text-blue-600">
+                      {/* Counter-rotate so icon stays upright while orbiting */}
+                      <motion.div
+                        style={{ rotate: counterOrbit }}
+                        className="w-full h-full flex items-center justify-center bg-white rounded-full shadow-lg border border-gray-200 text-blue-600"
+                      >
                         {React.cloneElement(item.icon, { size: 28 })}
-                      </div>
+                      </motion.div>
                     </div>
                   );
                 })}
