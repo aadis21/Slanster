@@ -296,8 +296,8 @@ function Success() {
       <header className="text-center">
         <div className="md:max-w-7xl mx-auto">
           <h2
-            className={`${inter.className} text-center font-normal text-gray-900 
-              text-[16px] sm:text-[24px] md:text-[32px] lg:text-[40px] xl:text-[40px] 2xl:text-[40px]`}
+            className="text-center font-inter text-gray-900 
+                     text-[20px] sm:text-[28px] md:text-[36px] lg:text-[42px]"
           >
             Driving Success With Next-Gen Technologies
           </h2>
