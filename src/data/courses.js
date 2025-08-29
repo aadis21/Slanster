@@ -88,7 +88,6 @@ export const courses = [
 ];
 
 
-// courses.js
 
 // courses.js
 

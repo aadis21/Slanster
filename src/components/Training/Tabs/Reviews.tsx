@@ -1,34 +1,30 @@
+"use client";
+import Image from "next/image";
 import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 
-const Reviews = () => {
+interface Review {
+  name: string;
+  comment: string;
+  rating: number;
+  avatar?: string;
+  date?: string;
+}
+
+interface ReviewsProps {
+  reviews: Review[];
+}
+
+const Reviews: React.FC<ReviewsProps> = ({ reviews }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
-  const reviews = [
-    {
-      id: 1,
-      name: "Laura Hipster",
-      date: "October 03, 2022",
-      comment:
-        "Quisque nec non amet quis. Varius tellus justo odio parturient mauris curabitur lorem in. Pulvinar sit ultrices mi ut eleifend luctus ut. Id sed faucibus bibendum augue id cras purus. At eget euismod cursus non. Molestie dignissim sed volutpat feugiat vel.",
-      avatar: "https://i.pravatar.cc/100?img=1", // sample avatar
-    },
-    {
-      id: 2,
-      name: "Laura Hipster",
-      date: "October 03, 2022",
-      comment:
-        "Quisque nec non amet quis. Varius tellus justo odio parturient mauris curabitur lorem in. Pulvinar sit ultrices mi ut eleifend luctus ut. Id sed faucibus bibendum augue id cras purus. At eget euismod cursus non. Molestie dignissim sed volutpat feugiat vel.",
-      avatar: "https://i.pravatar.cc/100?img=2",
-    },
-    {
-      id: 3,
-      name: "Laura Hipster",
-      date: "October 03, 2022",
-      comment:
-        "Quisque nec non amet quis. Varius tellus justo odio parturient mauris curabitur lorem in. Pulvinar sit ultrices mi ut eleifend luctus ut. Id sed faucibus bibendum augue id cras purus. At eget euismod cursus non. Molestie dignissim sed volutpat feugiat vel.",
-      avatar: "https://i.pravatar.cc/100?img=3",
-    },
+  // Static rating summary (can make dynamic later)
+  const ratingSummary = [
+    { stars: 5, percent: 90 },
+    { stars: 4, percent: 5 },
+    { stars: 3, percent: 2 },
+    { stars: 2, percent: 2 },
+    { stars: 1, percent: 1 },
   ];
 
   return (
@@ -60,13 +56,7 @@ const Reviews = () => {
 
       {/* Rating Bars */}
       <div className="mt-6 space-y-2">
-        {[
-          { stars: 5, percent: 90 },
-          { stars: 4, percent: 5 },
-          { stars: 3, percent: 2 },
-          { stars: 2, percent: 2 },
-          { stars: 1, percent: 1 },
-        ].map((item, idx) => (
+        {ratingSummary.map((item, idx) => (
           <div key={idx} className="flex items-center gap-3">
             <span className="flex items-center gap-1 text-sm w-14">
               {item.stars} <FaStar className="text-yellow-400" />
@@ -84,20 +74,37 @@ const Reviews = () => {
 
       {/* Reviews List */}
       <div className="mt-8 space-y-6">
-        {reviews.map((review) => (
+        {reviews.map((review, index) => (
           <div
-            key={review.id}
+            key={index}
             className="border-b pb-6 flex flex-col sm:flex-row sm:items-start gap-4"
           >
-            <img
-              src={review.avatar}
+            <Image
+              src={`https://i.pravatar.cc/100?img=${index + 1}`}
               alt={review.name}
               className="w-12 h-12 rounded-full object-cover"
+              width={200}
+              height={200}
             />
+
             <div className="flex-1">
               <div className="flex items-center justify-between">
                 <h4 className="font-semibold">{review.name}</h4>
-                <span className="text-sm text-gray-500">{review.date}</span>
+                <span className="text-sm text-gray-500">
+                  {review.date || "Recently"}
+                </span>
+              </div>
+              <div className="flex mt-1">
+                {Array(5)
+                  .fill(null)
+                  .map((_, i) => (
+                    <FaStar
+                      key={i}
+                      className={`${
+                        i < review.rating ? "text-yellow-400" : "text-gray-300"
+                      } w-4 h-4`}
+                    />
+                  ))}
               </div>
               <p className="text-gray-600 text-sm mt-2">{review.comment}</p>
               <button className="mt-2 text-sm text-red-500 hover:underline">
