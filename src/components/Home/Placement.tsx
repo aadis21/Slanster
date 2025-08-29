@@ -22,7 +22,7 @@ const inter = Inter({ subsets: ["latin"], weight: ["400", "600", "700"] });
 const TypeLoopWord: React.FC<{
   text: string;
   speed?: number; // ms between letters
-  hold?: number;  // ms to hold after full word
+  hold?: number; // ms to hold after full word
   className?: string;
 }> = ({ text, speed = 110, hold = 1200, className = "" }) => {
   const [i, setI] = useState(0);
@@ -56,14 +56,14 @@ const ALL_LOGOS = [
   { src: logo9, alt: "ServiceNow" },
 ];
 
-const VISIBLE_SLOTS = 9;     // 3x3
-const SWITCH_MS = 2600;      // per-slot change time
-const STAGGER_MS = 120;      // stagger between slots
+const VISIBLE_SLOTS = 9; // 3x3
+const SWITCH_MS = 2600; // per-slot change time
+const STAGGER_MS = 120; // stagger between slots
 
 const Placement: React.FC = () => {
   const [openModal, setOpenModal] = useState(false);
 
-  // ---- rotating logos across slots (if you want plain static, remove this block & use ALL_LOGOS directly) ----
+  // rotating logos
   const [base, setBase] = useState(0);
   useEffect(() => {
     const t = setInterval(() => setBase((b) => (b + 1) % ALL_LOGOS.length), SWITCH_MS);
@@ -96,7 +96,7 @@ const Placement: React.FC = () => {
           />
         </div>
 
-        {/* LEFT – heading with looping typewriter on "Commitment" */}
+        {/* LEFT – heading with updated content */}
         <div className="flex flex-col justify-center gap-4 md:gap-5">
           <h2 className="font-sans text-[26px] sm:text-[32px] md:text-[38px] font-bold leading-[1.15] tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#0f395f] to-[#0f6fa8]">
@@ -108,22 +108,18 @@ const Placement: React.FC = () => {
           </h2>
 
           <p className="font-sans text-gray-700 text-[14px] sm:text-[15px] md:text-[16px] animate-[fade-up_600ms_ease_100ms_both]">
-            Join our exclusive{" "}
-            <span className="font-semibold">Super 30 Batch</span> and master:
+            Be part of our exclusive <span className="font-semibold">Super 30 Batch</span> and gain hands-on expertise through live projects:
           </p>
 
           <ol className="font-sans space-y-2.5 text-gray-700 text-[14px] sm:text-[15px] md:text-[16px] animate-[fade-up_600ms_ease_160ms_both] list-decimal list-inside">
             <li>
-              <span className="font-semibold">Consulting Skills</span> —
-              Frameworks used by the Big 4
+              <span className="font-semibold">Consulting Skills</span> — Problem-solving with proven Big 4 frameworks
             </li>
             <li>
-              <span className="font-semibold">Tech Skills</span> — AI,
-              Cybersecurity & Cloud FinOps
+              <span className="font-semibold">Tech Skills</span> — AI, Cybersecurity & Cloud FinOps for future-ready careers
             </li>
             <li>
-              <span className="font-semibold">Business Relationship</span> —
-              Storytelling, client comms & networking
+              <span className="font-semibold">Business Relationship</span> — Storytelling, communication & networking mastery
             </li>
           </ol>
 
@@ -144,7 +140,7 @@ const Placement: React.FC = () => {
           </div>
         </div>
 
-        {/* RIGHT – 3x3 grid; each slot cross-fades next logo in loop */}
+        {/* RIGHT – 3x3 grid with rotating logos */}
         <div className="relative grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-6 sm:gap-x-8 sm:gap-y-8 place-items-center">
           {windowLogos.map((l, i) => {
             const k = `${i}-${l.alt}-${base}`;
@@ -174,7 +170,6 @@ const Placement: React.FC = () => {
 
       {/* single style block only */}
       <style jsx>{`
-        /* Cursor blink for typewriter */
         .cursor {
           display: inline-block;
           margin-left: 2px;
@@ -191,8 +186,6 @@ const Placement: React.FC = () => {
             opacity: 0;
           }
         }
-
-        /* fade-in content */
         @keyframes fade-up {
           0% {
             opacity: 0;
@@ -203,8 +196,6 @@ const Placement: React.FC = () => {
             transform: translateY(0) scale(1);
           }
         }
-
-        /* logo swap animation */
         .fadeSwap {
           animation: fadeSwap ${SWITCH_MS - 200}ms ease both;
         }
@@ -230,9 +221,7 @@ const Placement: React.FC = () => {
         }
       `}</style>
 
-      {openModal && (
-        <ContactModal isOpen={openModal} onClose={() => setOpenModal(false)} />
-      )}
+      {openModal && <ContactModal isOpen={openModal} onClose={() => setOpenModal(false)} />}
     </section>
   );
 };
