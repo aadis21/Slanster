@@ -3,7 +3,7 @@ import AIServices from "@/components/Home/AIServices";
 import Brilliance from "@/components/Home/Brilliance";
 import Companies from "@/components/Home/Companies";
 import FeaturedCard from "@/components/Home/FeaturedCard";
-import FlipCard from "@/components/Home/FlipCard";
+import FlipCard from "@/components/About/FlipCard";
 // import ITExpert from "@/components/Home/ITExpert";
 import ITPartners from "@/components/Home/ITPartners";
 import LandingPage from "@/components/Home/LandingPage";
