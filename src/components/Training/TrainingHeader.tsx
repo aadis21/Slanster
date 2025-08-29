@@ -9,20 +9,34 @@ import FAQs from "./Tabs/FAQs";
 import Reviews from "./Tabs/Reviews";
 import EnrollModal from "./EnrollModal";
 
-
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-const tabComponents: Record<string, React.FC> = {
-  Overview: Overview,
-  Curriculum: Curriculum,
-  FAQs: FAQs,
-  Reviews: Reviews,
+// type for course props
+type Course = {
+  id: number;
+  title: string;
+  desc: string;
+  duration: string;
+  students: string;
+  img: string;
+  syllabus: string[];
 };
 
-const TrainingHeader = () => {
+interface TrainingHeaderProps {
+  course: Course;
+}
+
+const tabComponents: Record<string, React.FC> = {
+  Overview,
+  Curriculum,
+  FAQs,
+  Reviews,
+};
+
+const TrainingHeader: React.FC<TrainingHeaderProps> = ({ course }) => {
   const [activeTab, setActiveTab] = useState("Curriculum");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -39,7 +53,7 @@ const TrainingHeader = () => {
             transition={{ duration: 0.6 }}
             className="text-2xl md:text-4xl font-semibold mb-4 w-full md:w-[70%] leading-snug tracking-wider md:px-0 px-2"
           >
-            The Ultimate Guide To The Best WordPress LMS Plugin
+            {course.title}
           </motion.h2>
 
           <motion.h2
@@ -48,11 +62,10 @@ const TrainingHeader = () => {
             transition={{ duration: 0.6 }}
             className="text-md md:text-md md:mt-10 font-inter flex md:space-x-4 md:px-0 px-2"
           >
-            <span>2 Weeks</span>
-            <span> · 156 Students</span>
+            <span>{course.duration}</span>
+            <span> · {course.students}</span>
             <span>· All levels </span>
-            <span>· 20 Lessons </span>
-            <span>· 3 Quizzes</span>
+            <span>· {course.syllabus.length} Lessons </span>
           </motion.h2>
         </div>
       </div>
@@ -69,8 +82,8 @@ const TrainingHeader = () => {
           >
             <div className="relative w-full">
               <Image
-                src="/TrainingImg.png"
-                alt="LMS illustration"
+                src={course.img}
+                alt={course.title}
                 width={400}
                 height={220}
                 className="w-full h-60 object-cover"

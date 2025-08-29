@@ -3,61 +3,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Calendar, Users } from "lucide-react";
 import Image from "next/image";
-import { useRouter } from "next/navigation"; // ✅ import router
-
-const courses = [
-  {
-    id: 1,
-    title: "ITGC, IT Audit & Cyber Assessment",
-    desc: "Understand IT General Controls, plan IT audits, assess cyber risks, and report findings with practical checklists........",
-    duration: "2 Weeks",
-    students: "156 Students",
-    img: "/TrainingImg.png",
-  },
-  {
-    id: 2,
-    title: "IT Asset Management (SAM)",
-    desc: "Master software & hardware lifecycle, license compliance, audits, and optimization using SAM best practices........",
-    duration: "2 Weeks",
-    students: "156 Students",
-    img: "/TrainingImg.png",
-  },
-  {
-    id: 3,
-    title: "ESG & Sustainability",
-    desc: "Learn ESG frameworks, materiality, disclosures, and data tracking to drive sustainable business outcomes........",
-    duration: "3 Weeks",
-    students: "220 Students",
-    img: "/TrainingImg.png",
-  },
-  {
-    id: 4,
-    title: "Digital Risk & Compliance",
-    desc: "Manage digital risks across cloud, data, and apps; align with policies, controls, and regulatory requirements........",
-    duration: "2 Weeks",
-    students: "190 Students",
-    img: "/TrainingImg.png",
-  },
-  {
-    id: 5,
-    title: "Entrepreneurship & Startup Innovation",
-    desc: "Validate ideas, build MVPs, craft GTM, and pitch to stakeholders with lean startup and innovation tools........",
-    duration: "4 Weeks",
-    students: "320 Students",
-    img: "/TrainingImg.png",
-  },
-  {
-    id: 6,
-    title: "Data Privacy & DPDP/GDPR Basics",
-    desc: "Grasp core privacy principles, consent, data rights, and compliance workflows under DPDP (India) & GDPR........",
-    duration: "6 Weeks",
-    students: "410 Students",
-    img: "/TrainingImg.png",
-  },
-];
+import { useRouter } from "next/navigation";
+import { courses } from "@/data/courses";
 
 const CourseCard = () => {
-  const router = useRouter(); // ✅ initialize router
+  const router = useRouter();
 
   return (
     <section className="py-12 bg-white">
@@ -117,7 +67,7 @@ const CourseCard = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => router.push("/trainingdetails")} // ✅ redirect
+                onClick={() => router.push(`/trainingdetails/${course.id}`)}
                 className="mt-4 md:mt-5 w-full py-2 text-xs md:text-sm font-medium rounded-lg 
                            text-[#024a71] border border-[#024a71] hover:bg-[#024a71] hover:text-white 
                            transition-colors cursor-pointer"
