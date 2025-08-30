@@ -21,19 +21,20 @@ interface CardType {
   id: number;
   title: string;
   image: StaticImageData;
+  description: string;
 }
 
 const cards: CardType[] = [
-  { id: 1, title: "Healthcare", image: testImage1 },
-  { id: 2, title: "Food & Beverages", image: testImage3 },
-  { id: 3, title: "E-commerce", image: testImage9 },
-  { id: 4, title: "Electric Vehicles", image: testImage4 },
-  { id: 5, title: "SaaS", image: testImage6 },
-  { id: 6, title: "Travel & Tourism", image: testImage5 },
-  { id: 7, title: "Entertainment", image: testImage7 },
-  { id: 8, title: "Social Media", image: testImage8 },
-  { id: 9, title: "Logistics", image: testImage2 },
-  { id: 10, title: "Retail & E-commerce", image: testImage10 },
+  { id: 1, title: "Healthcare", image: testImage1, description: "Innovations driving better patient care and digital health solutions." },
+  { id: 2, title: "Food & Beverages", image: testImage3, description: "Culinary trends and technology shaping global dining experiences." },
+  { id: 3, title: "E-commerce", image: testImage9, description: "Online shopping platforms transforming global retail markets." },
+  { id: 4, title: "Electric Vehicles", image: testImage4, description: "Sustainable mobility powering the future of clean transportation." },
+  { id: 5, title: "SaaS", image: testImage6, description: "Cloud-based software boosting efficiency for modern businesses." },
+  { id: 6, title: "Travel & Tourism", image: testImage5, description: "Global destinations enhanced by digital travel innovations." },
+  { id: 7, title: "Entertainment", image: testImage7, description: "Streaming, gaming, and media driving digital-first experiences." },
+  { id: 8, title: "Social Media", image: testImage8, description: "Connecting billions through platforms shaping online culture." },
+  { id: 9, title: "Logistics", image: testImage2, description: "Smart supply chains ensuring faster, seamless global deliveries." },
+  { id: 10, title: "Retail & E-commerce", image: testImage10, description: "Blending offline and online shopping for modern consumers." },
 ];
 
 const FeaturedCard = () => {
@@ -59,8 +60,6 @@ const FeaturedCard = () => {
           {cards.map((card) => (
             <motion.div
               key={card.id}
-              // whileHover={{ scale: 1.03 }}
-              // transition={{ duration: 0.3 }}
               className="relative overflow-hidden rounded-2xl shadow-lg cursor-pointer group
                          h-48 sm:h-56 lg:h-64 border border-white/20 
                          hover:border-[#084c74] transition duration-500"
@@ -91,6 +90,15 @@ const FeaturedCard = () => {
               >
                 {card.title}
               </motion.h3>
+
+              {/* Description (only visible on hover) */}
+              <p
+                className="absolute left-1/2 -translate-x-1/2 text-center text-white 
+                           opacity-0 group-hover:opacity-100 transition-opacity duration-700 
+                           text-sm px-4 w-full bottom-4 group-hover:bottom-1/4"
+              >
+                {card.description}
+              </p>
             </motion.div>
           ))}
         </div>

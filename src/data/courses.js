@@ -6,7 +6,7 @@ export const courses = [
     desc: "Understand IT General Controls, plan IT audits, assess cyber risks, and report findings with practical checklists.",
     duration: "2 Weeks",
     students: "156 Students",
-    img: "/TrainingImg.png",
+    img: "/trainingimg/course1.jpg",
     syllabus: [
       "Introduction to ITGC",
       "Audit Planning & Strategy",
@@ -21,7 +21,7 @@ export const courses = [
     desc: "Master software & hardware lifecycle, license compliance, audits, and optimization using SAM best practices.",
     duration: "2 Weeks",
     students: "156 Students",
-    img: "/TrainingImg.png",
+    img: "/trainingimg/course2.jpg",
     syllabus: [
       "Overview of Asset Lifecycle",
       "Software License Compliance",
@@ -35,7 +35,7 @@ export const courses = [
     desc: "Learn ESG frameworks, materiality, disclosures, and data tracking to drive sustainable business outcomes.",
     duration: "3 Weeks",
     students: "220 Students",
-    img: "/TrainingImg.png",
+    img: "/trainingimg/course3.jpg",
     syllabus: [
       "Introduction to ESG",
       "Materiality Assessment",
@@ -49,7 +49,7 @@ export const courses = [
     desc: "Manage digital risks across cloud, data, and apps; align with policies, controls, and regulatory requirements.",
     duration: "2 Weeks",
     students: "190 Students",
-    img: "/TrainingImg.png",
+    img: "/trainingimg/course4.jpg",
     syllabus: [
       "Digital Risk Landscape",
       "Cloud & Data Risks",
@@ -63,7 +63,7 @@ export const courses = [
     desc: "Validate ideas, build MVPs, craft GTM, and pitch to stakeholders with lean startup and innovation tools.",
     duration: "4 Weeks",
     students: "320 Students",
-    img: "/TrainingImg.png",
+    img: "/trainingimg/course5.jpg",
     syllabus: [
       "Idea Validation",
       "Building MVP",
@@ -71,20 +71,20 @@ export const courses = [
       "Pitching to Investors",
     ],
   },
-  {
-    id: 6,
-    title: "Data Privacy & DPDP/GDPR Basics",
-    desc: "Grasp core privacy principles, consent, data rights, and compliance workflows under DPDP (India) & GDPR.",
-    duration: "6 Weeks",
-    students: "410 Students",
-    img: "/TrainingImg.png",
-    syllabus: [
-      "Introduction to Data Privacy",
-      "DPDP & GDPR Basics",
-      "User Consent & Rights",
-      "Compliance Workflows",
-    ],
-  },
+  // {
+  //   id: 6,
+  //   title: "Data Privacy & DPDP/GDPR Basics",
+  //   desc: "Grasp core privacy principles, consent, data rights, and compliance workflows under DPDP (India) & GDPR.",
+  //   duration: "6 Weeks",
+  //   students: "410 Students",
+  //   img: "/TrainingImg.png",
+  //   syllabus: [
+  //     "Introduction to Data Privacy",
+  //     "DPDP & GDPR Basics",
+  //     "User Consent & Rights",
+  //     "Compliance Workflows",
+  //   ],
+  // },
 ];
 
 
@@ -99,7 +99,7 @@ const coursesDetails = [
       "Master IT General Controls, risk-based auditing, and cyber assessments aligned to SOX, ISO 27001, and GDPR.",
     duration: "4 Weeks",
     students: "220 Students",
-    image: "/trainingimg/course1.png",
+    image: "/trainingimg/course1.jpg",
     overview: {
       about:
         "In today’s digital-first business environment, IT controls and cyber assessments have become the backbone of corporate governance. This course offers a comprehensive understanding of IT General Controls (ITGC), risk-based audits, and cyber assessments, focusing on how organizations safeguard information systems and maintain compliance with global standards such as SOX, ISO 27001, and GDPR. Learners explore the critical role of audits in identifying gaps, preventing fraud, and strengthening enterprise resilience. With the help of real-world case studies, forensic analysis, and simulations, participants gain practical skills to assess risk exposure, evaluate IT infrastructure, and implement effective internal controls. The program ensures you are equipped to carry out professional IT audits across on-premise and cloud environments, preparing you for leadership roles in governance, risk, and compliance.",
@@ -183,7 +183,7 @@ const coursesDetails = [
       "Master Software Asset Management and ITAM to optimize software spend, pass vendor audits, and ensure compliance.",
     duration: "3 Weeks",
     students: "200 Students",
-    image: "/trainingimg/course2.png",
+    image: "/trainingimg/course2.jpg",
     overview: {
       about:
         "Managing IT assets efficiently is a vital skill for modern enterprises seeking to optimize resources and reduce costs. This course dives into Software Asset Management (SAM) and IT Asset Management practices, providing insights into license management, vendor audits, and compliance strategies. Participants develop a strong foundation in managing multi-million-dollar IT budgets, ensuring that investments deliver maximum value while minimizing risks. Hands-on training with tools like Flexera and ServiceNow brings practical application to theory, enabling learners to handle real-world licensing and vendor challenges with confidence. By the end of the course, you will be prepared to design asset strategies, negotiate effectively with top vendors such as Microsoft, SAP, Oracle, and IBM, and implement governance frameworks that align with business goals.",
@@ -267,7 +267,7 @@ const coursesDetails = [
       "Learn ESG principles and reporting frameworks (GRI, SASB, Integrated Reporting) to drive sustainable value.",
     duration: "3 Weeks",
     students: "160 Students",
-    image: "/trainingimg/course3.png",
+    image: "/trainingimg/course3.jpg",
     overview: {
       about:
         "Sustainability has become a defining factor for organizations striving for long-term success and global relevance. This course focuses on the principles of Environmental, Social, and Governance (ESG), offering a clear understanding of how businesses align strategies with international standards such as GRI, SASB, and Integrated Reporting. Learners gain the ability to measure, monitor, and report ESG performance with accuracy and transparency. Through case studies of leading corporations, participants explore how sustainability initiatives drive financial, social, and reputational value. The program equips professionals with tools to build robust ESG strategies, prepare impactful reports, and embed responsible practices into organizational culture, ensuring both compliance and competitive advantage in a rapidly evolving marketplace.",
@@ -351,7 +351,7 @@ const coursesDetails = [
       "Understand digital risks, privacy, IP protection, and compliance frameworks to protect brand and reputation online.",
     duration: "3 Weeks",
     students: "175 Students",
-    image: "/trainingimg/course4.png",
+    image: "/trainingimg/course4.jpg",
     overview: {
       about:
         "The digital economy offers immense opportunities, but it also brings new challenges in managing risks and ensuring compliance. This course provides a structured approach to understanding digital risks, including data privacy concerns, reputational threats, and intellectual property issues. Learners are introduced to key regulations such as GDPR, while also examining the technologies and frameworks used to mitigate risks in online environments. Practical sessions cover areas like digital reputation monitoring, compliance assessments, and case scenarios where organizations failed or succeeded in managing their digital footprint. By blending legal, technological, and risk management perspectives, the course prepares participants to safeguard organizations from evolving online threats and maintain regulatory compliance in a connected world.",
@@ -435,7 +435,7 @@ const coursesDetails = [
       "Turn ideas into ventures using design thinking, lean startup, and investor-ready pitching.",
     duration: "4 Weeks",
     students: "210 Students",
-    image: "/trainingimg/course5.png",
+    image: "/trainingimg/course5.jpg",
     overview: {
       about:
         "Turning ideas into impactful ventures requires vision, strategy, and execution. This program takes learners on a complete entrepreneurial journey, starting with idea validation and business model design, and progressing through product development, market testing, and branding. Participants are guided to think creatively and strategically, applying frameworks like design thinking and lean startup methodologies to build practical solutions. With a strong emphasis on real-world application, the course provides exposure to investor pitching, fundraising strategies, and startup legal frameworks. Mentorship from experienced founders and hands-on exercises ensure that learners not only acquire theoretical knowledge but also the confidence to navigate challenges and scale ventures in competitive markets.",
@@ -507,7 +507,7 @@ const coursesDetails = [
         name: "Tanya Kapoor",
         comment:
           "This course gave me the courage to launch my own idea. It’s very practical, and I highly recommend it for aspiring entrepreneurs. – Oct 05, 2023",
-        rating: 5,
+        rating: 4,
       },
     ],
   },
