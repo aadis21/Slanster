@@ -29,7 +29,7 @@ const cards: CardType[] = [
   { id: 3, title: "E-commerce", image: testImage9 },
   { id: 4, title: "Electric Vehicles", image: testImage4 },
   { id: 5, title: "SaaS", image: testImage6 },
-  { id: 6, title: "Travel & Tourism", image: testImage5 },
+  { id: 6, title: "Travel", image: testImage5 },
   { id: 7, title: "Entertainment", image: testImage7 },
   { id: 8, title: "Social Media", image: testImage8 },
   { id: 9, title: "Logistics", image: testImage2 },
