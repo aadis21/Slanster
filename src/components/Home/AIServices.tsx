@@ -84,7 +84,9 @@ const AIServices = () => {
 
   return (
     <div className="bg-white">
-      <section className={`mx-auto max-w-7xl py-16 md:px-0 px-6 ${inter.className}`}>
+      <section
+        className={`mx-auto max-w-7xl py-16 md:px-0 px-6 ${inter.className}`}
+      >
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
@@ -97,10 +99,13 @@ const AIServices = () => {
           </h2>
 
           <h2 className="text-3xl md:text-5xl text-gray-900 mt-4">
-            Full-spectrum of <span className="text-blue-600">AI-driven Solutions</span>
+            Full-spectrum of{" "}
+            <span className="text-[#024a71]">AI-driven Solutions</span>
           </h2>
 
-          <p className="text-lg text-gray-700 mt-2">Engineered for Global Impact</p>
+          <p className="text-lg text-gray-700 mt-2">
+            Engineered for Global Impact
+          </p>
         </motion.div>
 
         {/* Buttons */}
@@ -113,8 +118,8 @@ const AIServices = () => {
               onClick={() => setActive(service.id)}
               className={`px-5 py-2.5 rounded-full border transition-all duration-300 text-sm ${
                 active === service.id
-                  ? "bg-blue-600 text-white shadow-md border-blue-600"
-                  : "bg-white text-gray-700 border-gray-300 hover:border-blue-600"
+                  ? "bg-[#024a71] text-white shadow-md border-[#024a71]"
+                  : "bg-white text-gray-700 border-gray-300 hover:border-[#024a71]"
               }`}
             >
               {service.label}
@@ -185,7 +190,7 @@ const AIServices = () => {
                       {/* Counter-rotate so icon stays upright while orbiting */}
                       <motion.div
                         style={{ rotate: counterOrbit }}
-                        className="w-full h-full flex items-center justify-center bg-white rounded-full shadow-lg border border-gray-200 text-blue-600"
+                        className="w-full h-full flex items-center justify-center bg-white rounded-full shadow-lg border border-gray-200 text-[#024a71]"
                       >
                         {React.cloneElement(item.icon, { size: 28 })}
                       </motion.div>
