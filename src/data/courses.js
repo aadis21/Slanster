@@ -71,20 +71,38 @@ export const courses = [
       "Pitching to Investors",
     ],
   },
-  // {
-  //   id: 6,
-  //   title: "Data Privacy & DPDP/GDPR Basics",
-  //   desc: "Grasp core privacy principles, consent, data rights, and compliance workflows under DPDP (India) & GDPR.",
-  //   duration: "6 Weeks",
-  //   students: "410 Students",
-  //   img: "/TrainingImg.png",
-  //   syllabus: [
-  //     "Introduction to Data Privacy",
-  //     "DPDP & GDPR Basics",
-  //     "User Consent & Rights",
-  //     "Compliance Workflows",
-  //   ],
-  // },
+    {
+    id: 6,
+    title: "Python with AI & Machine Learning",
+    desc: "Python foundations to deep learning: NumPy, Pandas, ML algorithms, TensorFlow/Keras, and real AI mini-projects.",
+    duration: "6 Weeks",
+    students: "280 Students",
+    img: "/trainingimg/course6.jpg", // your uploaded image (course6)
+    syllabus: [
+      "Core Python (syntax, OOPs, files)",
+      "Data Science Basics (NumPy, Pandas, Matplotlib/Seaborn)",
+      "Machine Learning (Regression, Classification, Trees, Clustering)",
+      "Deep Learning Intro (TensorFlow/Keras, CNN basics)",
+      "AI Use-Cases (Chatbots/NLP, CV mini-projects)"
+    ],
+  },
+  {
+    id: 7,
+    title: "Node.js & Backend Development",
+    desc: "Modern backend engineering with Node.js, Express, REST APIs, databases, auth, and deployment.",
+    duration: "5 Weeks",
+    students: "265 Students",
+    img: "/trainingimg/course5.jpg", // your uploaded image (course5)
+    syllabus: [
+      "JavaScript ES6+ refresher",
+      "Node.js Core (event loop, async, modules)",
+      "Express.js (routing, middleware, REST APIs)",
+      "DB Integration (MongoDB/MySQL basics)",
+      "Auth & Security (JWT, OAuth, bcrypt) & Deploy"
+    ],
+  },
+
+  
 ];
 
 
@@ -146,32 +164,32 @@ const coursesDetails = [
       {
         name: "Rohit Sharma",
         comment:
-          "The IT audit simulations were excellent. I finally understood how internal audits are performed in real companies. – Oct 03, 2023",
-        rating: 5,
+          "The IT audit simulations were excellent and close to real scenarios. A couple of labs ran long but worth it. – Oct 03, 2023",
+        rating: 4.5,
       },
       {
         name: "Nikita Verma",
         comment:
-          "This course explained ITGC, SOX, and ISO 27001 in a very simple and practical way. I could connect it directly to my MBA case studies. – Oct 07, 2023",
-        rating: 5,
+          "Explained ITGC, SOX, and ISO 27001 practically; a bit dense in parts but very useful for MBA case work. – Oct 07, 2023",
+        rating: 4.1,
       },
       {
         name: "Aditya Nair",
         comment:
-          "I liked how cyber assessments were taught using real cloud and infrastructure examples. It didn’t feel like theory at all. – Sep 25, 2023",
-        rating: 5,
+          "Real cloud examples kept it engaging. Pace felt rushed in the last session. – Sep 25, 2023",
+        rating: 3.7,
       },
       {
         name: "Sanya Gupta",
         comment:
-          "The forensic investigation part was detailed. I now know how evidence is preserved during fraud detection. – Oct 01, 2023",
-        rating: 5,
+          "Forensic investigation module was detailed; would like more hands-on datasets. – Oct 01, 2023",
+        rating: 4.2,
       },
       {
         name: "Vikas Patel",
         comment:
-          "Perfect program if you want to enter IT audit and risk consulting. The trainers were from Big 4—very insightful sessions. – Sep 18, 2023",
-        rating: 5,
+          "Good entry to IT audit/risk consulting; Big 4 perspectives added value. – Sep 18, 2023",
+        rating: 4.3,
       },
     ],
   },
@@ -230,32 +248,32 @@ const coursesDetails = [
       {
         name: "Aditi Mehra",
         comment:
-          "Very practical course. I now know how to manage licenses for Microsoft, Oracle, and SAP, which was a complete mystery to me before. – Oct 05, 2023",
-        rating: 5,
+          "Very practical—licensing for Microsoft/SAP finally clicked. One more negotiation role-play would help. – Oct 05, 2023",
+        rating: 4.1,
       },
       {
         name: "Rahul Singh",
         comment:
-          "The Flexera and ServiceNow modules were amazing. The hands-on practice helped me understand how SAM tools actually work. – Oct 02, 2023",
-        rating: 5,
+          "Flexera/ServiceNow labs were solid. A few steps confusing initially but clear later. – Oct 02, 2023",
+        rating: 4.3,
       },
       {
         name: "Sneha Iyer",
         comment:
-          "I applied what I learned during my internship, and my manager was surprised I could reduce costs in their software budget. – Sep 28, 2023",
-        rating: 5,
+          "Applied concepts in my internship and reduced software spend—big win. – Sep 28, 2023",
+        rating: 4.4,
       },
       {
         name: "Arjun Malhotra",
         comment:
-          "Simple explanations with strong examples. The trainers connected every topic with real corporate audit scenarios. – Sep 20, 2023",
-        rating: 5,
+          "Good examples and pace overall; licensing section felt a bit fast. – Sep 20, 2023",
+        rating: 3.8,
       },
       {
         name: "Simran Kaur",
         comment:
-          "Great ROI on this course. Within two months I was confident enough to sit for SAM Consultant interviews. – Oct 04, 2023",
-        rating: 5,
+          "Great ROI; felt ready for SAM interviews. More mock audits would be nice. – Oct 04, 2023",
+        rating: 4.0,
       },
     ],
   },
@@ -314,32 +332,32 @@ const coursesDetails = [
       {
         name: "Priya Nair",
         comment:
-          "I didn’t realize how powerful ESG reporting is until this course. The GRI and SASB frameworks were taught very clearly. – Oct 06, 2023",
-        rating: 5,
+          "Clear overview of ESG reporting; theory-heavy at times but frameworks were well explained. – Oct 06, 2023",
+        rating: 4.2,
       },
       {
         name: "Ankur Sharma",
         comment:
-          "Loved the real-world examples. The case studies of Fortune 500 companies made sustainability reporting more relatable. – Sep 29, 2023",
-        rating: 5,
+          "Fortune 500 case studies were eye-opening. A couple of sessions felt long. – Sep 29, 2023",
+        rating: 4.0,
       },
       {
         name: "Megha Jain",
         comment:
-          "The assignments on ESG data collection and analytics were very useful. I now understand how to measure sustainability metrics. – Oct 03, 2023",
-        rating: 5,
+          "ESG data collection assignments were practical; more peer discussion would help. – Oct 03, 2023",
+        rating: 3.9,
       },
       {
         name: "Ravi Menon",
         comment:
-          "This program helped me connect my MBA research with industry practice. ESG careers are booming, and this course shows why. – Sep 25, 2023",
-        rating: 5,
+          "Great bridge between MBA research and industry practice; helpful career context. – Sep 25, 2023",
+        rating: 4.3,
       },
       {
         name: "Shalini Das",
         comment:
-          "The faculty was excellent. They made technical frameworks easy to digest and showed how investors look at ESG performance. – Oct 01, 2023",
-        rating: 5,
+          "Faculty made complex standards digestible; templates for disclosures would be a plus. – Oct 01, 2023",
+        rating: 4.1,
       },
     ],
   },
@@ -398,32 +416,32 @@ const coursesDetails = [
       {
         name: "Neha Kapoor",
         comment:
-          "The modules on GDPR compliance were very detailed. I could immediately use this knowledge in my compliance internship. – Oct 02, 2023",
-        rating: 5,
+          "GDPR modules were detailed and practical; some legal bits felt dense. – Oct 02, 2023",
+        rating: 4.0,
       },
       {
         name: "Manish Yadav",
         comment:
-          "Learning about digital brand protection opened my eyes. Even something as small as font misuse can cause major issues. – Sep 27, 2023",
-        rating: 5,
+          "Brand/IP protection insights were eye-opening. Tool demos could go a little deeper. – Sep 27, 2023",
+        rating: 3.7,
       },
       {
         name: "Anjali Singh",
         comment:
-          "The course covered both legal aspects and technical monitoring tools. That mix was unique and very practical. – Oct 06, 2023",
-        rating: 5,
+          "Good balance of legal concepts and monitoring tools; longer labs would help. – Oct 06, 2023",
+        rating: 4.2,
       },
       {
         name: "Rohit Chauhan",
         comment:
-          "Great structure and content. The trainers explained complex compliance topics in simple language with examples. – Sep 23, 2023",
-        rating: 5,
+          "Well-structured with relevant examples; easy to follow throughout. – Sep 23, 2023",
+        rating: 4.4,
       },
       {
         name: "Pooja Bansal",
         comment:
-          "After this training, I feel confident to apply for roles in digital risk consulting. The mock investigations were very helpful. – Oct 04, 2023",
-        rating: 5,
+          "Mock investigations were challenging but boosted confidence for interviews. – Oct 04, 2023",
+        rating: 4.1,
       },
     ],
   },
@@ -482,35 +500,113 @@ const coursesDetails = [
       {
         name: "Kavya Arora",
         comment:
-          "Best startup bootcamp I’ve attended. We actually built an MVP and pitched it to mentors who gave real feedback. – Oct 07, 2023",
-        rating: 5,
+          "Built an MVP and pitched to mentors—great experience. A follow-up mentoring track would make it perfect. – Oct 07, 2023",
+        rating: 4.3,
       },
       {
         name: "Aakash Jain",
         comment:
-          "The design thinking workshops completely changed how I approach problems. It was not just theory, we worked on live case studies. – Sep 30, 2023",
-        rating: 5,
+          "Design thinking workshops changed how I frame problems; at times felt like a quick sprint. – Sep 30, 2023",
+        rating: 4.0,
       },
       {
         name: "Shruti Sharma",
         comment:
-          "The module on business models and pitch decks was super valuable. I now have a professional presentation for my startup idea. – Oct 01, 2023",
-        rating: 5,
+          "Business models and pitch decks were super useful; more time on financial modeling would help. – Oct 01, 2023",
+        rating: 3.8,
       },
       {
         name: "Nikhil Mehta",
         comment:
-          "Mentorship was the highlight. Talking directly to startup founders and investors gave me clarity on what works in the real world. – Sep 26, 2023",
-        rating: 5,
+          "Mentor interactions stood out—founder insights were practical and honest. – Sep 26, 2023",
+        rating: 4.4,
       },
       {
         name: "Tanya Kapoor",
         comment:
-          "This course gave me the courage to launch my own idea. It’s very practical, and I highly recommend it for aspiring entrepreneurs. – Oct 05, 2023",
-        rating: 4,
+          "Gave me the push to launch my idea; schedule was packed but worth it. – Oct 05, 2023",
+        rating: 4.1,
       },
     ],
   },
+
+    {
+    id: 6,
+    title: "Python with AI & Machine Learning",
+    desc: "End-to-end Python + AI/ML with practical mini-projects and a capstone.",
+    duration: "6 Weeks",
+    students: "280 Students",
+    image: "/trainingimg/course6.jpg",
+    overview: {
+      about:
+        "A hands-on pathway from Python fundamentals to applied AI. Build data pipelines, train classic ML models, and step into deep learning with TensorFlow/Keras. Mini-projects in NLP and Computer Vision prepare you for real interview use-cases and internships.",
+      objectives: [
+        "Write clean Python with OOPs, file handling, and libraries",
+        "Manipulate data using NumPy/Pandas and visualize insights",
+        "Train/evaluate ML models (regression, classification, trees, clustering)",
+        "Build and tune neural networks with TensorFlow/Keras",
+        "Apply AI to NLP/CV mini-projects and ship a capstone"
+      ],
+    },
+    curriculum: [
+      "Python Essentials & OOPs · Files · Virtualenv",
+      "Data Science Foundations: NumPy, Pandas, EDA, Matplotlib/Seaborn",
+      "ML Algorithms: Linear/Logistic, Trees/Random Forests, K-Means",
+      "Deep Learning: Tensors, Model APIs, CNN basics, callbacks",
+      "AI Applications: Chatbot/NLP, Image classification mini-projects",
+      "Capstone: Predictive Model or AI Chatbot with report & demo"
+    ],
+    faqs: [
+      { question: "Do I need prior Python?", answer: "Basic programming helps, but we start from Python fundamentals and ramp up quickly." },
+      { question: "Which libraries are covered?", answer: "NumPy, Pandas, Matplotlib/Seaborn, scikit-learn, TensorFlow/Keras." },
+      { question: "What is the capstone?", answer: "Choose between a predictive model or an AI chatbot/CV project with a short report and demo." },
+      { question: "Career outcomes?", answer: "Python Developer, Data Analyst, ML Intern/Engineer (entry level), AI Project Trainee." }
+    ],
+    reviews: [
+      { name: "Riya Malhotra", comment: "Crisp EDA + ML flow; DL intro was perfectly paced.", rating: 4.4 },
+      { name: "Harshit Arora", comment: "Mini-projects felt industry-relevant; want more hyper-parameter labs.", rating: 4.2 },
+      { name: "Tanvi Joshi", comment: "Great starter to TensorFlow—loved the callbacks & metrics part.", rating: 4.1 }
+    ],
+  },
+  {
+    id: 7,
+    title: "Node.js & Backend Development",
+    desc: "Design and deploy production-style REST APIs with Node.js, Express, databases, and authentication.",
+    duration: "5 Weeks",
+    students: "265 Students",
+    image: "/trainingimg/course5.jpg",
+    overview: {
+      about:
+        "Backend bootcamp focused on building secure, scalable REST APIs. Learn Node internals, Express patterns, database integration, JWT/OAuth, and CI/CD-friendly deployment. You’ll finish with a documented API and a live demo.",
+      objectives: [
+        "Master Node.js runtime, modules, async patterns",
+        "Build REST APIs with Express (routing, validation, error handling)",
+        "Integrate MongoDB/MySQL and model data effectively",
+        "Implement auth with JWT/OAuth and secure best practices",
+        "Containerize and deploy to cloud providers"
+      ],
+    },
+    curriculum: [
+      "JavaScript ES6+ & Node.js Core (event loop, streams, promises)",
+      "Express Fundamentals: routers, middleware, joi/zod validation",
+      "Data Layer: MongoDB (Mongoose) & MySQL/PostgreSQL basics",
+      "Auth & Security: JWT/OAuth, bcrypt, RBAC, rate-limits, CORS",
+      "Deployment: env configs, Docker intro, CI/CD & cloud basics",
+      "Capstone: Production-ready REST API with docs & tests"
+    ],
+    faqs: [
+      { question: "Do we cover TypeScript?", answer: "The course uses JS; optional notes show how to migrate to TS for typings." },
+      { question: "Which DB is primary?", answer: "MongoDB for speed; SQL basics included for relational concepts." },
+      { question: "Is deployment included?", answer: "Yes—environment setup, Docker intro, and cloud deployment basics." },
+      { question: "Career roles?", answer: "Node.js Developer, Backend Engineer, API Developer, Full-Stack (Backend-heavy)." }
+    ],
+    reviews: [
+      { name: "Sourabh Kulkarni", comment: "Auth + RBAC section was gold. Loved the error-handling pattern.", rating: 4.5 },
+      { name: "Neelam S.", comment: "Clear roadmap from basics to deploy; wanted more SQL labs.", rating: 4.1 },
+      { name: "Kabir Mehta", comment: "Good production checklists; logging & env tips were practical.", rating: 4.3 }
+    ],
+  },
+
 ];
 
 
