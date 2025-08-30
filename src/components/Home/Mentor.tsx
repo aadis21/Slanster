@@ -16,7 +16,6 @@ import Kirti from "../../../public/home/Avtars/kirti.jpg";
 import Kabir from "../../../public/home/Avtars/kabir.jpg";
 import Meera from "../../../public/home/Avtars/meera.jpg";
 
-
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -24,6 +23,7 @@ const inter = Inter({
 
 // ---------- Types ----------
 type Mentor = {
+  id: number;
   name: string;
   role: string;
   experience: string;
@@ -55,8 +55,16 @@ const Card: React.FC<CardProps> = ({
                   w-[260px] sm:w-[280px] md:w-[300px] flex-shrink-0 mx-3 
                   transition-all duration-300 flex flex-col h-[460px]"
   >
-    <div className="relative h-[200px] bg-gray-200">
-      <Image src={image} alt={name} fill className="object-cover object-top" />
+    {/* ✅ updated image section */}
+    <div className="relative w-full aspect-[4/3] bg-gray-200">
+      <Image
+        src={image}
+        alt={name}
+        fill
+        className="object-contain"
+        sizes="(min-width:1024px) 300px, (min-width:640px) 280px, 260px"
+        placeholder="blur"
+      />
     </div>
 
     <div className="p-4 flex flex-col flex-1">
@@ -85,93 +93,91 @@ const Card: React.FC<CardProps> = ({
 
 // ---------- Main Component ----------
 const Mentor: React.FC = () => {
- const cards: Mentor[] = useMemo(
-   () => [
-     {
-       id: 1,
-       name: "Amitesh",
-       role: "CTO · IT Company",
-       experience: "10+ Yrs Of Experience",
-       description:
-         "Oversees end-to-end technology strategy, platform architecture, and product engineering. Highly skilled in AI systems, scalable microservices, and building products from 0→1.",
-       gender: "male",
-       image: Amitesh,
-     },
-     {
-       id: 2,
-       name: "Gaurav",
-       role: "Sr Manager · Big4",
-       experience: "9+ Yrs Of Experience",
-       description:
-         "Works at a Big4 firm in business, risk, and technology consulting. Guides on control frameworks, digital transformation, and tech-enabled risk mitigation.",
-       gender: "male",
-       image: Gaurav,
-     },
-     {
-       id: 3,
-       name: "Divyansh",
-       role: "Professor · Artificial Intelligence",
-       experience: "8+ Yrs Of Experience",
-       description:
-         "Educator at a leading university teaching AI and ML. Focuses on practical model building, MLOps fundamentals, and responsible AI practices.",
-       gender: "male",
-       image: Divyansh,
-     },
-     {
-       id: 4,
-       name: "Sonam",
-       role: "Product Manager · E-commerce",
-       experience: "7+ Yrs Of Experience",
-       description:
-         "Drives end-to-end product development and deployment for e-commerce. Specializes in user journeys, conversion funnels, and data-driven roadmaps.",
-       gender: "female",
-       image: Sonam,
-     },
-     {
-       id: 5,
-       name: "Rishabh",
-       role: "Risk Consultant · Big4",
-       experience: "6+ Yrs Of Experience",
-       description:
-         "Specializes in enterprise risk management and policy consulting at a Big4 firm. Advises on governance models, audits, and regulatory alignment.",
-       gender: "male",
-       image: Rishabh,
-     },
-     {
-       id: 6,
-       name: "Dhruv",
-       role: "Cyber Specialist · Banking",
-       experience: "8+ Yrs Of Experience",
-       description:
-         "Experienced in governance, risk, and compliance for financial institutions. Mentors on GRC tooling, SOC processes, and regulatory frameworks.",
-       gender: "male",
-       image: Dhruv,
-     },
-    
-     {
-       id: 8,
-       name: "Kriti",
-       role: "AI Product Lead",
-       experience: "9+ Yrs Of Experience",
-       description:
-         "Leads AI-first product strategy—LLM integrations, RAG pipelines, and experimentation. Mentors on PRDs, model evaluations, and GTM for AI features.",
-       gender: "female",
-       image: Kirti,
-     },
-     {
-       id: 9,
-       name: "Kabir",
-       role: "Cyber Threat Analyst",
-       experience: "6+ Yrs Of Experience",
-       description:
-         "Focuses on threat hunting, incident response, and SIEM use-cases. Coaches on playbooks, blue-team workflows, and defense-in-depth design.",
-       gender: "male",
-       image: Kabir, // 👀 lagta hai ye actually female image hai, check kar lena
-     },
-   ],
-   []
- );
-
+  const cards: Mentor[] = useMemo(
+    () => [
+      {
+        id: 1,
+        name: "Amitesh",
+        role: "CTO · IT Company",
+        experience: "10+ Yrs Of Experience",
+        description:
+          "Oversees end-to-end technology strategy, platform architecture, and product engineering. Highly skilled in AI systems, scalable microservices, and building products from 0→1.",
+        gender: "male",
+        image: Amitesh,
+      },
+      {
+        id: 2,
+        name: "Gaurav",
+        role: "Sr Manager · Big4",
+        experience: "9+ Yrs Of Experience",
+        description:
+          "Works at a Big4 firm in business, risk, and technology consulting. Guides on control frameworks, digital transformation, and tech-enabled risk mitigation.",
+        gender: "male",
+        image: Gaurav,
+      },
+      {
+        id: 3,
+        name: "Divyansh",
+        role: "Professor · Artificial Intelligence",
+        experience: "8+ Yrs Of Experience",
+        description:
+          "Educator at a leading university teaching AI and ML. Focuses on practical model building, MLOps fundamentals, and responsible AI practices.",
+        gender: "male",
+        image: Divyansh,
+      },
+      {
+        id: 4,
+        name: "Sonam",
+        role: "Product Manager · E-commerce",
+        experience: "7+ Yrs Of Experience",
+        description:
+          "Drives end-to-end product development and deployment for e-commerce. Specializes in user journeys, conversion funnels, and data-driven roadmaps.",
+        gender: "female",
+        image: Sonam,
+      },
+      {
+        id: 5,
+        name: "Rishabh",
+        role: "Risk Consultant · Big4",
+        experience: "6+ Yrs Of Experience",
+        description:
+          "Specializes in enterprise risk management and policy consulting at a Big4 firm. Advises on governance models, audits, and regulatory alignment.",
+        gender: "male",
+        image: Rishabh,
+      },
+      {
+        id: 6,
+        name: "Dhruv",
+        role: "Cyber Specialist · Banking",
+        experience: "8+ Yrs Of Experience",
+        description:
+          "Experienced in governance, risk, and compliance for financial institutions. Mentors on GRC tooling, SOC processes, and regulatory frameworks.",
+        gender: "male",
+        image: Dhruv,
+      },
+      {
+        id: 7,
+        name: "Kriti",
+        role: "AI Product Lead",
+        experience: "9+ Yrs Of Experience",
+        description:
+          "Leads AI-first product strategy—LLM integrations, RAG pipelines, and experimentation. Mentors on PRDs, model evaluations, and GTM for AI features.",
+        gender: "female",
+        image: Kirti,
+      },
+      {
+        id: 8,
+        name: "Kabir",
+        role: "Cyber Threat Analyst",
+        experience: "6+ Yrs Of Experience",
+        description:
+          "Focuses on threat hunting, incident response, and SIEM use-cases. Coaches on playbooks, blue-team workflows, and defense-in-depth design.",
+        gender: "male",
+        image: Kabir,
+      },
+    ],
+    []
+  );
 
   // ----- Slider refs & state -----
   const scrollerRef = useRef<HTMLDivElement | null>(null);
