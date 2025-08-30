@@ -8,7 +8,7 @@ import testImage1 from "../../../public/FeaturedCard/healthcare.jpg";
 import testImage2 from "../../../public/FeaturedCard/logistics.jpg";
 import testImage3 from "../../../public/FeaturedCard/food and beverages.jpg";
 import testImage4 from "../../../public/FeaturedCard/electric vehicles.jpg";
-import testImage5 from "../../../public/FeaturedCard/entertainment.png";
+import testImage5 from "../../../public/FeaturedCard/travel.png";
 import testImage6 from "../../../public/FeaturedCard/saas.png";
 import testImage7 from "../../../public/FeaturedCard/entertainment.png";
 import testImage8 from "../../../public/FeaturedCard/socialmedia.jpg";
