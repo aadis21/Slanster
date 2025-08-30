@@ -7,15 +7,16 @@ import { Inter } from "next/font/google";
 import ContactModal from "../Header/ContactModal";
 
 
-import AvtarFemele4 from "../../../public/home/Mentors/avtarFemale.jpg";
-import AvtarMale from "../../../public/home/Avtars/avtarmale.webp";
-import AvtarFemele from "../../../public/home/Avtars/avtarfemele.webp";
-import AvtarFemele2 from "../../../public/home/Avtars/avtarfemale2.webp";
-import AvtarMale2 from "../../../public/home/Avtars/avtarmale2.webp";
-import AvtarFemele3 from "../../../public/home/Avtars/avtarfemele3.webp";
-import AvtarMale3 from "../../../public/home/Avtars/avtarmale3.webp";
-import AvtarMale4 from "../../../public/home/Avtars/avtarmale4.webp";
-import AvtarMale5 from "../../../public/home/Avtars/avtarmale5.webp";
+import Amitesh from "../../../public/home/Avtars/amitesh.jpg";
+import Gaurav from "../../../public/home/Avtars/gaurav.jpg";
+import Divyansh from "../../../public/home/Avtars/divyansh.jpg";
+import Sonam from "../../../public/home/Avtars/sonam.jpg";
+import Rishabh from "../../../public/home/Avtars/rishabh.jpg";
+import Dhruv from "../../../public/home/Avtars/dhruv.jpg";
+import Anirudh from "../../../public/home/Avtars/anirudh.jpg";
+import Kirti from "../../../public/home/Avtars/kirti.jpg";
+import Kabir from "../../../public/home/Avtars/kabir.jpg";
+import Meera from "../../../public/home/Avtars/meera.jpg";
 
 
 const inter = Inter({
@@ -38,7 +39,7 @@ const MemberShip: React.FC<{ searchQuery?: string }> = ({
        description:
          "Oversees end-to-end technology strategy, platform architecture, and product engineering. Highly skilled in AI systems, scalable microservices, and building products from 0→1.",
        gender: "male",
-       image: AvtarMale2,
+       image: Amitesh,
      },
      {
        id: 2,
@@ -48,7 +49,7 @@ const MemberShip: React.FC<{ searchQuery?: string }> = ({
        description:
          "Works at a Big4 firm in business, risk, and technology consulting. Guides on control frameworks, digital transformation, and tech-enabled risk mitigation.",
        gender: "male",
-       image: AvtarMale3,
+       image: Gaurav,
      },
      {
        id: 3,
@@ -58,7 +59,7 @@ const MemberShip: React.FC<{ searchQuery?: string }> = ({
        description:
          "Educator at a leading university teaching AI and ML. Focuses on practical model building, MLOps fundamentals, and responsible AI practices.",
        gender: "male",
-       image: AvtarMale4,
+       image: Divyansh,
      },
      {
        id: 4,
@@ -68,7 +69,7 @@ const MemberShip: React.FC<{ searchQuery?: string }> = ({
        description:
          "Drives end-to-end product development and deployment for e-commerce. Specializes in user journeys, conversion funnels, and data-driven roadmaps.",
        gender: "female",
-       image: AvtarFemele,
+       image: Sonam,
      },
      {
        id: 5,
@@ -78,7 +79,7 @@ const MemberShip: React.FC<{ searchQuery?: string }> = ({
        description:
          "Specializes in enterprise risk management and policy consulting at a Big4 firm. Advises on governance models, audits, and regulatory alignment.",
        gender: "male",
-       image: AvtarMale5,
+       image: Rishabh,
      },
      {
        id: 6,
@@ -88,7 +89,7 @@ const MemberShip: React.FC<{ searchQuery?: string }> = ({
        description:
          "Experienced in governance, risk, and compliance for financial institutions. Mentors on GRC tooling, SOC processes, and regulatory frameworks.",
        gender: "male",
-       image: AvtarMale,
+       image: Dhruv,
      },
      {
        id: 7,
@@ -98,7 +99,7 @@ const MemberShip: React.FC<{ searchQuery?: string }> = ({
        description:
          "Climate change and social impact consulting expert at a Big4 firm. Guides on ESG reporting, materiality assessment, and sustainability roadmaps.",
        gender: "male",
-       image: AvtarMale2,
+       image: Anirudh,
      },
      {
        id: 8,
@@ -108,7 +109,7 @@ const MemberShip: React.FC<{ searchQuery?: string }> = ({
        description:
          "Leads AI-first product strategy—LLM integrations, RAG pipelines, and experimentation. Mentors on PRDs, model evaluations, and GTM for AI features.",
        gender: "female",
-       image: AvtarFemele2,
+       image: Kirti,
      },
      {
        id: 9,
@@ -118,7 +119,7 @@ const MemberShip: React.FC<{ searchQuery?: string }> = ({
        description:
          "Focuses on threat hunting, incident response, and SIEM use-cases. Coaches on playbooks, blue-team workflows, and defense-in-depth design.",
        gender: "male",
-       image: AvtarMale3,
+       image: Kabir,
      },
      {
        id: 10,
@@ -128,7 +129,7 @@ const MemberShip: React.FC<{ searchQuery?: string }> = ({
        description:
          "Owns discovery → delivery for data-driven products. Strong in metrics, stakeholder alignment, experimentation, and scalable release processes.",
        gender: "female",
-       image: AvtarFemele3,
+       image: Meera,
      },
    ],
    []

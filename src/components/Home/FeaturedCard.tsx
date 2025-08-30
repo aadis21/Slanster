@@ -4,16 +4,16 @@ import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import { Inter } from "next/font/google";
 
-import testImage1 from "../../../public/FeaturedCard/industry1.png";
-import testImage2 from "../../../public/FeaturedCard/industry2.png";
-import testImage3 from "../../../public/FeaturedCard/industry3.png";
-import testImage4 from "../../../public/FeaturedCard/industry4.png";
-import testImage5 from "../../../public/FeaturedCard/industry5.png";
-import testImage6 from "../../../public/FeaturedCard/industry6.png";
-import testImage7 from "../../../public/FeaturedCard/industry7.png";
-import testImage8 from "../../../public/FeaturedCard/industry8.png";
-import testImage9 from "../../../public/FeaturedCard/industry9.png";
-import testImage10 from "../../../public/FeaturedCard/industry10.png";
+import testImage1 from "../../../public/FeaturedCard/healthcare.jpg";
+import testImage2 from "../../../public/FeaturedCard/logistics.jpg";
+import testImage3 from "../../../public/FeaturedCard/food and beverages.jpg";
+import testImage4 from "../../../public/FeaturedCard/electric vehicles.jpg";
+import testImage5 from "../../../public/FeaturedCard/traveeel and tourism.jpg";
+import testImage6 from "../../../public/FeaturedCard/saas.png";
+import testImage7 from "../../../public/FeaturedCard/entertainment.png";
+import testImage8 from "../../../public/FeaturedCard/socialmedia.jpg";
+import testImage9 from "../../../public/FeaturedCard/e-commerce.jpg";
+import testImage10 from "../../../public/FeaturedCard/Retail & E-commerce.jpg";
 
 const inter = Inter({ subsets: ["latin"] });
 
