@@ -51,7 +51,7 @@ const services: Service[] = [
     title: "Staffing",
     desc: "Access top tech talent for your projects.",
     icon: <Users className="w-6 h-6 text-white" />,
-    backgroundimage: "/home/ourservices/staffing.jpg",
+    backgroundimage: "/home/ourservices/Staffing.jpg",
   },
   {
     title: "AR/VR",
