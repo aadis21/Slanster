@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import { LazyMotion, domAnimation, m, useMotionValue, useTransform } from "framer-motion";
@@ -22,7 +22,19 @@ const fadeUp = (d = 0) => ({
   viewport: { once: true, amount: 0.3 },
 });
 
+
+
 const Brilliance = () => {
+   const [isMd, setIsMd] = useState(false);
+
+   useEffect(() => {
+     const checkSize = () => setIsMd(window.innerWidth >= 768);
+     checkSize();
+     window.addEventListener("resize", checkSize);
+     return () => window.removeEventListener("resize", checkSize);
+   }, []);
+
+
   return (
     <div
       className={`relative w-full min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center px-6 md:px-12 lg:px-24 py-16 ${inter.className}`}
@@ -42,7 +54,7 @@ const Brilliance = () => {
           transition={{ repeat: Infinity, duration: 9, ease: EASE_IN_OUT }}
         />
 
-        <div className="max-w-7xl w-full relative grid grid-cols-1 md:grid-cols-2 items-center gap-10">
+        <div className="max-w-8xl  w-full relative grid grid-cols-1 md:grid-cols-2 items-center gap-10">
           {/* Background image block */}
           <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8/12 lg:w-6/12 h-[500px] lg:h-[550px] rounded-xl overflow-hidden">
             <Image
@@ -57,7 +69,7 @@ const Brilliance = () => {
           {/* LEFT */}
           <div className="relative z-10 text-center md:text-left">
             <m.h1
-              className="text-white leading-tight font-semibold text-[20px] sm:text-[28px] md:text-[36px] lg:text-[44px]"
+              className="text-white leading-normal font-semibold md:text-5xl text-4xl"
               {...fadeUp(0)}
             >
               AI that ships. <br /> IT that scales.
@@ -65,10 +77,11 @@ const Brilliance = () => {
 
             {/* Animated underline */}
             <m.div
-              className="mt-2 h-[3px] w-28 bg-gradient-to-r from-cyan-400 to-indigo-500 rounded-full transform-gpu will-change-transform"
+              className="mt-2 h-[3px] bg-gradient-to-r from-cyan-400 to-indigo-500 rounded-full 
+                 transform-gpu will-change-transform mx-auto md:mx-0"
               initial={{ width: 0 }}
-              whileInView={{ width: 112 }}
-              transition={{ duration: 0.7, ease: EASE_OUT, delay: 0.1 }}
+              whileInView={{ width: isMd ? "20%" : "100%" }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
               viewport={{ once: true }}
             />
 
@@ -76,8 +89,9 @@ const Brilliance = () => {
               className="mt-4 text-gray-300/90 max-w-lg mx-auto md:mx-0 text-[15px] md:text-[17px]"
               {...fadeUp(0.05)}
             >
-              We design, build and run <span className="text-white">AI-powered, cloud-native</span> systems that
-              turn data into real business wins.
+              We design, build and run{" "}
+              <span className="text-white">AI-powered, cloud-native</span>{" "}
+              systems that turn data into real business wins.
             </m.p>
 
             {/* Specialties (short) */}
@@ -85,14 +99,16 @@ const Brilliance = () => {
               className="mt-5 flex flex-wrap gap-2.5 justify-center md:justify-start"
               {...fadeUp(0.1)}
             >
-              {["GenAI Apps", "MLOps", "Data Pipelines", "Cloud DevOps"].map((t) => (
-                <span
-                  key={t}
-                  className="px-3 py-1.5 rounded-full text-[12px] bg-white/10 border border-white/15 text-gray-100 backdrop-blur"
-                >
-                  {t}
-                </span>
-              ))}
+              {["GenAI Apps", "MLOps", "Data Pipelines", "Cloud DevOps"].map(
+                (t) => (
+                  <span
+                    key={t}
+                    className="px-3 py-1.5 rounded-full text-[12px] bg-white/10 border border-white/15 text-gray-100 backdrop-blur"
+                  >
+                    {t}
+                  </span>
+                )
+              )}
             </m.div>
 
             {/* Value bullets (short) */}
@@ -130,7 +146,10 @@ const Brilliance = () => {
           {/* RIGHT – 3 process cards with parallax tilt */}
           <div className="relative flex items-center justify-center z-10 mt-10 md:mt-0">
             <div className="w-full md:w-[78%] space-y-5">
-              <TiltCard title=" Discover & Plan" points={["Data & workflow audit", "Use-case ROI map"]} />
+              <TiltCard
+                title=" Discover & Plan"
+                points={["Data & workflow audit", "Use-case ROI map"]}
+              />
               <TiltCard
                 title=" Build & Iterate"
                 points={["LLM apps & vector search", "Real-time pipelines"]}

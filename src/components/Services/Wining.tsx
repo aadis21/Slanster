@@ -41,7 +41,7 @@ const Wining = () => {
             Business Growth.
           </h2>
 
-          <button className="mt-6 px-6 py-2 bg-white text-black rounded-full font-medium shadow-md hover:bg-gray-100 transition">
+          <button className="mt-6 px-6 py-2 bg-white text-black rounded-full font-medium shadow-md hover:bg-gray-100 transition z-10 cursor-pointer">
             Talk To Experts
           </button>
         </div>

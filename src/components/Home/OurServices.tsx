@@ -177,7 +177,7 @@ const OurServices: React.FC = () => {
   };
 
   return (
-    <section className="py-16 px-6 md:px-0 bg-white">
+    <section className="py-16 px-6 md:px-0 bg-white ">
       {/* Heading */}
       <div className="text-center">
         <p className="inline-block border rounded-2xl border-gray-300 shadow-md px-4 py-1 text-gray-500 uppercase tracking-wide mb-4 bg-white">
@@ -187,12 +187,12 @@ const OurServices: React.FC = () => {
           className={`${inter.className} font-normal text-gray-900 
             text-[16px] sm:text-[24px] md:text-[32px] lg:text-[40px]`}
         >
-          Smart IT Services to Power <br /> Your Business
+          Smart IT Services to Power Your Business
         </h2>
       </div>
 
       {/* Row slider */}
-      <div className="relative max-w-7xl mx-auto mt-12">
+      <div className="relative max-w-8xl md:px-25 mx-auto mt-12">
         <div
           className="overflow-hidden"
           onTouchStart={onTouchStart}
@@ -230,10 +230,14 @@ const OurServices: React.FC = () => {
                   {service.icon}
                 </div>
                 <div className="relative z-10 text-left mt-auto">
-                  <h3 className={`${inter.className} text-lg font-normal text-yellow-400 mb-2`}>
+                  <h3
+                    className={`${inter.className} text-lg font-normal text-yellow-400 mb-2`}
+                  >
                     {service.title}
                   </h3>
-                  <p className={`${inter.className} text-gray-200 text-sm font-normal`}>
+                  <p
+                    className={`${inter.className} text-gray-200 text-sm font-normal`}
+                  >
                     {service.desc}
                   </p>
                 </div>

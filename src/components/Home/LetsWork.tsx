@@ -47,9 +47,9 @@ const ContactPage = () => {
 
   return (
     <div
-      className={`min-h-screen bg-white py-10 md:py-16 flex items-center justify-center text-white ${inter.className}`}
+      className={`min-h-screen bg-white py-10 md:px-6 px-0 md:py-16 flex items-center justify-center text-white ${inter.className}`}
     >
-      <div className="w-[95%] md:w-[90%] max-w-7xl mx-auto bg-[#1e3a5f] p-6 md:p-8 rounded-2xl shadow-lg">
+      <div className="w-[95%] md:w-[90%] max-w-8xl  mx-auto bg-[#1e3a5f] p-4 md:p-8 rounded-2xl shadow-lg">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* LEFT FORM */}
           <div className="md:col-span-2 flex flex-col justify-center">
@@ -67,20 +67,28 @@ const ContactPage = () => {
                     type="text"
                     placeholder="Last Name"
                     value={formData.lastName}
-                    onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, lastName: e.target.value })
+                    }
                     className="w-full px-4 py-2 rounded bg-[#2b4a75] placeholder-gray-400 text-white focus:outline-none"
                   />
-                  {errors.lastName && <p className="text-red-400 text-sm">{errors.lastName}</p>}
+                  {errors.lastName && (
+                    <p className="text-red-400 text-sm">{errors.lastName}</p>
+                  )}
                 </div>
                 <div>
                   <input
                     type="text"
                     placeholder="First Name"
                     value={formData.firstName}
-                    onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, firstName: e.target.value })
+                    }
                     className="w-full px-4 py-2 rounded bg-[#2b4a75] placeholder-gray-400 text-white focus:outline-none"
                   />
-                  {errors.firstName && <p className="text-red-400 text-sm">{errors.firstName}</p>}
+                  {errors.firstName && (
+                    <p className="text-red-400 text-sm">{errors.firstName}</p>
+                  )}
                 </div>
               </div>
 
@@ -89,10 +97,14 @@ const ContactPage = () => {
                   type="email"
                   placeholder="Email"
                   value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                   className="w-full px-4 py-2 rounded bg-[#2b4a75] placeholder-gray-400 text-white focus:outline-none"
                 />
-                {errors.email && <p className="text-red-400 text-sm">{errors.email}</p>}
+                {errors.email && (
+                  <p className="text-red-400 text-sm">{errors.email}</p>
+                )}
               </div>
 
               <div>
@@ -100,10 +112,14 @@ const ContactPage = () => {
                   type="text"
                   placeholder="Phone Number"
                   value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, phone: e.target.value })
+                  }
                   className="w-full px-4 py-2 rounded bg-[#2b4a75] placeholder-gray-400 text-white focus:outline-none"
                 />
-                {errors.phone && <p className="text-red-400 text-sm">{errors.phone}</p>}
+                {errors.phone && (
+                  <p className="text-red-400 text-sm">{errors.phone}</p>
+                )}
               </div>
 
               <div>
@@ -111,10 +127,14 @@ const ContactPage = () => {
                   placeholder="Message"
                   rows={4}
                   value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
                   className="w-full px-4 py-2 rounded bg-[#2b4a75] placeholder-gray-400 text-white focus:outline-none"
                 />
-                {errors.message && <p className="text-red-400 text-sm">{errors.message}</p>}
+                {errors.message && (
+                  <p className="text-red-400 text-sm">{errors.message}</p>
+                )}
               </div>
 
               <button
@@ -133,15 +153,20 @@ const ContactPage = () => {
                 Friendly support, fast responses
               </h3>
               <p className="text-white/80 text-sm mt-2 mb-6">
-                We usually reply in <span className="font-semibold text-white">under 6 hours</span>.
+                We usually reply in{" "}
+                <span className="font-semibold text-white">under 6 hours</span>.
               </p>
 
               {/* CONTACT INFO */}
               <div className="grid grid-cols-1 gap-4">
                 {/* Support */}
                 <div className="rounded-xl bg-white/10 border border-white/10 p-4">
-                  <h4 className="text-base font-semibold text-blue-100">Support</h4>
-                  <p className="text-white/80 text-xs mt-1">Our friendly team is here to help.</p>
+                  <h4 className="text-base font-semibold text-blue-100">
+                    Support
+                  </h4>
+                  <p className="text-white/80 text-xs mt-1">
+                    Our friendly team is here to help.
+                  </p>
                   <a
                     href="mailto:support@slanster.com"
                     className="text-blue-200 hover:underline text-sm mt-2 inline-block break-all"
@@ -152,7 +177,9 @@ const ContactPage = () => {
 
                 {/* Phone */}
                 <div className="rounded-xl bg-white/10 border border-white/10 p-4">
-                  <h4 className="text-base font-semibold text-blue-100">Phone</h4>
+                  <h4 className="text-base font-semibold text-blue-100">
+                    Phone
+                  </h4>
                   <p className="text-white/80 text-xs mt-1">Mon–Fri, 8am–5pm</p>
                   <a
                     href="tel:+14353457655"

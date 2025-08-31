@@ -32,7 +32,7 @@ const FooterPage = () => {
   return (
     <footer className={`${inter.className} bg-gray-900 text-white`}>
       {/* Top Section */}
-      <div className="max-w-7xl mx-auto px-6 md:px-0 py-20 flex flex-col md:flex-row justify-between gap-12 animate-fadeIn">
+      <div className="max-w-8xl md:px-25 mx-auto px-6 py-20 flex flex-col md:flex-row justify-between gap-12 animate-fadeIn">
         {/* Logo & Description */}
         <div className="flex flex-col items-start max-w-[300px]">
           <Image
@@ -50,53 +50,56 @@ const FooterPage = () => {
         </div>
 
         {/* Quick Links */}
-        <div>
-          <h3 className="font-semibold text-xl mb-6">Quick Links</h3>
-          <ul className="space-y-3 text-gray-400 text-base">
-            {navLinks.map((item, idx) => (
-              <li
-                key={idx}
-                className="relative py-2 group cursor-pointer w-fit hover:text-white transition"
-              >
-                <Link href={item.href}>
-                  <span>{item.name}</span>
-                </Link>
-                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-              </li>
-            ))}
-          </ul>
-        </div>
 
-        {/* Services */}
-        <div>
-          <h3 className="font-semibold text-xl mb-6">Services</h3>
-          <ul className="space-y-3 text-gray-400 text-base">
-            {[
-              // "AI",
-              // "Blockchain",
-              // "Bespoke",
-              // "Data Analytics",
-              // "Cyber Security",
-              // "AR/VR",
+        <div className="flex flex-row gap-12">
+          <div>
+            <h3 className="font-semibold text-xl mb-6">Quick Links</h3>
+            <ul className="space-y-3 text-gray-400 text-base">
+              {navLinks.map((item, idx) => (
+                <li
+                  key={idx}
+                  className="relative py-2 group cursor-pointer w-fit hover:text-white transition"
+                >
+                  <Link href={item.href}>
+                    <span>{item.name}</span>
+                  </Link>
+                  <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-              "AI",
-              "Consulting",
-              "Bespoke IT",
-              "Cyber Security",
-              "Staffing",
-              "AR/VR",
-            ].map((item, idx) => (
-              <li
-                key={idx}
-                className="relative py-2 group cursor-pointer w-fit hover:text-white transition"
-              >
-                <Link href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}>
-                  <span>{item}</span>
-                </Link>
-                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-              </li>
-            ))}
-          </ul>
+          {/* Services */}
+          <div>
+            <h3 className="font-semibold text-xl mb-6">Services</h3>
+            <ul className="space-y-3 text-gray-400 text-base">
+              {[
+                // "AI",
+                // "Blockchain",
+                // "Bespoke",
+                // "Data Analytics",
+                // "Cyber Security",
+                // "AR/VR",
+
+                "AI",
+                "Consulting",
+                "Bespoke IT",
+                "Cyber Security",
+                "Staffing",
+                "AR/VR",
+              ].map((item, idx) => (
+                <li
+                  key={idx}
+                  className="relative py-2 group cursor-pointer w-fit hover:text-white transition"
+                >
+                  <Link href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}>
+                    <span>{item}</span>
+                  </Link>
+                  <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         {/* Courses */}

@@ -86,7 +86,7 @@ const Placement: React.FC = () => {
       <div className="pointer-events-none absolute -top-24 -left-24 h-64 w-64 rounded-full bg-[#0f395f]/10 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-sky-200/40 blur-3xl" />
 
-      <div className="relative max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 rounded-2xl bg-white/60 backdrop-blur-md border border-gray-100 p-5 sm:p-8 md:p-10">
+      <div className="relative max-w-8xl md:px-25 w-full grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 rounded-2xl bg-white/60 backdrop-blur-md border border-gray-100 p-5 sm:p-8 md:p-10">
         <div className="absolute inset-0 -z-10">
           <Image
             src={BgShadow}
@@ -108,18 +108,23 @@ const Placement: React.FC = () => {
           </h2>
 
           <p className="font-sans text-gray-700 text-[14px] sm:text-[15px] md:text-[16px] animate-[fade-up_600ms_ease_100ms_both]">
-            Be part of our exclusive <span className="font-semibold">Super 30 Batch</span> and gain hands-on expertise through live projects:
+            Be part of our exclusive{" "}
+            <span className="font-semibold">Super 30 Batch</span> and gain
+            hands-on expertise through live projects:
           </p>
 
           <ol className="font-sans space-y-2.5 text-gray-700 text-[14px] sm:text-[15px] md:text-[16px] animate-[fade-up_600ms_ease_160ms_both] list-decimal list-inside">
             <li>
-              <span className="font-semibold">Consulting Skills</span> — Problem-solving with proven Big 4 frameworks
+              <span className="font-semibold">Consulting Skills</span> —
+              Problem-solving with proven Big 4 frameworks
             </li>
             <li>
-              <span className="font-semibold">Tech Skills</span> — AI, Cybersecurity & Cloud FinOps for future-ready careers
+              <span className="font-semibold">Tech Skills</span> — AI,
+              Cybersecurity & Cloud FinOps for future-ready careers
             </li>
             <li>
-              <span className="font-semibold">Business Relationship</span> — Storytelling, communication & networking mastery
+              <span className="font-semibold">Business Relationship</span> —
+              Storytelling, communication & networking mastery
             </li>
           </ol>
 
@@ -221,7 +226,9 @@ const Placement: React.FC = () => {
         }
       `}</style>
 
-      {openModal && <ContactModal isOpen={openModal} onClose={() => setOpenModal(false)} />}
+      {openModal && (
+        <ContactModal isOpen={openModal} onClose={() => setOpenModal(false)} />
+      )}
     </section>
   );
 };

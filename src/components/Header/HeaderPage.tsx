@@ -21,16 +21,17 @@ const HeaderPage: React.FC = () => {
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50 font-inter">
-      <div className="max-w-8xl md:px-15 mx-auto flex items-center justify-between h-24 px-4 sm:px-6">
+      <div className="max-w-8xl md:px-15 px-0  mx-auto flex items-center justify-between h-24">
         {/* Logo */}
         <div className="flex items-center">
           <Link href="/">
             <Image
               src="/logoheader.png"
               alt="Slanster Logo"
-              width={220}
+              width={210} 
               height={80}
               priority
+              className="w-[150px] md:w-[210px] h-auto"
             />
           </Link>
         </div>
@@ -57,7 +58,6 @@ const HeaderPage: React.FC = () => {
           >
             Let&apos;s Connect
           </button>
-
 
           <Link href="/super30">
             <button className="cursor-pointer  px-5 py-2 bg-sky-900 text-white rounded-md hover:bg-sky-800 transition">

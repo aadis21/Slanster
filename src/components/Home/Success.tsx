@@ -124,7 +124,7 @@ function Success() {
         </div>
       </header>
 
-      <div className="flex md:flex-row flex-col gap-10 xl:gap-12 items-center justify-center mt-12 max-w-7xl mx-auto">
+      <div className="flex md:flex-row flex-col gap-10 xl:gap-12 items-center justify-center mt-12 max-w-8xl md:px-25 mx-auto">
         {/* Sidebar Selection */}
         <div className="md:w-1/2 w-full">
           <ul className="w-full rounded-lg gap-3 grid grid-cols-2 md:grid-cols-1">

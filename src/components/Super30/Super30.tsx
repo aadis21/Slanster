@@ -38,7 +38,7 @@ const Super30 = () => {
         </div>
 
         {/* MAIN GRID */}
-        <div className="relative max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div className="relative max-w-8xl md:px-25 w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* LEFT IMAGE BOX (no border; fade-loop carousel) */}
           <div className="w-full h-[280px] sm:h-[350px] md:h-[420px] rounded-2xl flex justify-center relative overflow-hidden">
             {images.map((src, i) => (

@@ -61,7 +61,7 @@ const Card: React.FC<CardProps> = ({
         src={image}
         alt={name}
         fill
-        className="object-contain"
+        className="object-fill"
         sizes="(min-width:1024px) 300px, (min-width:640px) 280px, 260px"
         placeholder="blur"
       />
@@ -240,7 +240,7 @@ const Mentor: React.FC = () => {
 
   return (
     <section className={`bg-[#0F395F] text-white ${inter.className}`}>
-      <div className="max-w-7xl md:px-0 px-2 mx-auto py-16">
+      <div className="max-w-8xl md:px-25 px-6 mx-auto py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left Column */}
           <div className="lg:col-span-5">

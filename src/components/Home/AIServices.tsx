@@ -84,9 +84,7 @@ const AIServices = () => {
 
   return (
     <div className="bg-white">
-      <section
-        className={`mx-auto max-w-7xl py-16 md:px-0 px-6 ${inter.className}`}
-      >
+      <section className={`mx-auto py-16 md:px-0 px-6 ${inter.className}`}>
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
@@ -128,7 +126,7 @@ const AIServices = () => {
         </div>
 
         {/* Content Section */}
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16">
+        <div className="max-w-8xl md:px-25 mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16">
           {/* Left Text */}
           <motion.div
             key={activeService?.id}
