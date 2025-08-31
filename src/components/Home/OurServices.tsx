@@ -27,37 +27,37 @@ const services: Service[] = [
     title: "Artificial Intelligence",
     desc: "Automate processes, analyze data, and decide smarter.",
     icon: <Monitor className="w-6 h-6 text-white" />,
-    backgroundimage: "/home/ourservices/ai.png",
+    backgroundimage: "/home/ourservices/ai.jpg",
   },
   {
     title: "Consulting",
     desc: "Streamline operations and accelerate business growth.",
     icon: <Briefcase className="w-6 h-6 text-white" />,
-    backgroundimage: "/home/ourservices/consulting.png",
+    backgroundimage: "/home/ourservices/consulting.jpg",
   },
   {
     title: "Bespoke IT",
     desc: "Custom IT solutions for unique business needs.",
     icon: <Cpu className="w-6 h-6 text-white" />,
-    backgroundimage: "/home/ourservices/Bespoke.png",
+    backgroundimage: "/home/ourservices/Bespoke.jpg",
   },
   {
     title: "Cybersecurity",
     desc: "Protect digital assets with enterprise-grade security.",
     icon: <Shield className="w-6 h-6 text-white" />,
-    backgroundimage: "/home/ourservices/Cyber security.png",
+    backgroundimage: "/home/ourservices/Cyber security.jpg",
   },
   {
     title: "Staffing",
     desc: "Access top tech talent for your projects.",
     icon: <Users className="w-6 h-6 text-white" />,
-    backgroundimage: "/home/ourservices/Staffing.png",
+    backgroundimage: "/home/ourservices/staffing.jpg",
   },
   {
     title: "AR/VR",
     desc: "Immersive augmented and virtual reality solutions.",
     icon: <Glasses className="w-6 h-6 text-white" />,
-    backgroundimage: "/home/ourservices/ARVR.png",
+    backgroundimage: "/home/ourservices/ARVR.jpg",
   },
 ];
 

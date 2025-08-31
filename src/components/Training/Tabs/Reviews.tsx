@@ -1,7 +1,6 @@
 "use client";
-import Image from "next/image";
 import React, { useState } from "react";
-import { FaStar } from "react-icons/fa";
+import { FaStar, FaUserCircle } from "react-icons/fa";
 
 interface Review {
   name: string;
@@ -16,8 +15,6 @@ interface ReviewsProps {
 }
 
 const Reviews: React.FC<ReviewsProps> = ({ reviews }) => {
-  const [currentPage, setCurrentPage] = useState(1);
-
   // Static rating summary (can make dynamic later)
   const ratingSummary = [
     { stars: 5, percent: 90 },
@@ -49,9 +46,9 @@ const Reviews: React.FC<ReviewsProps> = ({ reviews }) => {
               ))}
           </div>
         </div>
-        <p className="text-gray-500 text-sm">
+        {/* <p className="text-gray-500 text-sm">
           based on <span className="font-semibold">146,951</span> ratings
-        </p>
+        </p> */}
       </div>
 
       {/* Rating Bars */}
@@ -79,13 +76,8 @@ const Reviews: React.FC<ReviewsProps> = ({ reviews }) => {
             key={index}
             className="border-b pb-6 flex flex-col sm:flex-row sm:items-start gap-4"
           >
-            <Image
-              src={`https://i.pravatar.cc/100?img=${index + 1}`}
-              alt={review.name}
-              className="w-12 h-12 rounded-full object-cover"
-              width={200}
-              height={200}
-            />
+            {/* Avatar replaced with icon */}
+            <FaUserCircle className="w-12 h-12 text-gray-400" />
 
             <div className="flex-1">
               <div className="flex items-center justify-between">
@@ -107,41 +99,10 @@ const Reviews: React.FC<ReviewsProps> = ({ reviews }) => {
                   ))}
               </div>
               <p className="text-gray-600 text-sm mt-2">{review.comment}</p>
-              <button className="mt-2 text-sm text-red-500 hover:underline">
-                Reply
-              </button>
+              {/* Removed Reply button */}
             </div>
           </div>
         ))}
-      </div>
-
-      {/* Pagination */}
-      <div className="flex justify-center items-center gap-2 mt-6">
-        <button
-          className="px-3 py-1 border rounded-full text-gray-500 hover:bg-gray-100"
-          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-        >
-          &lt;
-        </button>
-        {[1, 2, 3].map((page) => (
-          <button
-            key={page}
-            className={`px-3 py-1 border rounded-full ${
-              currentPage === page
-                ? "bg-black text-white"
-                : "text-gray-500 hover:bg-gray-100"
-            }`}
-            onClick={() => setCurrentPage(page)}
-          >
-            {page}
-          </button>
-        ))}
-        <button
-          className="px-3 py-1 border rounded-full text-gray-500 hover:bg-gray-100"
-          onClick={() => setCurrentPage((prev) => Math.min(prev + 1, 3))}
-        >
-          &gt;
-        </button>
       </div>
     </div>
   );
