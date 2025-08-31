@@ -40,7 +40,7 @@ const FooterPage = () => {
             alt="Logo"
             width={220}
             height={220}
-            className="mb-6 md:w-full w-[50%]"
+            className="mb-6 w-[50%]"
           />
           <p className="text-gray-400 text-base leading-relaxed">
             We empower businesses and learners by combining expert guidance with
