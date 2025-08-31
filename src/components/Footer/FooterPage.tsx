@@ -34,13 +34,13 @@ const FooterPage = () => {
       {/* Top Section */}
       <div className="max-w-8xl md:px-25 mx-auto px-6 py-20 flex flex-col md:flex-row justify-between gap-12 animate-fadeIn">
         {/* Logo & Description */}
-        <div className="flex flex-col items-start max-w-[300px]">
+        <div className="flex flex-col items-start max-w-[300px] ">
           <Image
             src="/logofooter.png"
             alt="Logo"
             width={220}
             height={220}
-            className="mb-6"
+            className="mb-6 md:w-full w-[50%]"
           />
           <p className="text-gray-400 text-base leading-relaxed">
             We empower businesses and learners by combining expert guidance with
@@ -152,7 +152,7 @@ const FooterPage = () => {
 
       <div className="max-w-7xl mx-auto px-6 md:px-0">
         {/* Social Icons */}
-        <div className="flex justify-start space-x-8 pb-8 animate-fadeIn delay-200">
+        <div className="flex justify-center md:justify-start space-x-8 pb-8 animate-fadeIn delay-200">
           {[FaInstagram, FaFacebookF, FaYoutube, FaLinkedin].map(
             (Icon, idx) => (
               <a
