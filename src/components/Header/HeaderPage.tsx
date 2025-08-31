@@ -77,18 +77,18 @@ const HeaderPage: React.FC = () => {
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-full w-[85%] sm:w-[70%] md:w-[60%] bg-white shadow-lg z-50 transform transition-transform duration-500 ease-in-out font-inter ${
-          mobileMenu ? "translate-x-0" : "-translate-x-full"
+        className={`fixed top-0 right-0 h-full w-full sm:w-[70%] md:w-[60%] bg-white shadow-lg z-50 transform transition-transform duration-500 ease-in-out font-inter ${
+          mobileMenu ? "-translate-x-0" : "translate-x-full"
         }`}
       >
         {/* Sidebar Header */}
-        <div className="flex justify-between items-center px-6 py-6 border-b">
+        <div className="flex justify-between items-center pr-6 py-6 border-b">
           <Link href="/">
             <Image
               src="/logoheader.png"
               alt="Slanster Logo"
               width={200}
-              height={80}
+              height={100}
               className="h-auto w-[180px] sm:w-[200px]"
             />
           </Link>
@@ -113,14 +113,14 @@ const HeaderPage: React.FC = () => {
 
           {/* Buttons in Sidebar */}
           <div className="flex flex-col space-y-4 pt-8">
-            <Link href="/contact">
+            
               <button
                 className="px-5 py-2 border border-gray-400 rounded-md hover:bg-gray-50 transition text-gray-900"
                 onClick={() => setOpenModal(true)}
               >
                 Let&apos;s Connect
               </button>
-            </Link>
+          
             <Link href="/super30">
               <button className="w-full bg-sky-900 text-white px-5 py-3 rounded-md hover:bg-sky-800 transition">
                 Unlock Super 30

@@ -167,7 +167,7 @@ const FooterPage = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-700 flex flex-col md:flex-row justify-between items-center px-6 py-6 text-gray-400 text-sm">
+        <div className="border-t border-gray-700 flex flex-col md:flex-row justify-between items-center md:px-6 px-0 py-6 text-gray-400 text-sm">
           <div className="flex space-x-6 mb-3 md:mb-0">
             {[
               { name: "Privacy policy", link: "/privacypolicy" },

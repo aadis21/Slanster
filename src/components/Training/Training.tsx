@@ -14,7 +14,7 @@ const Training = () => {
     <div
       className={`bg-white text-gray-900 md:min-h-[70vh] h-[40vh]  flex items-center justify-center px-4 ${inter.className}`}
     >
-      <div className="relative border-4 border-[#DCE3FF] rounded-3xl p-6 md:p-12 max-w-7xl w-full text-center flex flex-col items-center justify-center shadow-sm">
+      <div className="relative border-4 border-[#DCE3FF] rounded-3xl p-6 md:p-12 max-w-8xl md:mx-25 w-full text-center flex flex-col items-center justify-center shadow-sm">
         {/* Top Right Shape */}
         <div className="absolute -top-2 right-0">
           <Image

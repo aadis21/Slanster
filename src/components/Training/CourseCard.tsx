@@ -13,7 +13,7 @@ const CourseCard = () => {
     <section className="py-12 bg-white">
       {/* Heading */}
       <div className="text-center mb-10 px-4">
-        <h2 className="text-2xl md:text-5xl text-gray-900 font-bold pb-3">
+        <h2 className="text-2xl md:text-5xl text-gray-800  pb-3">
           Our Most Popular Training Program
         </h2>
         <p className="text-gray-500 mt-2 text-sm md:text-base">
@@ -22,7 +22,7 @@ const CourseCard = () => {
       </div>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-8xl md:px-25 mx-auto px-4">
         {courses?.map((course, index) => (
           <motion.div
             key={course.id}

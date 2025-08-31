@@ -291,8 +291,8 @@ const Mentor: React.FC = () => {
                   type="button"
                   aria-label="Previous"
                   onClick={handlePrev}
-                  className="h-10 w-10 rounded-full bg-[#0A3A58] flex items-center justify-center
-                             text-white text-lg leading-none shadow-sm select-none active:scale-95"
+                  className="h-10 w-10 rounded-full bg-white text-[#0A3A58] flex items-center justify-center
+                              text-lg leading-none shadow-sm select-none active:scale-95"
                 >
                   ‹
                 </button>
@@ -300,8 +300,8 @@ const Mentor: React.FC = () => {
                   type="button"
                   aria-label="Next"
                   onClick={handleNext}
-                  className="h-10 w-10 rounded-full bg-[#0A3A58] flex items-center justify-center
-                             text-white text-lg leading-none shadow-sm select-none active:scale-95"
+                  className="h-10 w-10 rounded-full bg-white text-[#0A3A58]  flex items-center justify-center
+                              text-lg leading-none shadow-sm select-none active:scale-95"
                 >
                   ›
                 </button>
