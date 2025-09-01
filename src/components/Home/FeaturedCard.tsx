@@ -76,7 +76,7 @@ const cards: CardType[] = [
 const PrevArrow = ({ onClick }: { onClick?: () => void }) => (
   <button
     onClick={onClick}
-    className="absolute left-[-2rem] top-1/2 -translate-y-1/2 z-10 bg-gray-800/60 text-white 
+    className="absolute left-[-3rem] top-1/2 -translate-y-1/2 z-10 bg-white text-gray-900 
                rounded-full p-2 sm:p-2 md:p-4 hover:bg-gray-200/20 transition cursor-pointer"
   >
     <FaChevronLeft className="text-sm sm:text-sm md:text-md " />
@@ -87,7 +87,7 @@ const PrevArrow = ({ onClick }: { onClick?: () => void }) => (
 const NextArrow = ({ onClick }: { onClick?: () => void }) => (
   <button
     onClick={onClick}
-    className="absolute right-[-2rem] top-1/2 -translate-y-1/2 z-10 bg-gray-800/60 text-white 
+    className="absolute right-[-3rem] top-1/2 -translate-y-1/2 z-10 bg-white text-gray-900 
                rounded-full p-2 sm:p-2 md:p-4 hover:bg-gray-200/20 transition cursor-pointer"
   >
     <FaChevronRight className="text-sm sm:text-sm md:text-md " />
@@ -124,7 +124,7 @@ const FeaturedCard = () => {
 
   return (
     <section
-      className={`bg-gray-900 min-h-screen flex flex-col justify-center items-center px-6 md:px-0 py-16 ${inter.className}`}
+      className={`bg-gray-900 md:min-h-[70vh] h-[40vh] flex flex-col justify-center items-center px-6 md:px-0 py-16 ${inter.className}`}
     >
       {/* Heading */}
       <h2

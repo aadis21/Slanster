@@ -1,3 +1,4 @@
+import FAQ from '@/components/AI/FAQ'
 import Companies from '@/components/Home/Companies'
 import Placement from '@/components/Home/Placement'
 import Super30 from '@/components/Super30/Super30'
@@ -13,6 +14,7 @@ const Page = () => {
         <CourseCard />
         <Super30/>
         <Placement />
+        <FAQ />
 
     </div>
   )
