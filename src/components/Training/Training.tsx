@@ -29,7 +29,7 @@ const Training = () => {
         {/* Heading */}
         <h2 className="text-2xl md:text-[45px] lg:text-[52px leading-snug">
           Teaching in the Internet age <br />
-          means we must teach <span className="text-blue-600">tomorrow’s</span>
+          means we must teach <span className="text-[#024a71]">tomorrow’s</span>
           <br />
           <span className="flex items-center justify-center gap-2 md:gap-4 md:mt-3 mt-0">
             <p className="">skills today</p>
