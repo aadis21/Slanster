@@ -1,8 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Inter } from "next/font/google";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -147,10 +148,23 @@ const servicesData: Record<ServiceKey, { items: ServiceItem[]; image: string }> 
 };
 
 const Catogories = () => {
-  const [activeTab, setActiveTab] = useState<ServiceKey>("Artificial Intelligence");
+  // const [activeTab, setActiveTab] = useState<ServiceKey>("Artificial Intelligence");
+  const searchParams = useSearchParams();
+  const defaultTab = decodeURIComponent(
+    searchParams.get("tab") || "Consulting"
+
+  ); 
+  const [activeTab, setActiveTab] = useState<ServiceKey>(defaultTab as ServiceKey);
+
+   useEffect(() => {
+     if (defaultTab) {
+       setActiveTab(defaultTab as ServiceKey);
+     }
+   }, [defaultTab]);
+
 
   return (
-    <section className="bg-white">
+    <section id="categories" className="bg-white scroll-mt-20">
       <div
         className={`${inter.className} mx-auto  max-w-8xl md:px-25 px-4 py-10 sm:py-14`}
       >
@@ -179,7 +193,7 @@ const Catogories = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
           {/* Left: Three Tiles */}
           <div className="flex flex-col gap-4 sm:gap-5">
-            {servicesData[activeTab].items.map((item, index) => (
+            {servicesData[activeTab]?.items?.map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 12 }}
@@ -211,7 +225,7 @@ const Catogories = () => {
                 {/* Aspect ratios ensure perfect alignment across breakpoints */}
                 <div className="relative w-full aspect-[16/10] sm:aspect-[4/3] lg:aspect-[3/2]">
                   <Image
-                    src={servicesData[activeTab].image}
+                    src={servicesData[activeTab]?.image}
                     alt={activeTab}
                     fill
                     className="object-cover"

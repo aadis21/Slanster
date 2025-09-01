@@ -12,6 +12,17 @@ import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const services = [
+  { name: "AI", path: "/services/ai" },
+  { name: "Consulting", path: "/services?tab=Consulting#categories" },
+  { name: "Bespoke IT", path: "/services?tab=Bespoke IT#categories" },
+  { name: "Cyber Security", path: "/services?tab=Cybersecurity#categories" },
+  { name: "Staffing", path: "/services?tab=Staffing#categories" },
+  { name: "AR/VR", path: "/services?tab=AR/VR#categories" },
+];
+
+
+
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
@@ -34,8 +45,7 @@ const FooterPage = () => {
       {/* Top Section */}
       <div className="max-w-8xl md:px-25 mx-auto px-6 py-20 flex flex-col md:flex-row justify-between gap-12 animate-fadeIn">
         {/* Logo & Description */}
-        <div className="flex flex-col items-start max-w-[300px] "
-        >
+        <div className="flex flex-col items-start max-w-[300px] ">
           <Image
             src="/logofooter.png"
             alt="Logo"
@@ -71,36 +81,19 @@ const FooterPage = () => {
           </div>
 
           {/* Services */}
-          <div>
-            <h3 className="font-semibold text-xl mb-6">Services</h3>
-            <ul className="space-y-3 text-gray-400 text-base">
-              {[
-                // "AI",
-                // "Blockchain",
-                // "Bespoke",
-                // "Data Analytics",
-                // "Cyber Security",
-                // "AR/VR",
-
-                "AI",
-                "Consulting",
-                "Bespoke IT",
-                "Cyber Security",
-                "Staffing",
-                "AR/VR",
-              ].map((item, idx) => (
-                <li
-                  key={idx}
-                  className="relative py-2 group cursor-pointer w-fit hover:text-white transition"
-                >
-                  <Link href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}>
-                    <span>{item}</span>
-                  </Link>
-                  <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ul className="space-y-3 text-gray-400 text-base">
+            {services.map((item, idx) => (
+              <li
+                key={idx}
+                className="relative py-2 group cursor-pointer w-fit hover:text-white transition"
+              >
+                <Link href={item.path}>
+                  <span>{item.name}</span>
+                </Link>
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* Courses */}
