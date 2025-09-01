@@ -1,11 +1,21 @@
-// app/registration/page.tsx
+// components/RegistrationModal.tsx
 "use client";
 
 import React from "react";
 
-export default function RegistrationPage() {
+interface RegistrationModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export default function RegistrationModal({
+  isOpen,
+  onClose,
+}: RegistrationModalProps) {
+  if (!isOpen) return null;
+
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); // static-only demo, no network calls
+    e.preventDefault();
     alert("Submitted (demo only – no server connected).");
   };
 
@@ -16,20 +26,27 @@ export default function RegistrationPage() {
   const hint = "text-xs text-gray-500 mt-1";
 
   return (
-    <main className="min-h-screen bg-white">
-      {/* Header band */}
-      <header className="bg-[#024a71] text-white">
-        <div className="max-w-5xl mx-auto px-6 py-10">
-          <h1 className="text-2xl md:text-3xl font-semibold">Registration</h1>
-          <p className="text-white/85 mt-1">
-            Fill your details to apply for our programs.
-          </p>
-        </div>
-      </header>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+      {/* Modal content */}
+      <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl bg-white shadow-xl">
+        {/* Header */}
+        <header className="sticky top-0 z-10 bg-[#024a71] text-white px-6 py-4 rounded-t-2xl flex justify-between items-center">
+          <div>
+            <h1 className="text-xl md:text-2xl font-semibold">Registration</h1>
+            <p className="text-white/85 text-sm">
+              Fill your details to apply for our programs.
+            </p>
+          </div>
+          <button
+            onClick={onClose}
+            className="text-white hover:opacity-80 text-lg font-bold"
+          >
+            ✕
+          </button>
+        </header>
 
-      {/* Card */}
-      <section className="max-w-5xl mx-auto px-6 -mt-8 pb-16">
-        <div className="rounded-2xl bg-white shadow-xl ring-1 ring-black/5 p-6 md:p-8">
+        {/* Form section */}
+        <section className="px-6 py-6 md:p-8">
           <form
             onSubmit={onSubmit}
             encType="multipart/form-data"
@@ -44,7 +61,6 @@ export default function RegistrationPage() {
                 <input
                   id="firstName"
                   name="firstName"
-                  autoComplete="given-name"
                   required
                   placeholder="First"
                   className={input}
@@ -58,7 +74,6 @@ export default function RegistrationPage() {
                 <input
                   id="lastName"
                   name="lastName"
-                  autoComplete="family-name"
                   required
                   placeholder="Last"
                   className={input}
@@ -76,7 +91,6 @@ export default function RegistrationPage() {
                   id="email"
                   type="email"
                   name="email"
-                  autoComplete="email"
                   required
                   placeholder="name@example.com"
                   className={input}
@@ -90,17 +104,11 @@ export default function RegistrationPage() {
                   id="mobile"
                   type="tel"
                   name="mobile"
-                  inputMode="tel"
-                  pattern="^\+?[0-9\s-]{10,15}$"
-                  autoComplete="tel"
                   required
                   placeholder="+91 98765 43210"
                   className={input}
-                  aria-describedby="mobile-hint"
                 />
-                <p id="mobile-hint" className={hint}>
-                  WhatsApp-enabled number preferred.
-                </p>
+                <p className={hint}>WhatsApp-enabled number preferred.</p>
               </div>
             </div>
 
@@ -122,13 +130,14 @@ export default function RegistrationPage() {
               </div>
               <div>
                 <label htmlFor="stream" className={label}>
-                  Stream / Specialization <span className="text-red-600">*</span>
+                  Stream / Specialization{" "}
+                  <span className="text-red-600">*</span>
                 </label>
                 <input
                   id="stream"
                   name="stream"
                   required
-                  placeholder="e.g., Computer Science, Finance, Marketing"
+                  placeholder="e.g., Computer Science"
                   className={input}
                 />
               </div>
@@ -138,21 +147,13 @@ export default function RegistrationPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div>
                 <label htmlFor="year" className={label}>
-                  Year of Study / Graduation Year{" "}
-                  <span className="text-red-600">*</span>
+                  Graduation Year <span className="text-red-600">*</span>
                 </label>
                 <select id="year" name="year" required className={input}>
                   <option value="">Select year</option>
-                  {/* Static options to keep page fully static */}
-                  <option>2024</option>
-                  <option>2025</option>
-                  <option>2026</option>
-                  <option>2027</option>
-                  <option>2028</option>
-                  <option>2029</option>
-                  <option>2030</option>
-                  <option>2031</option>
-                  <option>2032</option>
+                  {[2024, 2025, 2026, 2027, 2028, 2029, 2030].map((yr) => (
+                    <option key={yr}>{yr}</option>
+                  ))}
                 </select>
               </div>
               <div>
@@ -194,11 +195,8 @@ export default function RegistrationPage() {
                   name="cv"
                   accept=".pdf,.doc,.docx"
                   className="block w-full text-[15px] text-gray-800 file:mr-3 file:rounded-lg file:border-0 file:bg-[#024a71] file:px-3 file:py-2 file:text-white file:text-sm file:font-medium hover:file:opacity-95"
-                  aria-describedby="cv-hint"
                 />
-                <p id="cv-hint" className={hint}>
-                  PDF/DOC up to 5&nbsp;MB.
-                </p>
+                <p className={hint}>PDF/DOC up to 5MB.</p>
               </div>
             </div>
 
@@ -209,7 +207,11 @@ export default function RegistrationPage() {
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                 {[
-                  { id: "consulting", label: "Tech Consulting", value: "tech_consulting" },
+                  {
+                    id: "consulting",
+                    label: "Tech Consulting",
+                    value: "tech_consulting",
+                  },
                   { id: "python", label: "Python", value: "python" },
                   { id: "both", label: "Both", value: "both" },
                   { id: "others", label: "Others", value: "others" },
@@ -217,7 +219,7 @@ export default function RegistrationPage() {
                   <label
                     key={opt.id}
                     htmlFor={opt.id}
-                    className="flex items-center gap-2 rounded-xl border border-gray-300 px-3 py-2 cursor-pointer hover:bg-gray-50"
+                    className="flex items-center gap-2 rounded-xl border px-3 py-2 cursor-pointer hover:bg-gray-50"
                   >
                     <input
                       id={opt.id}
@@ -227,7 +229,7 @@ export default function RegistrationPage() {
                       required
                       className="accent-[#024a71]"
                     />
-                    <span className="text-gray-800">{opt.label}</span>
+                    <span>{opt.label}</span>
                   </label>
                 ))}
               </div>
@@ -242,29 +244,29 @@ export default function RegistrationPage() {
                 id="comments"
                 name="comments"
                 rows={4}
-                placeholder="Share any questions or specific interests…"
+                placeholder="Share any questions…"
                 className={input + " resize-y"}
               />
             </div>
 
             {/* Actions */}
-            <div className="flex items-center justify-end gap-3 pt-2">
+            <div className="flex justify-end gap-3 pt-2">
               <button
                 type="reset"
-                className="px-4 py-2 rounded-xl border border-gray-300 text-gray-800 hover:bg-gray-50"
+                className="px-4 py-2 rounded-xl border text-gray-800 hover:bg-gray-50"
               >
                 Clear
               </button>
               <button
                 type="submit"
-                className="px-5 py-2.5 rounded-xl bg-[#024a71] text-white font-medium shadow hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[#024a71] focus:ring-offset-2"
+                className="px-5 py-2.5 rounded-xl bg-[#024a71] text-white font-medium shadow hover:opacity-95"
               >
                 Submit
               </button>
             </div>
           </form>
-        </div>
-      </section>
-    </main>
+        </section>
+      </div>
+    </div>
   );
 }

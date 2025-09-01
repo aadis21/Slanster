@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import ContactModal from "../Header/ContactModal";
 
 type TabKey = "Frameworks" | "Feature Extraction" | "Feature Analysis";
 
@@ -56,6 +57,7 @@ const tabs: TabKey[] = ["Frameworks", "Feature Extraction", "Feature Analysis"];
 
 const Vision = () => {
   const [activeTab, setActiveTab] = useState<TabKey>("Frameworks");
+    const [openModal, setOpenModal] = useState(false);
 
   return (
     <section className="bg-white py-16">
@@ -134,6 +136,7 @@ const Vision = () => {
                   <a
                     href="#contact"
                     className="inline-flex items-center gap-2 bg-[#024a71] text-white px-5 py-2.5 rounded-xl shadow hover:opacity-95 transition"
+                    onClick={() => setOpenModal(true)}
                   >
                     Discuss your use case
                     <svg
@@ -200,6 +203,10 @@ const Vision = () => {
           ))}
         </div>
       </div>
+      {/* modal  */}
+      {openModal && (
+        <ContactModal isOpen={openModal} onClose={() => setOpenModal(false)} />
+      )}
     </section>
   );
 };

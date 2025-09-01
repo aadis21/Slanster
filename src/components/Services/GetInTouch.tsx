@@ -1,7 +1,10 @@
+"use client"
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import ContactModal from "../Header/ContactModal";
 
 const GetInTouch = () => {
+    const [openModal, setOpenModal] = useState(false);
   return (
     <div className="bg-white">
       <div className="w-full flex justify-center px-4">
@@ -77,12 +80,20 @@ const GetInTouch = () => {
 
           {/* === Right Button === */}
           <div className="mt-6 md:mt-0 z-10 relative">
-            <button className="relative bg-[#024a71] hover:bg-[#024a71] text-white font-semibold px-6 py-3 sm:px-10 sm:py-4 md:px-12 md:py-4 rounded-full shadow-lg transition z-10 cursor-pointer">
+            <button
+              className="relative bg-[#024a71] hover:bg-[#024a71] text-white font-semibold px-6 py-3 sm:px-10 sm:py-4 md:px-12 md:py-4 rounded-full shadow-lg transition z-10 cursor-pointer"
+              onClick={() => setOpenModal(true)}
+            >
               Get in touch
             </button>
           </div>
         </div>
       </div>
+
+      {/* modal  */}
+      {openModal && (
+        <ContactModal isOpen={openModal} onClose={() => setOpenModal(false)} />
+      )}
     </div>
   );
 };

@@ -4,10 +4,12 @@ import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link"; // ✅ Import Link from Next.js
 import ContactModal from "./ContactModal";
+import RegistrationPage from "../Home/registrationform";
 
 const HeaderPage: React.FC = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [openModal, setOpenModal] = useState(false);
+  const [openSuperModal, setOpenSuperModal] = useState(false);
 
   // ✅ Define routes here
   const navLinks = [
@@ -28,7 +30,7 @@ const HeaderPage: React.FC = () => {
             <Image
               src="/logoheader.png"
               alt="Slanster Logo"
-              width={210} 
+              width={210}
               height={80}
               priority
               className="w-[150px] md:w-[210px] h-auto"
@@ -59,11 +61,12 @@ const HeaderPage: React.FC = () => {
             Let&apos;s Connect
           </button>
 
-          <Link href="/super30">
-            <button className="cursor-pointer  px-5 py-2 bg-sky-900 text-white rounded-md hover:bg-sky-800 transition">
-              Unlock Super 30
-            </button>
-          </Link>
+          <button
+            className="cursor-pointer  px-5 py-2 bg-sky-900 text-white rounded-md hover:bg-sky-800 transition"
+            onClick={() => setOpenSuperModal(true)}
+          >
+            Unlock Super 30
+          </button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -113,19 +116,18 @@ const HeaderPage: React.FC = () => {
 
           {/* Buttons in Sidebar */}
           <div className="flex flex-col space-y-4 pt-8">
-            
-              <button
-                className="px-5 py-2 border border-gray-400 rounded-md hover:bg-gray-50 transition text-gray-900"
-                onClick={() => setOpenModal(true)}
-              >
-                Let&apos;s Connect
-              </button>
-          
-            <Link href="/super30">
+            <button
+              className="px-5 py-2 border border-gray-400 rounded-md hover:bg-gray-50 transition text-gray-900"
+              onClick={() => setOpenModal(true)}
+            >
+              Let&apos;s Connect
+            </button>
+
+            <button onClick={() => setOpenSuperModal(true)}>
               <button className="w-full bg-sky-900 text-white px-5 py-3 rounded-md hover:bg-sky-800 transition">
                 Unlock Super 30
               </button>
-            </Link>
+            </button>
           </div>
         </nav>
       </div>
@@ -133,6 +135,13 @@ const HeaderPage: React.FC = () => {
       {/* modal  */}
       {openModal && (
         <ContactModal isOpen={openModal} onClose={() => setOpenModal(false)} />
+      )}
+
+      {openSuperModal && (
+        <RegistrationPage
+          isOpen={openSuperModal}
+          onClose={() => setOpenSuperModal(false)}
+        />
       )}
 
       {/* Overlay */}

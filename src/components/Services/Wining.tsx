@@ -1,7 +1,8 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import ContactModal from "../Header/ContactModal";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -9,6 +10,7 @@ const inter = Inter({
 });
 
 const Wining = () => {
+    const [openModal, setOpenModal] = useState(false);
   return (
     <div className="bg-white py-10">
       <div
@@ -41,11 +43,19 @@ const Wining = () => {
             Business Growth.
           </h2>
 
-          <button className="mt-6 px-6 py-2 bg-white text-black rounded-full font-medium shadow-md hover:bg-gray-100 transition z-10 cursor-pointer">
+          <button
+            className="mt-6 px-6 py-2 bg-white text-black rounded-full font-medium shadow-md hover:bg-gray-100 transition z-10 cursor-pointer"
+            onClick={() => setOpenModal(true)}
+          >
             Talk To Experts
           </button>
         </div>
       </div>
+
+      {/* modal  */}
+      {openModal && (
+        <ContactModal isOpen={openModal} onClose={() => setOpenModal(false)} />
+      )}
     </div>
   );
 };
