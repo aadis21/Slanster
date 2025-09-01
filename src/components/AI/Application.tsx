@@ -41,7 +41,7 @@ const Application: React.FC = () => {
     <section className="relative w-full py-16 bg-[#0b1020] text-white">
       <div className="max-w-6xl mx-auto px-5 sm:px-6">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-14">
-          AI Applications Timeline
+          AI Solutions We’ve Delivered
         </h2>
 
         <div className="relative">

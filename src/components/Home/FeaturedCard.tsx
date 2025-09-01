@@ -13,7 +13,7 @@ import testImage2 from "../../../public/FeaturedCard/logistics.jpg";
 // import testImage3 from "../../../public/FeaturedCard/food and beverages.jpg";
 // import testImage4 from "../../../public/FeaturedCard/electric vehicles.jpg";
 // import testImage5 from "../../../public/FeaturedCard/travel.png";
-import testImage6 from "../../../public/FeaturedCard/saas.png";
+import testImage6 from "../../../public/FeaturedCard/saas1.jpg";
 // import testImage7 from "../../../public/FeaturedCard/entertainment.png";
 import testImage8 from "../../../public/FeaturedCard/socialmedia.jpg";
 import testImage9 from "../../../public/FeaturedCard/e-commerce.jpg";
