@@ -342,9 +342,7 @@
 "use client";
 import React, { useState } from "react";
 import { Inter } from "next/font/google";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import AnimatedButton from "../../../utils/AnimatedButton";
 import ContactModal from "../Header/ContactModal";
 import { FaLocationArrow } from "react-icons/fa";
 
@@ -353,24 +351,25 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-
 const LandingPage = () => {
   const [openModal, setOpenModal] = useState(false);
+
   return (
     <section
-      className={`${inter.className} relative w-full h-1/2 md:h-screen md:py-0 py-10`}
+      className={`${inter.className} relative w-full h-1/2 md:h-screen md:py-0 py-10 overflow-hidden`}
     >
-      {/* Background Image */}
-      <Image
-        src="/test2.png"
-        alt="Landing Background"
-        fill
-        className="object-cover object-center"
-        priority
+      {/* Background Video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover -z-10"
+        src="/hero.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60"></div>
+      <div className="absolute inset-0 bg-black/60 -z-10" />
 
       {/* Content */}
       <div className="relative z-10 flex items-center h-full px-4 sm:px-8 md:px-16 lg:px-24">
@@ -385,42 +384,33 @@ const LandingPage = () => {
               Solutions For A Smarter Future
             </span>
           </h1>
-          <h1
-            className="relative inline-block text-3xl sm:text-4xl md:text-5xl lg:text-5xl 
-               leading-tight pt-0 sm:py-4"
-          >
+
+          <h1 className="relative inline-block text-3xl sm:text-4xl md:text-5xl lg:text-5xl leading-tight pt-0 sm:py-4">
             <span className="bg-gradient-to-r from-blue-100 to-blue-600 bg-clip-text text-transparent">
               Transforming Ideas Into Intelligent Actions
             </span>
           </h1>
 
           <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 max-w-3xl">
-            Channeling Strengths of AI into Tangible Business Outco
+            Channeling Strengths of AI into Tangible Business Outcomes
           </p>
 
-          {/* Call to Action Button */}
-          <div
-            className="mt-5 sm:mt-6 md:mt-8 border border-[#005888] hover:bg-[#005888] 
-             cursor-pointer w-1/4 rounded-2xl flex justify-center group"
-            onClick={() => setOpenModal(true)}
-          >
+          {/* Call to Action */}
+          <div className="mt-5 sm:mt-6 md:mt-8 w-full sm:w-auto">
             <button
               onClick={() => setOpenModal(true)}
-              className="px-6 py-3 text-white font-semibold 
-               transition duration-300 flex items-center gap-2 cursor-pointer"
+              className="border border-[#005888] hover:bg-[#005888] px-6 py-3 rounded-2xl text-white font-semibold transition duration-300 flex items-center gap-2 group"
             >
               Get Started
-              <span
-                className="inline-block transform transition-transform duration-300 
-                 group-hover:translate-x-2 group-hover:scale-110"
-              >
+              <span className="inline-block transform transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110">
                 <FaLocationArrow className="animate-pulse" />
               </span>
             </button>
           </div>
         </motion.div>
       </div>
-      {/* modal  */}
+
+      {/* Modal */}
       {openModal && (
         <ContactModal isOpen={openModal} onClose={() => setOpenModal(false)} />
       )}
@@ -429,3 +419,5 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
+
+
