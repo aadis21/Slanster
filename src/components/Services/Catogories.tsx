@@ -9,156 +9,216 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-type CategoryKey =
-  | "Manufacturing"
-  | "Retail"
-  | "Healthcare"
-  | "Fitness & Sports"
-  | "Construction";
+// ✅ Your actual services
+type ServiceKey =
+  | "Artificial Intelligence"
+  | "Bespoke IT"
+  | "Cybersecurity"
+  | "Staffing"
+  | "Consulting"
+  | "AR/VR";
 
-interface CategoryItem {
+interface ServiceItem {
   title: string;
   description: string;
 }
 
-const categoriesData: Record<
-  CategoryKey,
-  { items: CategoryItem[]; image: string }
-> = {
-  Manufacturing: {
+const servicesData: Record<ServiceKey, { items: ServiceItem[]; image: string }> = {
+  "Artificial Intelligence": {
     items: [
       {
-        title: "Inventory Management",
+        title: "AI Automation & Agents",
         description:
-          "Our computer vision solutions scan the aisle and track stock levels to manage inventory and prevent understocking or overstacking using video AI.",
+          "Deploy AI copilots and workflow agents that reduce manual effort, accelerate SLAs, and scale operations across teams.",
       },
       {
-        title: "Quality Control",
+        title: "Predictive Analytics",
         description:
-          "Automated defect detection to improve manufacturing efficiency using computer vision.",
+          "Turn data into foresight with ML models for forecasting, churn/risk scoring, demand planning, and decision support.",
       },
       {
-        title: "Worker Safety",
+        title: "NLP & Computer Vision",
         description:
-          "Monitor factory environments to ensure worker safety and compliance.",
+          "Build domain-tuned NLP, OCR, and vision systems for documents, chat, voice, and video to unlock new efficiencies.",
       },
     ],
-    image: "/home/ourservices/ai.png",
+    image: "/home/ourservices/ai.jpg",
   },
-  Retail: {
+  "Bespoke IT": {
     items: [
       {
-        title: "Retail Insights",
+        title: "Custom Product Engineering",
         description:
-          "AI-powered analytics to track customer behavior, sales performance, and optimize product placement.",
+          "Design and develop secure, scalable apps—web, mobile, and microservices—aligned to your business workflows.",
       },
       {
-        title: "Smart Checkout",
+        title: "Cloud & Integrations",
         description:
-          "Frictionless checkout with computer vision powered self-checkout systems.",
+          "Architect cloud-native solutions and integrate ERPs, CRMs, and 3rd-party APIs for seamless, reliable data flows.",
+      },
+      {
+        title: "Modernization & DevOps",
+        description:
+          "Migrate legacy stacks, automate CI/CD, and adopt IaC to ship faster with lower risk and better observability.",
       },
     ],
-    image: "/home/ourservices/ai.png",
+    image: "/home/ourservices/Bespoke.jpg",
   },
-  Healthcare: {
+  Cybersecurity: {
     items: [
       {
-        title: "Patient Monitoring",
+        title: "Security Posture & Hardening",
         description:
-          "Computer vision solutions to monitor patient activity and improve care quality inside hospitals.",
+          "Harden infra, enforce Zero Trust, and baseline configurations to reduce attack surface across cloud and on-prem.",
+      },
+      {
+        title: "Threat Detection & Response",
+        description:
+          "24×7 monitoring, SIEM/SOAR playbooks, incident response, and compromise assessments to contain threats early.",
+      },
+      {
+        title: "Governance, Risk & Compliance",
+        description:
+          "Align with ISO 27001, SOC 2, GDPR and industry mandates—policies, audits, remediation, and stakeholder reporting.",
       },
     ],
-    image: "/home/ourservices/ai.png",
+    image: "/home/ourservices/Cyber security.jpg", // Tip: avoid spaces in file names if possible
   },
-  "Fitness & Sports": {
+  Staffing: {
     items: [
       {
-        title: "Performance Tracking",
+        title: "Tech Talent on Demand",
         description:
-          "AI-powered video analytics to track athletic performance and provide insights for improvement.",
+          "Curated developers, data engineers, cloud/security experts—deployed as contract, contract-to-hire, or full-time.",
+      },
+      {
+        title: "Project & POD Models",
+        description:
+          "Spin up multi-skill agile PODs for fixed-scope delivery or ongoing product engineering and support.",
+      },
+      {
+        title: "Screening & Readiness",
+        description:
+          "Role-aligned assessments, code tests, and cultural fit checks ensure faster ramp-up and lower attrition.",
       },
     ],
-    image: "/home/ourservices/ai.png",
+    image: "/home/ourservices/Staffing.jpg",
   },
-  Construction: {
+  Consulting: {
     items: [
       {
-        title: "Site Safety",
+        title: "Digital Transformation",
         description:
-          "Monitor construction sites to ensure worker safety and compliance using AI video analytics.",
+          "Roadmaps and operating models to align tech investments with measurable business outcomes and ROI.",
+      },
+      {
+        title: "Process & Cost Optimization",
+        description:
+          "Map value streams, eliminate bottlenecks, and automate repeatable work to cut costs and improve throughput.",
+      },
+      {
+        title: "Data & Platform Strategy",
+        description:
+          "Define data architectures, platform choices, SLAs, and governance for long-term scalability and resilience.",
       },
     ],
-    image: "/home/ourservices/ai.png",
+    image: "/home/ourservices/consulting.jpg",
+  },
+  "AR/VR": {
+    items: [
+      {
+        title: "Immersive Training & Onboarding",
+        description:
+          "AR/VR simulations for SOPs, safety, and complex procedures—learning that’s experiential and retention-friendly.",
+      },
+      {
+        title: "Product Visualization",
+        description:
+          "Interactive 3D demos, virtual showrooms, and configurators that boost buyer confidence and sales velocity.",
+      },
+      {
+        title: "Field Assistance & Remote Ops",
+        description:
+          "AR overlays and guided workflows for maintenance, inspections, and support—hands-free and real-time.",
+      },
+    ],
+    image: "/home/ourservices/ARVR.jpg",
   },
 };
 
 const Catogories = () => {
-  const [activeTab, setActiveTab] = useState<CategoryKey>("Manufacturing");
+  const [activeTab, setActiveTab] = useState<ServiceKey>("Artificial Intelligence");
 
   return (
-    <div className="bg-white">
-      <div className={`${inter.className} max-w-7xl mx-auto px-4 py-10`}>
-        {/* Tabs */}
-        <div className="flex flex-wrap gap-4 justify-center mb-10">
-          {(Object.keys(categoriesData) as CategoryKey[]).map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-6 py-2 rounded-full border transition-all duration-300 ${
-                activeTab === tab
-                  ? "bg-[#024a71] text-white "
-                  : "bg-white text-gray-900 border-gray-300 hover:bg-gray-100 cursor-pointer"
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
+    <section className="bg-white">
+      <div className={`${inter.className} mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-14`}>
+        {/* Tabs (scrollable on mobile) */}
+        <div className="relative mb-8 sm:mb-10">
+          <div className="flex gap-2 sm:gap-3 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
+            {(Object.keys(servicesData) as ServiceKey[]).map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`snap-start whitespace-nowrap px-4 sm:px-6 py-2 rounded-full border transition-all duration-300
+                ${activeTab === tab ? "bg-[#024a71] text-white border-[#024a71]" : "bg-white text-gray-900 border-gray-300 hover:bg-gray-100"}`}
+                aria-pressed={activeTab === tab}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
         </div>
 
-        {/* Content */}
-        <div className="flex flex-col lg:flex-row gap-8 items-stretch">
-          {/* Left Side Cards */}
-          <div className="flex flex-col gap-6 flex-1">
-            {categoriesData[activeTab].items.map((item, index) => (
+        {/* Content grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
+          {/* Left: Three Tiles */}
+          <div className="flex flex-col gap-4 sm:gap-5">
+            {servicesData[activeTab].items.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="border border-blue-900 cursor-pointer rounded-md p-4 shadow-sm hover:shadow-md transition"
+                transition={{ duration: 0.35, delay: index * 0.06 }}
+                className="group rounded-xl border border-slate-200 hover:border-slate-300 bg-white p-5 sm:p-6 shadow-sm hover:shadow-md transition"
               >
-                <h3 className="font-semibold text-lg text-gray-900">
+                <h3 className="text-base sm:text-lg font-semibold text-slate-900">
                   {item.title}
                 </h3>
-                <p className="text-gray-900 mt-2 text-sm">{item.description}</p>
+                <p className="mt-2 text-sm sm:text-[15px] leading-6 text-slate-700">
+                  {item.description}
+                </p>
               </motion.div>
             ))}
           </div>
 
-          {/* Right Side Image with Animation */}
-          <div className="flex-1 flex">
+          {/* Right: Responsive Image with Animation */}
+          <div className="w-full">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab}
-                initial={{ opacity: 0, x: 50 }}
+                initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -50 }}
-                transition={{ duration: 0.5 }}
-                className="w-full rounded-lg overflow-hidden flex"
+                exit={{ opacity: 0, x: -30 }}
+                transition={{ duration: 0.45 }}
+                className="relative w-full rounded-2xl overflow-hidden shadow-sm"
               >
-                <Image
-                  src={categoriesData[activeTab].image}
-                  alt={activeTab}
-                  width={800}
-                  height={600}
-                  className="object-cover w-full h-full"
-                />
+                {/* Aspect ratios ensure perfect alignment across breakpoints */}
+                <div className="relative w-full aspect-[16/10] sm:aspect-[4/3] lg:aspect-[3/2]">
+                  <Image
+                    src={servicesData[activeTab].image}
+                    alt={activeTab}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 640px"
+                    priority={false}
+                  />
+                </div>
               </motion.div>
             </AnimatePresence>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
