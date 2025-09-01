@@ -1,12 +1,13 @@
 "use client";
 import React from "react";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import {
   MessageSquare, Globe, PhoneCall, FileText, FileCog,
   FileSearch, Boxes, Megaphone, Plug, Users
 } from "lucide-react";
 
 interface Project { headers: string; text: string; role: string; }
+
 const projects: Project[] = [
   { headers: "AI-Powered Chat Support Bots", text: "Handle FAQs, resolve issues, and escalate to human agents when needed—all with NLP and sentiment-aware conversations.", role: "E-commerce, Healthcare, Banking" },
   { headers: "AI Web Crawling & Competitive Intelligence", text: "Stay ahead with real-time competitor insights. Scrapes pricing, services, and product data to generate actionable reports.", role: "Market Research, Consulting Firms" },
@@ -33,99 +34,85 @@ function resolveIcon(t: string) {
   return <Users className="w-5 h-5" />;
 }
 
-const Application: React.FC = () => {
-  const { scrollYProgress } = useScroll();
-  const progress = useSpring(scrollYProgress, { stiffness: 60, damping: 20 });
+const container: Variants = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.08, delayChildren: 0.1 }
+  }
+};
 
+const item: Variants = {
+  hidden: { y: 14, opacity: 0 },
+  show: { y: 0, opacity: 1, transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] } }
+};
+
+export default function Application() {
   return (
-    <section className="relative w-full py-16 bg-[#0b1020] text-white">
+    <section className="w-full bg-[#0b1020] text-white py-16 sm:py-20">
       <div className="max-w-6xl mx-auto px-5 sm:px-6">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-14">
-          AI Solutions We’ve Delivered
-        </h2>
-
-        <div className="relative">
-          {/* Mobile line: left, behind content */}
-          <motion.div
-            style={{ scaleY: progress }}
-            className="absolute md:hidden left-6 top-0 bottom-0 w-[3px] origin-top rounded-full bg-[linear-gradient(to_bottom,#22d3ee,#38bdf8,#6366f1)] z-0"
-          />
-          {/* Desktop line: center */}
-          <motion.div
-            style={{ scaleY: progress }}
-            className="absolute hidden md:block left-1/2 top-0 bottom-0 w-[4px] origin-top rounded-full bg-[linear-gradient(to_bottom,#22d3ee,#38bdf8,#6366f1)] z-0"
-          />
-
-          <div className="flex flex-col gap-12 sm:gap-14 md:gap-16">
-            {projects.map((p, i) => {
-              const isLeft = i % 2 === 0;
-              return (
-                <div key={i} className="relative flex md:items-start pl-12 md:pl-0 z-[1]">
-                  {isLeft ? (
-                    <>
-                      <div className="w-full md:w-1/2 md:pr-10">
-                        <Block title={p.headers} text={p.text} role={p.role} />
-                      </div>
-                      <Dot />
-                      <div className="hidden md:block w-1/2" />
-                    </>
-                  ) : (
-                    <>
-                      <div className="hidden md:block w-1/2" />
-                      <Dot />
-                      <div className="w-full md:w-1/2 md:pl-10">
-                        <Block title={p.headers} text={p.text} role={p.role} />
-                      </div>
-                    </>
-                  )}
-                </div>
-              );
-            })}
-          </div>
+        {/* Heading like reference, but keeping your colors */}
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+            AI Solutions We’ve Delivered
+          </h2>
+          <p className="mt-3 text-slate-300/90 text-sm sm:text-base">
+            Everything you need. Nothing you don’t.
+          </p>
         </div>
+
+        {/* Feature grid (reference-style): 3 columns on desktop, 2 on tablet, 1 on mobile */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "0px 0px -80px 0px" }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+        >
+          {projects.map((p, i) => (
+            <motion.div
+              key={i}
+              variants={item}
+              whileHover={{ y: -3 }}
+              className="relative rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm p-5 sm:p-6"
+            >
+              {/* Icon box (kept your palette; subtle glow for smooth feel) */}
+              <div className="mb-4 inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/[0.06] p-2 shadow-[0_0_24px_rgba(56,189,248,0.12)]">
+                <span className="text-cyan-300">{resolveIcon(p.headers)}</span>
+              </div>
+
+              <h3 className="text-base sm:text-lg font-semibold tracking-tight">
+                {p.headers}
+              </h3>
+
+              <p className="mt-2 text-sm sm:text-[15px] leading-6 text-slate-300/95">
+                {p.text}
+              </p>
+
+              {/* roles as tiny pills (content same, optional like the ref’s captions) */}
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {p.role.split(",").map((c, idx) => (
+                  <span
+                    key={idx}
+                    className="px-2 py-0.5 text-[10px] rounded-full border border-white/12 bg-white/5 text-slate-200/95"
+                  >
+                    {c.trim()}
+                  </span>
+                ))}
+              </div>
+
+              {/* subtle bottom divider shimmer (animation but very soft) */}
+              <motion.span
+                aria-hidden
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
+                className="absolute left-4 right-4 -bottom-px h-px origin-left bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent"
+              />
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
-};
-
-const Dot = () => (
-  <>
-    {/* Mobile dot aligned to left-6 */}
-    <motion.span
-      className="absolute md:hidden left-6 -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-tr from-cyan-400 to-sky-500 shadow-[0_0_10px_rgba(34,211,238,0.7)] flex items-center justify-center top-2 z-[1]"
-      whileInView={{ scale: 1.05 }}
-      transition={{ duration: 0.3 }}
-    >
-      <span className="w-2 h-2 rounded-full bg-white" />
-    </motion.span>
-    {/* Desktop dot on center line */}
-    <motion.span
-      className="absolute hidden md:flex left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-gradient-to-tr from-cyan-400 to-sky-500 shadow-[0_0_14px_rgba(34,211,238,0.8)] items-center justify-center top-2 z-[1]"
-      whileInView={{ scale: 1.08 }}
-      transition={{ duration: 0.35 }}
-    >
-      <span className="w-3 h-3 rounded-full bg-white" />
-    </motion.span>
-  </>
-);
-
-const Block: React.FC<{ title: string; text: string; role: string }> = ({ title, text, role }) => (
-  <div className="text-left">
-    <div className="flex items-center gap-2 text-cyan-300 mb-1">
-      {resolveIcon(title)}
-      <h3 className="text-lg sm:text-xl font-semibold">{title}</h3>
-    </div>
-    <p className="text-[15px] sm:text-base text-slate-300/95 leading-7 tracking-[0.005em]">
-      {text}
-    </p>
-    <div className="mt-3 flex flex-wrap gap-2">
-      {role.split(",").map((c, idx) => (
-        <span key={idx} className="px-2.5 py-1 text-xs rounded-full border border-white/15 bg-white/5 text-slate-200">
-          {c.trim()}
-        </span>
-      ))}
-    </div>
-  </div>
-);
-
-export default Application;
+}
