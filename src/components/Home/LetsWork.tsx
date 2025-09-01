@@ -139,7 +139,7 @@ const ContactPage = () => {
 
               <button
                 type="submit"
-                className="w-full bg-[#1d3557] hover:bg-[#1d3557] transition py-3 rounded font-medium flex items-center justify-center gap-2"
+                className="w-full bg-orange-500 hover:bg-orange-600 transition py-3 rounded font-medium flex items-center justify-center gap-2 cursor-pointer" 
               >
                 Send it to the moon 🚀
               </button>

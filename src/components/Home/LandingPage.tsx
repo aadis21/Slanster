@@ -346,6 +346,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import AnimatedButton from "../../../utils/AnimatedButton";
 import ContactModal from "../Header/ContactModal";
+import { FaLocationArrow } from "react-icons/fa";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -377,26 +378,45 @@ const LandingPage = () => {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          className="max-w-xl sm:max-w-2xl text-white"
+          className="max-w-6xl text-white"
         >
-          <h1 className="text-3xl sm:text-3xl md:text-5xl lg:text-6xl font-semibold leading-snug md:leading-tight py-2 sm:py-4">
-            Smarter Tech, <br className="hidden sm:block" /> Smarter Business.
+          <h1 className="relative inline-block text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight pt-0 sm:py-4">
+            <span className="bg-gradient-to-r from-[#005888] to-transparent px-4 py-2">
+              Solutions For A Smarter Future
+            </span>
+          </h1>
+          <h1
+            className="relative inline-block text-3xl sm:text-4xl md:text-5xl lg:text-5xl 
+               leading-tight pt-0 sm:py-4"
+          >
+            <span className="bg-gradient-to-r from-blue-100 to-blue-600 bg-clip-text text-transparent">
+              Transforming Ideas Into Intelligent Actions
+            </span>
           </h1>
 
-          <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-gray-200">
-            Empowering Businesses With AI, Cloud, And Digital Solutions For
-            Startups And Enterprises.
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 max-w-3xl">
+            Channeling Strengths of AI into Tangible Business Outco
           </p>
 
           {/* Call to Action Button */}
-          <div className="mt-5 sm:mt-6 md:mt-8">
-            <AnimatedButton
-              showArrow
-              className="mt-6 sm:mt-8 w-1/2 text-center justify-center"
+          <div
+            className="mt-5 sm:mt-6 md:mt-8 border border-[#005888] hover:bg-[#005888] 
+             cursor-pointer w-1/4 rounded-2xl flex justify-center group"
+            onClick={() => setOpenModal(true)}
+          >
+            <button
               onClick={() => setOpenModal(true)}
+              className="px-6 py-3 text-white font-semibold 
+               transition duration-300 flex items-center gap-2 cursor-pointer"
             >
               Get Started
-            </AnimatedButton>
+              <span
+                className="inline-block transform transition-transform duration-300 
+                 group-hover:translate-x-2 group-hover:scale-110"
+              >
+                <FaLocationArrow className="animate-pulse" />
+              </span>
+            </button>
           </div>
         </motion.div>
       </div>
