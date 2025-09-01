@@ -44,15 +44,18 @@ const FlipCard = () => {
   const CARD_HEIGHT = 220;
 
   return (
-    <section className="relative bg-blue-600 text-white py-16 px-4 md:py-20 md:px-6 overflow-hidden font-inter">
+    <section
+      className="relative bg-gradient-to-r bg-white text-[#0a1e3a]
+                    py-16 px-4 md:py-20 md:px-6 overflow-hidden font-inter"
+    >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between">
         {/* Left Section */}
         <div className="md:w-1/3 mb-10 md:mb-0 text-center md:text-left">
-          <h4 className="uppercase tracking-widest text-xs md:text-sm font-semibold text-gray-200 font-inter">
+          <h4 className="uppercase tracking-widest text-xs md:text-sm font-semibold text-gray-900 font-inter">
             Testimonials
           </h4>
           <h2
-            className="text-start font-inter text-white 
+            className="text-start font-inter text-[#0a1e3a]
              text-[16px] sm:text-[24px] md:text-[32px] lg:text-[40px] xl:text-[40px] 2xl:text-[40px] font-bold leading-snug"
           >
             What People Say <br /> About Us.
@@ -64,7 +67,7 @@ const FlipCard = () => {
               <span
                 key={i}
                 className={`w-2.5 h-2.5 rounded-full transition-colors duration-300 ${
-                  i === index ? "bg-white" : "bg-gray-400"
+                  i === index ? "bg-[#0a1e3a]" : "bg-gray-900"
                 }`}
               />
             ))}
@@ -94,7 +97,7 @@ const FlipCard = () => {
                   height: `${CARD_HEIGHT}px`,
                 }}
               >
-                <div className="bg-white text-gray-900 rounded-xl shadow-2xl md:mx-0 mx-5 p-6 sm:p-8 relative flex flex-col justify-between h-full font-inter">
+                <div className="bg-gradient-to-r from-gray-800 to-gray-900  text-gray-900 rounded-xl  md:mx-0 mx-5 p-6 sm:p-8 relative flex flex-col justify-between h-full font-inter">
                   {/* User Image */}
                   <div className="absolute -top-6 left-4">
                     <Image
@@ -107,11 +110,11 @@ const FlipCard = () => {
                   </div>
 
                   {/* Text */}
-                  <p className="mt-8 text-gray-700 text-sm sm:text-base leading-relaxed font-inter">
+                  <p className="mt-8 text-white text-sm sm:text-base leading-relaxed font-inter">
                     {item.text}
                   </p>
                   <div className="mt-4">
-                    <h4 className="font-semibold text-gray-900 font-inter">
+                    <h4 className="font-semibold text-white font-inter">
                       {item.name}
                     </h4>
                     <span className="text-gray-500 text-xs sm:text-sm font-inter">

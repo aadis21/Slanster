@@ -61,7 +61,7 @@ const Vision = () => {
 
   return (
     <section className="bg-white py-16">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-8xl md:px-25 mx-auto px-6">
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
           Computer Vision{" "}
@@ -187,7 +187,7 @@ const Vision = () => {
         </div>
 
         {/* Value strip (optional) */}
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {/* <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
             "Production-ready deployments",
             "Measurable model metrics",
@@ -201,7 +201,7 @@ const Vision = () => {
               {badge}
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
       {/* modal  */}
       {openModal && (
