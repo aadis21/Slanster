@@ -138,7 +138,20 @@ function Success() {
                     : "bg-gray-100 hover:bg-gray-200"
                 }`}
               >
-                <p className="capitalize">{data.name}</p>
+                <p className="capitalize">
+                  {/* Mobile view (md se chhote screens) */}
+                  <span className="block md:hidden">
+                    {data.name.split(" ").map((word, index) => (
+                      <span key={index} className="block">
+                        {word}
+                      </span>
+                    ))}
+                  </span>
+
+                  {/* md aur usse badi screens ke liye */}
+                  <span className="hidden md:inline">{data.name}</span>
+                </p>
+
                 {selected === index && (
                   <FaChevronRight className="ml-1 text-xs hidden md:block" />
                 )}
