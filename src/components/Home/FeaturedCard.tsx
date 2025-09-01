@@ -77,9 +77,9 @@ const PrevArrow = ({ onClick }: { onClick?: () => void }) => (
   <button
     onClick={onClick}
     className="absolute left-[-2rem] top-1/2 -translate-y-1/2 z-10 bg-gray-800/60 text-white 
-               rounded-full p-3 sm:p-4 md:p-5 hover:bg-gray-200/20 transition"
+               rounded-full p-2 sm:p-2 md:p-4 hover:bg-gray-200/20 transition cursor-pointer"
   >
-    <FaChevronLeft className="text-lg sm:text-lg md:text-xl cursor-pointer" />
+    <FaChevronLeft className="text-sm sm:text-sm md:text-md " />
   </button>
 );
 
@@ -88,9 +88,9 @@ const NextArrow = ({ onClick }: { onClick?: () => void }) => (
   <button
     onClick={onClick}
     className="absolute right-[-2rem] top-1/2 -translate-y-1/2 z-10 bg-gray-800/60 text-white 
-               rounded-full p-3 sm:p-4 md:p-5 hover:bg-gray-200/20 transition"
+               rounded-full p-2 sm:p-2 md:p-4 hover:bg-gray-200/20 transition cursor-pointer"
   >
-    <FaChevronRight className="text-lg sm:text-lg md:text-xl cursor-pointer" />
+    <FaChevronRight className="text-sm sm:text-sm md:text-md " />
   </button>
 );
 
