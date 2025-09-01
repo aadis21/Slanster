@@ -163,8 +163,8 @@ const AboutSection = () => {
           <motion.ul initial="hidden" whileInView="show" viewport={{ once: true }} className="md:pl-1 space-y-3">
             {[
               "AI, Consulting, Cybersecurity focus",
-              "Internship certifications & real projects",
-              "Placement assist with top IT/consulting firms",
+              "AI-driven training & live case studies",
+              "Career support with global tech leaders",
               "Campus-to-corporate readiness",
             ].map((item, idx) => (
               <motion.li

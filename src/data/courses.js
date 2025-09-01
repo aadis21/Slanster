@@ -71,7 +71,7 @@ export const courses = [
       "Pitching to Investors",
     ],
   },
-    {
+  {
     id: 6,
     title: "Python with AI & Machine Learning",
     desc: "Python foundations to deep learning: NumPy, Pandas, ML algorithms, TensorFlow/Keras, and real AI mini-projects.",
@@ -83,7 +83,7 @@ export const courses = [
       "Data Science Basics (NumPy, Pandas, Matplotlib/Seaborn)",
       "Machine Learning (Regression, Classification, Trees, Clustering)",
       "Deep Learning Intro (TensorFlow/Keras, CNN basics)",
-      "AI Use-Cases (Chatbots/NLP, CV mini-projects)"
+      "AI Use-Cases (Chatbots/NLP, CV mini-projects)",
     ],
   },
   {
@@ -98,14 +98,27 @@ export const courses = [
       "Node.js Core (event loop, async, modules)",
       "Express.js (routing, middleware, REST APIs)",
       "DB Integration (MongoDB/MySQL basics)",
-      "Auth & Security (JWT, OAuth, bcrypt) & Deploy"
+      "Auth & Security (JWT, OAuth, bcrypt) & Deploy",
     ],
   },
 
-  
+  // >>> New Course (Summary) <<<
+  {
+    id: 8,
+    title: "Artificial Intelligence (GenAI & Applied AI)",
+    desc: "From AI foundations to Generative AI: prompts, RAG, LLM apps, and responsible AI for real business use-cases.",
+    duration: "6 Weeks",
+    students: "300 Students",
+    img: "/trainingimg/course8.jpg",
+    syllabus: [
+      "AI/ML Foundations & Use-Cases",
+      "Neural Networks & DL Basics",
+      "Generative AI (LLMs, Prompting)",
+      "RAG & Vector Search Fundamentals",
+      "Responsible AI & Deployment Patterns",
+    ],
+  },
 ];
-
-
 
 // courses.js
 
@@ -530,7 +543,7 @@ const coursesDetails = [
     ],
   },
 
-    {
+  {
     id: 6,
     title: "Python with AI & Machine Learning",
     desc: "End-to-end Python + AI/ML with practical mini-projects and a capstone.",
@@ -545,7 +558,7 @@ const coursesDetails = [
         "Manipulate data using NumPy/Pandas and visualize insights",
         "Train/evaluate ML models (regression, classification, trees, clustering)",
         "Build and tune neural networks with TensorFlow/Keras",
-        "Apply AI to NLP/CV mini-projects and ship a capstone"
+        "Apply AI to NLP/CV mini-projects and ship a capstone",
       ],
     },
     curriculum: [
@@ -554,20 +567,21 @@ const coursesDetails = [
       "ML Algorithms: Linear/Logistic, Trees/Random Forests, K-Means",
       "Deep Learning: Tensors, Model APIs, CNN basics, callbacks",
       "AI Applications: Chatbot/NLP, Image classification mini-projects",
-      "Capstone: Predictive Model or AI Chatbot with report & demo"
+      "Capstone: Predictive Model or AI Chatbot with report & demo",
     ],
     faqs: [
       { question: "Do I need prior Python?", answer: "Basic programming helps, but we start from Python fundamentals and ramp up quickly." },
       { question: "Which libraries are covered?", answer: "NumPy, Pandas, Matplotlib/Seaborn, scikit-learn, TensorFlow/Keras." },
       { question: "What is the capstone?", answer: "Choose between a predictive model or an AI chatbot/CV project with a short report and demo." },
-      { question: "Career outcomes?", answer: "Python Developer, Data Analyst, ML Intern/Engineer (entry level), AI Project Trainee." }
+      { question: "Career outcomes?", answer: "Python Developer, Data Analyst, ML Intern/Engineer (entry level), AI Project Trainee." },
     ],
     reviews: [
       { name: "Riya Malhotra", comment: "Crisp EDA + ML flow; DL intro was perfectly paced.", rating: 4.4 },
       { name: "Harshit Arora", comment: "Mini-projects felt industry-relevant; want more hyper-parameter labs.", rating: 4.2 },
-      { name: "Tanvi Joshi", comment: "Great starter to TensorFlow—loved the callbacks & metrics part.", rating: 4.1 }
+      { name: "Tanvi Joshi", comment: "Great starter to TensorFlow—loved the callbacks & metrics part.", rating: 4.1 },
     ],
   },
+
   {
     id: 7,
     title: "Node.js & Backend Development",
@@ -583,7 +597,7 @@ const coursesDetails = [
         "Build REST APIs with Express (routing, validation, error handling)",
         "Integrate MongoDB/MySQL and model data effectively",
         "Implement auth with JWT/OAuth and secure best practices",
-        "Containerize and deploy to cloud providers"
+        "Containerize and deploy to cloud providers",
       ],
     },
     curriculum: [
@@ -592,23 +606,79 @@ const coursesDetails = [
       "Data Layer: MongoDB (Mongoose) & MySQL/PostgreSQL basics",
       "Auth & Security: JWT/OAuth, bcrypt, RBAC, rate-limits, CORS",
       "Deployment: env configs, Docker intro, CI/CD & cloud basics",
-      "Capstone: Production-ready REST API with docs & tests"
+      "Capstone: Production-ready REST API with docs & tests",
     ],
     faqs: [
       { question: "Do we cover TypeScript?", answer: "The course uses JS; optional notes show how to migrate to TS for typings." },
       { question: "Which DB is primary?", answer: "MongoDB for speed; SQL basics included for relational concepts." },
       { question: "Is deployment included?", answer: "Yes—environment setup, Docker intro, and cloud deployment basics." },
-      { question: "Career roles?", answer: "Node.js Developer, Backend Engineer, API Developer, Full-Stack (Backend-heavy)." }
+      { question: "Career roles?", answer: "Node.js Developer, Backend Engineer, API Developer, Full-Stack (Backend-heavy)." },
     ],
     reviews: [
       { name: "Sourabh Kulkarni", comment: "Auth + RBAC section was gold. Loved the error-handling pattern.", rating: 4.5 },
       { name: "Neelam S.", comment: "Clear roadmap from basics to deploy; wanted more SQL labs.", rating: 4.1 },
-      { name: "Kabir Mehta", comment: "Good production checklists; logging & env tips were practical.", rating: 4.3 }
+      { name: "Kabir Mehta", comment: "Good production checklists; logging & env tips were practical.", rating: 4.3 },
     ],
   },
 
+  // >>> New Course (Detailed) <<<
+  {
+    id: 8,
+    title: "Artificial Intelligence (GenAI & Applied AI)",
+    desc:
+      "Master AI fundamentals, build with Generative AI (LLMs), and ship practical, responsible AI applications.",
+    duration: "6 Weeks",
+    students: "300 Students",
+    image: "/trainingimg/course8.jpg",
+    overview: {
+      about:
+        "This hands-on program takes you from core AI concepts to building real Generative AI applications. You’ll understand classic AI/ML ideas, neural networks, and modern LLMs, then apply them to solve business problems with prompt engineering, Retrieval-Augmented Generation (RAG), and vector search. Along the way, you’ll learn evaluation, observability, and Responsible AI practices so what you build is not only powerful—but safe, reliable, and production-ready.",
+      objectives: [
+        "Explain AI vs. ML vs. DL; identify suitable AI use-cases in business",
+        "Understand neural networks, embeddings, and transformer basics",
+        "Apply prompt engineering (zero/few-shot, chain-of-thought prompts)",
+        "Design RAG pipelines with vector databases for grounded answers",
+        "Evaluate AI apps for quality, bias, safety, and reliability",
+        "Deploy lightweight AI services and document them professionally",
+      ],
+    },
+    curriculum: [
+      "AI Foundations: ML vs. DL, Use-Cases & Solution Patterns",
+      "Neural Networks & Transformers: Embeddings, Attention, Tokenization",
+      "Prompt Engineering: Task design, guards, tools & function calling",
+      "RAG Systems: Chunking, embeddings, vector DBs, retrieval orchestration",
+      "Evaluation & Responsible AI: Metrics, red-teaming, safety checklists",
+      "Capstone: End-to-end GenAI App (RAG or Agent) with demo & report",
+    ],
+    faqs: [
+      {
+        question: "Do I need coding experience?",
+        answer:
+          "Basic programming helps, but templates and guided labs are provided. If you know Python or JavaScript, you’ll move faster.",
+      },
+      {
+        question: "What tools and stacks are used?",
+        answer:
+          "You’ll work with common AI libraries and LLM APIs, vector databases, and simple deployment via cloud or containers.",
+      },
+      {
+        question: "Is this course theoretical or practical?",
+        answer:
+          "Both. You’ll learn the concepts and immediately apply them in labs—culminating in a deployable GenAI project.",
+      },
+      {
+        question: "What careers can this lead to?",
+        answer:
+          "AI/ML Intern, GenAI App Developer, AI Product Associate, or Solutions Engineer focusing on AI integrations.",
+      },
+    ],
+    reviews: [
+      { name: "Ananya Sethi", comment: "RAG module made LLMs feel practical—great evaluation framework as well.", rating: 4.5 },
+      { name: "Dhruv Malhotra", comment: "Prompts + function-calling labs were super useful; would love more agent patterns.", rating: 4.2 },
+      { name: "Sana Qureshi", comment: "Responsible AI checklists helped us avoid common pitfalls—nice touch.", rating: 4.3 },
+      { name: "Ishaan Gupta", comment: "Capstone feedback was detailed; deployment tips were beginner-friendly.", rating: 4.1 },
+    ],
+  },
 ];
 
-
 export default coursesDetails;
-

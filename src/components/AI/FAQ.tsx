@@ -14,9 +14,9 @@ type FAQItem = {
 
 const faqs: FAQItem[] = [
   {
-    question: "What is the Super 30 Batch?",
-    answer: "It’s a fast-track program for 30 selected learners with hands-on projects and mentorship.",
-  },
+  question: "What is the Super 30 Batch?",
+  answer: "It’s a fast-track program for 30 selected learners, taught by industry experts working at Big 4 companies, with hands-on projects and dedicated mentorship.",
+},
   {
     question: "Who can apply for Super 30?",
     answer: "Final-year students, fresh graduates, and early professionals can apply through a test and interview.",
