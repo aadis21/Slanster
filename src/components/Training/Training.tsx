@@ -16,13 +16,13 @@ const Training = () => {
     >
       <div className="relative border-4 border-[#DCE3FF] rounded-3xl p-6 md:p-12 max-w-8xl md:mx-25 w-full text-center flex flex-col items-center justify-center shadow-sm">
         {/* Top Right Shape */}
-        <div className="absolute -top-2 right-0">
+        <div className="absolute -top-0 md:-top-5 right-[-6vw] md:right-[-4vw]">
           <Image
             src="/trainingimg/Ellipse.png"
             alt="no image"
             width={220}
             height={150}
-            className="md:w-[12rem] md:h-[8rem] w-[4rem] h-[2rem] object-contain"
+            className="md:w-[15rem] md:h-[15rem] w-[4rem] h-[2rem] object-contain"
           />
         </div>
 

@@ -34,7 +34,8 @@ const FooterPage = () => {
       {/* Top Section */}
       <div className="max-w-8xl md:px-25 mx-auto px-6 py-20 flex flex-col md:flex-row justify-between gap-12 animate-fadeIn">
         {/* Logo & Description */}
-        <div className="flex flex-col items-start max-w-[300px] ">
+        <div className="flex flex-col items-start max-w-[300px] "
+        >
           <Image
             src="/logofooter.png"
             alt="Logo"
