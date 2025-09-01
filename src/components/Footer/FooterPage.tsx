@@ -52,7 +52,7 @@ const FooterPage = () => {
 
         {/* Quick Links */}
 
-        <div className="flex flex-row gap-12">
+        <div className="flex flex-row gap-12 md:gap-42">
           <div>
             <h3 className="font-semibold text-xl mb-6">Quick Links</h3>
             <ul className="space-y-3 text-gray-400 text-base">
@@ -104,7 +104,7 @@ const FooterPage = () => {
         </div>
 
         {/* Courses */}
-        <div>
+        {/* <div>
           <h3 className="font-semibold text-xl mb-6">Courses</h3>
           <ul className="space-y-3 text-gray-400 text-base">
             {[
@@ -127,7 +127,7 @@ const FooterPage = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
 
         {/* Contact Us */}
         <div>
