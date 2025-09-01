@@ -225,18 +225,21 @@ const OurServices: React.FC = () => {
                   sizes="(max-width: 1024px) 300px, 320px"
                   priority={i < 3}
                 />
-                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-all duration-300" />
+                <div className="absolute inset-0  transition-all duration-300" />
                 <div className="absolute top-0 left-0 mt-4 ml-4 z-10 w-12 h-12 flex items-center justify-center rounded-full border border-white bg-white/20 backdrop-blur-sm">
                   {service.icon}
                 </div>
-                <div className="relative z-10 text-left mt-auto">
+                <div className="relative z-10 text-left mt-auto hover:bg-black/20 group-hover:bg-black/60 w-full rounded-2xl p-4">
+                  {/* Always visible title */}
                   <h3
                     className={`${inter.className} text-lg font-normal text-yellow-400 mb-2`}
                   >
                     {service.title}
                   </h3>
+
+                  {/* Hidden by default, visible on hover */}
                   <p
-                    className={`${inter.className} text-gray-200 text-sm font-normal`}
+                    className={`${inter.className} text-gray-200 text-sm font-normal opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                   >
                     {service.desc}
                   </p>
