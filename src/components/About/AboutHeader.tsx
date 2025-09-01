@@ -77,7 +77,7 @@ const AboutHeader = () => {
           <h3 className="text-3xl md:text-4xl text-blue-600">660 +</h3>
           <div className="w-full h-[1px] bg-gray-400 mx-auto my-3 rounded"></div>
           <p className="text-gray-600 mt-2 text-sm md:text-base">
-            Has Recovered
+            Path to Healing
           </p>
         </motion.div>
       </div>

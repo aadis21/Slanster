@@ -20,7 +20,7 @@ const Services = () => {
     >
       {/* Background Image */}
       <Image
-        src="/services/servicelanding.jpg"
+        src="/services/hero.webp"
         alt="Landing Background"
         fill
         className="object-cover object-center"
@@ -39,7 +39,7 @@ const Services = () => {
           className="max-w-xl sm:max-w-2xl text-white"
         >
           <h1 className="text-3xl sm:text-3xl md:text-5xl lg:text-6xl font-semibold leading-snug md:leading-tight py-2 sm:py-4">
-            Smarter Tech, <br className="hidden sm:block" /> Smarter Business.
+           A Digital Fortress to <br className="hidden sm:block" /> Protect You.
           </h1>
 
           <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-gray-200">
