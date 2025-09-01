@@ -11,7 +11,7 @@ import React from 'react'
 const Page = () => {
   return (
     <div>
-      <AboutHeader />
+      {/* <AboutHeader /> */}
       <Features />
       <MissionTimeline />
       <WhySlanster />
