@@ -12,7 +12,7 @@ const Discuss = () => {
     const [openModal, setOpenModal] = useState(false);
   return (
     <div className="bg-white">
-      <div className={`${inter.className}  max-w-7xl mx-auto px-4 py-12`}>
+      <div className={`${inter.className}  max-w-8xl md:px-22 mx-auto px-4 py-12`}>
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
           {/* Left Text Section */}
           <div>

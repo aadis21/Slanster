@@ -6,9 +6,9 @@ import ContactModal from "../Header/ContactModal";
 const GetInTouch = () => {
     const [openModal, setOpenModal] = useState(false);
   return (
-    <div className="bg-white">
+    <div className="bg-white max-w-8xl md:px-21">
       <div className="w-full flex justify-center px-4">
-        <div className="w-full max-w-7xl rounded-xl shadow-md bg-gradient-to-r from-[#0a1b3d] to-[#121b2f] p-6 md:p-12 flex flex-col md:flex-row items-center justify-between relative overflow-hidden">
+        <div className="w-full   rounded-xl shadow-md bg-gradient-to-r from-[#0a1b3d] to-[#121b2f] p-6 md:p-12 flex flex-col md:flex-row items-center justify-between relative overflow-hidden">
           {/* === Background Decorative Images (responsive positions & sizes) === */}
 
           {/* Top Left Polygon */}

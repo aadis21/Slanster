@@ -151,7 +151,9 @@ const Catogories = () => {
 
   return (
     <section className="bg-white">
-      <div className={`${inter.className} mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-14`}>
+      <div
+        className={`${inter.className} mx-auto  max-w-8xl md:px-25 px-4 py-10 sm:py-14`}
+      >
         {/* Tabs (scrollable on mobile) */}
         <div className="relative mb-8 sm:mb-10">
           <div className="flex gap-2 sm:gap-3 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
@@ -160,7 +162,11 @@ const Catogories = () => {
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`snap-start whitespace-nowrap px-4 sm:px-6 py-2 rounded-full border transition-all duration-300
-                ${activeTab === tab ? "bg-[#024a71] text-white border-[#024a71]" : "bg-white text-gray-900 border-gray-300 hover:bg-gray-100"}`}
+                ${
+                  activeTab === tab
+                    ? "bg-[#024a71] text-white border-[#024a71]"
+                    : "bg-white text-gray-900 border-gray-300 hover:bg-gray-100"
+                }`}
                 aria-pressed={activeTab === tab}
               >
                 {tab}
