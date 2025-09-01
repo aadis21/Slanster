@@ -361,7 +361,7 @@ const LandingPage = () => {
     >
       {/* Background Image */}
       <Image
-        src="/test2.png"
+        src="/test3.png"
         alt="Landing Background"
         fill
         className="object-cover object-center"
