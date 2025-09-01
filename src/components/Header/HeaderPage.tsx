@@ -123,11 +123,11 @@ const HeaderPage: React.FC = () => {
               Let&apos;s Connect
             </button>
 
-            <button onClick={() => setOpenSuperModal(true)}>
+            <div onClick={() => setOpenSuperModal(true)}>
               <button className="w-full bg-sky-900 text-white px-5 py-3 rounded-md hover:bg-sky-800 transition">
                 Unlock Super 30
               </button>
-            </button>
+            </div>
           </div>
         </nav>
       </div>
