@@ -14,6 +14,10 @@ export const courses = [
       "Control Testing",
       "Audit Reporting",
     ],
+    modules: [
+      { title: "Module 1", minutes: 900 },
+      { title: "Module 2", minutes: 3500 },
+    ],
   },
   {
     id: 2,
@@ -27,6 +31,10 @@ export const courses = [
       "Software License Compliance",
       "Hardware Management",
       "Audit & Optimization",
+    ],
+    modules: [
+      { title: "Module 1", minutes: 900 },
+      { title: "Module 2", minutes: 3500 },
     ],
   },
   {
@@ -42,6 +50,10 @@ export const courses = [
       "Reporting Frameworks",
       "Sustainability Disclosures",
     ],
+    modules: [
+      { title: "Module 1", minutes: 900 },
+      { title: "Module 2", minutes: 3500 },
+    ],
   },
   {
     id: 4,
@@ -56,6 +68,10 @@ export const courses = [
       "Compliance Frameworks",
       "Risk Mitigation",
     ],
+    modules: [
+      { title: "Module 1", minutes: 900 },
+      { title: "Module 2", minutes: 3500 },
+    ],
   },
   {
     id: 5,
@@ -69,6 +85,10 @@ export const courses = [
       "Building MVP",
       "Go-To-Market Strategy",
       "Pitching to Investors",
+    ],
+    modules: [
+      { title: "Module 1", minutes: 900 },
+      { title: "Module 2", minutes: 3500 },
     ],
   },
   {
@@ -85,6 +105,10 @@ export const courses = [
       "Deep Learning Intro (TensorFlow/Keras, CNN basics)",
       "AI Use-Cases (Chatbots/NLP, CV mini-projects)",
     ],
+    modules: [
+      { title: "Module 1", minutes: 900 },
+      { title: "Module 2", minutes: 3500 },
+    ],
   },
   {
     id: 7,
@@ -100,9 +124,11 @@ export const courses = [
       "DB Integration (MongoDB/MySQL basics)",
       "Auth & Security (JWT, OAuth, bcrypt) & Deploy",
     ],
+    modules: [
+      { title: "Module 1", minutes: 900 },
+      { title: "Module 2", minutes: 3500 },
+    ],
   },
-
-  // id: 8 (summary)
   {
     id: 8,
     title: "Artificial Intelligence (GenAI & Applied AI)",
@@ -117,9 +143,11 @@ export const courses = [
       "RAG & Vector Search Fundamentals",
       "Responsible AI & Deployment Patterns",
     ],
+    modules: [
+      { title: "Module 1", minutes: 900 },
+      { title: "Module 2", minutes: 3500 },
+    ],
   },
-
-  // >>> New Course (Summary) <<<
   {
     id: 9,
     title: "Product Management & Scrum Master",
@@ -134,10 +162,14 @@ export const courses = [
       "Backlog, Estimation & Sprint Execution",
       "Metrics, GTM & Stakeholder Communication",
     ],
+    modules: [
+      { title: "Module 1", minutes: 900 },
+      { title: "Module 2", minutes: 3500 },
+    ],
   },
 ];
 
-// courses.js
+// courses.js (detailed)
 
 const coursesDetails = [
   {
@@ -168,6 +200,26 @@ const coursesDetails = [
       "Forensic Techniques & Incident Review Simulations",
       "Capstone: End-to-End ITGC Audit & Executive Report",
     ],
+    curriculumPlan: [
+      {
+        module: 1,
+        minutes: 900,
+        topics: [
+          "Foundations of ITGC & Risk-Based Auditing",
+          "Control Mapping: SOX, ISO 27001, GDPR",
+        ],
+      },
+      {
+        module: 2,
+        minutes: 3500,
+        topics: [
+          "Cloud Controls (AWS/Azure/GCP) & Shared Responsibility",
+          "Evidence, Sampling, ToD vs. ToE",
+          "Forensic Techniques & Incident Review Simulations",
+          "Capstone: End-to-End ITGC Audit & Executive Report",
+        ],
+      },
+    ],
     faqs: [
       {
         question: "What is ITGC and why is it important?",
@@ -191,36 +243,11 @@ const coursesDetails = [
       },
     ],
     reviews: [
-      {
-        name: "Rohit Sharma",
-        comment:
-          "The IT audit simulations were excellent and close to real scenarios. A couple of labs ran long but worth it. – Oct 03, 2023",
-        rating: 4.5,
-      },
-      {
-        name: "Nikita Verma",
-        comment:
-          "Explained ITGC, SOX, and ISO 27001 practically; a bit dense in parts but very useful for MBA case work. – Oct 07, 2023",
-        rating: 4.1,
-      },
-      {
-        name: "Aditya Nair",
-        comment:
-          "Real cloud examples kept it engaging. Pace felt rushed in the last session. – Sep 25, 2023",
-        rating: 3.7,
-      },
-      {
-        name: "Sanya Gupta",
-        comment:
-          "Forensic investigation module was detailed; would like more hands-on datasets. – Oct 01, 2023",
-        rating: 4.2,
-      },
-      {
-        name: "Vikas Patel",
-        comment:
-          "Good entry to IT audit/risk consulting; Big 4 perspectives added value. – Sep 18, 2023",
-        rating: 4.3,
-      },
+      { name: "Rohit Sharma", comment: "The IT audit simulations were excellent and close to real scenarios. A couple of labs ran long but worth it. – Oct 03, 2023", rating: 4.5 },
+      { name: "Nikita Verma", comment: "Explained ITGC, SOX, and ISO 27001 practically; a bit dense in parts but very useful for MBA case work. – Oct 07, 2023", rating: 4.1 },
+      { name: "Aditya Nair", comment: "Real cloud examples kept it engaging. Pace felt rushed in the last session. – Sep 25, 2023", rating: 3.7 },
+      { name: "Sanya Gupta", comment: "Forensic investigation module was detailed; would like more hands-on datasets. – Oct 01, 2023", rating: 4.2 },
+      { name: "Vikas Patel", comment: "Good entry to IT audit/risk consulting; Big 4 perspectives added value. – Sep 18, 2023", rating: 4.3 },
     ],
   },
 
@@ -252,6 +279,26 @@ const coursesDetails = [
       "Hands-on with Flexera & ServiceNow",
       "Capstone: Enterprise SAM Strategy & Savings Plan",
     ],
+    curriculumPlan: [
+      {
+        module: 1,
+        minutes: 900,
+        topics: [
+          "ITAM & SAM Fundamentals, Policies, and Processes",
+          "Software Discovery, Normalization & CMDB Alignment",
+        ],
+      },
+      {
+        module: 2,
+        minutes: 3500,
+        topics: [
+          "License Models: Microsoft, Oracle, SAP, IBM, VMware",
+          "Vendor Audits: Readiness, Defense & Negotiation",
+          "Hands-on with Flexera & ServiceNow",
+          "Capstone: Enterprise SAM Strategy & Savings Plan",
+        ],
+      },
+    ],
     faqs: [
       {
         question: "Why is Software Asset Management (SAM) essential for companies?",
@@ -275,36 +322,11 @@ const coursesDetails = [
       },
     ],
     reviews: [
-      {
-        name: "Aditi Mehra",
-        comment:
-          "Very practical—licensing for Microsoft/SAP finally clicked. One more negotiation role-play would help. – Oct 05, 2023",
-        rating: 4.1,
-      },
-      {
-        name: "Rahul Singh",
-        comment:
-          "Flexera/ServiceNow labs were solid. A few steps confusing initially but clear later. – Oct 02, 2023",
-        rating: 4.3,
-      },
-      {
-        name: "Sneha Iyer",
-        comment:
-          "Applied concepts in my internship and reduced software spend—big win. – Sep 28, 2023",
-        rating: 4.4,
-      },
-      {
-        name: "Arjun Malhotra",
-        comment:
-          "Good examples and pace overall; licensing section felt a bit fast. – Sep 20, 2023",
-        rating: 3.8,
-      },
-      {
-        name: "Simran Kaur",
-        comment:
-          "Great ROI; felt ready for SAM interviews. More mock audits would be nice. – Oct 04, 2023",
-        rating: 4.0,
-      },
+      { name: "Aditi Mehra", comment: "Very practical—licensing for Microsoft/SAP finally clicked. One more negotiation role-play would help. – Oct 05, 2023", rating: 4.1 },
+      { name: "Rahul Singh", comment: "Flexera/ServiceNow labs were solid. A few steps confusing initially but clear later. – Oct 02, 2023", rating: 4.3 },
+      { name: "Sneha Iyer", comment: "Applied concepts in my internship and reduced software spend—big win. – Sep 28, 2023", rating: 4.4 },
+      { name: "Arjun Malhotra", comment: "Good examples and pace overall; licensing section felt a bit fast. – Sep 20, 2023", rating: 3.8 },
+      { name: "Simran Kaur", comment: "Great ROI; felt ready for SAM interviews. More mock audits would be nice. – Oct 04, 2023", rating: 4.0 },
     ],
   },
 
@@ -336,59 +358,38 @@ const coursesDetails = [
       "Reporting & Assurance Considerations",
       "Capstone: ESG Report with Case Benchmarking",
     ],
-    faqs: [
+    curriculumPlan: [
       {
-        question: "What does ESG mean in business?",
-        answer:
-          "ESG stands for Environmental, Social, and Governance—factors that measure a company’s sustainability, ethics, and corporate responsibility.",
+        module: 1,
+        minutes: 900,
+        topics: [
+          "ESG Foundations & Global Drivers",
+          "Frameworks Deep Dive: GRI, SASB, Integrated Reporting",
+        ],
       },
       {
-        question: "Why is ESG knowledge in such high demand today?",
-        answer:
-          "Investors and regulators now require companies to disclose ESG performance. Firms with strong ESG credentials attract better investments and credibility.",
-      },
-      {
-        question: "What frameworks will I learn in this course?",
-        answer:
-          "You’ll study GRI, SASB, and Integrated Reporting frameworks, plus learn how to prepare ESG reports with real case studies.",
-      },
-      {
-        question: "What career options exist after completing ESG training?",
-        answer:
-          "Careers include ESG Analyst, Sustainability Consultant, Climate Risk Analyst, or Compliance Manager.",
+        module: 2,
+        minutes: 3500,
+        topics: [
+          "ESG Data: Sourcing, Quality, and Analytics",
+          "Materiality, KPIs, and Target-Setting",
+          "Reporting & Assurance Considerations",
+          "Capstone: ESG Report with Case Benchmarking",
+        ],
       },
     ],
+    faqs: [
+      { question: "What does ESG mean in business?", answer: "ESG stands for Environmental, Social, and Governance—factors that measure a company’s sustainability, ethics, and corporate responsibility." },
+      { question: "Why is ESG knowledge in such high demand today?", answer: "Investors and regulators now require companies to disclose ESG performance. Firms with strong ESG credentials attract better investments and credibility." },
+      { question: "What frameworks will I learn in this course?", answer: "You’ll study GRI, SASB, and Integrated Reporting frameworks, plus learn how to prepare ESG reports with real case studies." },
+      { question: "What career options exist after completing ESG training?", answer: "Careers include ESG Analyst, Sustainability Consultant, Climate Risk Analyst, or Compliance Manager." },
+    ],
     reviews: [
-      {
-        name: "Priya Nair",
-        comment:
-          "Clear overview of ESG reporting; theory-heavy at times but frameworks were well explained. – Oct 06, 2023",
-        rating: 4.2,
-      },
-      {
-        name: "Ankur Sharma",
-        comment:
-          "Fortune 500 case studies were eye-opening. A couple of sessions felt long. – Sep 29, 2023",
-        rating: 4.0,
-      },
-      {
-        name: "Megha Jain",
-        comment:
-          "ESG data collection assignments were practical; more peer discussion would help. – Oct 03, 2023",
-        rating: 3.9,
-      },
-      {
-        name: "Ravi Menon",
-        comment:
-          "Great bridge between MBA research and industry practice; helpful career context. – Sep 25, 2023",
-        rating: 4.3,
-      },
-      {
-        name: "Shalini Das",
-        comment:
-          "Faculty made complex standards digestible; templates for disclosures would be a plus. – Oct 01, 2023",
-        rating: 4.1,
-      },
+      { name: "Priya Nair", comment: "Clear overview of ESG reporting; theory-heavy at times but frameworks were well explained. – Oct 06, 2023", rating: 4.2 },
+      { name: "Ankur Sharma", comment: "Fortune 500 case studies were eye-opening. A couple of sessions felt long. – Sep 29, 2023", rating: 4.0 },
+      { name: "Megha Jain", comment: "ESG data collection assignments were practical; more peer discussion would help. – Oct 03, 2023", rating: 3.9 },
+      { name: "Ravi Menon", comment: "Great bridge between MBA research and industry practice; helpful career context. – Sep 25, 2023", rating: 4.3 },
+      { name: "Shalini Das", comment: "Faculty made complex standards digestible; templates for disclosures would be a plus. – Oct 01, 2023", rating: 4.1 },
     ],
   },
 
@@ -420,59 +421,38 @@ const coursesDetails = [
       "Digital Compliance Audits & Controls",
       "Capstone: Digital Risk Program & Playbook",
     ],
-    faqs: [
+    curriculumPlan: [
       {
-        question: "What is Digital Risk in the corporate world?",
-        answer:
-          "Digital risk includes threats to a company’s brand, reputation, intellectual property, and compliance across online platforms.",
+        module: 1,
+        minutes: 900,
+        topics: [
+          "Digital Risk Landscape & Case Studies",
+          "Regulations & Privacy: GDPR Essentials",
+        ],
       },
       {
-        question: "What skills will I develop in this program?",
-        answer:
-          "You’ll master GDPR compliance, IP protection, online investigation tools, and monitoring brand risks across digital and social platforms.",
-      },
-      {
-        question: "Why should I consider a career in Digital Risk & Compliance?",
-        answer:
-          "With businesses moving online, demand for digital compliance and brand protection specialists is rapidly increasing worldwide.",
-      },
-      {
-        question: "What career roles can I apply for after this program?",
-        answer:
-          "Risk Analyst, Digital Compliance Consultant, Brand Protection Specialist, or Technology Risk Advisor.",
+        module: 2,
+        minutes: 3500,
+        topics: [
+          "Brand, IP & Content Protection in the Digital World",
+          "Monitoring, Investigation & Evidence Preservation",
+          "Digital Compliance Audits & Controls",
+          "Capstone: Digital Risk Program & Playbook",
+        ],
       },
     ],
+    faqs: [
+      { question: "What is Digital Risk in the corporate world?", answer: "Digital risk includes threats to a company’s brand, reputation, intellectual property, and compliance across online platforms." },
+      { question: "What skills will I develop in this program?", answer: "You’ll master GDPR compliance, IP protection, online investigation tools, and monitoring brand risks across digital and social platforms." },
+      { question: "Why should I consider a career in Digital Risk & Compliance?", answer: "With businesses moving online, demand for digital compliance and brand protection specialists is rapidly increasing worldwide." },
+      { question: "What career roles can I apply for after this program?", answer: "Risk Analyst, Digital Compliance Consultant, Brand Protection Specialist, or Technology Risk Advisor." },
+    ],
     reviews: [
-      {
-        name: "Neha Kapoor",
-        comment:
-          "GDPR modules were detailed and practical; some legal bits felt dense. – Oct 02, 2023",
-        rating: 4.0,
-      },
-      {
-        name: "Manish Yadav",
-        comment:
-          "Brand/IP protection insights were eye-opening. Tool demos could go a little deeper. – Sep 27, 2023",
-        rating: 3.7,
-      },
-      {
-        name: "Anjali Singh",
-        comment:
-          "Good balance of legal concepts and monitoring tools; longer labs would help. – Oct 06, 2023",
-        rating: 4.2,
-      },
-      {
-        name: "Rohit Chauhan",
-        comment:
-          "Well-structured with relevant examples; easy to follow throughout. – Sep 23, 2023",
-        rating: 4.4,
-      },
-      {
-        name: "Pooja Bansal",
-        comment:
-          "Mock investigations were challenging but boosted confidence for interviews. – Oct 04, 2023",
-        rating: 4.1,
-      },
+      { name: "Neha Kapoor", comment: "GDPR modules were detailed and practical; some legal bits felt dense. – Oct 02, 2023", rating: 4.0 },
+      { name: "Manish Yadav", comment: "Brand/IP protection insights were eye-opening. Tool demos could go a little deeper. – Sep 27, 2023", rating: 3.7 },
+      { name: "Anjali Singh", comment: "Good balance of legal concepts and monitoring tools; longer labs would help. – Oct 06, 2023", rating: 4.2 },
+      { name: "Rohit Chauhan", comment: "Well-structured with relevant examples; easy to follow throughout. – Sep 23, 2023", rating: 4.4 },
+      { name: "Pooja Bansal", comment: "Mock investigations were challenging but boosted confidence for interviews. – Oct 04, 2023", rating: 4.1 },
     ],
   },
 
@@ -504,59 +484,38 @@ const coursesDetails = [
       "Fundraising, Pitch Decks & Term Sheets",
       "Demo Day: Pitch to Mentors & Feedback",
     ],
-    faqs: [
+    curriculumPlan: [
       {
-        question: "What makes this startup program unique?",
-        answer:
-          "It’s a hands-on bootcamp where you’ll design a real digital product, build an MVP, and launch it with guidance from mentors and founders.",
+        module: 1,
+        minutes: 900,
+        topics: [
+          "Design Thinking & Problem Discovery",
+          "Business Model Canvas & Unit Economics",
+        ],
       },
       {
-        question: "Is this course suitable only for entrepreneurs?",
-        answer:
-          "No. It’s also valuable for professionals seeking skills in innovation, product design, and business strategy.",
-      },
-      {
-        question: "What topics are covered in this course?",
-        answer:
-          "Design Thinking, Business Model Canvas, market validation, investor pitching, legal compliance, branding, and team building.",
-      },
-      {
-        question: "What outcomes can I expect from the program?",
-        answer:
-          "You’ll graduate with a live startup idea, a professional pitch deck, and direct exposure to industry mentors and investors.",
+        module: 2,
+        minutes: 3500,
+        topics: [
+          "MVP Build, Experiments & Market Testing",
+          "Branding, GTM Strategy & Growth Loops",
+          "Fundraising, Pitch Decks & Term Sheets",
+          "Demo Day: Pitch to Mentors & Feedback",
+        ],
       },
     ],
+    faqs: [
+      { question: "What makes this startup program unique?", answer: "It’s a hands-on bootcamp where you’ll design a real digital product, build an MVP, and launch it with guidance from mentors and founders." },
+      { question: "Is this course suitable only for entrepreneurs?", answer: "No. It’s also valuable for professionals seeking skills in innovation, product design, and business strategy." },
+      { question: "What topics are covered in this course?", answer: "Design Thinking, Business Model Canvas, market validation, investor pitching, legal compliance, branding, and team building." },
+      { question: "What outcomes can I expect from the program?", answer: "You’ll graduate with a live startup idea, a professional pitch deck, and direct exposure to industry mentors and investors." },
+    ],
     reviews: [
-      {
-        name: "Kavya Arora",
-        comment:
-          "Built an MVP and pitched to mentors—great experience. A follow-up mentoring track would make it perfect. – Oct 07, 2023",
-        rating: 4.3,
-      },
-      {
-        name: "Aakash Jain",
-        comment:
-          "Design thinking workshops changed how I frame problems; at times felt like a quick sprint. – Sep 30, 2023",
-        rating: 4.0,
-      },
-      {
-        name: "Shruti Sharma",
-        comment:
-          "Business models and pitch decks were super useful; more time on financial modeling would help. – Oct 01, 2023",
-        rating: 3.8,
-      },
-      {
-        name: "Nikhil Mehta",
-        comment:
-          "Mentor interactions stood out—founder insights were practical and honest. – Sep 26, 2023",
-        rating: 4.4,
-      },
-      {
-        name: "Tanya Kapoor",
-        comment:
-          "Gave me the push to launch my idea; schedule was packed but worth it. – Oct 05, 2023",
-        rating: 4.1,
-      },
+      { name: "Kavya Arora", comment: "Built an MVP and pitched to mentors—great experience. A follow-up mentoring track would make it perfect. – Oct 07, 2023", rating: 4.3 },
+      { name: "Aakash Jain", comment: "Design thinking workshops changed how I frame problems; at times felt like a quick sprint. – Sep 30, 2023", rating: 4.0 },
+      { name: "Shruti Sharma", comment: "Business models and pitch decks were super useful; more time on financial modeling would help. – Oct 01, 2023", rating: 3.8 },
+      { name: "Nikhil Mehta", comment: "Mentor interactions stood out—founder insights were practical and honest. – Sep 26, 2023", rating: 4.4 },
+      { name: "Tanya Kapoor", comment: "Gave me the push to launch my idea; schedule was packed but worth it. – Oct 05, 2023", rating: 4.1 },
     ],
   },
 
@@ -585,6 +544,26 @@ const coursesDetails = [
       "Deep Learning: Tensors, Model APIs, CNN basics, callbacks",
       "AI Applications: Chatbot/NLP, Image classification mini-projects",
       "Capstone: Predictive Model or AI Chatbot with report & demo",
+    ],
+    curriculumPlan: [
+      {
+        module: 1,
+        minutes: 900,
+        topics: [
+          "Python Essentials & OOPs · Files · Virtualenv",
+          "Data Science Foundations: NumPy, Pandas, EDA, Matplotlib/Seaborn",
+        ],
+      },
+      {
+        module: 2,
+        minutes: 3500,
+        topics: [
+          "ML Algorithms: Linear/Logistic, Trees/Random Forests, K-Means",
+          "Deep Learning: Tensors, Model APIs, CNN basics, callbacks",
+          "AI Applications: Chatbot/NLP, Image classification mini-projects",
+          "Capstone: Predictive Model or AI Chatbot with report & demo",
+        ],
+      },
     ],
     faqs: [
       { question: "Do I need prior Python?", answer: "Basic programming helps, but we start from Python fundamentals and ramp up quickly." },
@@ -624,6 +603,26 @@ const coursesDetails = [
       "Auth & Security: JWT/OAuth, bcrypt, RBAC, rate-limits, CORS",
       "Deployment: env configs, Docker intro, CI/CD & cloud basics",
       "Capstone: Production-ready REST API with docs & tests",
+    ],
+    curriculumPlan: [
+      {
+        module: 1,
+        minutes: 900,
+        topics: [
+          "JavaScript ES6+ & Node.js Core (event loop, streams, promises)",
+          "Express Fundamentals: routers, middleware, joi/zod validation",
+        ],
+      },
+      {
+        module: 2,
+        minutes: 3500,
+        topics: [
+          "Data Layer: MongoDB (Mongoose) & MySQL/PostgreSQL basics",
+          "Auth & Security: JWT/OAuth, bcrypt, RBAC, rate-limits, CORS",
+          "Deployment: env configs, Docker intro, CI/CD & cloud basics",
+          "Capstone: Production-ready REST API with docs & tests",
+        ],
+      },
     ],
     faqs: [
       { question: "Do we cover TypeScript?", answer: "The course uses JS; optional notes show how to migrate to TS for typings." },
@@ -666,27 +665,31 @@ const coursesDetails = [
       "Evaluation & Responsible AI: Metrics, red-teaming, safety checklists",
       "Capstone: End-to-end GenAI App (RAG or Agent) with demo & report",
     ],
+    curriculumPlan: [
+      {
+        module: 1,
+        minutes: 900,
+        topics: [
+          "AI Foundations: ML vs. DL, Use-Cases & Solution Patterns",
+          "Neural Networks & Transformers: Embeddings, Attention, Tokenization",
+        ],
+      },
+      {
+        module: 2,
+        minutes: 3500,
+        topics: [
+          "Prompt Engineering: Task design, guards, tools & function calling",
+          "RAG Systems: Chunking, embeddings, vector DBs, retrieval orchestration",
+          "Evaluation & Responsible AI: Metrics, red-teaming, safety checklists",
+          "Capstone: End-to-end GenAI App (RAG or Agent) with demo & report",
+        ],
+      },
+    ],
     faqs: [
-      {
-        question: "Do I need coding experience?",
-        answer:
-          "Basic programming helps, but templates and guided labs are provided. If you know Python or JavaScript, you’ll move faster.",
-      },
-      {
-        question: "What tools and stacks are used?",
-        answer:
-          "You’ll work with common AI libraries and LLM APIs, vector databases, and simple deployment via cloud or containers.",
-      },
-      {
-        question: "Is this course theoretical or practical?",
-        answer:
-          "Both. You’ll learn the concepts and immediately apply them in labs—culminating in a deployable GenAI project.",
-      },
-      {
-        question: "What careers can this lead to?",
-        answer:
-          "AI/ML Intern, GenAI App Developer, AI Product Associate, or Solutions Engineer focusing on AI integrations.",
-      },
+      { question: "Do I need coding experience?", answer: "Basic programming helps, but templates and guided labs are provided. If you know Python or JavaScript, you’ll move faster." },
+      { question: "What tools and stacks are used?", answer: "You’ll work with common AI libraries and LLM APIs, vector databases, and simple deployment via cloud or containers." },
+      { question: "Is this course theoretical or practical?", answer: "Both. You’ll learn the concepts and immediately apply them in labs—culminating in a deployable GenAI project." },
+      { question: "What careers can this lead to?", answer: "AI/ML Intern, GenAI App Developer, AI Product Associate, or Solutions Engineer focusing on AI integrations." },
     ],
     reviews: [
       { name: "Ananya Sethi", comment: "RAG module made LLMs feel practical—great evaluation framework as well.", rating: 4.5 },
@@ -696,7 +699,6 @@ const coursesDetails = [
     ],
   },
 
-  // >>> New Course (Detailed) <<<
   {
     id: 9,
     title: "Product Management & Scrum Master",
@@ -728,32 +730,33 @@ const coursesDetails = [
       "Week 6 · Metrics, GTM & Stakeholders: OKRs, North Star, A/B basics, comms & exec readouts",
       "Capstone · From Discovery to Delivery: PRD + Jira board + sprint demo & retrospective",
     ],
+    curriculumPlan: [
+      {
+        module: 1,
+        minutes: 900,
+        topics: [
+          "Week 1 · Product Mindset & Discovery: JTBD, interviews, personas, problem statements",
+          "Week 2 · Strategy, Roadmaps & PRDs: vision, outcomes, RICE/MoSCoW, writing PRDs",
+        ],
+      },
+      {
+        module: 2,
+        minutes: 3500,
+        topics: [
+          "Week 3 · Agile & Scrum Deep Dive: roles, events, artifacts, Definition of Ready/Done",
+          "Week 4 · Backlog & Estimation: user stories, acceptance criteria, story points, capacity",
+          "Week 5 · Delivery with Jira: workflows, boards, burndown/velocity, release planning",
+          "Week 6 · Metrics, GTM & Stakeholders: OKRs, North Star, A/B basics, comms & exec readouts",
+          "Capstone · From Discovery to Delivery: PRD + Jira board + sprint demo & retrospective",
+        ],
+      },
+    ],
     faqs: [
-      {
-        question: "Is coding required?",
-        answer:
-          "No. This is a product/Agile program. Basic tech literacy helps when collaborating with engineering.",
-      },
-      {
-        question: "Do we use any tools?",
-        answer:
-          "Yes—Jira (or similar) for Agile execution, plus templates for PRDs, roadmaps, OKRs, and stakeholder updates.",
-      },
-      {
-        question: "Will I learn both PM and Scrum Master skills?",
-        answer:
-          "Yes. You’ll cover end-to-end PM craft and the Scrum Master’s facilitation and delivery leadership.",
-      },
-      {
-        question: "What roles does this prepare me for?",
-        answer:
-          "Associate/Junior Product Manager, Product Analyst, Business Analyst, or Scrum Master in Agile teams.",
-      },
-      {
-        question: "Is there a certification?",
-        answer:
-          "You’ll receive a course completion certificate. We also provide guidance to attempt external certifications like PSM-I/PSPO-I.",
-      },
+      { question: "Is coding required?", answer: "No. This is a product/Agile program. Basic tech literacy helps when collaborating with engineering." },
+      { question: "Do we use any tools?", answer: "Yes—Jira (or similar) for Agile execution, plus templates for PRDs, roadmaps, OKRs, and stakeholder updates." },
+      { question: "Will I learn both PM and Scrum Master skills?", answer: "Yes. You’ll cover end-to-end PM craft and the Scrum Master’s facilitation and delivery leadership." },
+      { question: "What roles does this prepare me for?", answer: "Associate/Junior Product Manager, Product Analyst, Business Analyst, or Scrum Master in Agile teams." },
+      { question: "Is there a certification?", answer: "You’ll receive a course completion certificate. We also provide guidance to attempt external certifications like PSM-I/PSPO-I." },
     ],
     reviews: [
       { name: "Kritika Malhotra", comment: "PRD and roadmap templates were immediately usable at work. Loved the stakeholder comms module.", rating: 4.6 },
