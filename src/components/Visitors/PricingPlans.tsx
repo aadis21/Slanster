@@ -276,10 +276,10 @@ const PricingPlans: React.FC = () => {
         <div className="mt-8 md:mt-10 pb-14">{content}</div>
 
         {/* Fine print */}
-        <p className="text-center text-[11px] md:text-xs text-slate-400 pb-8">
+        {/* <p className="text-center text-[11px] md:text-xs text-slate-400 pb-8">
           * Inclusions mirror your “Slanster Consulting Training Modules”. Visuals aligned to your dark theme.
           Pricing remains exactly the same.
-        </p>
+        </p> */}
       </div>
     </section>
   );
