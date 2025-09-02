@@ -57,7 +57,7 @@ export default function Application() {
             AI Solutions We’ve Delivered
           </h2>
           <p className="mt-3 text-slate-300/90 text-sm sm:text-base">
-            Everything you need. Nothing you don’t.
+            From Vision to Value with AI
           </p>
         </div>
 
