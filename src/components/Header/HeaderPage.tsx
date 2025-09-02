@@ -61,12 +61,13 @@ const HeaderPage: React.FC = () => {
             Let&apos;s Connect
           </button>
 
-          <button
+          <Link
+            href="/visitors"
             className="cursor-pointer  px-5 py-2 bg-sky-900 text-white rounded-md hover:bg-sky-800 transition"
-            onClick={() => setOpenSuperModal(true)}
+            // onClick={() => setOpenSuperModal(true)}
           >
             Unlock Super 30
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -123,11 +124,11 @@ const HeaderPage: React.FC = () => {
               Let&apos;s Connect
             </button>
 
-            <div onClick={() => setOpenSuperModal(true)}>
+            <Link href="/visitors">
               <button className="w-full bg-sky-900 text-white px-5 py-3 rounded-md hover:bg-sky-800 transition">
                 Unlock Super 30
               </button>
-            </div>
+            </Link>
           </div>
         </nav>
       </div>
