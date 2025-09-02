@@ -102,7 +102,7 @@ export const courses = [
     ],
   },
 
-  // >>> New Course (Summary) <<<
+  // id: 8 (summary)
   {
     id: 8,
     title: "Artificial Intelligence (GenAI & Applied AI)",
@@ -116,6 +116,23 @@ export const courses = [
       "Generative AI (LLMs, Prompting)",
       "RAG & Vector Search Fundamentals",
       "Responsible AI & Deployment Patterns",
+    ],
+  },
+
+  // >>> New Course (Summary) <<<
+  {
+    id: 9,
+    title: "Product Management & Scrum Master",
+    desc: "Build market-ready products: discovery → PRD → Agile delivery with Scrum, Jira, metrics, and stakeholder management.",
+    duration: "6 Weeks",
+    students: "340 Students",
+    img: "/trainingimg/course9.jpg",
+    syllabus: [
+      "Product Discovery & User Research",
+      "Roadmaps, Prioritization & PRDs",
+      "Agile & Scrum: Roles, Events, Artifacts",
+      "Backlog, Estimation & Sprint Execution",
+      "Metrics, GTM & Stakeholder Communication",
     ],
   },
 ];
@@ -621,7 +638,6 @@ const coursesDetails = [
     ],
   },
 
-  // >>> New Course (Detailed) <<<
   {
     id: 8,
     title: "Artificial Intelligence (GenAI & Applied AI)",
@@ -677,6 +693,74 @@ const coursesDetails = [
       { name: "Dhruv Malhotra", comment: "Prompts + function-calling labs were super useful; would love more agent patterns.", rating: 4.2 },
       { name: "Sana Qureshi", comment: "Responsible AI checklists helped us avoid common pitfalls—nice touch.", rating: 4.3 },
       { name: "Ishaan Gupta", comment: "Capstone feedback was detailed; deployment tips were beginner-friendly.", rating: 4.1 },
+    ],
+  },
+
+  // >>> New Course (Detailed) <<<
+  {
+    id: 9,
+    title: "Product Management & Scrum Master",
+    desc:
+      "End-to-end product thinking + Agile delivery. Learn discovery, PRDs, roadmaps, Scrum, Jira, metrics, and stakeholder leadership.",
+    duration: "6 Weeks",
+    students: "340 Students",
+    image: "/trainingimg/course9.jpg",
+    overview: {
+      about:
+        "A practical, industry-aligned program that combines Product Management fundamentals with Scrum Mastery. You’ll learn how to discover customer problems, validate solutions, translate insights into PRDs and roadmaps, and deliver iteratively using Scrum. The course blends hands-on Jira labs, prioritization frameworks, stakeholder communication techniques, and outcome-driven metrics so you can ship the right product—fast. Ideal for aspiring PMs, Business Analysts, Scrum Masters, and tech leads who want to drive impact in cross-functional teams.",
+      objectives: [
+        "Run product discovery: user interviews, JTBD, personas, journey maps",
+        "Write crisp PRDs and success metrics; build outcome-based roadmaps",
+        "Prioritize with RICE, MoSCoW, Kano; manage trade-offs and scope",
+        "Master Scrum roles, events, and artifacts; facilitate high-quality ceremonies",
+        "Operate a Jira project: epics, stories, subtasks, workflows, boards, reports",
+        "Estimate with story points; plan sprints, track velocity, manage dependencies",
+        "Define North Star metrics, OKRs, and dashboards; drive data-informed decisions",
+        "Communicate with execs & engineers; handle escalations and risks",
+      ],
+    },
+    curriculum: [
+      "Week 1 · Product Mindset & Discovery: JTBD, interviews, personas, problem statements",
+      "Week 2 · Strategy, Roadmaps & PRDs: vision, outcomes, RICE/MoSCoW, writing PRDs",
+      "Week 3 · Agile & Scrum Deep Dive: roles, events, artifacts, Definition of Ready/Done",
+      "Week 4 · Backlog & Estimation: user stories, acceptance criteria, story points, capacity",
+      "Week 5 · Delivery with Jira: workflows, boards, burndown/velocity, release planning",
+      "Week 6 · Metrics, GTM & Stakeholders: OKRs, North Star, A/B basics, comms & exec readouts",
+      "Capstone · From Discovery to Delivery: PRD + Jira board + sprint demo & retrospective",
+    ],
+    faqs: [
+      {
+        question: "Is coding required?",
+        answer:
+          "No. This is a product/Agile program. Basic tech literacy helps when collaborating with engineering.",
+      },
+      {
+        question: "Do we use any tools?",
+        answer:
+          "Yes—Jira (or similar) for Agile execution, plus templates for PRDs, roadmaps, OKRs, and stakeholder updates.",
+      },
+      {
+        question: "Will I learn both PM and Scrum Master skills?",
+        answer:
+          "Yes. You’ll cover end-to-end PM craft and the Scrum Master’s facilitation and delivery leadership.",
+      },
+      {
+        question: "What roles does this prepare me for?",
+        answer:
+          "Associate/Junior Product Manager, Product Analyst, Business Analyst, or Scrum Master in Agile teams.",
+      },
+      {
+        question: "Is there a certification?",
+        answer:
+          "You’ll receive a course completion certificate. We also provide guidance to attempt external certifications like PSM-I/PSPO-I.",
+      },
+    ],
+    reviews: [
+      { name: "Kritika Malhotra", comment: "PRD and roadmap templates were immediately usable at work. Loved the stakeholder comms module.", rating: 4.6 },
+      { name: "Rohan Verma", comment: "Hands-on Jira labs + Scrum ceremonies practice made concepts stick.", rating: 4.4 },
+      { name: "Mitali Shah", comment: "Clear prioritization frameworks; simulations felt close to real life.", rating: 4.3 },
+      { name: "Yashdeep Singh", comment: "Capstone tied discovery to delivery—great feedback loops.", rating: 4.2 },
+      { name: "Asmita Rao", comment: "Balanced PM strategy and Scrum facilitation. Useful for BA → PM transition.", rating: 4.5 },
     ],
   },
 ];
