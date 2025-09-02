@@ -66,7 +66,7 @@ const HeaderPage: React.FC = () => {
             className="cursor-pointer  px-5 py-2 bg-sky-900 text-white rounded-md hover:bg-sky-800 transition"
             // onClick={() => setOpenSuperModal(true)}
           >
-            Unlock Super 30
+            Register Now
           </Link>
         </div>
 
@@ -126,7 +126,7 @@ const HeaderPage: React.FC = () => {
 
             <Link href="/visitors">
               <button className="w-full bg-sky-900 text-white px-5 py-3 rounded-md hover:bg-sky-800 transition">
-                Unlock Super 30
+                Register Now
               </button>
             </Link>
           </div>
