@@ -2,6 +2,7 @@
 
 import React from "react";
 import Slider from "react-slick";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -72,27 +73,22 @@ const NeurosExperience = () => {
     dots: false,
     arrows: false,
     infinite: true,
-    speed: 8000, // total duration for one slide (adjust)
-    slidesToShow: 1,
+    speed: 2500, // transition ka time (slow + smooth)
+    slidesToShow: 4,
     slidesToScroll: 1,
-    variableWidth: true,
     autoplay: true,
-    autoplaySpeed: 0,
-    cssEase: "linear",
-    rtl: true, // reverse direction
+    autoplaySpeed: 1000, // rukne ka gap kam rakha, taaki lagataar chale
+    cssEase: "linear", // ekdum smooth motion
     responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 1, variableWidth: true } },
-      { breakpoint: 640, settings: { slidesToShow: 1, variableWidth: true } },
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 640, settings: { slidesToShow: 1 } },
     ],
   };
 
   return (
-    <div className="w-full py-10 bg-white min-h-screen">
-      <div className="text-center">
-        <h2
-          className="font-dmsans text-center md:text-5xl text-3xl
-         leading-[1.2] max-w-4xl mx-auto text-[#1C1F25]"
-        >
+    <div className="w-full py-16 bg-gradient-to-br from-white via-gray-50 to-gray-100 min-h-screen">
+      <div className="text-center mb-12">
+        <h2 className="font-dmsans md:text-5xl text-3xl leading-[1.2] max-w-4xl mx-auto text-[#1C1F25]">
           The Slanster Experience
         </h2>
         <p className="text-gray-500 mt-4 max-w-3xl mx-auto">
@@ -104,27 +100,40 @@ const NeurosExperience = () => {
 
       <Slider {...settings}>
         {testimonials.map((t, i) => (
-          <div key={i} className="px-2 pt-10" style={{ width: 350 }}>
-            <div className="rounded-xl border border-gray-200 p-6 shadow-sm flex flex-col h-[400px]">
-              {/* Text section centered vertically */}
+          <motion.div
+            key={i}
+            className="px-3"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div
+              className="rounded-2xl border border-gray-200 p-6 shadow-md bg-white flex flex-col h-[350px] 
+              transition-transform duration-500 hover:scale-105 hover:shadow-2xl"
+            >
+              {/* Text */}
               <div className="flex-1 flex items-center justify-center">
-                <p className="text-gray-700 text-base text-center">{t.text}</p>
+                <p className="text-gray-700 text-base text-center italic">
+                  “{t.text}”
+                </p>
               </div>
 
-              {/* Author section at bottom */}
+              {/* Author */}
               <div className="flex flex-col items-center mt-6">
-                <div className="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center text-white font-bold">
+                <div className="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center text-white font-bold shadow-lg">
                   {t.name[0]}
                 </div>
                 <p className="mt-3 font-semibold text-gray-900">{t.name}</p>
                 <p className="text-sm text-gray-500">{t.role}</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </Slider>
     </div>
   );
 };
+
 
 export default NeurosExperience;

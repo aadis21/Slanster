@@ -19,6 +19,7 @@ const HeaderPage: React.FC = () => {
     { name: "AI", href: "/ai" },
     // { name: "Mentors", href: "/mentors" },
     { name: "Training", href: "/training" },
+    { name: "Package", href: "/slansterlearning" },
   ];
 
   return (

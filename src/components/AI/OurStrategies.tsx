@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import { BarChart3, Link, Play, Zap } from "lucide-react";
+import { BarChart3, Link, Zap } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const strategies = [
   {
@@ -10,12 +10,11 @@ const strategies = [
     title: "AI-Driven Forecasts",
     desc: "Harness the unmatched power of artificial intelligence with Neuros. Dive deep into predictive analytics, anticipate market trends...",
   },
-{
-  icon: <Link className="w-5 h-5 text-gray-700" />,
-  title: "Connect & Streamline",
-  desc: "Integrate Slanster with your favorite tools, CRMs, and platforms. Create a smooth, unified workflow where your team and data work together effortlessly.",
-},
-
+  {
+    icon: <Link className="w-5 h-5 text-gray-700" />,
+    title: "Connect & Streamline",
+    desc: "Integrate Slanster with your favorite tools, CRMs, and platforms. Create a smooth, unified workflow where your team and data work together effortlessly.",
+  },
   {
     icon: <Zap className="w-5 h-5 text-gray-700" />,
     title: "Instant Insights",
@@ -23,28 +22,53 @@ const strategies = [
   },
 ];
 
-
 const bgImages = [
-  // "/AIpage/service_6.webp",
   "/AIpage/service_7.png",
   "/AIpage/service_8.png",
   "/AIpage/service_9.png",
   "/AIpage/service_10.png",
 ];
 
-const OurStrategies = () => {
-   const [currentIndex, setCurrentIndex] = useState(0);
+// 🎨 Define multiple animation styles
+const animations = [
+  {
+    initial: { opacity: 0, scale: 1.2, x: 50 },
+    animate: { opacity: 1, scale: 1, x: 0 },
+    exit: { opacity: 0, scale: 0.9, x: -50 },
+  },
+  {
+    initial: { opacity: 0, y: -100 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: 100 },
+  },
+  {
+    initial: { opacity: 0, rotate: -15, filter: "blur(10px)" },
+    animate: { opacity: 1, rotate: 0, filter: "blur(0px)" },
+    exit: { opacity: 0, rotate: 15, filter: "blur(10px)" },
+  },
+  {
+    initial: { opacity: 0, rotateY: 90 },
+    animate: { opacity: 1, rotateY: 0 },
+    exit: { opacity: 0, rotateY: -90 },
+  },
+];
 
-   // automatic slideshow
-   useEffect(() => {
-     const interval = setInterval(() => {
-       setCurrentIndex((prev) => (prev + 1) % bgImages.length);
-     }, 2000); // 4 seconds delay
-     return () => clearInterval(interval);
-   }, []);
+const OurStrategies = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [animIndex, setAnimIndex] = useState(0);
+
+  // automatic slideshow
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % bgImages.length);
+      setAnimIndex(Math.floor(Math.random() * animations.length)); // pick random animation
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="bg-white">
-      <div className="max-w-7xl mx-auto min-h-screen md:py-12 py-6 md:px-0 px-4  flex flex-col items-center">
+      <div className="max-w-8xl mx-auto md:px-25 px-4 min-h-screen md:py-12 py-6 flex flex-col items-center">
         {/* Tag */}
         <div className="mb-4">
           <span
@@ -72,26 +96,8 @@ const OurStrategies = () => {
           products.
         </p>
 
-        {/* Buttons */}
-        {/* <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-          <button
-            className="px-5 sm:px-6 py-2.5 sm:py-3 bg-[#084c74] cursor-pointer text-white font-semibold rounded-md shadow-lg 
-                     hover:bg-[#084c74] hover:scale-105 transform transition-all duration-300 
-                     text-sm sm:text-base active:scale-95"
-          >
-            Get a demo
-          </button>
-          <button
-            className="px-5 sm:px-6 py-2.5 sm:py-3 flex items-center gap-2 border border-gray-300 rounded-md 
-                     text-gray-700 hover:bg-gray-100 hover:scale-105 transform transition-all duration-300 
-                     text-sm sm:text-base active:scale-95 cursor-pointer"
-          >
-            Research
-          </button>
-        </div> */}
-
         {/* Strategy Cards */}
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl px-4">
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-8xl md:px-0 px-4">
           {strategies.map((item, i) => (
             <div
               key={i}
@@ -110,74 +116,22 @@ const OurStrategies = () => {
           ))}
         </div>
 
-        {/* Wave Image with Floating Badge */}
-        <div className="mt-12 relative w-full max-w-6xl rounded-xl overflow-hidden shadow-lg bg-[#084c74]">
-          {/* shadow background */}
-          {/* <Image
-            src="/AIlandingPage/wave/bg-shadow.png"
-            alt="Wave Design"
-            width={1200}
-            height={600}
-            className="w-full object-cover z-10"
-          /> */}
-
+        {/* Wave Image with Random Animation */}
+        <div className="mt-12 relative w-full rounded-xl overflow-hidden shadow-lg bg-[#084c74]">
           <div className="relative w-full h-[400px] sm:h-[500px]">
-            {bgImages.map((src, i) => (
-              <Image
-                key={i}
-                src={src}
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={currentIndex}
+                src={bgImages[currentIndex]}
                 alt="Wave Design"
-                fill
-                className={`object-cover transition-opacity duration-1000 ease-in-out ${
-                  i === currentIndex ? "opacity-100" : "opacity-0"
-                }`}
+                className="absolute inset-0 w-full h-full object-fill bg-black rounded-xl"
+                initial={{ opacity: 0, scale: 1.2, x: 50 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                exit={{ opacity: 0, scale: 0.9, x: -50 }}
+                transition={{ duration: 1 }}
               />
-            ))}
+            </AnimatePresence>
           </div>
-          {/* wave images on top of shadow */}
-          {/* <Image
-            src="/AIlandingPage/wave/wave-1.png"
-            alt="Wave 1"
-            width={1200}
-            height={600}
-            className="absolute top-0 right-0 w-full object-cover opacity-80 z-20"
-          /> */}
-          {/* <Image
-            src="/AIlandingPage/wave/wave-2.png"
-            alt="Wave 2"
-            width={1200}
-            height={600}
-            className="absolute top-10 right-10 w-full object-cover opacity-70 z-30"
-          />
-          <Image
-            src="/AIlandingPage/wave/wave-3.png"
-            alt="Wave 3"
-            width={1200}
-            height={600}
-            className="absolute top-20 right-20 w-full object-cover opacity-60 z-40"
-          /> */}
-
-          {/* center text */}
-          {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
-          <span
-            className="inline-flex items-center gap-2 px-4 py-2 shadow-lg 
-                 text-sm sm:text-base font-medium text-gray-800 bg-white 
-                 rounded-full border border-gray-300"
-          >
-            <span className="text-blue-600">✨</span>
-            <span>AI-Driven Forecasts</span>
-          </span>
-        </div> */}
-          {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-300/70 p-2 rounded-full shadow-lg">
-            <div className="relative z-10 bg-white rounded-full px-4 sm:px-6 py-2.5 sm:py-3 shadow-lg flex items-center gap-3 shadow-gray-300">
-              <div>
-                <p className="font-semibold text-gray-900 text-sm sm:text-base">
-                  <span className="text-blue-600">✨</span>
-                  <span>AI-Driven Forecasts</span>
-                </p>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>
