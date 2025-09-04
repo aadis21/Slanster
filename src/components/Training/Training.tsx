@@ -27,26 +27,26 @@ const Training = () => {
         </div>
 
         {/* Heading */}
-        <h2 className="text-2xl md:text-[45px] lg:text-[52px leading-snug">
-          Teaching in the Internet age <br />
-          means we must teach <span className="text-[#024a71]">tomorrow’s</span>
+        <h2 className="text-2xl md:text-[45px] lg:text-[52px] leading-snug">
+          Building the <span className="text-[#024a71]">future workforce</span>{" "}
           <br />
+          with industry-ready{" "}
           <span className="flex items-center justify-center gap-2 md:gap-4 md:mt-3 mt-0">
-            <p className="">skills today</p>
+            <p className="">skills & frameworks</p>
             <Image
               src="/trainingimg/arrow.png"
               alt="arrow"
               width={120}
               height={80}
-              className="md:w-[8vw] w-[6vw]  md:min-w-[60px] md:max-w-[100px] object-contain"
+              className="md:w-[8vw] w-[6vw] md:min-w-[60px] md:max-w-[100px] object-contain"
             />
           </span>
         </h2>
 
         {/* Subtext */}
         <p className="text-gray-500 mt-4 text-sm md:text-base max-w-2xl mx-auto md:w-full w-1/2">
-          Provides you with the latest online learning system and material that
-          help your
+          Empowering learners with the latest technologies, tools, and
+          frameworks to thrive in the IT industry.
         </p>
 
         {/* Left Image */}
