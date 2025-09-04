@@ -87,11 +87,11 @@ const NeurosExperience = () => {
 
   return (
     <div className="w-full py-16 bg-gradient-to-br from-white via-gray-50 to-gray-100 min-h-screen">
-      <div className="text-center mb-12">
+      <div className="text-center mb-12 px-6">
         <h2 className="font-inter md:text-5xl text-3xl leading-[1.2] max-w-4xl mx-auto text-[#1C1F25]">
           The Slanster Experience
         </h2>
-        <p className="text-gray-500 mt-4 max-w-3xl mx-auto">
+        <p className="text-gray-500 mt-4 max-w-3xl mx-auto ">
           At Slanster, we build AI solutions that simplify work, drive growth,
           and spark innovation. But don’t just take our word for it—see what our
           clients and partners have to say.

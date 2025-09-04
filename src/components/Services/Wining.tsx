@@ -12,7 +12,7 @@ const inter = Inter({
 const Wining = () => {
     const [openModal, setOpenModal] = useState(false);
   return (
-    <div className="bg-white py-10 max-w-8xl md:px-25">
+    <div className="bg-white py-10 max-w-8xl md:px-25 px-4">
       <div
         className={`${inter.className} bg-gray-900 relative w-full  mx-auto rounded-2xl overflow-hidden`}
       >

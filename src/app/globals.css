@@ -81,13 +81,9 @@ body {
 /* main scroller remover  */
 
 /* Hide scrollbar for entire website */
-html, body {
-  overflow-y: auto; /* scroll to work */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
-}
+
 
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge */
+  display: none;
 }

@@ -61,10 +61,10 @@ const services: Service[] = [
   },
 ];
 
-const visibleCards = 4; // always show 4 cards
-const mod = (n: number, m: number) => ((n % m) + m) % m;
-
 const OurServices: React.FC = () => {
+  const visibleCards = 4;
+  const mod = (n: number, m: number) => ((n % m) + m) % m;
+
   const total = services.length;
   const head = services.slice(0, visibleCards);
   const tail = services.slice(-visibleCards);
@@ -77,7 +77,6 @@ const OurServices: React.FC = () => {
   const firstCardRef = useRef<HTMLDivElement | null>(null);
   const [stepPx, setStepPx] = useState(0);
 
-  // Drag/swipe state
   const [dragPx, setDragPx] = useState(0);
   const touchStartX = useRef<number | null>(null);
   const isDragging = useRef(false);
@@ -86,13 +85,9 @@ const OurServices: React.FC = () => {
     const cardEl = firstCardRef.current;
     const trackEl = trackRef.current;
     if (!cardEl || !trackEl) return;
-
     const cardWidth = cardEl.offsetWidth;
     const styles: CSSStyleDeclaration = window.getComputedStyle(trackEl);
-
-    // ✅ properly typed: no `any`
     const gap = parseFloat(styles.gap || styles.columnGap || "0");
-
     setStepPx(cardWidth + gap);
   };
 
@@ -123,12 +118,8 @@ const OurServices: React.FC = () => {
     }
   }, [animating]);
 
-  const next = () => {
-    if (total > visibleCards) setIndex((i) => i + 1);
-  };
-  const prev = () => {
-    if (total > visibleCards) setIndex((i) => i - 1);
-  };
+  const next = () => total > visibleCards && setIndex((i) => i + 1);
+  const prev = () => total > visibleCards && setIndex((i) => i - 1);
 
   const realIndex = mod(index - visibleCards, total);
   const progress = total > 1 ? realIndex / (total - 1) : 1;
@@ -145,7 +136,6 @@ const OurServices: React.FC = () => {
     setIndex(targetIdx);
   };
 
-  // Touch/Swipe handlers (mobile)
   const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     if (total <= visibleCards) return;
     isDragging.current = true;
@@ -155,11 +145,9 @@ const OurServices: React.FC = () => {
 
   const onTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     if (!isDragging.current || touchStartX.current === null) return;
-    const currentX = e.touches[0].clientX;
-    const delta = currentX - touchStartX.current;
+    const delta = e.touches[0].clientX - touchStartX.current;
     const maxDrag = stepPx * 0.9;
-    const clamped = Math.max(Math.min(delta, maxDrag), -maxDrag);
-    setDragPx(clamped);
+    setDragPx(Math.max(Math.min(delta, maxDrag), -maxDrag));
   };
 
   const onTouchEnd = () => {
@@ -168,31 +156,23 @@ const OurServices: React.FC = () => {
     const delta = dragPx;
     setDragPx(0);
     setAnimating(true);
-
-    const threshold = 40; // px swipe threshold
-    if (Math.abs(delta) > threshold) {
-      if (delta < 0) next();
-      else prev();
-    }
+    if (Math.abs(delta) > 40) delta < 0 ? next() : prev();
   };
 
   return (
-    <section className="py-16 px-6 md:px-0 bg-white ">
-      {/* Heading */}
+    <section className="py-12 px-4 md:px-6 bg-white">
       <div className="text-center">
         <p className="inline-block border rounded-2xl border-gray-300 shadow-md px-4 py-1 text-gray-500 uppercase tracking-wide mb-4 bg-white">
           Our Services
         </p>
         <h2
-          className={`${inter.className} font-normal text-gray-900 
-            text-[16px] sm:text-[24px] md:text-[32px] lg:text-[40px]`}
+          className={`${inter.className} font-normal text-gray-900 text-[24px] sm:text-[28px] md:text-[36px] lg:text-[40px]`}
         >
           Smart IT Services to Power Your Business
         </h2>
       </div>
 
-      {/* Row slider */}
-      <div className="relative max-w-8xl md:px-25 mx-auto mt-12">
+      <div className="relative max-w-8xl md:px-20 px-4 mx-auto mt-8">
         <div
           className="overflow-hidden"
           onTouchStart={onTouchStart}
@@ -201,7 +181,7 @@ const OurServices: React.FC = () => {
         >
           <div
             ref={trackRef}
-            className={`flex gap-8 ${
+            className={`flex gap-6 md:gap-8 ${
               animating ? "transition-transform duration-500 ease-out" : ""
             }`}
             style={{
@@ -215,46 +195,31 @@ const OurServices: React.FC = () => {
               <div
                 key={`${service.title}-${i}`}
                 ref={i === 0 ? firstCardRef : undefined}
-                className="relative flex flex-col justify-end items-start p-6 rounded-2xl h-[40vh] w-full sm:w-[300px] lg:w-[320px] shrink-0 overflow-hidden group cursor-pointer"
+                className="relative flex flex-col justify-end items-center p-4 md:p-6 rounded-2xl h-[40vh] sm:h-[45vh] md:h-[40vh] w-[260px] sm:w-[280px] md:w-[300px] lg:w-[320px] shrink-0 overflow-hidden group cursor-pointer"
               >
                 <Image
                   src={service.backgroundimage}
-                  alt={`${service.title} background`}
+                  alt={service.title}
                   fill
                   className="object-cover absolute inset-0"
-                  sizes="(max-width: 1024px) 300px, 320px"
+                  sizes="(max-width: 768px) 260px, (max-width: 1024px) 280px, 320px"
                   priority={i < 3}
                 />
 
-                {/* 🔹 Overlay div (black transparent on hover) */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-sky-900 transition-all duration-300" />
 
-                {/* Icon top-left */}
                 <div className="absolute top-0 left-0 mt-4 ml-4 z-10 w-12 h-12 flex items-center justify-center rounded-full border border-white bg-white/20 backdrop-blur-sm">
                   {service.icon}
                 </div>
 
-                {/* Text wrapper */}
-                <div
-                  className="relative z-10 mt-auto w-full rounded-2xl p-4 
-                flex flex-col items-center justify-end   // <- yahan change
-                group-hover:justify-center 
-                text-center transition-all duration-500
-                bg-black/80 group-hover:bg-black/40"
-                >
-                  {/* Title */}
+                <div className="relative z-10 mt-auto w-full p-3 md:p-4 flex flex-col items-center justify-end text-center group-hover:justify-center transition-all duration-500 bg-black/80 group-hover:bg-black/40 rounded-2xl">
                   <h3
-                    className={`${inter.className} text-center text-lg font-normal text-yellow-400 mb-2 
-                group-hover:text-2xl group-hover:font-semibold transition-all duration-500 uppercase`}
+                    className={`${inter.className} text-center text-lg sm:text-lg md:text-xl font-normal mb-2 text-yellow-400 group-hover:text-2xl group-hover:font-semibold transition-all duration-500 uppercase`}
                   >
                     {service.title}
                   </h3>
-
-                  {/* Description */}
                   <p
-                    className={`${inter.className} text-gray-200 text-sm font-normal 
-                opacity-0 group-hover:opacity-100 
-                group-hover:text-base transition-all duration-500`}
+                    className={`${inter.className} text-gray-200 text-xs sm:text-sm md:text-base opacity-0 group-hover:opacity-100 transition-all duration-500`}
                   >
                     {service.desc}
                   </p>
@@ -264,32 +229,25 @@ const OurServices: React.FC = () => {
           </div>
         </div>
 
-        {/* Controls + Progress (progress hidden on mobile) */}
         {total > visibleCards && (
-          <div className="mt-6 flex items-center gap-4">
+          <div className="mt-6 flex items-center gap-3 md:gap-4">
             <button
               onClick={prev}
               className="w-10 h-10 rounded-full bg-sky-900 text-white flex items-center justify-center shadow"
-              aria-label="Previous"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
-
             <button
               onClick={next}
               className="w-10 h-10 rounded-full bg-sky-900 text-white flex items-center justify-center shadow"
-              aria-label="Next"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
-
-            {/* Progress bar — hidden on mobile */}
             <div className="flex-1 hidden md:block">
               <div
                 ref={barRef}
                 onClick={handleBarClick}
                 className="relative h-[2px] w-full cursor-pointer select-none"
-                aria-label="Slider progress"
               >
                 <div className="absolute inset-0 bg-neutral-300" />
                 <div
