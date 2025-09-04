@@ -209,7 +209,8 @@ const PricingPlans: React.FC = () => {
 
   const handleBuy = (plan: Plan) => {
     // Redirect to dashboard with the card ID as a query parameter
-    router.push(`/slansterdashboard?plan=${plan.id}`);
+    // router.push(`/slansterdashboard?plan=${plan.id}`);
+    router.push("/auth");
   };
 
   const content = useMemo(() => {
