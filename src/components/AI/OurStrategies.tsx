@@ -73,7 +73,7 @@ const OurStrategies = () => {
         </p>
 
         {/* Buttons */}
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+        {/* <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
           <button
             className="px-5 sm:px-6 py-2.5 sm:py-3 bg-[#084c74] cursor-pointer text-white font-semibold rounded-md shadow-lg 
                      hover:bg-[#084c74] hover:scale-105 transform transition-all duration-300 
@@ -88,7 +88,7 @@ const OurStrategies = () => {
           >
             Research
           </button>
-        </div>
+        </div> */}
 
         {/* Strategy Cards */}
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl px-4">

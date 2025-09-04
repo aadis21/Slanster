@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useState } from "react";
-import { Play } from "lucide-react";
+// import { Play } from "lucide-react";
 // import Image from "next/image";
 
 const AiLandingPage = () => {
@@ -30,7 +30,7 @@ const AiLandingPage = () => {
                rounded-full border border-gray-300"
         >
           <span className="text-blue-600">✨</span>
-          <span>Generative Business Intelligence for Analysts</span>
+          <span>Generative Business Intelligence </span>
         </span>
       </div>
 
@@ -51,8 +51,8 @@ const AiLandingPage = () => {
       </p>
 
       {/* Buttons */}
-      <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-        {/* Primary Button */}
+      {/* <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+    
         <button
           className="px-5 cursor-pointer sm:px-6 py-2.5 sm:py-3 bg-[#084c74] text-white font-semibold rounded-md shadow-lg 
                      hover:bg-[#084c74] hover:scale-105 transform transition-all duration-300 
@@ -61,17 +61,17 @@ const AiLandingPage = () => {
           Start your free trial
         </button>
 
-        {/* Secondary Button */}
+
         <button
           className="px-5 sm:px-6 py-2.5 sm:py-3 flex items-center gap-2 border border-gray-300 rounded-md 
                      text-gray-700 hover:bg-gray-100 hover:scale-105 transform transition-all duration-300 
                      text-sm sm:text-base active:scale-95"
         >
           <Play className="w-4 h-4 sm:w-5 sm:h-5 animate-pulse" />{" "}
-          {/* Play icon pulse animation */}
+        
           Watch video
         </button>
-      </div>
+      </div> */}
 
       <div className="mt-12 w-full max-w-7xl px-2 sm:px-4">
         <div className="bg-gradient-to-br from-[#084c74] to-[#084c74] rounded-xl p-6 sm:p-10 flex items-center justify-center relative overflow-hidden h-[350px] sm:h-[450px] lg:h-[500px]">

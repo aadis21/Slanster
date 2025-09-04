@@ -225,21 +225,36 @@ const OurServices: React.FC = () => {
                   sizes="(max-width: 1024px) 300px, 320px"
                   priority={i < 3}
                 />
-                <div className="absolute inset-0  transition-all duration-300" />
+
+                {/* 🔹 Overlay div (black transparent on hover) */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-sky-900 transition-all duration-300" />
+
+                {/* Icon top-left */}
                 <div className="absolute top-0 left-0 mt-4 ml-4 z-10 w-12 h-12 flex items-center justify-center rounded-full border border-white bg-white/20 backdrop-blur-sm">
                   {service.icon}
                 </div>
-                <div className="relative z-10 text-left mt-auto hover:bg-black/20 group-hover:bg-black/60 w-full rounded-2xl p-4">
-                  {/* Always visible title */}
+
+                {/* Text wrapper */}
+                <div
+                  className="relative z-10 mt-auto w-full rounded-2xl p-4 
+                flex flex-col items-center justify-end   // <- yahan change
+                group-hover:justify-center 
+                text-center transition-all duration-500
+                bg-black/80 group-hover:bg-black/40"
+                >
+                  {/* Title */}
                   <h3
-                    className={`${inter.className} text-lg font-normal text-yellow-400 mb-2`}
+                    className={`${inter.className} text-center text-lg font-normal text-yellow-400 mb-2 
+                group-hover:text-2xl group-hover:font-semibold transition-all duration-500 uppercase`}
                   >
                     {service.title}
                   </h3>
 
-                  {/* Hidden by default, visible on hover */}
+                  {/* Description */}
                   <p
-                    className={`${inter.className} text-gray-200 text-sm font-normal opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                    className={`${inter.className} text-gray-200 text-sm font-normal 
+                opacity-0 group-hover:opacity-100 
+                group-hover:text-base transition-all duration-500`}
                   >
                     {service.desc}
                   </p>
