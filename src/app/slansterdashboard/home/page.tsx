@@ -1,9 +1,12 @@
-import React from 'react'
+import HomePage from "@/components/DlansterDashboard/Pages/HomePage";
+import React from "react";
 
 const page = () => {
   return (
-    <div className="text-xl text-gray-900 font-semibold">🏠 Home Page</div>
-  )
-}
+    <div>
+      <HomePage />
+    </div>
+  );
+};
 
-export default page
+export default page;

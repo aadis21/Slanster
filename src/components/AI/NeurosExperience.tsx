@@ -73,12 +73,12 @@ const NeurosExperience = () => {
     dots: false,
     arrows: false,
     infinite: true,
-    speed: 2500, // transition ka time (slow + smooth)
+    speed: 2500, 
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1000, // rukne ka gap kam rakha, taaki lagataar chale
-    cssEase: "linear", // ekdum smooth motion
+    autoplaySpeed: 1000, 
+    cssEase: "linear", 
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: 2 } },
       { breakpoint: 640, settings: { slidesToShow: 1 } },
@@ -88,7 +88,7 @@ const NeurosExperience = () => {
   return (
     <div className="w-full py-16 bg-gradient-to-br from-white via-gray-50 to-gray-100 min-h-screen">
       <div className="text-center mb-12">
-        <h2 className="font-dmsans md:text-5xl text-3xl leading-[1.2] max-w-4xl mx-auto text-[#1C1F25]">
+        <h2 className="font-inter md:text-5xl text-3xl leading-[1.2] max-w-4xl mx-auto text-[#1C1F25]">
           The Slanster Experience
         </h2>
         <p className="text-gray-500 mt-4 max-w-3xl mx-auto">

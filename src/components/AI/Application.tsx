@@ -48,15 +48,15 @@ const item: Variants = {
 /* ---- Section ---- */
 export default function Application() {
   return (
-    <section className="relative w-full bg-[#0b1020] text-white py-16 sm:py-20 overflow-hidden">
+    <section className="relative w-full bg-[#0b1020] text-white py-12 sm:py-20 overflow-hidden">
       <ParticleBG />
 
-      <div className="relative z-[1] max-w-6xl mx-auto px-5 sm:px-6">
+      <div className="relative z-[1] max-w-8xl md:px-25 mx-auto px-6">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+          <h2 className="font-inter md:text-5xl text-3xl leading-[1.2]">
             AI Solutions We’ve Delivered
           </h2>
-          <p className="mt-3 text-slate-300/90 text-sm sm:text-base">
+          <p className="font-inter leading-[1.2] mt-3 text-slate-300/90 text-sm sm:text-base">
             From Vision to Value with AI
           </p>
         </div>
@@ -103,7 +103,11 @@ export default function Application() {
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
+                transition={{
+                  duration: 0.6,
+                  ease: [0.22, 1, 0.36, 1],
+                  delay: 0.05,
+                }}
                 className="absolute left-4 right-4 -bottom-px h-px origin-left bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent"
               />
             </motion.div>
