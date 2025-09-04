@@ -67,13 +67,10 @@ const Vision = () => {
           Computer Vision{" "}
           <span className="text-[#024a71]">Tools & Capabilities</span>
         </h2>
-        <p className="text-gray-600 mt-3 mb-8 max-w-3xl">
-          We design, build, and productionize vision systems—from classic CV to
-          deep learning—so you get accurate, real-time insights for QA,
-          automation, and analytics.
-        </p>
-
-        {/* Tabs */}
+  <p className="text-gray-600 mt-3 mb-8 w-full">
+  We build production-grade vision systems—from classic CV to deep learning—for accurate, real-time insights in QA, automation, and analytics.
+</p>
+ {/* Tabs */}
         <div
           className="flex gap-3 mb-10 flex-wrap"
           role="tablist"
