@@ -27,21 +27,22 @@ const Training = () => {
         </div>
 
         {/* Heading */}
-        <h2 className="text-2xl md:text-[45px] lg:text-[52px leading-snug">
-          Teaching in the Internet age <br />
-          means we must teach <span className="text-[#024a71]">tomorrow’s</span>
-          <br />
-          <span className="flex items-center justify-center gap-2 md:gap-4 md:mt-3 mt-0">
-            <p className="">skills today</p>
-            <Image
-              src="/trainingimg/arrow.png"
-              alt="arrow"
-              width={120}
-              height={80}
-              className="md:w-[8vw] w-[6vw]  md:min-w-[60px] md:max-w-[100px] object-contain"
-            />
-          </span>
-        </h2>
+      <h2 className="text-2xl md:text-[45px] lg:text-[52px] leading-snug">
+  Empowering learners in the <br />
+  digital era with <span className="text-[#024a71]">future-ready</span>
+  <br />
+  <span className="flex items-center justify-center gap-2 md:gap-4 md:mt-3 mt-0">
+    <p className="">skills today</p>
+    <Image
+      src="/trainingimg/arrow.png"
+      alt="arrow"
+      width={120}
+      height={80}
+      className="md:w-[8vw] w-[6vw] md:min-w-[60px] md:max-w-[100px] object-contain"
+    />
+  </span>
+</h2>
+
 
         {/* Subtext */}
         <p className="text-gray-500 mt-4 text-sm md:text-base max-w-2xl mx-auto md:w-full w-1/2">
