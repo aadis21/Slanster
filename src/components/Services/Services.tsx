@@ -44,7 +44,7 @@ const Services = () => {
             </span>
           </h1>
 
-          <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 pt-12">
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 md:pt-12 pt-4">
             Empowering Businesses With AI, Cloud, And Digital Solutions For
             Startups And Enterprises.
           </p>

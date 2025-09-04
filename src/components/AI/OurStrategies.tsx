@@ -91,7 +91,7 @@ const OurStrategies = () => {
         </h1>
 
         {/* Subtext */}
-        <p className="mt-4 text-gray-600 text-center max-w-2xl text-sm sm:text-base md:text-lg">
+        <p className="mt-4 text-gray-600 text-center max-w-2xl text-sm sm:text-base md:text-lg px-4">
           Specify helps you gain control of your design system across teams and
           products.
         </p>

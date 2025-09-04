@@ -21,7 +21,7 @@ const AiLandingPage = () => {
   }, [images.length]);
 
   return (
-    <div className="w-full min-h-screen md:py-12 py-6 md:px-0 px-4 bg-white flex flex-col items-center justify-center ">
+    <div className="w-full min-h-[65vh] md:min-h-screen md:py-12 py-6 md:px-0 px-4 bg-white flex flex-col items-center justify-center ">
       {/* Tag */}
       <div className="mb-4">
         <span
@@ -36,15 +36,15 @@ const AiLandingPage = () => {
 
       {/* Heading */}
       <h1
-        className="font-dmsans text-center text-[28px] sm:text-[36px] md:text-5xl lg:text-5xl
-               leading-[1.2] max-w-4xl mx-auto text-[#1C1F25]"
+        className="font-dmsans text-center text-[24px] sm:text-[36px] md:text-5xl lg:text-5xl
+               leading-[1.2] max-w-4xl mx-auto text-[#1C1F25] "
       >
         Revolutionizing Business Decisions <br className="block" />
         with AI-Powered Analytics
       </h1>
 
       {/* Subtext */}
-      <p className="mt-4 text-gray-600 text-center max-w-2xl text-sm sm:text-base md:text-lg">
+      <p className="mt-4 text-gray-600 text-center max-w-2xl text-sm sm:text-base md:text-lg px-4">
         Harnesses the power of artificial intelligence to transform your
         business data into actionable insights, propelling you to new heights of
         success
