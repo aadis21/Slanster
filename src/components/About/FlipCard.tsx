@@ -55,8 +55,8 @@ const FlipCard = () => {
             Testimonials
           </h4>
           <h2
-            className="text-start font-inter text-[#0a1e3a]
-             text-[16px] sm:text-[24px] md:text-[32px] lg:text-[40px] xl:text-[40px] 2xl:text-[40px] font-bold leading-snug"
+            className="md:text-start text-center  font-inter text-[#0a1e3a]
+             text-[28px] sm:text-[28px] md:text-[32px] lg:text-[40px] xl:text-[40px] 2xl:text-[40px] font-bold leading-snug"
           >
             What People Say <br /> About Us.
           </h2>
