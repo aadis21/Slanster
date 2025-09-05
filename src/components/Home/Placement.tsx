@@ -97,8 +97,8 @@ const Placement: React.FC = () => {
         </div>
 
         {/* LEFT – heading with updated content */}
-        <div className="flex flex-col justify-center gap-4 md:gap-5">
-          <h2 className="font-sans text-[26px] sm:text-[32px] md:text-[38px] font-bold leading-[1.15] tracking-tight">
+        <div className="flex flex-col justify-center items-center md:items-start gap-4 md:gap-5">
+          <h2 className="font-sans flex flex-col md:flex-row items-center text-[32px] sm:text-[32px] md:text-[38px] font-bold leading-[1.15] tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#0f395f] to-[#0f6fa8]">
               Your Career, Our{" "}
             </span>
@@ -107,7 +107,7 @@ const Placement: React.FC = () => {
             </span>
           </h2>
 
-          <p className="font-sans text-gray-700 text-[14px] sm:text-[15px] md:text-[16px] animate-[fade-up_600ms_ease_100ms_both]">
+          <p className="font-sans text-gray-700 text-[16px] sm:text-[15px] md:text-[16px] animate-[fade-up_600ms_ease_100ms_both] ">
             Be part of our exclusive{" "}
             <span className="font-semibold">Super 30 Batch</span> and gain
             hands-on expertise through live projects:

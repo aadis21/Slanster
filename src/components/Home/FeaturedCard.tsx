@@ -1,8 +1,7 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
-import { Inter } from "next/font/google";
 import Slider, { CustomArrowProps } from "react-slick";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
@@ -14,8 +13,6 @@ import testImage6 from "../../../public/FeaturedCard/saas1.jpg";
 import testImage8 from "../../../public/FeaturedCard/socialmedia.jpg";
 import testImage9 from "../../../public/FeaturedCard/e-commerce.jpg";
 import testImage10 from "../../../public/FeaturedCard/Retail & E-commerce.jpg";
-
-const inter = Inter({ subsets: ["latin"] });
 
 interface CardType {
   id: number;
@@ -68,7 +65,7 @@ const cards: CardType[] = [
   },
 ];
 
-// Desktop Arrows
+// Custom arrows
 const DesktopPrevArrow: React.FC<CustomArrowProps> = ({ onClick }) => (
   <button
     onClick={onClick}
@@ -87,57 +84,48 @@ const DesktopNextArrow: React.FC<CustomArrowProps> = ({ onClick }) => (
   </button>
 );
 
-// Mobile Arrows (Bottom Center)
-const MobileArrows: React.FC<{ onPrev: () => void; onNext: () => void }> = ({
-  onPrev,
-  onNext,
-}) => (
-  <div className="flex gap-4 absolute bottom-[-45px] left-1/2 -translate-x-1/2 z-10 md:hidden">
-    <button
-      onClick={onPrev}
-      className="w-12 h-12 rounded-full bg-gray-400/20  shadow-lg flex items-center justify-center hover:bg-gray-200 transition"
-    >
-      <FaChevronLeft />
-    </button>
-    <button
-      onClick={onNext}
-      className="w-12 h-12 rounded-full bg-gray-400/20 shadow-lg flex items-center justify-center hover:bg-gray-200 transition"
-    >
-      <FaChevronRight />
-    </button>
-  </div>
-);
-
 const FeaturedCard = () => {
   const sliderRef = React.useRef<Slider | null>(null);
+  const [slidesToShow, setSlidesToShow] = useState(4);
+
+  // Tailwind breakpoints ko JS mein detect karna
+  useEffect(() => {
+    const updateSlides = () => {
+      if (window.innerWidth < 768) {
+        setSlidesToShow(1);
+      } else if (window.innerWidth < 1024) {
+        setSlidesToShow(2);
+      } else if (window.innerWidth < 1280) {
+        setSlidesToShow(3);
+      } else {
+        setSlidesToShow(4);
+      }
+    };
+    updateSlides();
+    window.addEventListener("resize", updateSlides);
+    return () => window.removeEventListener("resize", updateSlides);
+  }, []);
 
   const settings = {
     dots: false,
     infinite: true,
     speed: 800,
-    slidesToShow: 4,
-    slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
+    slidesToShow,
+    slidesToScroll: 1,
     nextArrow: <DesktopNextArrow />,
     prevArrow: <DesktopPrevArrow />,
-    responsive: [
-      { breakpoint: 1280, settings: { slidesToShow: 3 } },
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 768, settings: { slidesToShow: 1, arrows: false } }, // mobile: 1 card, arrows hidden
-    ],
   };
 
   return (
-    <section
-      className={`bg-gray-900 md:min-h-[70vh] h-[50vh] flex flex-col justify-center items-center px-6 md:px-0 py-16 ${inter.className}`}
-    >
+    <section className="bg-gray-900 md:min-h-[70vh] h-[55vh] flex flex-col justify-center items-center px-4 md:px-0 py-16 relative">
       <h2 className="text-center text-white text-[22px] sm:text-[28px] md:text-[36px] lg:text-[42px] font-bold mb-10">
         Explore Our Featured Industries
       </h2>
 
-      <div className="relative max-w-8xl md:px-25 w-full px-2">
+      <div className="relative max-w-8xl md:px-20 w-full px-2">
         <Slider ref={sliderRef} {...settings}>
           {cards.map((card) => (
             <div key={card.id} className="px-2 sm:px-3">
@@ -159,12 +147,6 @@ const FeaturedCard = () => {
             </div>
           ))}
         </Slider>
-
-        {/* Mobile arrows at bottom center */}
-        <MobileArrows
-          onPrev={() => sliderRef.current?.slickPrev()}
-          onNext={() => sliderRef.current?.slickNext()}
-        />
       </div>
     </section>
   );

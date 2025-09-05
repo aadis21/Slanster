@@ -380,7 +380,7 @@ const LandingPage = () => {
           className="max-w-6xl text-white"
         >
           <h1 className="relative inline-block text-2xl sm:text-3xl md:text-5xl lg:text-6xl leading-tight pt-0 md:py-0 py-4 sm:py-4">
-            <span className="bg-gradient-to-r from-[#005888] to-transparent px-4 py-2">
+            <span className="bg-gradient-to-r from-[#005888] to-transparent md:px-2 px-0 py-2">
               Solutions For A Smarter Future
             </span>
           </h1>

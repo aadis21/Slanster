@@ -170,7 +170,7 @@ const Catogories = () => {
       >
         {/* Tabs (scrollable on mobile) */}
         <div className="relative mb-8 sm:mb-10">
-          <div className="flex gap-2 sm:gap-3 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
+          <div className="flex ml-2 gap-2 sm:gap-3 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-2 -mx-4 px-4  sm:mx-0 sm:px-0">
             {(Object.keys(servicesData) as ServiceKey[]).map((tab) => (
               <button
                 key={tab}
