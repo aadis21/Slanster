@@ -1,30 +1,41 @@
 "use client";
-import React, { useState } from "react";
-import { Menu, X } from "lucide-react";
+import React, { useState, useContext } from "react";
+import { Menu, X, User } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link"; // ✅ Import Link from Next.js
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import ContactModal from "./ContactModal";
 import RegistrationPage from "../Home/registrationform";
+import { AuthContext } from "../../../AuthContext";
 
 const HeaderPage: React.FC = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const [openSuperModal, setOpenSuperModal] = useState(false);
+  const [showUserDropdown, setShowUserDropdown] = useState(false);
 
-  // ✅ Define routes here
+  const { isAuthenticated, logout } = useContext(AuthContext);
+  const router = useRouter();
+
+  // Enhanced logout function
+  const handleLogout = () => {
+    logout();
+    setShowUserDropdown(false);
+    router.push("/auth");
+  };
+
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "AI", href: "/ai" },
-    // { name: "Mentors", href: "/mentors" },
     { name: "Training", href: "/training" },
     { name: "Package", href: "/slansterlearning" },
   ];
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50 font-inter">
-      <div className="max-w-8xl md:px-15 px-0  mx-auto flex items-center justify-between h-24">
+      <div className="max-w-8xl md:px-15 px-0 mx-auto flex items-center justify-between h-24">
         {/* Logo */}
         <div className="flex items-center">
           <Link href="/">
@@ -53,8 +64,8 @@ const HeaderPage: React.FC = () => {
           ))}
         </nav>
 
-        {/* Buttons (Desktop) */}
-        <div className="hidden md:flex items-center space-x-3">
+        {/* Buttons / User (Desktop) */}
+        <div className="hidden md:flex items-center space-x-3 relative">
           <button
             className="cursor-pointer px-5 py-2 border border-gray-400 rounded-md hover:bg-gray-50 transition text-gray-900"
             onClick={() => setOpenModal(true)}
@@ -62,13 +73,41 @@ const HeaderPage: React.FC = () => {
             Let&apos;s Connect
           </button>
 
-          <Link
-            href="/visitors"
-            className="cursor-pointer  px-5 py-2 bg-sky-900 text-white rounded-md hover:bg-sky-800 transition"
-            // onClick={() => setOpenSuperModal(true)}
-          >
-            Register Now
-          </Link>
+          {isAuthenticated ? (
+            <div className="relative">
+              <button
+                onClick={() => setShowUserDropdown(!showUserDropdown)}
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 hover:bg-gray-300 transition"
+              >
+                <User size={20} />
+              </button>
+
+              {showUserDropdown && (
+                <div className="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-50">
+                  <Link
+                    href="/profile"
+                    className="block px-4 py-2 text-gray-900 hover:bg-gray-100 transition"
+                    onClick={() => setShowUserDropdown(false)}
+                  >
+                    View Profile
+                  </Link>
+                  <button
+                    className="w-full text-left px-4 py-2 text-gray-900 hover:bg-gray-100 transition"
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </button>
+                </div>
+              )}
+            </div>
+          ) : (
+            <Link
+              href="/auth"
+              className="cursor-pointer px-5 py-2 bg-sky-900 text-white rounded-md hover:bg-sky-800 transition"
+            >
+              Sign In
+            </Link>
+          )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -109,7 +148,7 @@ const HeaderPage: React.FC = () => {
               key={link.name}
               href={link.href}
               className="relative group hover:text-sky-600 transition"
-              onClick={() => setMobileMenu(false)} // ✅ close sidebar on click
+              onClick={() => setMobileMenu(false)}
             >
               {link.name}
               <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
@@ -125,16 +164,35 @@ const HeaderPage: React.FC = () => {
               Let&apos;s Connect
             </button>
 
-            <Link href="/visitors">
-              <button className="w-full bg-sky-900 text-white px-5 py-3 rounded-md hover:bg-sky-800 transition">
-                Register Now
-              </button>
-            </Link>
+            {isAuthenticated ? (
+              <>
+                <Link href="/profile">
+                  <button
+                    className="w-full bg-gray-200 text-gray-900 px-5 py-3 rounded-md hover:bg-gray-300 transition"
+                    onClick={() => setMobileMenu(false)}
+                  >
+                    View Profile
+                  </button>
+                </Link>
+                <button
+                  onClick={handleLogout}
+                  className="w-full bg-red-500 text-white px-5 py-3 rounded-md hover:bg-red-600 transition"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <Link href="/auth">
+                <button className="w-full bg-sky-900 text-white px-5 py-3 rounded-md hover:bg-sky-800 transition">
+                  Sign In
+                </button>
+              </Link>
+            )}
           </div>
         </nav>
       </div>
 
-      {/* modal  */}
+      {/* Modals */}
       {openModal && (
         <ContactModal isOpen={openModal} onClose={() => setOpenModal(false)} />
       )}

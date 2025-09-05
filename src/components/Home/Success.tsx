@@ -17,7 +17,7 @@ const TechnologiesData: TechnologiesProps[] = [
   {
     name: "Backend Development",
     tech: [
-      { title: "Flask", image: "/success/backend/1.png" },
+      
       { title: "GoLang", image: "/success/backend/2.png" },
       { title: "Java", image: "/success/backend/3.png" },
       { title: ".Net Core", image: "/success/backend/4.png" },
@@ -27,6 +27,7 @@ const TechnologiesData: TechnologiesProps[] = [
       { title: "Python", image: "/success/backend/8.png" },
       { title: "Ruby on Rails", image: "/success/backend/9.png" },
       { title: "Spring Boot", image: "/success/backend/10.png" },
+      { title: "Flask", image: "/success/backend/1.png" },
     ],
   },
   {

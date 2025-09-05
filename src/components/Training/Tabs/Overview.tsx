@@ -16,7 +16,7 @@ const Overview: React.FC<OverviewProps> = ({ course }) => {
         {course.overview.about}
       </p>
       
-      <h3 className="text-xl font-semibold mb-4">What You wll Learn</h3>
+      <h3 className="text-xl font-semibold mb-4">What You will Learn</h3>
       <ul className="list-disc list-inside text-gray-600 space-y-2">
         {course.overview.objectives.map((objective, index) => (
           <li key={index}>{objective}</li>

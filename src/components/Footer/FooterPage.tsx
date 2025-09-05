@@ -82,6 +82,9 @@ const FooterPage = () => {
 
           {/* Services */}
           <ul className="space-y-3 text-gray-400 text-base">
+            <h3 className="font-semibold text-xl mb-6 text-white ">
+              Services
+            </h3>
             {services.map((item, idx) => (
               <li
                 key={idx}

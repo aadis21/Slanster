@@ -208,9 +208,14 @@ const PricingPlans: React.FC = () => {
   const router = useRouter();
 
   const handleBuy = (plan: Plan) => {
-    // Redirect to dashboard with the card ID as a query parameter
-    // router.push(`/slansterdashboard?plan=${plan.id}`);
-    router.push("/auth");
+    const token = localStorage.getItem("token"); // check login
+    if (token) {
+      // User is logged in → go to payment page
+      router.push(`/payment?plan=${plan.id}`);
+    } else {
+      // User not logged in → go to auth page
+      router.push("/auth");
+    }
   };
 
   const content = useMemo(() => {

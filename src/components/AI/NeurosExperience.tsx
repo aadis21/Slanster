@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
 
@@ -67,22 +67,35 @@ const testimonials = [
   },
 ];
 
-
 const NeurosExperience = () => {
+  const sliderRef = React.useRef<Slider | null>(null);
+  const [slidesToShow, setSlidesToShow] = useState(4); // default desktop
+
+  useEffect(() => {
+    const updateSlides = () => {
+      if (window.innerWidth < 768) {
+        setSlidesToShow(1); // mobile
+      } else if (window.innerWidth < 1024) {
+        setSlidesToShow(2); // tablet
+      } else {
+        setSlidesToShow(4); // desktop/md+
+      }
+    };
+    updateSlides();
+    window.addEventListener("resize", updateSlides);
+    return () => window.removeEventListener("resize", updateSlides);
+  }, []);
+
   const settings = {
     dots: false,
     arrows: false,
     infinite: true,
-    speed: 2500, 
-    slidesToShow: 4,
+    speed: 2500,
+    slidesToShow,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1000, 
-    cssEase: "linear", 
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 640, settings: { slidesToShow: 1 } },
-    ],
+    autoplaySpeed: 1000,
+    cssEase: "linear",
   };
 
   return (
@@ -98,42 +111,37 @@ const NeurosExperience = () => {
         </p>
       </div>
 
-      <Slider {...settings}>
-        {testimonials.map((t, i) => (
-          <motion.div
-            key={i}
-            className="px-3"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div
-              className="rounded-2xl border border-gray-200 p-6 shadow-md bg-white flex flex-col h-[350px] 
-              transition-transform duration-500 hover:scale-105 hover:shadow-2xl"
+      <div className="relative max-w-8xl md:px-20 w-full px-2">
+        <Slider ref={sliderRef} {...settings}>
+          {testimonials.map((t, i) => (
+            <motion.div
+              key={i}
+              className="px-3"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
             >
-              {/* Text */}
-              <div className="flex-1 flex items-center justify-center">
-                <p className="text-gray-700 text-base text-center italic">
-                  “{t.text}”
-                </p>
-              </div>
-
-              {/* Author */}
-              <div className="flex flex-col items-center mt-6">
-                <div className="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center text-white font-bold shadow-lg">
-                  {t.name[0]}
+              <div className="mb-10 rounded-2xl border border-gray-200 p-6 shadow-md bg-white flex flex-col h-[350px] transition-transform duration-500 hover:scale-102 hover:shadow-xl">
+                <div className="flex-1 flex items-center justify-center">
+                  <p className="text-gray-700 text-base text-center italic">
+                    “{t.text}”
+                  </p>
                 </div>
-                <p className="mt-3 font-semibold text-gray-900">{t.name}</p>
-                <p className="text-sm text-gray-500">{t.role}</p>
+                <div className="flex flex-col items-center mt-6">
+                  <div className="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center text-white font-bold shadow-lg">
+                    {t.name[0]}
+                  </div>
+                  <p className="mt-3 font-semibold text-gray-900">{t.name}</p>
+                  <p className="text-sm text-gray-500">{t.role}</p>
+                </div>
               </div>
-            </div>
-          </motion.div>
-        ))}
-      </Slider>
+            </motion.div>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };
-
 
 export default NeurosExperience;
